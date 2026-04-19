@@ -12,9 +12,10 @@ All of it is in `src/content/*.json`. That's the full list of
 placeholder sources:
 
 - `meta.json` -- conference name, subtitle, dates, venue, mission,
-  principles, fiscal sponsor info. **Only committed fact:** the
-  conference is in Atlanta in October 2026 and is fiscally
-  sponsored by Applied Love Labs. Everything else is a placeholder.
+  principles, fiscal sponsor info. **Committed facts:** the conference
+  is in Atlanta on October 9-11, 2026. Everything else -- venue,
+  fiscal sponsor, registration rates, speaker roster -- is a
+  placeholder.
 - `speakers.json` -- twenty speakers, listed as "Speaker 1" through
   "Speaker 20" while the committee finalizes invitations. Each has an
   affiliation, research areas, a plausible academic-style talk title,
@@ -26,7 +27,8 @@ placeholder sources:
   review and adjust answers; registration rates and exact dates
   deliberately read as "to be finalized" rather than bluffing.
 - `sponsors.json` -- tiers labeled Presenting / Supporting / Community.
-  Only Applied Love Labs is a real entry; the rest are [PLACEHOLDER].
+  Every entry -- including the Presenting-tier "Fiscal sponsor TBD" --
+  is a placeholder until the committee confirms partnerships.
 - `committee.json` -- six roles with [TBD] names until the committee
   approves public listing.
 

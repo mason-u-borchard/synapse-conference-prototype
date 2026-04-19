@@ -36,8 +36,8 @@ export const stripeProvider: DonationProvider = {
             unit_amount: input.amountCents,
             product_data: {
               name: input.recurring
-                ? "The Synapse annual support (via Applied Love Labs)"
-                : "The Synapse donation (via Applied Love Labs)",
+                ? "The Synapse annual support"
+                : "The Synapse donation",
             },
             ...(input.recurring ? { recurring: { interval: "year" } } : {}),
           },

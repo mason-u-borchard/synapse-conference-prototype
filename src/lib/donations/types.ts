@@ -1,8 +1,9 @@
 // Shared types for the donation module. The committee is still deciding
-// which donation backend to use (Stripe, Donorbox, PayPal, Patreon, a
-// platform ALL recommends, etc.). Every provider implements the same
-// DonationProvider interface so the UI and API route never know which
-// backend is live -- swap one module and everything keeps working.
+// which donation backend to use (Stripe, Donorbox, PayPal, Patreon, or
+// whatever the chosen fiscal sponsor recommends). Every provider
+// implements the same DonationProvider interface so the UI and API
+// route never know which backend is live -- swap one module and
+// everything keeps working.
 
 export type DonationProviderKind =
   | "stripe"

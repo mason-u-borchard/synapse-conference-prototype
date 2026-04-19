@@ -4,7 +4,7 @@ import { committee, meta, sponsors } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "The organizing committee, our operating principles, code of conduct, and Applied Love Labs, our fiscal sponsor.",
+  description: "The organizing committee, our operating principles, code of conduct, and fiscal sponsor placeholder while the committee finalizes a 501(c)(3) partnership.",
 };
 
 export default function AboutPage() {
@@ -25,16 +25,10 @@ export default function AboutPage() {
         <p className="eyebrow mb-4 text-muted-foreground">Fiscal sponsor</p>
         <h2 className="font-serif text-3xl tracking-tight">{meta.fiscalSponsor.name}</h2>
         <p className="mt-4 max-w-prose text-pretty text-muted-foreground">{meta.fiscalSponsor.blurb}</p>
-        <div className="mt-6">
-          <a
-            href={meta.fiscalSponsor.href}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-ghost"
-          >
-            Learn more about {meta.fiscalSponsor.short}
-          </a>
-        </div>
+        <p className="mt-3 max-w-prose text-xs text-muted-foreground">
+          This section will name the selected 501(c)(3) partner, link to
+          its site, and explain the receipt and transparency process.
+        </p>
       </section>
 
       <section id="committee" className="mt-20">

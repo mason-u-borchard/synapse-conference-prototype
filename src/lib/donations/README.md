@@ -8,10 +8,11 @@ interface.
 ## Why
 
 The committee has not yet finalized which donation platform the
-Synapse will use. Applied Love Labs, our fiscal sponsor, may have a
-preferred donation partner; the committee may prefer the simplicity
-of a Donorbox embed; or we may end up on Stripe directly. We don't
-know, and we shouldn't need to know to build the rest of the site.
+Synapse will use. The fiscal sponsor (still being finalized by the
+committee) may have a preferred donation partner; the committee may
+prefer the simplicity of a Donorbox embed; or we may end up on Stripe
+directly. We don't know, and we shouldn't need to know to build the
+rest of the site.
 
 The rest of the app treats donation as a tiny interface with two
 behaviors: render a "donate" affordance, and (for API-driven
@@ -47,7 +48,7 @@ link to the `DONATION_EMBED_URL`. No code changes needed.
 
 - No database writes. Donor records live in the provider (Stripe,
   Donorbox, etc.) and are surfaced through their dashboards.
-- No receipt generation. Receipts come from Applied Love Labs or the
-  provider depending on flow.
+- No receipt generation. Receipts come from the chosen fiscal sponsor
+  or the donation provider depending on flow.
 - No UI. The `src/components/donate-form.tsx` file is the only UI;
   this module just describes the backend.

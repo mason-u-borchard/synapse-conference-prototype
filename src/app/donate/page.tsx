@@ -5,7 +5,7 @@ import { meta } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Support the convening",
-  description: "Donations fund travel grants, access accommodations, and the mentor-matching program. Fiscally sponsored by Applied Love Labs.",
+  description: "Donations will fund travel grants, access accommodations, and the mentor-matching program. Fiscal sponsor and allocation percentages are placeholders while the committee finalizes both.",
 };
 
 export default function DonatePage() {
@@ -23,7 +23,7 @@ export default function DonatePage() {
           separately at year's end.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
-          The Synapse is fiscally sponsored by <span className="text-ink">{meta.fiscalSponsor.name}</span>; your receipt is issued in ALL's name. {provider.blurb}
+          The fiscal sponsor is a placeholder (<span className="text-ink">{meta.fiscalSponsor.name}</span>) while the committee finalizes a 501(c)(3) partnership; the chosen sponsor will issue your tax receipt. {provider.blurb}
         </p>
       </header>
 
@@ -38,15 +38,17 @@ export default function DonatePage() {
               <AllocationRow share={20} label="Mentor-matching program" />
             </ul>
             <p className="mt-5 text-xs text-muted-foreground">
-              Zero percent goes to organizer honoraria. Funds flow through Applied Love Labs.
+              Allocation percentages are placeholders the committee will
+              confirm; funds will flow through the chosen fiscal sponsor.
             </p>
           </section>
           <section className="paper p-6">
             <h2 className="eyebrow mb-3 text-muted-foreground">Transparency</h2>
             <p className="text-sm text-pretty text-muted-foreground">
-              Financials are published through Applied Love Labs and reviewed
-              annually. The committee is currently deciding between several
-              donation platforms; the active backend is{" "}
+              Financial reporting will be published through the chosen
+              fiscal sponsor once the partnership is finalized. The
+              committee is also deciding between several donation
+              platforms; the active backend here is{" "}
               <span className="font-mono text-ink">{provider.label}</span>.
             </p>
           </section>

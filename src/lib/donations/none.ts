@@ -6,6 +6,6 @@ export const noneProvider: DonationProvider = {
   name: "none",
   label: "Donations paused",
   blurb:
-    "Donations are paused while the committee finalizes a donation partner through Applied Love Labs. In the meantime, reach the committee for ways to support.",
+    "Donations are paused while the committee finalizes both a fiscal sponsor and a donation partner. Reach the committee for ways to support in the meantime.",
   embedOnly: false,
 };

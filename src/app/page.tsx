@@ -46,14 +46,14 @@ export default function HomePage() {
               className="btn px-8 py-3 text-base font-medium text-[#1e0e22] shadow-[0_1px_0_hsl(var(--gold-deep)/0.8),0_14px_40px_-18px_hsl(var(--gold)/0.8)]"
               style={{ backgroundColor: "hsl(var(--gold))", borderColor: "hsl(var(--gold-deep) / 0.8)" }}
             >
-              Donate through ALL
+              Donate
               <ArrowRight />
             </Link>
             <Link href="/register" className="btn btn-ghost">Register</Link>
             <Link href="/schedule" className="btn btn-ghost">Learn more</Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Tax-deductible via Applied Love Labs. Ring-fenced from operating costs.
+            Donations will be tax-deductible through a fiscal sponsor the committee is finalizing. Funds will be ring-fenced from operating costs.
           </p>
           <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 text-sm md:grid-cols-4">
             <HeroStat label="Dates" value={meta.dates.display} />
@@ -67,13 +67,13 @@ export default function HomePage() {
       <div className="border-y border-border bg-surface-raised">
         <div className="mx-auto flex w-full max-w-gallery flex-col gap-4 px-gutter py-5 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="eyebrow mb-1">Applied Love Labs fiscal sponsorship &middot; tax-deductible</p>
+            <p className="eyebrow mb-1">Fiscal sponsor placeholder &middot; partnership TBD</p>
             <p className="text-sm text-muted-foreground">
-              55% travel grants &middot; 25% access accommodations &middot; 20% mentor-matching
+              Allocation breakdown shown on /donate (55% travel grants &middot; 25% access &middot; 20% mentor-matching) is a placeholder the committee will refine once a sponsor is chosen.
             </p>
           </div>
           <Link href="/donate" className="btn btn-ghost shrink-0">
-            Donate through ALL <ArrowRight />
+            Donate <ArrowRight />
           </Link>
         </div>
       </div>
@@ -116,17 +116,17 @@ export default function HomePage() {
         <div className="paper mt-2 flex flex-col gap-6 p-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="text-lg text-pretty text-muted-foreground">
-              Contributions underwrite travel grants for doctoral researchers
-              (~55%), captioning and childcare (~25%), and mentor-matching
-              (~20%). Gifts flow through {meta.fiscalSponsor.name}; receipts
-              arrive in ALL's name.
+              Contributions would underwrite travel grants for doctoral
+              researchers (~55%), captioning and childcare (~25%), and
+              mentor-matching (~20%). Allocation percentages and the fiscal
+              sponsor are placeholders while the committee finalizes both.
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
-              Tax-deductible via ALL. Ring-fenced from operating costs.
+              Donations will be tax-deductible through the chosen fiscal sponsor and ring-fenced from operating costs.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/donate" className="btn btn-primary">Donate through ALL</Link>
+            <Link href="/donate" className="btn btn-primary">Donate</Link>
             <Link href="/register" className="btn btn-ghost">Register</Link>
           </div>
         </div>

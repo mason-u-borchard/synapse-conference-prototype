@@ -39,8 +39,8 @@ describe("content integrity", () => {
     expect(days).toEqual(new Set([1, 2, 3]));
   });
 
-  it("Atlanta is the declared city and Applied Love Labs is the fiscal sponsor", () => {
+  it("Atlanta is the declared city and the fiscal sponsor is a placeholder", () => {
     expect(meta.city).toMatch(/Atlanta/);
-    expect(meta.fiscalSponsor.name).toBe("Applied Love Labs");
+    expect(meta.fiscalSponsor.name).toMatch(/TBD|placeholder/i);
   });
 });

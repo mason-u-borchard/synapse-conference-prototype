@@ -4,11 +4,12 @@
 
 A prototype for The Synapse 2026, a women-focused academic conference on
 consciousness research, cognitive science, and machine intelligence.
-Fiscally sponsored by **Applied Love Labs** (ALL / TILT).
+The fiscal sponsor shown anywhere on the site is a placeholder while
+the committee finalizes a 501(c)(3) partnership.
 
-- **When:** October 2026 (exact dates TBD by the committee)
+- **When:** October 9-11, 2026
 - **Where:** Atlanta, Georgia (venue TBD)
-- **Fiscal sponsor:** Applied Love Labs / TILT
+- **Fiscal sponsor:** TBD by the committee
 
 ## What this repo is
 
@@ -27,7 +28,7 @@ The goal of this prototype specifically is to:
    updates when the JSON content files update.
 3. Propose a **swappable donation module** designed around the
    committee's biggest open question: which donation platform to
-   use through ALL/TILT.
+   use once the fiscal sponsor is chosen.
 4. Get to a place where Lighthouse passes 90+ and accessibility
    passes without special configuration.
 
@@ -122,7 +123,7 @@ assembled from `src/content/*.json` every call
 update on the next request -- no deploy cycle.
 
 **Donation is an interface, not a vendor.** The committee's biggest
-open question is which donation platform ALL / TILT will use. The
+open question is which donation platform the chosen fiscal sponsor will use. The
 donation module is structured so that Stripe, Donorbox, Patreon,
 PayPal, or a brand new provider can be swapped in with one env var
 (or, for entirely new backends, one new file). See

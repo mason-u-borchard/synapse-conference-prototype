@@ -21,10 +21,11 @@ describe("concierge prompt", () => {
     expect(assembleConciergePrompt("none")).toMatch(/AI assistant/);
   });
 
-  it("carries conference metadata and the fiscal sponsor", () => {
+  it("carries conference metadata and flags the fiscal sponsor as a placeholder", () => {
     expect(prompt).toContain(meta.name);
     expect(prompt).toContain(meta.city);
     expect(prompt).toContain(meta.fiscalSponsor.name);
+    expect(prompt).toMatch(/placeholder/i);
   });
 
   it("includes every speaker by name and talk title", () => {

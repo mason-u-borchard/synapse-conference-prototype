@@ -2,7 +2,7 @@
   "name": "synapse-conference-prototype",
   "version": "0.1.0",
   "private": true,
-  "description": "The Synapse -- women connecting mind, machine, and what comes next. A prototype for the 2026 convening in Atlanta, fiscally sponsored by Applied Love Labs.",
+  "description": "The Synapse -- women connecting mind, machine, and what comes next. A prototype for the 2026 convening in Atlanta.",
   "scripts": {
     "dev": "next dev --port 3021",
     "build": "next build",

@@ -76,7 +76,7 @@ prototype is now reachable at
 ## 3. When the conference gets a real domain
 
 When the committee chooses `thesynapsecon.com` (or similar) through
-ALL / TILT:
+the chosen fiscal sponsor:
 
 1. In Vercel, add the domain to the prototype project.
 2. Update DNS to point the apex / www record at Vercel's standard

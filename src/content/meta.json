@@ -7,10 +7,10 @@
   "venue": "Venue TBD -- Atlanta confirmed",
   "capacity": 300,
   "fiscalSponsor": {
-    "name": "Applied Love Labs",
-    "short": "ALL",
-    "href": "https://appliedlovelabs.org",
-    "blurb": "Applied Love Labs / TILT is the fiscal sponsor for The Synapse. Charitable contributions flow through ALL; receipts are issued in ALL's name."
+    "name": "Fiscal sponsor TBD",
+    "short": "TBD",
+    "href": "#",
+    "blurb": "The fiscal sponsor shown here is a placeholder while the committee finalizes a 501(c)(3) partnership. The chosen sponsor will hold donated funds and issue tax-deductible receipts in its own name."
   },
   "mission": "The Synapse convenes women working at the edge of consciousness research, cognitive science, and machine intelligence. We gather to interrogate what these fields mean together -- not as a survey, but as a working conversation that gives early-career researchers a seat at the same table as senior scholars.",
   "principles": [
@@ -19,5 +19,5 @@
     { "title": "Interdisciplinary on purpose", "body": "Every track mixes neuroscience, philosophy, and machine-learning voices. We trust attendees to follow arguments outside their home field." },
     { "title": "Access is architecture", "body": "Captioning, step-free navigation, a quiet room, onsite childcare, and a short, honest access form. Not accommodations -- defaults." }
   ],
-  "placeholderNote": "Venue, final dates, registration rates, and speaker roster are placeholders -- see CONTENT_PLACEHOLDER.md. The committee owns final content."
+  "placeholderNote": "Venue, registration rates, speaker roster, and fiscal sponsor are placeholders -- see CONTENT_PLACEHOLDER.md. The committee owns final content."
 }
