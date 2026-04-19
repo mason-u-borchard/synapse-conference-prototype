@@ -35,7 +35,7 @@ export default function HomePage() {
             <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">machine</span>, and what comes next.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Two working days in Atlanta. Twenty researchers across
+            Three working days in Atlanta. Twenty speakers across
             consciousness studies, cognitive neuroscience, philosophy of
             mind, and AI alignment. Forty-plus posters, panels, and quiet
             rooms. One single live conversation.

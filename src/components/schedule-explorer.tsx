@@ -9,7 +9,7 @@ import { cx } from "@/lib/cx";
 const TRACKS: readonly Track[] = ["Plenary", "Foundations", "Machines", "Frontiers", "Community"];
 
 export function ScheduleExplorer({ sessions, speakers }: { sessions: readonly Session[]; speakers: readonly Speaker[] }) {
-  const [day, setDay] = useState<1 | 2>(1);
+  const [day, setDay] = useState<1 | 2 | 3>(1);
   const [trackFilter, setTrackFilter] = useState<Track | "all">("all");
   const [expanded, setExpanded] = useState<string | null>(null);
 
@@ -30,13 +30,13 @@ export function ScheduleExplorer({ sessions, speakers }: { sessions: readonly Se
     <>
       <div className="flex flex-wrap items-center justify-between gap-4 border-y border-border py-4">
         <div role="tablist" aria-label="Day" className="inline-flex rounded-pill border border-border p-0.5 text-sm">
-          {[1, 2].map((d) => (
+          {([1, 2, 3] as const).map((d) => (
             <button
               key={d}
               type="button"
               role="tab"
               aria-selected={day === d}
-              onClick={() => setDay(d as 1 | 2)}
+              onClick={() => setDay(d)}
               className={cx("rounded-pill px-4 py-1.5 transition-colors", day === d ? "bg-ink text-surface" : "text-muted-foreground hover:text-ink")}
             >Day {d}</button>
           ))}

@@ -81,7 +81,7 @@ export default function SpeakerPage({ params }: PageProps) {
               <ul className="space-y-3">
                 {sessions.map((s) => (
                   <li key={s.id} className="paper p-4">
-                    <p className="eyebrow text-muted-foreground">Day {s.day} &middot; {formatTimeRange(s.start, s.end)} &middot; {s.track}</p>
+                    <p className="eyebrow text-muted-foreground">Day {s.day} &middot; {formatTimeRange(s.start, s.end)} &middot; {s.track} &middot; {s.title}</p>
                     <p className="mt-1 font-serif text-lg text-ink">{s.title}</p>
                     {s.location && <p className="text-sm text-muted-foreground">{s.location}</p>}
                   </li>

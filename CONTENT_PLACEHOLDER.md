@@ -19,7 +19,7 @@ placeholder sources:
   "Speaker 20" while the committee finalizes invitations. Each has an
   affiliation, research areas, a plausible academic-style talk title,
   and an abstract; none of the names are real people yet.
-- `schedule.json` -- two days, four tracks, realistic cadence. Time
+- `schedule.json` -- three days, four tracks, realistic cadence. Time
   slots and titles are placeholder structures the committee can
   edit or replace wholesale.
 - `faq.json` -- the ten most-likely questions. The committee should

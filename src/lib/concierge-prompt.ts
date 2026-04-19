@@ -25,7 +25,8 @@ export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none
       )
       .join("\n");
 
-  const scheduleBlock = [1, 2]
+  const dayNumbers = Array.from(new Set(schedule.map((s) => s.day))).sort();
+  const scheduleBlock = dayNumbers
     .map((day) => {
       const rows = schedule
         .filter((s) => s.day === day)

@@ -41,7 +41,7 @@ export type Track =
 
 export interface Session {
   id: string;
-  day: 1 | 2;
+  day: 1 | 2 | 3;
   start: string;
   end: string;
   track: Track;

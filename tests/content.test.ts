@@ -34,9 +34,9 @@ describe("content integrity", () => {
     expect(sponsors.length).toBeGreaterThanOrEqual(3);
   });
 
-  it("schedule spans two days", () => {
+  it("schedule spans three days", () => {
     const days = new Set(schedule.map((s) => s.day));
-    expect(days).toEqual(new Set([1, 2]));
+    expect(days).toEqual(new Set([1, 2, 3]));
   });
 
   it("Atlanta is the declared city and Applied Love Labs is the fiscal sponsor", () => {

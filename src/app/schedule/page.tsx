@@ -4,7 +4,7 @@ import { ScheduleExplorer } from "@/components/schedule-explorer";
 
 export const metadata: Metadata = {
   title: "Schedule",
-  description: "Two working days in Atlanta, four tracks, six keynotes, plus workshops, panels, poster sessions, and mentor-matching.",
+  description: "Three days in Atlanta, four tracks, six keynotes, plus workshops, panels, poster sessions, and mentor-matching. Titles are placeholder labels while the committee finalizes content.",
 };
 
 export default function SchedulePage() {
@@ -12,7 +12,7 @@ export default function SchedulePage() {
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">Program</p>
-        <h1 className="text-display-lg text-balance">Two days, four tracks, cross-linked throughout.</h1>
+        <h1 className="text-display-lg text-balance">Three days, four tracks, cross-linked throughout.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
           Plenaries run in the main theater; parallel sessions move between
           galleries and seminar rooms. Every session is cross-linked to its
