@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+// trim() defends against trailing newlines / whitespace that sometimes
+// creep into env vars when pasted through a hosting UI.
+const rawBasePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").trim();
 const basePath = rawBasePath.replace(/\/$/, "");
 
 // Diagnostic -- prints to the Vercel build log so we can see exactly
