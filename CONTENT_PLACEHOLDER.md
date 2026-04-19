@@ -1,0 +1,49 @@
+# Content placeholders
+
+Every piece of text and data in this prototype is placeholder content
+unless otherwise decided by the committee. The site ships with these
+values so that layout, typography, and flows can be evaluated against
+something that reads like real conference copy -- but the committee
+owns the actual content decisions.
+
+## Where placeholders live
+
+All of it is in `src/content/*.json`. That's the full list of
+placeholder sources:
+
+- `meta.json` -- conference name, subtitle, dates, venue, mission,
+  principles, fiscal sponsor info. **Only committed fact:** the
+  conference is in Atlanta in October 2026 and is fiscally
+  sponsored by Applied Love Labs. Everything else is a placeholder.
+- `speakers.json` -- six speakers, with invented names, affiliations,
+  pronouns, bios, and abstracts. These read like academic talks on
+  purpose; none of the people are real.
+- `schedule.json` -- two days, four tracks, realistic cadence. Time
+  slots and titles are placeholder structures the committee can
+  edit or replace wholesale.
+- `faq.json` -- the ten most-likely questions. The committee should
+  review and adjust answers; registration rates and exact dates
+  deliberately read as "to be finalized" rather than bluffing.
+- `sponsors.json` -- tiers labeled Presenting / Supporting / Community.
+  Only Applied Love Labs is a real entry; the rest are [PLACEHOLDER].
+- `committee.json` -- six roles with [TBD] names until the committee
+  approves public listing.
+
+## How placeholders feed the chatbot
+
+Ada reads from these same JSON files at request time -- see
+`src/lib/concierge-prompt.ts`. Updating any content file updates
+Ada's answers on the next chat request, no deploy cycle needed.
+
+## What's NOT a placeholder
+
+- The layout and design system (colors, typography, spacing)
+- The signature hero animation
+- The swappable donation module architecture (see
+  `src/lib/donations/README.md`)
+- Accessibility defaults (focus rings, reduced-motion, skip link)
+- Form pipeline, rate limiting, security headers
+- Ada's disclosure that she's an AI assistant
+
+Those are design decisions this prototype is proposing, not content to
+edit. They are worth reviewing, but they are not scaffolding.
