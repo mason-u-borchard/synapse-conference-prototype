@@ -14,10 +14,10 @@
   },
   "mission": "The Synapse convenes women working at the edge of consciousness research, cognitive science, and machine intelligence. We gather to interrogate what these fields mean together -- not as a survey, but as a working conversation that gives early-career researchers a seat at the same table as senior scholars.",
   "principles": [
-    { "title": "Real work, not a showcase", "body": "Sessions are built around substantive argument, not platform-building. Keynotes run forty-five minutes and take real questions." },
-    { "title": "Mentorship is the point", "body": "Every doctoral attendee is matched with a senior mentor for a thirty-minute conversation during the convening." },
-    { "title": "Interdisciplinary on purpose", "body": "Every track mixes neuroscience, philosophy, and machine-learning voices. We trust attendees to follow arguments outside their home field." },
-    { "title": "Access is architecture", "body": "Captioning, step-free navigation, a quiet room, onsite childcare, and a short, honest access form. Not accommodations -- defaults." }
+    { "title": "Principle 1", "body": "Placeholder -- the committee will state the convening's first guiding principle here." },
+    { "title": "Principle 2", "body": "Placeholder -- the committee will state the second guiding principle here." },
+    { "title": "Principle 3", "body": "Placeholder -- the committee will state the third guiding principle here." },
+    { "title": "Principle 4", "body": "Placeholder -- the committee will state the fourth guiding principle here." }
   ],
   "placeholderNote": "Venue, registration rates, speaker roster, and fiscal sponsor are placeholders -- see CONTENT_PLACEHOLDER.md. The committee owns final content."
 }

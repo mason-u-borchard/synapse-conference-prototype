@@ -80,7 +80,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <Section eyebrow="The premise" heading="One conversation across three disciplines." lede={meta.mission}>
+      <Section eyebrow="The premise" heading="One conversation across multiple disciplines." lede={meta.mission}>
         <PrinciplesGrid />
       </Section>
 
