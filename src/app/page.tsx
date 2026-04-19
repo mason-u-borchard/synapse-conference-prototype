@@ -41,10 +41,20 @@ export default function HomePage() {
             rooms. One single live conversation.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <Link href="/register" className="btn btn-primary">Register<ArrowRight /></Link>
-            <Link href="/donate" className="btn btn-ghost">Donate</Link>
+            <Link
+              href="/donate"
+              className="btn px-8 py-3 text-base font-medium text-[#1e0e22] shadow-[0_1px_0_hsl(var(--gold-deep)/0.8),0_14px_40px_-18px_hsl(var(--gold)/0.8)]"
+              style={{ backgroundColor: "hsl(var(--gold))", borderColor: "hsl(var(--gold-deep) / 0.8)" }}
+            >
+              Donate through ALL
+              <ArrowRight />
+            </Link>
+            <Link href="/register" className="btn btn-ghost">Register</Link>
             <Link href="/schedule" className="btn btn-ghost">Learn more</Link>
           </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Tax-deductible via Applied Love Labs. Ring-fenced from operating costs.
+          </p>
           <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 text-sm md:grid-cols-4">
             <HeroStat label="Dates" value={meta.dates.display} />
             <HeroStat label="Venue" value={meta.venue} />
@@ -53,6 +63,20 @@ export default function HomePage() {
           </dl>
         </div>
       </section>
+
+      <div className="border-y border-border bg-surface-raised">
+        <div className="mx-auto flex w-full max-w-gallery flex-col gap-4 px-gutter py-5 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="eyebrow mb-1">Applied Love Labs fiscal sponsorship &middot; tax-deductible</p>
+            <p className="text-sm text-muted-foreground">
+              55% travel grants &middot; 25% access accommodations &middot; 20% mentor-matching
+            </p>
+          </div>
+          <Link href="/donate" className="btn btn-ghost shrink-0">
+            Donate through ALL <ArrowRight />
+          </Link>
+        </div>
+      </div>
 
       <Section eyebrow="The premise" heading="One conversation across three disciplines." lede={meta.mission}>
         <PrinciplesGrid />
@@ -88,18 +112,21 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Support the convening" heading="Donations travel with us through Applied Love Labs.">
+      <Section eyebrow="Support the convening" heading="Fund the parts registration will not cover.">
         <div className="paper mt-2 flex flex-col gap-6 p-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="text-lg text-pretty text-muted-foreground">
-              As a fiscally sponsored project of {meta.fiscalSponsor.name}, The
-              Synapse can receive tax-deductible contributions through ALL.
-              Donations fund travel grants, access accommodations, and the
-              mentor-matching program.
+              Contributions underwrite travel grants for doctoral researchers
+              (~55%), captioning and childcare (~25%), and mentor-matching
+              (~20%). Gifts flow through {meta.fiscalSponsor.name}; receipts
+              arrive in ALL's name.
+            </p>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Tax-deductible via ALL. Ring-fenced from operating costs.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/donate" className="btn btn-primary">Donate</Link>
+            <Link href="/donate" className="btn btn-primary">Donate through ALL</Link>
             <Link href="/register" className="btn btn-ghost">Register</Link>
           </div>
         </div>

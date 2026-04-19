@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     return new Response(
       JSON.stringify({
         error: "rate-limited",
-        message: "Ada is answering a lot of folks right now. Please give it about a minute before asking again.",
+        message: "Ava is answering a lot of folks right now. Please give it about a minute before asking again.",
         retryAfter: Math.max(1, Math.ceil((limit.reset - Date.now()) / 1000)),
       }),
       { status: 429, headers: { "Content-Type": "application/json" } },
@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
     return new Response(
       JSON.stringify({
         error: "no-credentials",
-        message: "Ada is offline right now because no model provider key is set in this environment. Reach out at hello@thesynapse.example -- a human will answer the same question faster anyway.",
+        message: "Ava is offline right now because no model provider key is set in this environment. Reach out at hello@thesynapse.example -- a human will answer the same question faster anyway.",
       }),
       { status: 503, headers: { "Content-Type": "application/json" } },
     );
@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
     getErrorMessage: (error) => {
       console.error("[chat] streamText error", error);
       if (error instanceof Error) return error.message;
-      return "Ada hit an unexpected error. Please try again.";
+      return "Ava hit an unexpected error. Please try again.";
     },
   });
 }

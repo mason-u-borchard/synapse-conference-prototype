@@ -1,6 +1,6 @@
 import type { Message } from "ai";
 
-const KEY = "synapse-ada-transcript";
+const KEY = "synapse-ava-transcript";
 
 export interface StoredConversation { messages: Message[]; }
 

@@ -26,13 +26,13 @@ test.describe("critical flows", () => {
 
   test("concierge opens and respects its offline banner when keys are absent", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("button", { name: /Ask Ada/i }).click();
+    await page.getByRole("button", { name: /Ask Ava/i }).click();
     await page.locator("textarea").fill("What are the dates?");
     await page.keyboard.press("Enter");
     // When no provider key is set, the /api/chat endpoint returns 503 and the
     // UI surfaces an offline banner. With a key, this test would instead see
     // a streaming reply -- which is covered by the concierge-qa Vitest suite
     // at the prompt layer.
-    await expect(page.getByText(/Ada is offline|model provider key|Ada said/i)).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByText(/Ava is offline|model provider key|Ava said/i)).toBeVisible({ timeout: 10_000 });
   });
 });

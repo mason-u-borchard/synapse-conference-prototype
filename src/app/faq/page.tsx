@@ -22,7 +22,7 @@ export default function FaqPage() {
         <p className="eyebrow mb-4">FAQ</p>
         <h1 className="text-display-lg text-balance">The short answers.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          If your question is not here, ask Ada in the bottom-right corner --
+          If your question is not here, ask Ava in the bottom-right corner --
           she has read every page on this site -- or email us directly.
         </p>
       </header>

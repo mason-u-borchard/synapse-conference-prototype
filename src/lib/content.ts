@@ -15,7 +15,7 @@ export const meta = metaData as {
   name: string;
   subtitle: string;
   edition: string;
-  dates: { display: string; month: string; year: string };
+  dates: { display: string; month: string; year: string; start: string; end: string };
   city: string;
   venue: string;
   capacity: number;

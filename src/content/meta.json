@@ -2,7 +2,7 @@
   "name": "The Synapse",
   "subtitle": "Where women connect mind, machine, and what comes next",
   "edition": "2026",
-  "dates": { "display": "October 2026 -- exact dates TBD", "month": "October", "year": "2026" },
+  "dates": { "display": "October 9-11, 2026", "month": "October", "year": "2026", "start": "2026-10-09", "end": "2026-10-11" },
   "city": "Atlanta, Georgia",
   "venue": "Venue TBD -- Atlanta confirmed",
   "capacity": 300,

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { assembleConciergePrompt } from "@/lib/concierge-prompt";
 
 // We do not hit a live model here. Instead we verify that the
-// assembled system prompt carries enough grounding that Ada COULD
+// assembled system prompt carries enough grounding that Ava COULD
 // accurately answer each of the ten representative committee
 // questions. If this drifts, the chatbot grounding has regressed.
 

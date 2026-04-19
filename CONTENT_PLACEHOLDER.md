@@ -32,9 +32,9 @@ placeholder sources:
 
 ## How placeholders feed the chatbot
 
-Ada reads from these same JSON files at request time -- see
+Ava reads from these same JSON files at request time -- see
 `src/lib/concierge-prompt.ts`. Updating any content file updates
-Ada's answers on the next chat request, no deploy cycle needed.
+Ava's answers on the next chat request, no deploy cycle needed.
 
 ## What's NOT a placeholder
 
@@ -44,7 +44,7 @@ Ada's answers on the next chat request, no deploy cycle needed.
   `src/lib/donations/README.md`)
 - Accessibility defaults (focus rings, reduced-motion, skip link)
 - Form pipeline, rate limiting, security headers
-- Ada's disclosure that she's an AI assistant
+- Ava's disclosure that she's an AI assistant
 
 Those are design decisions this prototype is proposing, not content to
 edit. They are worth reviewing, but they are not scaffolding.

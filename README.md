@@ -23,7 +23,7 @@ The goal of this prototype specifically is to:
 1. Demonstrate that the signature design direction (editorial,
    academic-warm, neural-inspired) can carry the whole site without
    drifting into Tailwind-template default aesthetics.
-2. Show a working, content-grounded Ada concierge whose knowledge
+2. Show a working, content-grounded Ava concierge whose knowledge
    updates when the JSON content files update.
 3. Propose a **swappable donation module** designed around the
    committee's biggest open question: which donation platform to
@@ -35,7 +35,7 @@ The goal of this prototype specifically is to:
 
 This prototype was built with Claude Code assistance. Keeping that
 in the README is intentional -- the organizing committee has been
-open about AI tooling, and Ada (the on-site concierge) is herself an
+open about AI tooling, and Ava (the on-site concierge) is herself an
 AI. Hiding the build process while the product is an AI chatbot
 would be a strange choice.
 
@@ -73,7 +73,7 @@ you can run the full site end-to-end with zero secrets:
 
 | Missing service                | What happens                                                |
 |--------------------------------|-------------------------------------------------------------|
-| `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` | Ada shows an offline banner and points to the mail alias. |
+| `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` | Ava shows an offline banner and points to the mail alias. |
 | Google service account         | Registrations log to stdout and still return a confirmation id. |
 | `RESEND_API_KEY`               | Confirmation emails are silently skipped.                   |
 | `STRIPE_SECRET_KEY`            | `/api/donate` returns a stub "demo mode" response.          |
@@ -116,9 +116,9 @@ live as HSL CSS variables; Tailwind colors reference those variables
 via `hsl(var(--token) / <alpha>)`. Dark mode is a considered palette
 shift, not an inverted layer.
 
-**Ada reads content at request time.** The chatbot's system prompt is
+**Ava reads content at request time.** The chatbot's system prompt is
 assembled from `src/content/*.json` every call
-(`src/lib/concierge-prompt.ts`). Edit a content file, Ada's answers
+(`src/lib/concierge-prompt.ts`). Edit a content file, Ava's answers
 update on the next request -- no deploy cycle.
 
 **Donation is an interface, not a vendor.** The committee's biggest

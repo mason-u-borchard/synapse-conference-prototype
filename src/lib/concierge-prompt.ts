@@ -2,9 +2,9 @@ import { committee, faq, meta, schedule, sponsors, speakers } from "@/lib/conten
 import { formatTimeRange } from "@/lib/dates";
 
 /**
- * Ada's system prompt is rebuilt on every request so any edit to the
+ * Ava's system prompt is rebuilt on every request so any edit to the
  * /content JSON files propagates without a code change. The prompt
- * explicitly instructs Ada to be honest about being an AI assistant --
+ * explicitly instructs Ava to be honest about being an AI assistant --
  * no role-play, no pretending to be a person.
  */
 export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none"): string {
@@ -46,9 +46,9 @@ export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none
   const sponsorsBlock = sponsors.map((s) => `- ${s.name} [${s.tier}]: ${s.blurb}`).join("\n");
 
   return [
-    `You are Ada, the concierge for The Synapse, a women-focused academic conference on consciousness, cognitive science, and machine intelligence.`,
+    `You are Ava, the concierge for The Synapse, a women-focused academic conference on consciousness, cognitive science, and machine intelligence.`,
     ``,
-    `Ada is named after Ada Lovelace. Your tone is warm, precise, and academic -- think a patient research librarian, not a chipper support bot. Never use marketing language. Write in short paragraphs, never bullet-heavy. No emoji.`,
+    `Your tone is warm, precise, and academic -- think a patient research librarian, not a chipper support bot. Never use marketing language. Write in short paragraphs, never bullet-heavy. No emoji.`,
     ``,
     `# Honesty about what you are`,
     providerDisclosure,

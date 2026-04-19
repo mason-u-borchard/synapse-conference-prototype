@@ -58,20 +58,20 @@ export function Concierge() {
     <>
       <button
         type="button"
-        aria-label={open ? "Close Ada, the conference concierge" : "Open Ada, the conference concierge"}
+        aria-label={open ? "Close Ava, the conference concierge" : "Open Ava, the conference concierge"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="group fixed bottom-5 right-5 z-40 inline-flex h-14 items-center gap-3 rounded-pill border border-border-strong bg-surface pl-5 pr-4 text-sm shadow-paper transition-transform hover:-translate-y-0.5 hover:shadow-glow md:bottom-8 md:right-8"
       >
         <ConciergeGlyph active={open} />
-        <span className="font-serif italic tracking-tight">{open ? "Close Ada" : "Ask Ada"}</span>
+        <span className="font-serif italic tracking-tight">{open ? "Close Ava" : "Ask Ava"}</span>
       </button>
 
       <AnimatePresence>
         {open && (
           <motion.div
             role="dialog"
-            aria-label="Ada, conference concierge"
+            aria-label="Ava, conference concierge"
             initial={prefersReduced ? undefined : { y: 24, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={prefersReduced ? undefined : { y: 12, opacity: 0 }}
@@ -81,9 +81,9 @@ export function Concierge() {
             <header className="flex items-start gap-3 border-b border-border px-5 py-4">
               <ConciergeGlyph active />
               <div className="flex-1">
-                <p className="font-serif text-lg leading-tight text-ink">Ada</p>
+                <p className="font-serif text-lg leading-tight text-ink">Ava</p>
                 <p className="text-xs text-muted-foreground">
-                  AI concierge for The Synapse. Named after Ada Lovelace.
+                  AI concierge for The Synapse.
                 </p>
               </div>
               <button
@@ -100,7 +100,7 @@ export function Concierge() {
               {messages.length === 0 && !offline && (
                 <div className="rounded-card border border-border bg-surface-raised px-4 py-3">
                   <p className="text-pretty text-muted-foreground">
-                    Hello. I'm Ada, an AI concierge for The Synapse. I can
+                    Hello. I'm Ava, an AI concierge for The Synapse. I can
                     answer questions about registration, the program, access
                     accommodations, and the people behind the convening. Pick
                     something to start, or ask anything.
@@ -144,13 +144,13 @@ export function Concierge() {
               className="border-t border-border px-4 py-3"
             >
               <label className="flex items-end gap-2">
-                <span className="sr-only">Your question for Ada</span>
+                <span className="sr-only">Your question for Ava</span>
                 <textarea
                   name="message"
                   rows={1}
                   value={input}
                   onChange={handleInputChange}
-                  placeholder={offline ? "Ada is offline in this environment." : "Ask about the program, logistics, access..."}
+                  placeholder={offline ? "Ava is offline in this environment." : "Ask about the program, logistics, access..."}
                   disabled={offline || isLoading}
                   className="flex-1 resize-none rounded-md border border-border-strong bg-surface-raised px-3 py-2 text-sm outline-none focus:border-gold focus:ring-2 focus:ring-gold/30"
                   onKeyDown={(e) => {
@@ -170,7 +170,7 @@ export function Concierge() {
                 </button>
               </label>
               <p className="mt-2 text-[11px] text-muted-foreground">
-                Ada is an AI assistant. She reads from the content on this site; email
+                Ava is an AI assistant. She reads from the content on this site; email
                 hello@thesynapse.example for anything she cannot answer.
               </p>
             </form>
@@ -247,7 +247,7 @@ function Typing() {
 function OfflineBanner() {
   return (
     <div className="rounded-card border border-border bg-surface-raised px-4 py-3 text-pretty text-muted-foreground">
-      Ada is offline in this environment -- no model provider key is set. Email{" "}
+      Ava is offline in this environment -- no model provider key is set. Email{" "}
       <a href="mailto:hello@thesynapse.example" className="underline decoration-gold/60 decoration-2 underline-offset-2">
         hello@thesynapse.example
       </a>{" "}instead.

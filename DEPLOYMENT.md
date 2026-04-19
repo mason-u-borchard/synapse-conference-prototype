@@ -110,7 +110,7 @@ and 90+ best-practices/SEO on the four most-trafficked pages.
 
 ## 6. Operational notes
 
-- Ada returns a 503 if no model provider key is set. The UI handles
+- Ava returns a 503 if no model provider key is set. The UI handles
   that gracefully (offline banner pointing to the committee email).
 - Stripe is in "stub mode" when `STRIPE_SECRET_KEY` is unset -- the
   UI shows a polite demo-mode message. When the committee picks the

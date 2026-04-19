@@ -14,7 +14,7 @@ npm run dev   # localhost:3021
 ```
 
 Everything has a graceful fallback when a credential is missing, so you
-can run the site end-to-end with zero secrets (Ada stays offline, emails
+can run the site end-to-end with zero secrets (Ava stays offline, emails
 log to stdout, etc.).
 
 ## Branching & commits
@@ -25,7 +25,7 @@ log to stdout, etc.).
   ```
   feat(concierge): route off-topic questions through a single warm deflection
 
-  - Keep tone consistent when Ada gets asked for pizza recommendations
+  - Keep tone consistent when Ava gets asked for pizza recommendations
   - Mirrors the committee's preference for fewer prompts with stronger steering
   ```
 
@@ -45,7 +45,7 @@ log to stdout, etc.).
 
 Speaker bios, abstracts, FAQ, sponsor copy, and mission statement all
 live as JSON in `src/content/`. They are **placeholders** until the
-committee finalizes text. Ada reads these at request time, so editing
+committee finalizes text. Ava reads these at request time, so editing
 a JSON file updates the chatbot's grounding automatically.
 
 ## Accessibility floor

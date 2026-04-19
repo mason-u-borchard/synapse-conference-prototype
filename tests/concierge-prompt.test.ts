@@ -5,9 +5,8 @@ import { meta, speakers, schedule, faq } from "@/lib/content";
 describe("concierge prompt", () => {
   const prompt = assembleConciergePrompt("anthropic");
 
-  it("introduces Ada and her namesake", () => {
-    expect(prompt).toMatch(/You are Ada/);
-    expect(prompt).toMatch(/Ada Lovelace/);
+  it("introduces Ava as the concierge", () => {
+    expect(prompt).toMatch(/You are Ava/);
   });
 
   it("discloses AI identity plainly", () => {

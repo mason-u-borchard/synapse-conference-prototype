@@ -2,7 +2,7 @@
 
 This directory is deliberately the only place that knows how donations
 actually flow. Everything else (the `/donate` page, the `/api/donate`
-route, the Ada concierge) goes through the `DonationProvider`
+route, the Ava concierge) goes through the `DonationProvider`
 interface.
 
 ## Why
