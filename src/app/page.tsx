@@ -69,7 +69,9 @@ export default function HomePage() {
           <div>
             <p className="eyebrow mb-1">Fiscal sponsor placeholder &middot; partnership TBD</p>
             <p className="text-sm text-muted-foreground">
-              Allocation breakdown shown on /donate (55% travel grants &middot; 25% access &middot; 20% mentor-matching) is a placeholder the committee will refine once a sponsor is chosen.
+              An illustrative allocation is shown on /donate; specific
+              funding categories and percentages are placeholders the
+              committee will confirm once a sponsor is chosen.
             </p>
           </div>
           <Link href="/donate" className="btn btn-ghost shrink-0">
@@ -116,10 +118,10 @@ export default function HomePage() {
         <div className="paper mt-2 flex flex-col gap-6 p-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="text-lg text-pretty text-muted-foreground">
-              Contributions would underwrite travel grants for doctoral
-              researchers (~55%), captioning and childcare (~25%), and
-              mentor-matching (~20%). Allocation percentages and the fiscal
-              sponsor are placeholders while the committee finalizes both.
+              Contributions will support parts of the convening that
+              registration fees cannot cover. Specific funding categories,
+              allocation percentages, and the fiscal sponsor are all
+              placeholders while the committee finalizes its priorities.
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
               Donations will be tax-deductible through the chosen fiscal sponsor and ring-fenced from operating costs.

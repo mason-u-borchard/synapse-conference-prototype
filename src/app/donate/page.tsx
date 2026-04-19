@@ -16,11 +16,11 @@ export default function DonatePage() {
         <p className="eyebrow mb-4">Donate</p>
         <h1 className="text-display-lg text-balance">Hold the door open for someone else.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          Donations underwrite the three parts of the convening the market
-          will not: travel grants for doctoral researchers, access
-          accommodations, and the mentor-matching program. Every dollar
-          donated is ring-fenced from operating costs and accounted for
-          separately at year's end.
+          Donations will support parts of the convening that registration
+          fees cannot cover. The specific funding categories are
+          placeholders while the committee finalizes its priorities --
+          see the illustrative breakdown in the sidebar. Every dollar
+          donated will be ring-fenced from operating costs.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
           The fiscal sponsor is a placeholder (<span className="text-ink">{meta.fiscalSponsor.name}</span>) while the committee finalizes a 501(c)(3) partnership; the chosen sponsor will issue your tax receipt. {provider.blurb}
@@ -31,15 +31,16 @@ export default function DonatePage() {
         <DonateForm providerName={provider.name} providerLabel={provider.label} embedOnly={provider.embedOnly} embedUrl={provider.embedUrl} />
         <aside className="space-y-8">
           <section className="paper p-6">
-            <h2 className="eyebrow mb-4 text-muted-foreground">Where it goes</h2>
+            <h2 className="eyebrow mb-4 text-muted-foreground">Illustrative allocation</h2>
             <ul className="space-y-3">
-              <AllocationRow share={55} label="Travel grants" />
-              <AllocationRow share={25} label="Access accommodations" />
-              <AllocationRow share={20} label="Mentor-matching program" />
+              <AllocationRow share={55} label="Category A (e.g., travel grants)" />
+              <AllocationRow share={25} label="Category B (e.g., access)" />
+              <AllocationRow share={20} label="Category C (e.g., mentorship)" />
             </ul>
             <p className="mt-5 text-xs text-muted-foreground">
-              Allocation percentages are placeholders the committee will
-              confirm; funds will flow through the chosen fiscal sponsor.
+              Categories and percentages are placeholders the committee
+              will confirm; funds will flow through the chosen fiscal
+              sponsor.
             </p>
           </section>
           <section className="paper p-6">
