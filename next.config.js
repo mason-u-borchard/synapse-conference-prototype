@@ -21,40 +21,55 @@ const cspDirectives = [
   "upgrade-insecure-requests",
 ].join("; ");
 
+// BUILD_MODE=export produces a static site in ./out/ for rsync to a plain
+// webserver. API routes (chat/donate/submit-form) are skipped in that mode;
+// the UI already degrades to offline fallbacks for each. Dynamic builds
+// keep server features and security headers.
+const isStaticExport = process.env.BUILD_MODE === "export";
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
   basePath: basePath || undefined,
   assetPrefix: basePath || undefined,
+  ...(isStaticExport ? { output: "export", trailingSlash: true } : {}),
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [],
+    unoptimized: isStaticExport,
   },
   experimental: {
     optimizePackageImports: ["framer-motion"],
   },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          { key: "Content-Security-Policy", value: cspDirectives },
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          {
-            key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
-          },
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
-          },
-        ],
-      },
-    ];
-  },
+  // Headers are only applied by the Next.js server; static export serves
+  // from nginx, which should apply its own CSP/HSTS. Guard so the build
+  // does not warn about header-config being inapplicable.
+  ...(isStaticExport
+    ? {}
+    : {
+        async headers() {
+          return [
+            {
+              source: "/:path*",
+              headers: [
+                { key: "Content-Security-Policy", value: cspDirectives },
+                { key: "X-Frame-Options", value: "SAMEORIGIN" },
+                { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+                { key: "X-Content-Type-Options", value: "nosniff" },
+                {
+                  key: "Permissions-Policy",
+                  value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+                },
+                {
+                  key: "Strict-Transport-Security",
+                  value: "max-age=63072000; includeSubDomains; preload",
+                },
+              ],
+            },
+          ];
+        },
+      }),
 };
 
 module.exports = nextConfig;

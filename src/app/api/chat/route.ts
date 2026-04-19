@@ -16,7 +16,6 @@ const bodySchema = z.object({
 });
 
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
 
 // Provider selection: Anthropic is the committee's preference (per the
 // build spec). OpenAI is available as a fallback so development can

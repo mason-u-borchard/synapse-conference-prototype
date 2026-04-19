@@ -5,7 +5,6 @@ import { recordSubmission } from "@/lib/sheets-sink";
 import { sendConfirmationEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
 
 const registrationSchema = z.object({
   fullName: z.string().min(2).max(120),

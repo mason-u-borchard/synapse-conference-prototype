@@ -4,7 +4,6 @@ import { identifierFromHeaders, rateLimit } from "@/lib/rate-limit";
 import { getDonationProvider } from "@/lib/donations/provider";
 
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
 
 const bodySchema = z.object({
   amount: z.number().int().min(500).max(5_000_00),

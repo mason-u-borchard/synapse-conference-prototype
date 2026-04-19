@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev --port 3021",
     "build": "next build",
+    "build:export": "BUILD_MODE=export NEXT_PUBLIC_BASE_PATH=/synapse-conference-prototype next build",
     "start": "next start --port 3021",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
