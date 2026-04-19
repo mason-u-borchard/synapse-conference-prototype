@@ -1,0 +1,8 @@
+[
+  { "name": "[Program Chair TBD]", "role": "Program Chair", "affiliation": "TBD", "focus": "Philosophy of perception" },
+  { "name": "[Scientific Co-Chair TBD]", "role": "Scientific Co-Chair", "affiliation": "TBD", "focus": "Cognitive neuroscience" },
+  { "name": "[Scientific Co-Chair TBD]", "role": "Scientific Co-Chair", "affiliation": "TBD", "focus": "AI alignment" },
+  { "name": "[Access Lead TBD]", "role": "Access Lead", "affiliation": "TBD", "focus": "Disability studies and academic access" },
+  { "name": "[Community Lead TBD]", "role": "Community Lead", "affiliation": "TBD", "focus": "Early-career mentorship" },
+  { "name": "[Ethics Lead TBD]", "role": "Ethics Lead", "affiliation": "TBD", "focus": "Ethics of emerging tech" }
+]

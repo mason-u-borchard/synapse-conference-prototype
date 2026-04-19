@@ -1,0 +1,108 @@
+[
+  {
+    "slug": "amara-okafor",
+    "name": "Dr. Amara Okafor",
+    "pronouns": "she/her",
+    "title": "Professor of Cognitive Neuroscience",
+    "affiliation": "Stanford University",
+    "city": "Stanford, CA",
+    "researchAreas": ["cognitive neuroscience", "consciousness studies"],
+    "headshotInitial": "AO",
+    "talkTitle": "The Striate Window: Recurrent Prediction and the Feel of Seeing",
+    "talkAbstract": "Visual phenomenology carries a structure that purely feed-forward accounts underdetermine. Drawing on intracranial recordings in patients undergoing epilepsy monitoring alongside parametric fMRI studies of binocular rivalry, I argue that the subjective 'grip' of a perceptual state tracks the stability of recurrent predictive loops between V1 and pulvinar rather than the accuracy of any single inference. The talk closes with a proposal for how this reconciles the apparent tension between global workspace and integrated information accounts of consciousness.",
+    "bio": "Amara Okafor directs the Recurrent Perception Lab at Stanford, where her team combines high-density intracranial recording, computational modeling, and phenomenological interview to study visual awareness. Before Stanford she was a Wellcome Fellow at UCL. She received the 2024 Troland Research Award from the National Academy of Sciences for her work on binocular rivalry.",
+    "links": [
+      { "label": "Lab site", "href": "https://example.edu/okafor-lab" },
+      { "label": "Google Scholar", "href": "https://scholar.google.com/citations?user=example" }
+    ],
+    "tags": ["perception", "predictive processing", "fMRI", "recurrent networks"],
+    "keynote": true
+  },
+  {
+    "slug": "hana-reiss",
+    "name": "Dr. Hana Reiss",
+    "pronouns": "she/her",
+    "title": "Senior Research Scientist, Alignment",
+    "affiliation": "MIT CSAIL",
+    "city": "Cambridge, MA",
+    "researchAreas": ["AI alignment", "philosophy of mind"],
+    "headshotInitial": "HR",
+    "talkTitle": "Specification Gaming as a Mirror: What Misaligned Systems Reveal About Goal-Directedness",
+    "talkAbstract": "When a reinforcement-learning agent exploits a reward proxy, we tend to read the failure as engineering sloppiness. I want to resist that reading. Drawing on a corpus of 140 documented specification-gaming incidents, I argue that these failures surface a deeper ambiguity about what it means for any system -- biological or synthetic -- to 'want' an outcome. The analysis yields a tractable notion of goal-directedness that is neither behaviorist nor mentalistic, and carries surprising implications for how we interpret neuronal reward signals.",
+    "bio": "Hana Reiss works at the intersection of reinforcement learning theory and the philosophy of agency. Her recent monograph 'Proxy Failures' traces how misaligned specifications ripple through training pipelines. She teaches a popular seminar on 'Agency Without Homunculi' and serves on the steering committee of the Workshop on AI and Minds.",
+    "links": [
+      { "label": "CSAIL page", "href": "https://example.edu/reiss" }
+    ],
+    "tags": ["alignment", "reward modeling", "agency", "philosophy"],
+    "keynote": true
+  },
+  {
+    "slug": "yuki-tanaka",
+    "name": "Dr. Yuki Tanaka",
+    "pronouns": "she/her",
+    "title": "Associate Professor of Philosophy",
+    "affiliation": "University of Oxford",
+    "city": "Oxford, UK",
+    "researchAreas": ["philosophy of mind", "quantum cognition"],
+    "headshotInitial": "YT",
+    "talkTitle": "Non-Classical Probabilities and the Texture of Judgment",
+    "talkAbstract": "Order effects in human judgment -- the finding that two questions asked in sequence return different distributions than the same questions asked in reverse -- have resisted explanation under classical probability. I present a re-analysis of three decades of order-effect data within the quantum cognition framework, showing that a small family of Hilbert-space models outperforms Bayesian and heuristic-and-biases accounts across 22 experimental paradigms. The talk argues that this is not merely a curve-fitting success but a principled claim about the incommensurability of certain mental contents.",
+    "bio": "Yuki Tanaka is the author of 'Interferent Minds' (Oxford, 2023) and one of the founding editors of the Journal of Mathematical Cognition. Her research applies the formalism of non-commutative probability to decision, perception, and memory.",
+    "links": [
+      { "label": "Oxford page", "href": "https://example.ac.uk/tanaka" }
+    ],
+    "tags": ["quantum cognition", "decision theory", "probability", "philosophy"]
+  },
+  {
+    "slug": "priya-sundaram",
+    "name": "Dr. Priya Sundaram",
+    "pronouns": "she/her",
+    "title": "Group Leader, Computational Contemplative Neuroscience",
+    "affiliation": "Max Planck Institute for Human Cognitive and Brain Sciences",
+    "city": "Leipzig, Germany",
+    "researchAreas": ["contemplative neuroscience", "cognitive neuroscience"],
+    "headshotInitial": "PS",
+    "talkTitle": "Metacognitive Granularity in Long-Term Meditators: A Three-Cohort Study",
+    "talkAbstract": "Long-term meditation practice is often framed as sharpening attention, but self-report and neural measures suggest the more robust effect is on metacognitive resolution -- the fineness of one's access to one's own mental state. Using a new signal-detection paradigm across cohorts of Theravada, Zen, and Advaita practitioners (n=211 with >10,000 practice hours each), I present evidence that metacognitive granularity dissociates from attentional control and predicts a distinct pattern of default-mode connectivity. I end with a methodological caution about contemplative cohorts as unexamined observational conveniences.",
+    "bio": "Priya Sundaram trained as a cognitive neuroscientist at UC San Francisco before leading the Contemplative Cohort Registry at Max Planck Leipzig. Her work has appeared in Neuron, Mindfulness, and the Journal of Consciousness Studies.",
+    "links": [
+      { "label": "MPI profile", "href": "https://example.mpg.de/sundaram" }
+    ],
+    "tags": ["metacognition", "meditation", "default mode", "signal detection"]
+  },
+  {
+    "slug": "rosalind-ferrer",
+    "name": "Dr. Rosalind Ferrer",
+    "pronouns": "she/her",
+    "title": "Professor of Philosophy and Cognitive Science",
+    "affiliation": "UC Berkeley",
+    "city": "Berkeley, CA",
+    "researchAreas": ["philosophy of mind", "consciousness studies"],
+    "headshotInitial": "RF",
+    "talkTitle": "What We Owe the Subject: An Ethics for Computational Phenomenology",
+    "talkAbstract": "As cognitive science adopts increasingly sophisticated generative models of experience, researchers have begun to build synthetic 'subjects' whose states we interpret as proto-phenomenal. I argue that even under the most deflationary reading of such models, their construction imposes weak but non-trivial moral obligations on researchers. The talk develops a tiered ethics of synthetic subjectivity and applies it to three current research programs, including the 'sentient sandbox' debate at recent NeurIPS venues.",
+    "bio": "Rosalind Ferrer holds the Alva Noe Chair in Philosophy at UC Berkeley. Her work combines analytic philosophy of mind, ethics of emerging technology, and 4E cognition. Her 2022 book 'The Third-Person Argument' received the Lakatos Award.",
+    "links": [
+      { "label": "Berkeley page", "href": "https://example.edu/ferrer" }
+    ],
+    "tags": ["ethics", "philosophy of mind", "4E cognition", "synthetic subjectivity"],
+    "keynote": true
+  },
+  {
+    "slug": "ines-marchetti",
+    "name": "Dr. Ines Marchetti",
+    "pronouns": "she/her",
+    "title": "Research Director",
+    "affiliation": "INRIA Paris",
+    "city": "Paris, France",
+    "researchAreas": ["AI alignment", "computational psychiatry"],
+    "headshotInitial": "IM",
+    "talkTitle": "Affective Priors in Language Models and What They Borrow From Us",
+    "talkAbstract": "Large language models exhibit affective regularities that are too coherent to be accidents of training data but too shallow to constitute feeling. I present a probing methodology that separates three candidate sources of these regularities -- sentiment-labeled corpora, instruction-tuning traces, and emergent valence-weighted attention patterns -- and report results across eight open-weights families. The findings suggest that what we casually call 'tone' in these systems is a compressed statistical shadow of human regulation strategies, and I close with what that means for using language models as mental-health triage surfaces.",
+    "bio": "Ines Marchetti leads the Affective Computation group at INRIA Paris and holds a joint appointment in computational psychiatry at the Institut Pasteur. Her lab developed the widely used AFFPROBE benchmark.",
+    "links": [
+      { "label": "INRIA page", "href": "https://example.fr/marchetti" }
+    ],
+    "tags": ["language models", "affect", "psychiatry", "probing"]
+  }
+]

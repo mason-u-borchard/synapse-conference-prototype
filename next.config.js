@@ -1,0 +1,60 @@
+/** @type {import('next').NextConfig} */
+
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePath = rawBasePath.replace(/\/$/, "");
+
+// CSP is written with the Vercel AI SDK streaming endpoint in mind plus
+// the Stripe Checkout redirect. When the committee finalizes a donation
+// backend, re-audit the connect-src list below.
+const cspDirectives = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "connect-src 'self' https://api.openai.com https://api.anthropic.com https://api.stripe.com https://*.upstash.io https://sheets.googleapis.com",
+  "frame-src 'self' https://js.stripe.com https://hooks.stripe.com",
+  "frame-ancestors 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+const nextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+  basePath: basePath || undefined,
+  assetPrefix: basePath || undefined,
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [],
+  },
+  experimental: {
+    optimizePackageImports: ["framer-motion"],
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "Content-Security-Policy", value: cspDirectives },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+          },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;

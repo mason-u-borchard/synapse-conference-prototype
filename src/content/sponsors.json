@@ -1,0 +1,8 @@
+[
+  { "name": "Applied Love Labs", "tier": "presenting", "blurb": "Fiscal sponsor for The Synapse. Charitable contributions flow through Applied Love Labs; receipts are issued in ALL's name.", "href": "https://appliedlovelabs.org", "initials": "ALL" },
+  { "name": "Institute for Computational Minds", "tier": "supporting", "blurb": "A nonprofit research consortium funding junior investigators in the philosophy and neuroscience of machine cognition. [PLACEHOLDER]", "href": "#", "initials": "ICM" },
+  { "name": "Gwen and Priya Foundation", "tier": "supporting", "blurb": "Private foundation supporting women and nonbinary researchers in consciousness studies. [PLACEHOLDER]", "href": "#", "initials": "GPF" },
+  { "name": "Correlates Quarterly", "tier": "community", "blurb": "Independent publication covering consciousness research; media partner. [PLACEHOLDER]", "href": "#", "initials": "CQ" },
+  { "name": "Quiet Signal Labs", "tier": "community", "blurb": "Open-source lab donating live-captioning infrastructure for plenary sessions. [PLACEHOLDER]", "href": "#", "initials": "QSL" },
+  { "name": "Westlight Roasters", "tier": "community", "blurb": "Atlanta-based coffee partner for the conference atrium. [PLACEHOLDER]", "href": "#", "initials": "WLR" }
+]
