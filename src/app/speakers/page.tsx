@@ -13,12 +13,11 @@ export default function SpeakersPage() {
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">The roster</p>
-        <h1 className="text-display-lg text-balance">Six researchers, one working conversation.</h1>
+        <h1 className="text-display-lg text-balance">Twenty researchers, one working conversation.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          Speakers were selected by a blind program committee for the substance
-          of their argument. Filter by topic, or explore the constellation to
-          see how their research areas overlap. This roster is a placeholder
-          until the committee finalizes invitations.
+          Speakers are numbered (Speaker 1 through Speaker 20) as placeholders
+          while the committee finalizes invitations. Filter by topic, or
+          explore the constellation to see how research areas overlap.
         </p>
       </header>
       <SpeakersExplorer speakers={speakers} allTags={allTags} />

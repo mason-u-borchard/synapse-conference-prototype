@@ -15,9 +15,10 @@ placeholder sources:
   principles, fiscal sponsor info. **Only committed fact:** the
   conference is in Atlanta in October 2026 and is fiscally
   sponsored by Applied Love Labs. Everything else is a placeholder.
-- `speakers.json` -- six speakers, with invented names, affiliations,
-  pronouns, bios, and abstracts. These read like academic talks on
-  purpose; none of the people are real.
+- `speakers.json` -- twenty speakers, listed as "Speaker 1" through
+  "Speaker 20" while the committee finalizes invitations. Each has an
+  affiliation, research areas, a plausible academic-style talk title,
+  and an abstract; none of the names are real people yet.
 - `schedule.json` -- two days, four tracks, realistic cadence. Time
   slots and titles are placeholder structures the committee can
   edit or replace wholesale.

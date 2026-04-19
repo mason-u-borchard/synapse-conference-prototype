@@ -35,10 +35,10 @@ export default function HomePage() {
             <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">machine</span>, and what comes next.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Two working days in Atlanta. Six headline researchers. Forty-plus
-            posters, panels, and quiet rooms. The Synapse convenes women
-            interrogating consciousness, cognition, and machine intelligence
-            as a single live conversation.
+            Two working days in Atlanta. Twenty researchers across
+            consciousness studies, cognitive neuroscience, philosophy of
+            mind, and AI alignment. Forty-plus posters, panels, and quiet
+            rooms. One single live conversation.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link href="/register" className="btn btn-primary">Register<ArrowRight /></Link>
@@ -62,7 +62,7 @@ export default function HomePage() {
         tone="raised"
         eyebrow="Headline speakers"
         heading="Work that makes the committee take notes, not photos."
-        lede="Six scholars giving real arguments, not brand talks. The full roster and abstracts are on the speakers page. Speaker lineup below is a placeholder until the committee finalizes invitations."
+        lede="Six keynote slots within a twenty-speaker roster. Speakers are numbered placeholders while the committee finalizes invitations; full abstracts are on the speakers page."
       >
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {keynotes.map((speaker) => (

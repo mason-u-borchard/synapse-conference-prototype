@@ -6,7 +6,14 @@ export type ResearchArea =
   | "quantum cognition"
   | "contemplative neuroscience"
   | "computational psychiatry"
-  | "affective computing";
+  | "affective computing"
+  | "active inference"
+  | "embodied cognition"
+  | "psychedelic science"
+  | "cognitive architecture"
+  | "memory research"
+  | "attention research"
+  | "phenomenology";
 
 export interface Speaker {
   slug: string;

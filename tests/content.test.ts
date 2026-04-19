@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { speakers, schedule, faq, committee, sponsors, meta } from "@/lib/content";
+import type { FaqEntry } from "@/types/content";
 
 describe("content integrity", () => {
-  it("has exactly six speakers", () => {
-    expect(speakers.length).toBe(6);
+  it("has exactly twenty speakers", () => {
+    expect(speakers.length).toBe(20);
   });
 
   it("every speaker has a unique slug", () => {
@@ -21,9 +22,10 @@ describe("content integrity", () => {
   });
 
   it("the FAQ covers all expected categories", () => {
+    const expected: FaqEntry["category"][] = ["registration", "access", "travel", "submissions", "conduct", "program"];
     const categories = new Set(faq.map((f) => f.category));
-    for (const c of ["registration", "access", "travel", "submissions", "conduct", "program"]) {
-      expect(categories.has(c as typeof c)).toBe(true);
+    for (const c of expected) {
+      expect(categories.has(c)).toBe(true);
     }
   });
 
