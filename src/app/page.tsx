@@ -87,7 +87,7 @@ export default function HomePage() {
       <Section
         tone="raised"
         eyebrow="Headline speakers"
-        heading="Work that makes the committee take notes, not photos."
+        heading="[Placeholder — replace with the one-line editorial thesis that ties these six keynotes together: what argument does the slate make that the other fourteen speakers don't?]"
         lede="Six keynote slots within a twenty-speaker roster. Speakers are numbered placeholders while the committee finalizes invitations; full abstracts are on the speakers page."
       >
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
