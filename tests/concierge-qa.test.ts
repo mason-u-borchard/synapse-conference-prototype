@@ -9,7 +9,7 @@ import { assembleConciergePrompt } from "@/lib/concierge-prompt";
 const prompt = assembleConciergePrompt("anthropic");
 
 const groundingChecks: { question: string; requires: string[] }[] = [
-  { question: "Who is giving the opening keynote?", requires: ["Speaker 1", "The Striate Window"] },
+  { question: "Who is giving the opening keynote?", requires: ["Speaker 1", "Talk1_Title"] },
   { question: "When and where is the conference?", requires: ["October", "2026", "Atlanta"] },
   { question: "How do I register?", requires: ["Registration opens", "late spring 2026"] },
   { question: "Is childcare available?", requires: ["Onsite childcare", "ages 1-10"] },
