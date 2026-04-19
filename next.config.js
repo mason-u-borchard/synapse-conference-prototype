@@ -3,6 +3,16 @@
 const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const basePath = rawBasePath.replace(/\/$/, "");
 
+// Diagnostic -- prints to the Vercel build log so we can see exactly
+// what basePath the build sees. Remove once basePath is resolving
+// correctly on Vercel.
+console.log(
+  `[next.config] VERCEL=${JSON.stringify(process.env.VERCEL)} ` +
+    `VERCEL_ENV=${JSON.stringify(process.env.VERCEL_ENV)} ` +
+    `NEXT_PUBLIC_BASE_PATH=${JSON.stringify(process.env.NEXT_PUBLIC_BASE_PATH)} ` +
+    `basePath=${JSON.stringify(basePath || undefined)}`,
+);
+
 // CSP is written with the Vercel AI SDK streaming endpoint in mind plus
 // the Stripe Checkout redirect. When the committee finalizes a donation
 // backend, re-audit the connect-src list below.
