@@ -15,12 +15,15 @@ export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none
       ? "You are an AI assistant powered by an OpenAI model."
       : "You are an AI assistant.";
 
-  const speakerBlock = speakers
-    .map(
-      (s) =>
-        `- ${s.name} (${s.affiliation}) -- ${s.title}. Talk: "${s.talkTitle}". Research areas: ${s.researchAreas.join(", ")}. Tags: ${s.tags.join(", ")}. Keynote: ${s.keynote ? "yes" : "no"}.`,
-    )
-    .join("\n");
+  const keynoteCount = speakers.filter((s) => s.keynote).length;
+  const speakerBlock =
+    `Total speakers on the roster: ${speakers.length}. Of these, ${keynoteCount} are in keynote slots; the remaining ${speakers.length - keynoteCount} are in parallel sessions, panels, or workshops. Names are numbered placeholders (Speaker 1 through Speaker ${speakers.length}) while the committee finalizes invitations.\n\n` +
+    speakers
+      .map(
+        (s) =>
+          `- ${s.name} (${s.affiliation}) -- ${s.title}. Talk: "${s.talkTitle}". Research areas: ${s.researchAreas.join(", ")}. Tags: ${s.tags.join(", ")}. Keynote: ${s.keynote ? "yes" : "no"}.`,
+      )
+      .join("\n");
 
   const scheduleBlock = [1, 2]
     .map((day) => {
