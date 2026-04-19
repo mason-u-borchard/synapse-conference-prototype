@@ -55,9 +55,9 @@ export default function AboutPage() {
         <p className="mt-4 max-w-prose text-muted-foreground text-pretty">
           Sponsor tiers mirror how the committee thinks about partnership:
           presenting (the fiscal sponsor), supporting (mission-aligned
-          funders), and community (local and in-kind partners). Travel
-          grants and the access fund are ring-fenced and accounted for
-          separately at year's end.
+          funders), and community (local and in-kind partners). Every
+          partner listed below is a numbered placeholder until the
+          committee confirms commitments.
         </p>
         <SponsorTier title="Presenting" rows={tiers.presenting} />
         <SponsorTier title="Supporting" rows={tiers.supporting} />

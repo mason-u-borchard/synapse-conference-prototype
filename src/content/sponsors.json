@@ -1,8 +1,8 @@
 [
   { "name": "Fiscal sponsor TBD", "tier": "presenting", "blurb": "Presenting tier is reserved for the fiscal sponsor the committee selects; it is a placeholder while the 501(c)(3) partnership is finalized. [PLACEHOLDER]", "href": "#", "initials": "TBD" },
-  { "name": "Institute for Computational Minds", "tier": "supporting", "blurb": "A nonprofit research consortium funding junior investigators in the philosophy and neuroscience of machine cognition. [PLACEHOLDER]", "href": "#", "initials": "ICM" },
-  { "name": "Gwen and Priya Foundation", "tier": "supporting", "blurb": "Private foundation supporting women and nonbinary researchers in consciousness studies. [PLACEHOLDER]", "href": "#", "initials": "GPF" },
-  { "name": "Correlates Quarterly", "tier": "community", "blurb": "Independent publication covering consciousness research; media partner. [PLACEHOLDER]", "href": "#", "initials": "CQ" },
-  { "name": "Quiet Signal Labs", "tier": "community", "blurb": "Open-source lab donating live-captioning infrastructure for plenary sessions. [PLACEHOLDER]", "href": "#", "initials": "QSL" },
-  { "name": "Westlight Roasters", "tier": "community", "blurb": "Atlanta-based coffee partner for the conference atrium. [PLACEHOLDER]", "href": "#", "initials": "WLR" }
+  { "name": "Supporting partner 1", "tier": "supporting", "blurb": "Placeholder for a mission-aligned funder -- typically a research foundation, academic institute, or endowment. The committee will fill this slot once a commitment is signed. [PLACEHOLDER]", "href": "#", "initials": "S1" },
+  { "name": "Supporting partner 2", "tier": "supporting", "blurb": "Placeholder for a second mission-aligned funder or institutional partner. The committee will fill this slot once a commitment is signed. [PLACEHOLDER]", "href": "#", "initials": "S2" },
+  { "name": "Community partner 1", "tier": "community", "blurb": "Placeholder for a local Atlanta venue, university, or civic partner. The committee will fill this slot once arrangements are made. [PLACEHOLDER]", "href": "#", "initials": "C1" },
+  { "name": "Community partner 2", "tier": "community", "blurb": "Placeholder for an in-kind partner -- captioning, AV, catering, or similar. The committee will fill this slot once arrangements are made. [PLACEHOLDER]", "href": "#", "initials": "C2" },
+  { "name": "Community partner 3", "tier": "community", "blurb": "Placeholder for a media, publication, or community organization partner. The committee will fill this slot once arrangements are made. [PLACEHOLDER]", "href": "#", "initials": "C3" }
 ]
