@@ -19,6 +19,10 @@ export const meta = metaData as {
   city: string;
   venue: string;
   capacity: number;
+  capacityDisplay: string;
+  tagline: string;
+  founder: { name: string; title: string; contact: string };
+  fundingTarget: { amount: string; by: string };
   fiscalSponsor: { name: string; short: string; href: string; blurb: string };
   mission: string;
   principles: { title: string; body: string }[];

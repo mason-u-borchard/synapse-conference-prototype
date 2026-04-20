@@ -5,19 +5,28 @@
   "dates": { "display": "October 9-11, 2026", "month": "October", "year": "2026", "start": "2026-10-09", "end": "2026-10-11" },
   "city": "Atlanta, Georgia",
   "venue": "Venue TBD -- Atlanta confirmed",
-  "capacity": 300,
+  "capacity": 75,
+  "capacityDisplay": "50-75 guests",
+  "tagline": "A women-centered gathering at the frontier of consciousness, AI, cognitive science, and robotics.",
+  "founder": {
+    "name": "Julia Mossbridge, PhD",
+    "title": "Neuroscientist; Founder, Applied Love Labs",
+    "contact": "jmossbridge@gmail.com"
+  },
+  "fundingTarget": { "amount": "$100,000", "by": "June 30" },
   "fiscalSponsor": {
     "name": "Applied Love Labs",
     "short": "ALL",
     "href": "https://appliedlovelabs.org",
-    "blurb": "The Synapse is hosted by Applied Love Labs / TILT. Charitable contributions flow through ALL, which issues tax-deductible receipts in its own name."
+    "blurb": "The Synapse is hosted by Applied Love Labs, founded by neuroscientist Julia Mossbridge, PhD. Charitable contributions flow through ALL, which issues tax-deductible receipts in its own name."
   },
-  "mission": "The Synapse convenes women working at the edges of consciousness research, cognitive neuroscience, philosophy of mind, and machine intelligence. We gather not to perform expertise but to think together -- a small, invitation-shaped conversation where early-career researchers sit at the same table as senior scholars.",
+  "mission": "The Synapse convenes women working at the edges of consciousness research, artificial intelligence, cognitive science, and robotics. A small, invitation-shaped conversation -- 50 to 75 people -- where early-career researchers sit at the same table as senior scholars, and where the work being done is treated as the point, not the performance.",
   "principles": [
-    { "title": "Principle 1", "body": "Placeholder -- the committee will state the convening's first guiding principle here (e.g., engagement over performance)." },
-    { "title": "Principle 2", "body": "Placeholder -- the committee will state the second guiding principle here (e.g., mentorship as the point, not an add-on)." },
-    { "title": "Principle 3", "body": "Placeholder -- the committee will state the third guiding principle here (e.g., access as architecture, not accommodation)." },
-    { "title": "Principle 4", "body": "Placeholder -- the committee will state the fourth guiding principle here (e.g., rigor with love)." }
+    { "title": "Everyone belongs", "body": "Every person in the room is here on purpose. No one has to prove they belong by performing." },
+    { "title": "Engagement over performance", "body": "Sparse plenaries. More workshops, facilitated dialogue, art, and structured time for the conversations that usually only happen in hallways." },
+    { "title": "Participants are compensated", "body": "The ethos of equality starts with what we value enough to fund. Those who lead a session are paid." },
+    { "title": "Women-centered, ally-welcoming", "body": "Women lead and convene. Anyone who supports the mission is welcome to apply." },
+    { "title": "Small enough to matter", "body": "50-75 guests. Deep connection is a design constraint, not a nice-to-have." }
   ],
-  "placeholderNote": "Venue, registration rates, participant roster, and principles copy are placeholders -- see CONTENT_PLACEHOLDER.md. Applied Love Labs is confirmed as the host / fiscal sponsor; Atlanta October 9-11 2026 is confirmed."
+  "placeholderNote": "Venue, registration rates, participant roster, and session titles are placeholders -- see CONTENT_PLACEHOLDER.md. Applied Love Labs is confirmed as the host / fiscal sponsor; Atlanta October 9-11, 2026 and the 50-75 capacity are confirmed; the five ethos principles and the four-field framing align with whp.vercel.app, the committee's reference build."
 }

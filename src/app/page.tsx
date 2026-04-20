@@ -24,9 +24,12 @@ export default function HomePage() {
           <SynapseField />
         </div>
         <div className="relative mx-auto flex min-h-[88vh] w-full max-w-gallery flex-col justify-center px-gutter pb-20 pt-28 md:min-h-[92vh] md:pb-28 md:pt-36">
-          <p className="eyebrow mb-6 flex items-center gap-3">
+          <p className="eyebrow mb-3 flex items-center gap-3">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-gold" />
-            {meta.dates.display} &middot; {meta.city}
+            Atlanta, GA &middot; {meta.dates.display}
+          </p>
+          <p className="eyebrow mb-6 text-muted-foreground">
+            3 days &middot; {meta.capacityDisplay} &middot; Invitation only
           </p>
           <h1 className="max-w-[22ch] text-display-xl text-balance">
             Where women connect{" "}
@@ -34,8 +37,8 @@ export default function HomePage() {
             <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">machine</span>, and what comes next.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            A small, invitation-shaped convening in Atlanta. Three working
-            days, roughly {meta.capacity} people in the room, hosted by{" "}
+            A women-centered gathering at the frontier of consciousness,
+            AI, cognitive science, and robotics. Hosted by{" "}
             <a
               href={meta.fiscalSponsor.href}
               target="_blank"
@@ -64,7 +67,7 @@ export default function HomePage() {
           <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 text-sm md:grid-cols-4">
             <HeroStat label="When" value={meta.dates.display} />
             <HeroStat label="Where" value={meta.city} />
-            <HeroStat label="Shape" value="Invitation-based" />
+            <HeroStat label="Size" value={meta.capacityDisplay} />
             <HeroStat label="Host" value={meta.fiscalSponsor.name} />
           </dl>
         </div>
@@ -94,7 +97,7 @@ export default function HomePage() {
         <FieldsGrid />
       </Section>
 
-      <Section tone="raised" eyebrow="How the room is run" heading="[Placeholder -- replace with the committee's one-line ethos: e.g., 'engagement over performance' or 'rigor with love'.]" lede="A handful of principles that shape how we invite, schedule, host, and close the days. Placeholder copy below; the committee owns the wording.">
+      <Section tone="raised" eyebrow="How the room is run" heading="Power without permission. Rigor with love." lede="A handful of principles that shape how we invite, schedule, host, and close the days.">
         <PrinciplesGrid />
       </Section>
 

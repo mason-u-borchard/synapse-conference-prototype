@@ -21,7 +21,28 @@ export default function AboutPage() {
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">{meta.mission}</p>
       </header>
 
-      <section id="fiscal-sponsor" className="mt-20 paper p-8">
+      <section id="founder" className="mt-20 paper p-8 md:p-10">
+        <p className="eyebrow mb-4 text-muted-foreground">A response, and a reimagining</p>
+        <div className="max-w-prose space-y-5 text-pretty text-ink">
+          <p>
+            Consciousness, AI, cognitive science, and robotics are the
+            fields shaping the future of humanity. They remain
+            overwhelmingly led by elite, male-ordered institutions.
+          </p>
+          <p>
+            A small group of us decided to stop waiting for a better
+            invitation and build one. The Synapse is not a protest --
+            it is a dedication: to the rigorous, controversial,
+            embodied, relational work women are already doing, and to
+            the collaborative future we intend to build together.
+          </p>
+        </div>
+        <p className="mt-6 text-sm text-muted-foreground">
+          -- {meta.founder.name} &middot; {meta.founder.title}
+        </p>
+      </section>
+
+      <section id="fiscal-sponsor" className="mt-12 paper p-8">
         <p className="eyebrow mb-4 text-muted-foreground">Host and fiscal sponsor</p>
         <h2 className="font-serif text-3xl tracking-tight">{meta.fiscalSponsor.name}</h2>
         <p className="mt-4 max-w-prose text-pretty text-muted-foreground">{meta.fiscalSponsor.blurb}</p>
@@ -35,6 +56,17 @@ export default function AboutPage() {
             About {meta.fiscalSponsor.short}
           </a>
         </div>
+      </section>
+
+      <section id="atlanta" className="mt-12 paper p-8">
+        <p className="eyebrow mb-4 text-muted-foreground">Why Atlanta</p>
+        <h2 className="font-serif text-3xl tracking-tight">A city already doing the work of empowering women.</h2>
+        <p className="mt-4 max-w-prose text-pretty text-muted-foreground">
+          We are gathering in Atlanta: a city with deep roots in civil
+          rights, a thriving tech and research ecosystem, and an
+          established commitment to lifting women's voices. The City of
+          Atlanta has expressed interest in supporting the initiative.
+        </p>
       </section>
 
       <section id="committee" className="mt-20">

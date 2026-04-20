@@ -4,8 +4,8 @@ import { getDonationProvider } from "@/lib/donations/provider";
 import { meta } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Support the convening",
-  description: "Donations flow through Applied Love Labs, our host and fiscal sponsor. Funding categories and allocation percentages are placeholders while the committee finalizes priorities.",
+  title: "Fund the room where this happens",
+  description: "Donations flow through Applied Love Labs, our host and fiscal sponsor. A $100,000 working target covers organizer salaries, participant travel and compensation, venue and A/V, and scholarships for early-career scholars.",
 };
 
 export default function DonatePage() {
@@ -13,14 +13,14 @@ export default function DonatePage() {
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
-        <p className="eyebrow mb-4">Donate</p>
-        <h1 className="text-display-lg text-balance">[Placeholder — replace with a concrete statement of what donor dollars do that registration fees cannot: e.g., underwrite the first ten travel grants for non-R1 doctoral researchers; fund CART captioning across all rooms.]</h1>
+        <p className="eyebrow mb-4">Fund the work</p>
+        <h1 className="text-display-lg text-balance">Fund the room where this happens.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          Donations will support parts of the convening that registration
-          fees cannot cover. The specific funding categories are
-          placeholders while the committee finalizes its priorities --
-          see the illustrative breakdown in the sidebar. Every dollar
-          donated will be ring-fenced from operating costs.
+          A working target of <span className="text-ink">{meta.fundingTarget.amount} by {meta.fundingTarget.by}</span> covers
+          the four things that make this convening possible but cannot
+          come from registration alone: organizer time, participant
+          travel and compensation, venue and A/V, and scholarships for
+          early-career scholars.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
           Gifts flow through <span className="text-ink">{meta.fiscalSponsor.name}</span>, our host and fiscal sponsor; receipts are issued in ALL's name. {provider.blurb}
@@ -31,15 +31,19 @@ export default function DonatePage() {
         <DonateForm providerName={provider.name} providerLabel={provider.label} embedOnly={provider.embedOnly} embedUrl={provider.embedUrl} />
         <aside className="space-y-8">
           <section className="paper p-6">
-            <h2 className="eyebrow mb-4 text-muted-foreground">Illustrative allocation</h2>
+            <h2 className="eyebrow mb-4 text-muted-foreground">Working budget</h2>
+            <p className="mb-4 text-xs text-muted-foreground">
+              {meta.fundingTarget.amount} target by {meta.fundingTarget.by}. Exact allocation will be confirmed by the committee.
+            </p>
             <ul className="space-y-3">
-              <AllocationRow share={55} label="Category A (e.g., travel grants)" />
-              <AllocationRow share={25} label="Category B (e.g., access)" />
-              <AllocationRow share={20} label="Category C (e.g., mentorship)" />
+              <AllocationRow share={35} label="Organizer salaries" />
+              <AllocationRow share={30} label="Participant travel and compensation" />
+              <AllocationRow share={20} label="Venue and A/V" />
+              <AllocationRow share={15} label="Scholarships for early-career scholars" />
             </ul>
             <p className="mt-5 text-xs text-muted-foreground">
-              Categories and percentages are placeholders the committee
-              will confirm. Funds flow through Applied Love Labs.
+              Percentages are an illustrative split the committee will
+              refine. Funds flow through {meta.fiscalSponsor.name}.
             </p>
           </section>
           <section className="paper p-6">

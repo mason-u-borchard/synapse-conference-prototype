@@ -1,62 +1,80 @@
 [
   {
-    "id": "registration-dates",
-    "question": "When does registration open and close?",
-    "answer": "Registration opens in late spring 2026. Exact open and close dates are being finalized by the program committee; sign up for the mailing list from the footer to be notified when registration goes live.",
-    "category": "registration"
+    "id": "how-big",
+    "question": "How big is the conference?",
+    "answer": "50-75 guests. We are optimizing for depth, not scale. Every person in the room is there on purpose, and deep connection is treated as a design constraint rather than a nice-to-have.",
+    "category": "program"
   },
   {
-    "id": "registration-rates",
-    "question": "What are the registration tiers?",
-    "answer": "Rates are in the process of being set by the committee. The current working structure has three tiers (faculty/industry, postdoc/independent, student) plus a small pool of need-based waivers. Specific dollar amounts will be published when registration opens.",
+    "id": "women-only",
+    "question": "Is this only for women?",
+    "answer": "The convening is women-centered. Women lead, women convene, and the experience is designed around women's voices. Allies who support the mission are welcome to apply, regardless of gender.",
+    "category": "conduct"
+  },
+  {
+    "id": "what-makes-different",
+    "question": "How is this different from a typical academic conference?",
+    "answer": "Sparse keynotes. More workshops, facilitated dialogue, art, movement, and structured time for the conversations that usually only happen in hallways. We are building a container, not a lecture hall.",
+    "category": "program"
+  },
+  {
+    "id": "host",
+    "question": "Who is hosting it?",
+    "answer": "Applied Love Labs, founded by neuroscientist Julia Mossbridge, PhD. The conference takes place in Atlanta, Georgia on October 9-11, 2026.",
+    "category": "program"
+  },
+  {
+    "id": "compensation",
+    "question": "Are participants compensated?",
+    "answer": "Yes. Those who lead sessions, facilitate, or perform are paid. The ethos of equality starts with what we value enough to fund. Mention your session interest in the application.",
+    "category": "program"
+  },
+  {
+    "id": "registration-dates",
+    "question": "When does the application open and close?",
+    "answer": "Applications open in late spring 2026. Submissions are reviewed on a rolling basis; the committee builds the room intentionally and responds to every applicant.",
     "category": "registration"
   },
   {
     "id": "submissions",
-    "question": "Are you accepting talk or poster submissions?",
-    "answer": "Yes. Doctoral-researcher lightning talks (seven minutes, blinded review) and posters will both be accepted. The submission portal and dates will be announced alongside registration. Early-career submissions are prioritized.",
+    "question": "I want to lead a session, perform, or run a workshop. How?",
+    "answer": "Mention it in your application -- what you would run, why now, who it is for. The committee will follow up. Session leaders and facilitators are compensated.",
     "category": "submissions"
   },
   {
     "id": "travel-venue",
     "question": "Where is the conference and how do I get there?",
-    "answer": "The Synapse 2026 will take place in Atlanta, Georgia. Venue is being finalized by the committee. Atlanta is a major airline hub (ATL) with direct flights from most U.S. and many international cities; MARTA connects the airport to much of the city.",
+    "answer": "Atlanta, Georgia. Venue is being finalized. Atlanta is a major airline hub (ATL) with direct flights from most U.S. and many international cities; MARTA connects the airport to much of the city.",
     "category": "travel"
   },
   {
     "id": "travel-grants",
     "question": "Are travel grants available?",
-    "answer": "Yes. A limited pool of travel grants funded through Applied Love Labs, our host and fiscal sponsor, will be available for doctoral researchers and early-career practitioners whose home institutions cannot cover travel. The application form and deadlines will be posted alongside the attendance application.",
+    "answer": "Yes. A limited pool of travel grants funded through Applied Love Labs, our host and fiscal sponsor, covers doctoral researchers and early-career practitioners whose home institutions cannot cover travel. Indicate interest in the application.",
     "category": "travel"
   },
   {
     "id": "access-mobility",
     "question": "What accessibility accommodations are planned?",
-    "answer": "Step-free venue access, an induction loop in the main theater, and live captioning for plenaries are all defaults. The registration form asks directly about access needs, and the access lead will follow up within 72 hours of registration to confirm specifics.",
+    "answer": "Step-free venue access, induction loop support in the main room, and live captioning for plenaries are defaults. The application asks directly about access needs; the access lead follows up within 72 hours of submission.",
     "category": "access"
   },
   {
     "id": "access-quiet",
     "question": "Is there a quiet space?",
-    "answer": "Yes. A low-stimulation room with soft seating, dim lighting, and no scheduled programming is available throughout the conference. The room will be marked on the venue map distributed at registration.",
+    "answer": "Yes. A low-stimulation room with soft seating, dim lighting, and no scheduled programming is available throughout the three days. The room will be marked on the venue map distributed at arrival.",
     "category": "access"
   },
   {
     "id": "conduct",
     "question": "What is the code of conduct?",
-    "answer": "The Synapse follows a clear code of conduct grounded in respect, consent, and scholarly integrity. It is enforced by an independent response team reachable in person, by email, and by anonymous form. The full document is linked from the footer of every page and reviewed annually.",
+    "answer": "The Synapse follows a clear code of conduct grounded in respect, consent, and scholarly integrity, enforced by an independent response team reachable in person, by email, and by anonymous form. The full document is linked from the footer.",
     "category": "conduct"
-  },
-  {
-    "id": "program-recording",
-    "question": "Will talks be recorded?",
-    "answer": "Plenary sessions are recorded and made publicly available within six weeks; speakers retain rights and may opt out. Parallel-track sessions are not recorded unless the presenter specifically requests it. Panels are not recorded.",
-    "category": "program"
   },
   {
     "id": "program-childcare",
     "question": "Is childcare available?",
-    "answer": "Onsite childcare for children ages 1-10 during programmed hours is a working plan, staffed by a licensed local provider. Advance sign-up will be required. Nursing and quiet-feeding rooms will be available throughout the venue. Final confirmation depends on venue selection.",
+    "answer": "Onsite childcare for children ages 1-10 during programmed hours is the working plan, staffed by a licensed local provider. Advance sign-up will be required. Nursing and quiet-feeding rooms will be available throughout. Final confirmation depends on venue selection.",
     "category": "program"
   }
 ]

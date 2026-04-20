@@ -1,22 +1,23 @@
-// Four fields the convening holds in one conversation. Text is
-// placeholder copy the committee can replace; the structure (four
-// cards, two rows on md) is what matters.
+// Four fields, one thread. The framing and field names align with the
+// committee's reference build at whp.vercel.app. Copy below is close
+// to that version's wording because the committee has converged on
+// this scope; adjust in place as final copy is agreed.
 const fields = [
   {
     label: "Consciousness",
-    body: "The old question -- what is it like to be a subject? -- asked with contemporary tools and without the patience for vague answers.",
+    body: "Post-materialist frameworks, rigorous controversial research, and the ethics of studying mind itself.",
   },
   {
-    label: "Cognitive neuroscience",
-    body: "What the brain actually does, measured at the scales the question demands. Perception, attention, memory, and the failure modes that reveal the work.",
+    label: "Artificial intelligence",
+    body: "What does it mean to midwife AI into a world worth living in? Whose values get encoded, and whose get erased?",
   },
   {
-    label: "Philosophy of mind",
-    body: "The conceptual scaffolding the empirical work rests on, examined in public. Where the data runs out, what replaces it should not be vibes.",
+    label: "Cognitive science",
+    body: "The development of minds across the lifespan, cognitive security, and how young brains grow up in the age of AI.",
   },
   {
-    label: "Machine intelligence",
-    body: "What we are building, and what that building reveals about thinking. Alignment, interpretability, agency, and the ways synthetic systems are shadows of the biological.",
+    label: "Robotics & embodiment",
+    body: "Physical embodiment, relational intelligence, and the bodies -- human and otherwise -- we are building into the future.",
   },
 ];
 

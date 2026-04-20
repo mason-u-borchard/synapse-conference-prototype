@@ -2,26 +2,27 @@ import type { Metadata } from "next";
 import { RegisterForm } from "@/components/register-form";
 
 export const metadata: Metadata = {
-  title: "Apply to attend",
-  description: "Apply to attend The Synapse 2026 in Atlanta. An invitation-based convening; the short form captures who you are, what you are working on, and any access needs.",
+  title: "Request an invitation",
+  description: "Attendance is by application. The Synapse is building the room intentionally -- 50 to 75 people. Tell us who you are and what you are working on.",
 };
 
 export default function RegisterPage() {
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
-        <p className="eyebrow mb-4">Apply to attend</p>
+        <p className="eyebrow mb-4">Request an invitation</p>
         <h1 className="text-display-lg text-balance">Tell us who you are and what you are working on.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          The Synapse is invitation-shaped. The committee is building the
-          room intentionally, so the form below asks for the short version
-          of who you are, what you are working on right now, and any access
-          needs. We read every submission.
+          Attendance is by application. We are building the room
+          intentionally -- 50 to 75 people over three days in Atlanta --
+          and the form below is how that works. We read every submission,
+          and the access lead responds within 72 hours regardless of the
+          outcome of review.
         </p>
         <p className="mt-3 text-xs text-muted-foreground">
-          Applications open in late spring 2026. Submitting now adds you to
-          the notification list and captures access needs so the committee
-          can plan around them early.
+          Applications open in late spring 2026. Submitting now adds you
+          to the notification list and captures access needs so the
+          committee can plan around them early.
         </p>
       </header>
 
