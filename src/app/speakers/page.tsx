@@ -3,8 +3,8 @@ import { speakers, speakerTagCloud } from "@/lib/content";
 import { SpeakersExplorer } from "@/components/speakers-explorer";
 
 export const metadata: Metadata = {
-  title: "Speakers",
-  description: "Six scholars in consciousness studies, cognitive neuroscience, philosophy of mind, and AI alignment. Full abstracts included.",
+  title: "Participants",
+  description: "A list of invited participants and a visual map of how their research areas overlap. Twenty numbered placeholders while the committee finalizes the roster.",
 };
 
 export default function SpeakersPage() {
@@ -12,12 +12,14 @@ export default function SpeakersPage() {
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
-        <p className="eyebrow mb-4">The roster</p>
-        <h1 className="text-display-lg text-balance">[Placeholder — replace with the one-line description of what binds the roster editorially: the shared question or live disagreement the twenty talks are arranged around.]</h1>
+        <p className="eyebrow mb-4">Participants</p>
+        <h1 className="text-display-lg text-balance">Every person in the room is here on purpose.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          Speakers are numbered (Speaker 1 through Speaker 20) as placeholders
-          while the committee finalizes invitations. Filter by topic, or
-          explore the constellation to see how research areas overlap.
+          The Synapse is built around conversation, not broadcast.
+          Participants are numbered placeholders (Participant 1 through
+          Participant 20) while the committee finalizes invitations. The
+          constellation view shows how their research areas overlap; it
+          is a map of the conversation, not a ranking.
         </p>
       </header>
       <SpeakersExplorer speakers={speakers} allTags={allTags} />

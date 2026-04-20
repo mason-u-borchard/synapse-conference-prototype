@@ -1,12 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { meta, speakers, schedule, faq } from "@/lib/content";
+import { meta, schedule, faq } from "@/lib/content";
 import { Section } from "@/components/section";
 import { SynapseField } from "@/components/synapse-field";
-import { SpeakerCard } from "@/components/speaker-card";
 import { ScheduleGlance } from "@/components/schedule-glance";
 import { PrinciplesGrid } from "@/components/principles-grid";
 import { FaqPreview } from "@/components/faq-preview";
+import { FieldsGrid } from "@/components/fields-grid";
 
 export const metadata: Metadata = {
   title: `${meta.name} -- ${meta.subtitle}`,
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const keynotes = speakers.filter((s) => s.keynote);
   const openers = schedule.filter((s) => s.day === 1 && s.kind !== "break").slice(0, 4);
   const openFaq = faq.slice(0, 4);
 
@@ -35,10 +34,17 @@ export default function HomePage() {
             <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">machine</span>, and what comes next.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Three working days in Atlanta. Twenty speakers across
-            consciousness studies, cognitive neuroscience, philosophy of
-            mind, and AI alignment. Forty-plus posters, panels, and quiet
-            rooms. One single live conversation.
+            A small, invitation-shaped convening in Atlanta. Three working
+            days, roughly {meta.capacity} people in the room, hosted by{" "}
+            <a
+              href={meta.fiscalSponsor.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-ink underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold"
+            >
+              {meta.fiscalSponsor.name}
+            </a>. Sparse keynotes, more workshops and facilitated dialogue
+            than panels. Every person here on purpose.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
@@ -46,20 +52,20 @@ export default function HomePage() {
               className="btn px-8 py-3 text-base font-medium text-[#1e0e22] shadow-[0_1px_0_hsl(var(--gold-deep)/0.8),0_14px_40px_-18px_hsl(var(--gold)/0.8)]"
               style={{ backgroundColor: "hsl(var(--gold))", borderColor: "hsl(var(--gold-deep) / 0.8)" }}
             >
-              Donate
+              Support the convening
               <ArrowRight />
             </Link>
-            <Link href="/register" className="btn btn-ghost">Register</Link>
-            <Link href="/schedule" className="btn btn-ghost">Learn more</Link>
+            <Link href="/register" className="btn btn-ghost">Apply to attend</Link>
+            <Link href="/schedule" className="btn btn-ghost">The three-day arc</Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Donations will be tax-deductible through a fiscal sponsor the committee is finalizing. Funds will be ring-fenced from operating costs.
+            Donations are tax-deductible through Applied Love Labs and ring-fenced from operating costs.
           </p>
           <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 text-sm md:grid-cols-4">
-            <HeroStat label="Dates" value={meta.dates.display} />
-            <HeroStat label="Venue" value={meta.venue} />
-            <HeroStat label="Capacity" value={`~${meta.capacity} seats`} />
-            <HeroStat label="Fiscal sponsor" value={meta.fiscalSponsor.name} />
+            <HeroStat label="When" value={meta.dates.display} />
+            <HeroStat label="Where" value={meta.city} />
+            <HeroStat label="Shape" value="Invitation-based" />
+            <HeroStat label="Host" value={meta.fiscalSponsor.name} />
           </dl>
         </div>
       </section>
@@ -67,47 +73,39 @@ export default function HomePage() {
       <div className="border-y border-border bg-surface-raised">
         <div className="mx-auto flex w-full max-w-gallery flex-col gap-4 px-gutter py-5 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="eyebrow mb-1">Fiscal sponsor placeholder &middot; partnership TBD</p>
+            <p className="eyebrow mb-1">Hosted by {meta.fiscalSponsor.name} &middot; tax-deductible</p>
             <p className="text-sm text-muted-foreground">
-              An illustrative allocation is shown on /donate; specific
-              funding categories and percentages are placeholders the
-              committee will confirm once a sponsor is chosen.
+              Gifts flow through {meta.fiscalSponsor.short}. Allocation
+              categories shown on /donate are illustrative placeholders the
+              committee will confirm.
             </p>
           </div>
           <Link href="/donate" className="btn btn-ghost shrink-0">
-            Donate <ArrowRight />
+            Support the convening <ArrowRight />
           </Link>
         </div>
       </div>
 
-      <Section eyebrow="The premise" heading="One conversation across multiple disciplines." lede={meta.mission}>
+      <Section
+        eyebrow="Four fields, one thread"
+        heading="One conversation across consciousness, cognition, and the machines we are building."
+        lede="The Synapse is organized around the question these fields already share but rarely ask together: what kind of mind are we studying, and what kind are we making?"
+      >
+        <FieldsGrid />
+      </Section>
+
+      <Section tone="raised" eyebrow="How the room is run" heading="[Placeholder -- replace with the committee's one-line ethos: e.g., 'engagement over performance' or 'rigor with love'.]" lede="A handful of principles that shape how we invite, schedule, host, and close the days. Placeholder copy below; the committee owns the wording.">
         <PrinciplesGrid />
       </Section>
 
-      <Section
-        tone="raised"
-        eyebrow="Headline speakers"
-        heading="[Placeholder — replace with the one-line editorial thesis that ties these six keynotes together: what argument does the slate make that the other fourteen speakers don't?]"
-        lede="Six keynote slots within a twenty-speaker roster. Speakers are numbered placeholders while the committee finalizes invitations; full abstracts are on the speakers page."
-      >
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {keynotes.map((speaker) => (
-            <SpeakerCard key={speaker.slug} speaker={speaker} featured />
-          ))}
-        </div>
-        <div className="mt-10">
-          <Link href="/speakers" className="btn btn-ghost">All speakers<ArrowRight /></Link>
-        </div>
-      </Section>
-
-      <Section eyebrow="Day one, early" heading="[Placeholder — replace with the programming principle the committee wants this schedule to prove out: e.g., no parallel tracks in the opening slot, plenary-then-workshop cadence, poster sessions protected from being scheduled against keynotes.]" lede="The full, filterable schedule lives on the /schedule page.">
+      <Section eyebrow="The three-day arc" heading="A program that respects your attention." lede="Days are shaped around conversation, not broadcast. Sparse plenaries, protected quiet time, workshops, and a poster session built for reading. Full arc on the schedule page.">
         <ScheduleGlance items={openers} />
         <div className="mt-8">
-          <Link href="/schedule" className="btn btn-ghost">Full schedule<ArrowRight /></Link>
+          <Link href="/schedule" className="btn btn-ghost">The three-day arc<ArrowRight /></Link>
         </div>
       </Section>
 
-      <Section tone="raised" eyebrow="Questions, briefly answered" heading="[Placeholder — replace with the committee's one-line stance on logistics: what specifically is easier or cheaper here than at comparable conferences (single form covers access; no grad-student surcharge; travel grants decided before early-bird closes).]">
+      <Section tone="raised" eyebrow="Questions, briefly answered" heading="Logistics without the maze.">
         <FaqPreview items={openFaq} />
         <div className="mt-8">
           <Link href="/faq" className="btn btn-ghost">All FAQ<ArrowRight /></Link>
@@ -118,18 +116,19 @@ export default function HomePage() {
         <div className="paper mt-2 flex flex-col gap-6 p-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="text-lg text-pretty text-muted-foreground">
-              Contributions will support parts of the convening that
-              registration fees cannot cover. Specific funding categories,
-              allocation percentages, and the fiscal sponsor are all
-              placeholders while the committee finalizes its priorities.
+              Gifts underwrite travel for early-career participants, access
+              accommodations, and the facilitation work that keeps the
+              format from collapsing into a panel-after-panel lineup.
+              Specific categories and percentages are placeholders the
+              committee will confirm; funds flow through {meta.fiscalSponsor.name}.
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
-              Donations will be tax-deductible through the chosen fiscal sponsor and ring-fenced from operating costs.
+              Donations are tax-deductible through {meta.fiscalSponsor.short} and ring-fenced from operating costs.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/donate" className="btn btn-primary">Donate</Link>
-            <Link href="/register" className="btn btn-ghost">Register</Link>
+            <Link href="/donate" className="btn btn-primary">Support the convening</Link>
+            <Link href="/register" className="btn btn-ghost">Apply to attend</Link>
           </div>
         </div>
       </Section>

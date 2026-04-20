@@ -25,15 +25,15 @@ export function SiteFooter() {
           </p>
         </div>
         <FooterColumn title="Program" items={[
-          { label: "Speakers", href: "/speakers" },
-          { label: "Schedule", href: "/schedule" },
+          { label: "Participants", href: "/speakers" },
+          { label: "The three-day arc", href: "/schedule" },
           { label: "About", href: "/about" },
           { label: "FAQ", href: "/faq" },
         ]} />
         <FooterColumn title="Participate" items={[
-          { label: "Register", href: "/register" },
+          { label: "Apply to attend", href: "/register" },
           { label: "Submit a talk", href: "/faq#submissions" },
-          { label: "Donate", href: "/donate" },
+          { label: "Support the convening", href: "/donate" },
           { label: "Access form", href: "/register#access" },
         ]} />
         <FooterColumn title="Reach us" items={[
