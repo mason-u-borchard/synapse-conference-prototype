@@ -3,25 +3,26 @@ import { schedule, speakers, meta } from "@/lib/content";
 import { ScheduleExplorer } from "@/components/schedule-explorer";
 
 export const metadata: Metadata = {
-  title: "The three-day arc",
-  description: "Three days in Atlanta. A high-level arc -- orientation and opening keynote, core workshops and panels, closing reflection. Session titles below are placeholder labels the committee will refine.",
+  title: "Three days. A deliberate arc.",
+  description: "Each day moves through Embody, Encounter, Imagine, Create -- weighted differently as the conference progresses. Day 1 opens perception. Day 2 builds frameworks. Day 3 makes things.",
 };
 
+// Arc copy follows Kelly's approved Website Copy doc (Section 06).
 const arc = [
   {
-    label: "Day one",
-    title: "Arrive, meet, begin.",
-    body: "Registration and informal orientation. An opening plenary keynote in the afternoon. An evening reception on-site. The day is paced to absorb travel, not to front-load content.",
+    label: "Day 1",
+    title: "Expand Mind",
+    body: "We open by expanding what we recognize as mind -- human, artificial, biological, hybrid, embodied, distributed. Through somatic arrival, facilitated encounter across difference, and the questions each of us is carrying into this room.",
   },
   {
-    label: "Day two",
-    title: "The working day.",
-    body: "Sparse plenaries; more workshops and facilitated dialogue than panels. A protected poster session in the afternoon, built for reading rather than performing. Mentor-matching tables at lunch.",
+    label: "Day 2",
+    title: "Rethink Intelligence",
+    body: "If mind is broader than we assumed, what is intelligence? Day 2 pushes into the hardest questions: intelligence as relational, developmental, collective, and emergent -- not as optimization, not as control. Frameworks begin to form.",
   },
   {
-    label: "Day three",
-    title: "Close with care.",
-    body: "A final plenary and a closing panel drawn across the fields. Closing remarks short. The intention is that participants leave with a working relationship or two they did not arrive with.",
+    label: "Day 3",
+    title: "Shapeshift",
+    body: "The center of gravity shifts to making. How should minds interact -- human to AI, human to human, mind to system? We move through design, ethics, and what we intend to build together. The day ends not with a summary but with outputs: commitments, collaborations, and a shared declaration.",
   },
 ];
 
@@ -29,13 +30,15 @@ export default function SchedulePage() {
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
-        <p className="eyebrow mb-4">The three-day arc</p>
-        <h1 className="text-display-lg text-balance">Three days, shaped around conversation.</h1>
+        <p className="eyebrow mb-4">What to expect</p>
+        <h1 className="text-display-lg text-balance">Three days. A deliberate arc.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          Days are paced to absorb travel, protect the work, and close
-          with something to carry. Specific session titles below are
-          placeholder labels while the committee finalizes who is
-          presenting what; the shape of the arc is what is decided.
+          Each day moves through the same four phases -- Embody,
+          Encounter, Imagine, Create -- but the weight shifts
+          deliberately as the conference progresses. Day 1 opens
+          perception. Day 2 builds frameworks. Day 3 makes things. A
+          provisional arc; exact sessions, speakers, and format will be
+          shaped with the community in the months ahead.
         </p>
       </header>
       <div className="mt-8 flex gap-6 text-sm text-muted-foreground">

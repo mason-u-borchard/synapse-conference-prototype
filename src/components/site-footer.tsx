@@ -13,7 +13,8 @@ export function SiteFooter() {
             <span className="font-serif text-lg">The Synapse</span>
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
-            {meta.subtitle}. A three-day convening in Atlanta, hosted by{" "}
+            {meta.subtitle} {meta.city} &middot; {meta.dates.display}. An
+            initiative of{" "}
             <a
               href={meta.fiscalSponsor.href}
               target="_blank"
@@ -24,16 +25,16 @@ export function SiteFooter() {
             </a>.
           </p>
         </div>
-        <FooterColumn title="Program" items={[
-          { label: "Participants", href: "/speakers" },
-          { label: "The three-day arc", href: "/schedule" },
+        <FooterColumn title="Explore" items={[
           { label: "About", href: "/about" },
+          { label: "Ethos", href: "/#ethos" },
+          { label: "Program", href: "/schedule" },
+          { label: "Participants", href: "/speakers" },
           { label: "FAQ", href: "/faq" },
         ]} />
-        <FooterColumn title="Participate" items={[
+        <FooterColumn title="Get involved" items={[
           { label: "Apply to attend", href: "/register" },
-          { label: "Submit a talk", href: "/faq#submissions" },
-          { label: "Support the convening", href: "/donate" },
+          { label: "Fund the work", href: "/donate" },
           { label: "Access form", href: "/register#access" },
         ]} />
         <FooterColumn title="Reach us" items={[
@@ -45,7 +46,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="container-gutter flex flex-col gap-3 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <span>
-            &copy; {year} The Synapse. Hosted by {meta.fiscalSponsor.name}.
+            &copy; {year} {meta.fiscalSponsor.name}.
           </span>
           <span className="font-mono tracking-wider">
             {meta.dates.display} &middot; {meta.city}

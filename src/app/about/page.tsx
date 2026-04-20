@@ -22,19 +22,22 @@ export default function AboutPage() {
       </header>
 
       <section id="founder" className="mt-20 paper p-8 md:p-10">
-        <p className="eyebrow mb-4 text-muted-foreground">A response, and a reimagining</p>
+        <p className="eyebrow mb-4 text-muted-foreground">A dedication, not a protest</p>
         <div className="max-w-prose space-y-5 text-pretty text-ink">
           <p>
-            Consciousness, AI, cognitive science, and robotics are the
-            fields shaping the future of humanity. They remain
+            AI, consciousness, cognitive science, and robotics are the
+            fields shaping the future of humanity. And they remain
             overwhelmingly led by elite, male-ordered institutions.
+            After the Epstein files release made plain how women have
+            been actively suppressed in these disciplines, a small group
+            of us decided we would stop waiting for a better invitation
+            and build one.
           </p>
           <p>
-            A small group of us decided to stop waiting for a better
-            invitation and build one. The Synapse is not a protest --
-            it is a dedication: to the rigorous, controversial,
-            embodied, relational work women are already doing, and to
-            the collaborative future we intend to build together.
+            This conference is not a protest. It is a dedication: to the
+            rigorous, controversial, embodied, relational work women are
+            already doing, and to the collaborative future we intend to
+            build together.
           </p>
         </div>
         <p className="mt-6 text-sm text-muted-foreground">

@@ -13,17 +13,19 @@ export default function DonatePage() {
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
-        <p className="eyebrow mb-4">Fund the work</p>
-        <h1 className="text-display-lg text-balance">Fund the room where this happens.</h1>
+        <p className="eyebrow mb-4">Support</p>
+        <h1 className="text-display-lg text-balance">Invest in the room where this gets built.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          A working target of <span className="text-ink">{meta.fundingTarget.amount} by {meta.fundingTarget.by}</span> covers
-          the four things that make this convening possible but cannot
-          come from registration alone: organizer time, participant
-          travel and compensation, venue and A/V, and scholarships for
-          early-career scholars.
+          The Synapse is a living proof of what it looks like when women
+          determine how intelligence is designed -- not as a corrective,
+          but as a new model entirely. We're raising an initial <span className="text-ink">{meta.fundingTarget.amount} by {meta.fundingTarget.by}</span> to
+          cover organizer salaries, speaker compensation and travel,
+          venue and A/V, and registration scholarships. Every dollar
+          ensures the right people are in the room, regardless of who
+          can afford to be.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
-          Gifts flow through <span className="text-ink">{meta.fiscalSponsor.name}</span>, our host and fiscal sponsor; receipts are issued in ALL's name. {provider.blurb}
+          Gifts flow through <span className="text-ink">{meta.fiscalSponsor.name}</span>; receipts are issued in ALL's name. {provider.blurb}
         </p>
       </header>
 

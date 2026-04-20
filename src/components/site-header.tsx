@@ -7,11 +7,15 @@ import { cx } from "@/lib/cx";
 import { useTheme } from "@/components/theme-provider";
 import { SynapseMark } from "@/components/synapse-mark";
 
+// Nav follows Kelly's Messaging Guide / Website Copy doc -- About,
+// Ethos, Program, Attend, Support. Ethos points to the home-page
+// anchor; Participants (the constellation view) lives in the footer.
 const navItems = [
-  { href: "/speakers", label: "Participants" },
-  { href: "/schedule", label: "Arc" },
   { href: "/about", label: "About" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/#ethos", label: "Ethos" },
+  { href: "/schedule", label: "Program" },
+  { href: "/register", label: "Attend" },
+  { href: "/donate", label: "Support" },
 ];
 
 export function SiteHeader() {
@@ -72,7 +76,7 @@ export function SiteHeader() {
           >
             {theme === "light" ? <MoonIcon /> : <SunIcon />}
           </button>
-          <Link href="/register" className="hidden md:inline-flex btn btn-primary">Apply</Link>
+          <Link href="/register" className="hidden md:inline-flex btn btn-primary">Apply to attend</Link>
           <button
             type="button"
             className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-border"
@@ -100,7 +104,7 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/register" className="btn btn-primary mt-2 w-full">Apply</Link>
+            <Link href="/register" className="btn btn-primary mt-2 w-full">Apply to attend</Link>
           </nav>
         </div>
       )}

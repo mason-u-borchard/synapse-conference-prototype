@@ -10,14 +10,13 @@ export default function RegisterPage() {
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
-        <p className="eyebrow mb-4">Request an invitation</p>
-        <h1 className="text-display-lg text-balance">Tell us who you are and what you are working on.</h1>
+        <p className="eyebrow mb-4">Apply to attend</p>
+        <h1 className="text-display-lg text-balance">Tell us who you are and what you're building.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          Attendance is by application. We are building the room
+          Attendance is by application. We're building the room
           intentionally -- 50 to 75 people over three days in Atlanta --
-          and the form below is how that works. We read every submission,
-          and the access lead responds within 72 hours regardless of the
-          outcome of review.
+          and the form below is how that works. Tell us who you are and
+          what you're working on; we'll be in touch as review opens.
         </p>
         <p className="mt-3 text-xs text-muted-foreground">
           Applications open in late spring 2026. Submitting now adds you

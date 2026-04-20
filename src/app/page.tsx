@@ -7,6 +7,7 @@ import { ScheduleGlance } from "@/components/schedule-glance";
 import { PrinciplesGrid } from "@/components/principles-grid";
 import { FaqPreview } from "@/components/faq-preview";
 import { FieldsGrid } from "@/components/fields-grid";
+import { WhoItsFor } from "@/components/who-its-for";
 
 export const metadata: Metadata = {
   title: `${meta.name} -- ${meta.subtitle}`,
@@ -24,12 +25,9 @@ export default function HomePage() {
           <SynapseField />
         </div>
         <div className="relative mx-auto flex min-h-[88vh] w-full max-w-gallery flex-col justify-center px-gutter pb-20 pt-28 md:min-h-[92vh] md:pb-28 md:pt-36">
-          <p className="eyebrow mb-3 flex items-center gap-3">
+          <p className="eyebrow mb-6 flex items-center gap-3">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-gold" />
-            Atlanta, GA &middot; {meta.dates.display}
-          </p>
-          <p className="eyebrow mb-6 text-muted-foreground">
-            3 days &middot; {meta.capacityDisplay} &middot; Invitation only
+            The Synapse &middot; {meta.city} &middot; {meta.dates.display}
           </p>
           <h1 className="max-w-[22ch] text-display-xl text-balance">
             Where women connect{" "}
@@ -37,32 +35,28 @@ export default function HomePage() {
             <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">machine</span>, and what comes next.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            A women-centered gathering at the frontier of consciousness,
-            AI, cognitive science, and robotics. Hosted by{" "}
-            <a
-              href={meta.fiscalSponsor.href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-ink underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold"
-            >
-              {meta.fiscalSponsor.name}
-            </a>. Sparse keynotes, more workshops and facilitated dialogue
-            than panels. Every person here on purpose.
+            Across AI, robotics, cognitive science, and consciousness,
+            the inherited rules are no longer sufficient. The Synapse
+            is an invitation to the women -- and those who stand with
+            them -- who are building what comes next.
+          </p>
+          <p className="mt-4 eyebrow text-muted-foreground">
+            3 days &middot; {meta.capacityDisplay} &middot; {meta.city}
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
-              href="/donate"
+              href="/register"
               className="btn px-8 py-3 text-base font-medium text-[#1e0e22] shadow-[0_1px_0_hsl(var(--gold-deep)/0.8),0_14px_40px_-18px_hsl(var(--gold)/0.8)]"
               style={{ backgroundColor: "hsl(var(--gold))", borderColor: "hsl(var(--gold-deep) / 0.8)" }}
             >
-              Support the convening
+              Apply to attend
               <ArrowRight />
             </Link>
-            <Link href="/register" className="btn btn-ghost">Apply to attend</Link>
-            <Link href="/schedule" className="btn btn-ghost">The three-day arc</Link>
+            <Link href="/donate" className="btn btn-ghost">Become a funding partner</Link>
+            <Link href="/#program" className="btn btn-ghost">The arc</Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Donations are tax-deductible through Applied Love Labs and ring-fenced from operating costs.
+            An initiative of Applied Love Labs. Gifts are tax-deductible through ALL and ring-fenced from operating costs.
           </p>
           <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 text-sm md:grid-cols-4">
             <HeroStat label="When" value={meta.dates.display} />
@@ -90,22 +84,27 @@ export default function HomePage() {
       </div>
 
       <Section
+        id="fields"
         eyebrow="Four fields, one thread"
-        heading="One conversation across consciousness, cognition, and the machines we are building."
-        lede="The Synapse is organized around the question these fields already share but rarely ask together: what kind of mind are we studying, and what kind are we making?"
+        heading="Consciousness is the thread that runs through all of it."
+        lede="We convene across disciplines that are usually siloed, because the questions that matter now live in between them."
       >
         <FieldsGrid />
       </Section>
 
-      <Section tone="raised" eyebrow="How the room is run" heading="Power without permission. Rigor with love." lede="A handful of principles that shape how we invite, schedule, host, and close the days.">
+      <Section id="ethos" tone="raised" eyebrow="Our ethos" heading="Power without permission. Rigor with love." lede="Six principles that shape how we invite, schedule, host, and close the days.">
         <PrinciplesGrid />
       </Section>
 
-      <Section eyebrow="The three-day arc" heading="A program that respects your attention." lede="Days are shaped around conversation, not broadcast. Sparse plenaries, protected quiet time, workshops, and a poster session built for reading. Full arc on the schedule page.">
+      <Section id="program" eyebrow="What to expect" heading="Three days. A deliberate arc." lede="Each day moves through the same four phases -- Embody, Encounter, Imagine, Create -- but the weight shifts deliberately as the conference progresses. Day 1 opens perception. Day 2 builds frameworks. Day 3 makes things. A provisional arc. Exact sessions, speakers, and format will be shaped with the community in the months ahead.">
         <ScheduleGlance items={openers} />
         <div className="mt-8">
-          <Link href="/schedule" className="btn btn-ghost">The three-day arc<ArrowRight /></Link>
+          <Link href="/schedule" className="btn btn-ghost">The full arc<ArrowRight /></Link>
         </div>
+      </Section>
+
+      <Section id="who" tone="raised" eyebrow="Who it's for" heading="For the women building at the edges.">
+        <WhoItsFor />
       </Section>
 
       <Section tone="raised" eyebrow="Questions, briefly answered" heading="Logistics without the maze.">
@@ -115,22 +114,25 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Support the convening" heading="Fund the parts registration will not cover.">
+      <Section id="support" eyebrow="Support" heading="Invest in the room where this gets built.">
         <div className="paper mt-2 flex flex-col gap-6 p-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="text-lg text-pretty text-muted-foreground">
-              Gifts underwrite travel for early-career participants, access
-              accommodations, and the facilitation work that keeps the
-              format from collapsing into a panel-after-panel lineup.
-              Specific categories and percentages are placeholders the
-              committee will confirm; funds flow through {meta.fiscalSponsor.name}.
+              The Synapse is a living proof of what it looks like when
+              women determine how intelligence is designed -- not as a
+              corrective, but as a new model entirely. We are raising an
+              initial {meta.fundingTarget.amount} by {meta.fundingTarget.by} to
+              cover organizer salaries, speaker compensation and travel,
+              venue and A/V, and registration scholarships. Every dollar
+              ensures the right people are in the room, regardless of who
+              can afford to be.
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
-              Donations are tax-deductible through {meta.fiscalSponsor.short} and ring-fenced from operating costs.
+              Gifts are tax-deductible through {meta.fiscalSponsor.name} and ring-fenced from operating costs.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/donate" className="btn btn-primary">Support the convening</Link>
+            <Link href="/donate" className="btn btn-primary">Fund the work</Link>
             <Link href="/register" className="btn btn-ghost">Apply to attend</Link>
           </div>
         </div>

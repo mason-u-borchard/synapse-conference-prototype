@@ -1,13 +1,13 @@
 {
   "name": "The Synapse",
-  "subtitle": "Where women connect mind, machine, and what comes next",
+  "subtitle": "Where women connect mind, machine, and what comes next.",
   "edition": "2026",
   "dates": { "display": "October 9-11, 2026", "month": "October", "year": "2026", "start": "2026-10-09", "end": "2026-10-11" },
-  "city": "Atlanta, Georgia",
+  "city": "Atlanta, GA",
   "venue": "Venue TBD -- Atlanta confirmed",
   "capacity": 75,
   "capacityDisplay": "50-75 guests",
-  "tagline": "A women-centered gathering at the frontier of consciousness, AI, cognitive science, and robotics.",
+  "tagline": "The Synapse is a conference for women shaping the intersections of AI, robotics, cognitive science, and consciousness -- where the future of intelligence is being co-created.",
   "founder": {
     "name": "Julia Mossbridge, PhD",
     "title": "Neuroscientist; Founder, Applied Love Labs",
@@ -18,15 +18,16 @@
     "name": "Applied Love Labs",
     "short": "ALL",
     "href": "https://appliedlovelabs.org",
-    "blurb": "The Synapse is hosted by Applied Love Labs, founded by neuroscientist Julia Mossbridge, PhD. Charitable contributions flow through ALL, which issues tax-deductible receipts in its own name."
+    "blurb": "The Synapse is an initiative of Applied Love Labs. Charitable contributions flow through ALL, which issues tax-deductible receipts in its own name."
   },
-  "mission": "The Synapse convenes women working at the edges of consciousness research, artificial intelligence, cognitive science, and robotics. A small, invitation-shaped conversation -- 50 to 75 people -- where early-career researchers sit at the same table as senior scholars, and where the work being done is treated as the point, not the performance.",
+  "mission": "Inherited paradigms are no longer sufficient. Across AI, robotics, cognitive science, and consciousness, the questions that matter most require integration -- across disciplines, ways of knowing, and the full range of human intelligence. The Synapse is a gathering for the women at the frontier of each field: researchers, builders, practitioners, and leaders who are not waiting for permission to shape what comes next. This is not a conference about the future. It is the future, in formation.",
   "principles": [
-    { "title": "Everyone belongs", "body": "Every person in the room is here on purpose. No one has to prove they belong by performing." },
-    { "title": "Engagement over performance", "body": "Sparse plenaries. More workshops, facilitated dialogue, art, and structured time for the conversations that usually only happen in hallways." },
-    { "title": "Participants are compensated", "body": "The ethos of equality starts with what we value enough to fund. Those who lead a session are paid." },
-    { "title": "Women-centered, ally-welcoming", "body": "Women lead and convene. Anyone who supports the mission is welcome to apply." },
-    { "title": "Small enough to matter", "body": "50-75 guests. Deep connection is a design constraint, not a nice-to-have." }
+    { "title": "Everyone belongs", "body": "Every person in the room is here on purpose. No one has to prove their worth to take up space." },
+    { "title": "Engagement over performance", "body": "Few keynotes. More facilitated dialogue, workshops, art, movement, and structured time for the conversations that usually only happen in hallways -- or not at all." },
+    { "title": "Speakers are compensated", "body": "The ethos of equality starts with what we value enough to fund." },
+    { "title": "Women-centered, ally-welcoming", "body": "Women lead and speak. Anyone who supports the mission is welcome to apply." },
+    { "title": "Small enough to matter", "body": "50-75 guests. Deep connection is a design constraint, not a nice-to-have." },
+    { "title": "Reimagining, not resisting", "body": "We are in dedication to what is possible, not in opposition to what isn't." }
   ],
-  "placeholderNote": "Venue, registration rates, participant roster, and session titles are placeholders -- see CONTENT_PLACEHOLDER.md. Applied Love Labs is confirmed as the host / fiscal sponsor; Atlanta October 9-11, 2026 and the 50-75 capacity are confirmed; the five ethos principles and the four-field framing align with whp.vercel.app, the committee's reference build."
+  "placeholderNote": "Venue, speaker/participant roster, and session titles are placeholders. Applied Love Labs is confirmed as the host; Atlanta October 9-11, 2026 and the 50-75 capacity are confirmed. Copy across hero, four fields, ethos, program arc, apply, support, and FAQ sections follows Kelly's approved Website Copy doc and Messaging Guide."
 }
