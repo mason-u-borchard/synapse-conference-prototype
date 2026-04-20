@@ -13,9 +13,15 @@ export function SiteFooter() {
             <span className="font-serif text-lg">The Synapse</span>
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
-            {meta.subtitle}. A three-day convening in Atlanta. The fiscal
-            sponsor is a placeholder while the committee finalizes a
-            501(c)(3) partnership.
+            {meta.subtitle}. A three-day convening in Atlanta, hosted by{" "}
+            <a
+              href={meta.fiscalSponsor.href}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold"
+            >
+              {meta.fiscalSponsor.name}
+            </a>.
           </p>
         </div>
         <FooterColumn title="Program" items={[
@@ -39,7 +45,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="container-gutter flex flex-col gap-3 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <span>
-            &copy; {year} The Synapse. Fiscal sponsor TBD by the organizing committee.
+            &copy; {year} The Synapse. Hosted by {meta.fiscalSponsor.name}.
           </span>
           <span className="font-mono tracking-wider">
             {meta.dates.display} &middot; {meta.city}

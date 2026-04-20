@@ -16,7 +16,7 @@ const CONFIGS: Record<Exclude<DonationProviderKind, "stripe" | "none">, EmbedCon
     name: "donorbox",
     label: "Donorbox",
     blurbFor: () =>
-      "Donations are handled by Donorbox. Your receipt will be issued by the fiscal sponsor the committee is finalizing.",
+      "Donations are handled by Donorbox. Your receipt is issued by Applied Love Labs, our host and fiscal sponsor.",
   },
   patreon: {
     name: "patreon",
@@ -28,7 +28,7 @@ const CONFIGS: Record<Exclude<DonationProviderKind, "stripe" | "none">, EmbedCon
     name: "paypal",
     label: "PayPal",
     blurbFor: () =>
-      "Donations are processed by PayPal. PayPal sends the receipt; the chosen fiscal sponsor (TBD) receives the funds.",
+      "Donations are processed by PayPal. PayPal sends the receipt; Applied Love Labs receives the funds.",
   },
 };
 

@@ -47,7 +47,7 @@ export default function RegisterPage() {
             <p className="text-sm text-pretty text-muted-foreground">
               Doctoral researchers and early-career practitioners without
               institutional support can indicate interest in a travel grant.
-              Funded through the fiscal sponsor the committee is finalizing.
+              Funded through Applied Love Labs.
             </p>
           </section>
         </aside>

@@ -5,7 +5,7 @@ import { meta } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Support the convening",
-  description: "Donations will fund travel grants, access accommodations, and the mentor-matching program. Fiscal sponsor and allocation percentages are placeholders while the committee finalizes both.",
+  description: "Donations flow through Applied Love Labs, our host and fiscal sponsor. Funding categories and allocation percentages are placeholders while the committee finalizes priorities.",
 };
 
 export default function DonatePage() {
@@ -23,7 +23,7 @@ export default function DonatePage() {
           donated will be ring-fenced from operating costs.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
-          The fiscal sponsor is a placeholder (<span className="text-ink">{meta.fiscalSponsor.name}</span>) while the committee finalizes a 501(c)(3) partnership; the chosen sponsor will issue your tax receipt. {provider.blurb}
+          Gifts flow through <span className="text-ink">{meta.fiscalSponsor.name}</span>, our host and fiscal sponsor; receipts are issued in ALL's name. {provider.blurb}
         </p>
       </header>
 
@@ -39,17 +39,15 @@ export default function DonatePage() {
             </ul>
             <p className="mt-5 text-xs text-muted-foreground">
               Categories and percentages are placeholders the committee
-              will confirm; funds will flow through the chosen fiscal
-              sponsor.
+              will confirm. Funds flow through Applied Love Labs.
             </p>
           </section>
           <section className="paper p-6">
             <h2 className="eyebrow mb-3 text-muted-foreground">Transparency</h2>
             <p className="text-sm text-pretty text-muted-foreground">
-              Financial reporting will be published through the chosen
-              fiscal sponsor once the partnership is finalized. The
-              committee is also deciding between several donation
-              platforms; the active backend here is{" "}
+              Financial reporting is published through Applied Love Labs
+              and reviewed annually. The committee is still selecting
+              a donation platform; the active backend here is{" "}
               <span className="font-mono text-ink">{provider.label}</span>.
             </p>
           </section>

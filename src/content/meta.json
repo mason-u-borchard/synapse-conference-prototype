@@ -7,17 +7,17 @@
   "venue": "Venue TBD -- Atlanta confirmed",
   "capacity": 300,
   "fiscalSponsor": {
-    "name": "Fiscal sponsor TBD",
-    "short": "TBD",
-    "href": "#",
-    "blurb": "The fiscal sponsor shown here is a placeholder while the committee finalizes a 501(c)(3) partnership. The chosen sponsor will hold donated funds and issue tax-deductible receipts in its own name."
+    "name": "Applied Love Labs",
+    "short": "ALL",
+    "href": "https://appliedlovelabs.org",
+    "blurb": "The Synapse is hosted by Applied Love Labs / TILT. Charitable contributions flow through ALL, which issues tax-deductible receipts in its own name."
   },
-  "mission": "The Synapse convenes women working at the edge of consciousness research, cognitive science, and machine intelligence. We gather to interrogate what these fields mean together -- not as a survey, but as a working conversation that gives early-career researchers a seat at the same table as senior scholars.",
+  "mission": "The Synapse convenes women working at the edges of consciousness research, cognitive neuroscience, philosophy of mind, and machine intelligence. We gather not to perform expertise but to think together -- a small, invitation-shaped conversation where early-career researchers sit at the same table as senior scholars.",
   "principles": [
-    { "title": "Principle 1", "body": "Placeholder -- the committee will state the convening's first guiding principle here." },
-    { "title": "Principle 2", "body": "Placeholder -- the committee will state the second guiding principle here." },
-    { "title": "Principle 3", "body": "Placeholder -- the committee will state the third guiding principle here." },
-    { "title": "Principle 4", "body": "Placeholder -- the committee will state the fourth guiding principle here." }
+    { "title": "Principle 1", "body": "Placeholder -- the committee will state the convening's first guiding principle here (e.g., engagement over performance)." },
+    { "title": "Principle 2", "body": "Placeholder -- the committee will state the second guiding principle here (e.g., mentorship as the point, not an add-on)." },
+    { "title": "Principle 3", "body": "Placeholder -- the committee will state the third guiding principle here (e.g., access as architecture, not accommodation)." },
+    { "title": "Principle 4", "body": "Placeholder -- the committee will state the fourth guiding principle here (e.g., rigor with love)." }
   ],
-  "placeholderNote": "Venue, registration rates, speaker roster, and fiscal sponsor are placeholders -- see CONTENT_PLACEHOLDER.md. The committee owns final content."
+  "placeholderNote": "Venue, registration rates, participant roster, and principles copy are placeholders -- see CONTENT_PLACEHOLDER.md. Applied Love Labs is confirmed as the host / fiscal sponsor; Atlanta October 9-11 2026 is confirmed."
 }

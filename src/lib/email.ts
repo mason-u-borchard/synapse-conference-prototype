@@ -39,7 +39,7 @@ function renderConfirmationHtml({ fullName, confirmationId }: { fullName: string
       <h1 style="font-size: 30px; line-height: 1.1; margin-top: 16px;">You're on the list, ${escapeHtml(fullName)}.</h1>
       <p style="font-size: 16px; line-height: 1.6;">Thank you for registering. We'll send program logistics and the venue map before the conference. If you flagged access needs or a grant application, the relevant lead will reach out within 72 hours.</p>
       <p style="font-family: monospace; color: #6b5a70; font-size: 12px; margin-top: 28px;">Confirmation: ${confirmationId}</p>
-      <p style="font-size: 14px; color: #6b5a70; margin-top: 32px;">${meta.dates.display} &middot; ${meta.city}</p>
+      <p style="font-size: 14px; color: #6b5a70; margin-top: 32px;">${meta.dates.display} &middot; ${meta.city} &middot; Hosted by ${meta.fiscalSponsor.name}</p>
     </div>
   </body></html>
   `;
@@ -52,7 +52,8 @@ Thank you for registering for ${meta.name} ${meta.edition} in ${meta.city}.
 
 Confirmation: ${confirmationId}
 
-${meta.dates.display} -- ${meta.city}`;
+${meta.dates.display} -- ${meta.city}
+Hosted by ${meta.fiscalSponsor.name}`;
 }
 
 function escapeHtml(str: string): string {

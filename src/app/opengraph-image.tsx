@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
             Where women connect mind, machine, and what comes next.
           </div>
           <div style={{ display: "flex", fontSize: 28, color: "#4a3a52", fontFamily: "sans-serif", maxWidth: 900 }}>
-            {meta.dates.display} &middot; {meta.city}
+            {meta.dates.display} &middot; {meta.city} &middot; Hosted by {meta.fiscalSponsor.name}
           </div>
         </div>
       </div>

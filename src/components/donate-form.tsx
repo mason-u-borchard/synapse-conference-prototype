@@ -36,9 +36,8 @@ function EmbedDonateCard({ providerLabel, embedUrl }: { providerLabel: string; e
       <p className="eyebrow text-muted-foreground">Via {providerLabel}</p>
       <p className="text-lg text-pretty text-muted-foreground">
         The committee has chosen {providerLabel} as the donation platform.
-        Donations are processed on their site; your receipt will arrive
-        from the chosen fiscal sponsor once the 501(c)(3) partnership is
-        finalized.
+        Donations are processed on their site; your receipt arrives from
+        Applied Love Labs, our host and fiscal sponsor.
       </p>
       {embedUrl ? (
         <a href={embedUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
@@ -59,9 +58,9 @@ function PausedDonateCard() {
     <section className="paper space-y-5 p-8">
       <p className="eyebrow text-muted-foreground">Donations are paused</p>
       <p className="text-lg text-pretty text-muted-foreground">
-        The donation backend and fiscal sponsor are both being finalized
-        by the committee. Reach the committee directly to pledge support
-        in the meantime.
+        The donation backend is being finalized; Applied Love Labs will
+        hold received funds. Reach the committee directly to pledge
+        support in the meantime.
       </p>
       <a href="mailto:hello@thesynapse.example" className="btn btn-ghost">Email the committee</a>
     </section>
@@ -183,7 +182,7 @@ function StripeStyleForm({ providerLabel }: { providerLabel: string }) {
       </button>
 
       <p className="text-xs text-muted-foreground">
-        Donations will flow through the chosen fiscal sponsor (TBD). Card details never touch our servers.
+        Donations flow through Applied Love Labs. Card details never touch our servers.
       </p>
     </form>
   );
