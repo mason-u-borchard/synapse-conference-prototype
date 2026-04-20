@@ -6,7 +6,7 @@ test.describe("critical flows", () => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText(/Where women connect/);
     await page.getByRole("link", { name: /^Register/i }).first().click();
     await expect(page).toHaveURL(/\/register$/);
-    await expect(page.getByRole("heading", { name: /Claim your seat/ })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });
 
   test("speakers page opens a detail page with abstract", async ({ page }) => {

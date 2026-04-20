@@ -14,7 +14,7 @@ export default function DonatePage() {
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">Donate</p>
-        <h1 className="text-display-lg text-balance">Hold the door open for someone else.</h1>
+        <h1 className="text-display-lg text-balance">[Placeholder — replace with a concrete statement of what donor dollars do that registration fees cannot: e.g., underwrite the first ten travel grants for non-R1 doctoral researchers; fund CART captioning across all rooms.]</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
           Donations will support parts of the convening that registration
           fees cannot cover. The specific funding categories are

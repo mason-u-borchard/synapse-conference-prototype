@@ -100,14 +100,14 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Day one, early" heading="A program that respects your attention." lede="Sessions are built to be attended, not scanned. The full, filterable schedule lives on the /schedule page.">
+      <Section eyebrow="Day one, early" heading="[Placeholder — replace with the programming principle the committee wants this schedule to prove out: e.g., no parallel tracks in the opening slot, plenary-then-workshop cadence, poster sessions protected from being scheduled against keynotes.]" lede="The full, filterable schedule lives on the /schedule page.">
         <ScheduleGlance items={openers} />
         <div className="mt-8">
           <Link href="/schedule" className="btn btn-ghost">Full schedule<ArrowRight /></Link>
         </div>
       </Section>
 
-      <Section tone="raised" eyebrow="Questions, briefly answered" heading="Logistics without the maze.">
+      <Section tone="raised" eyebrow="Questions, briefly answered" heading="[Placeholder — replace with the committee's one-line stance on logistics: what specifically is easier or cheaper here than at comparable conferences (single form covers access; no grad-student surcharge; travel grants decided before early-bird closes).]">
         <FaqPreview items={openFaq} />
         <div className="mt-8">
           <Link href="/faq" className="btn btn-ghost">All FAQ<ArrowRight /></Link>

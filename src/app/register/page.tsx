@@ -11,11 +11,10 @@ export default function RegisterPage() {
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">Register</p>
-        <h1 className="text-display-lg text-balance">Claim your seat.</h1>
+        <h1 className="text-display-lg text-balance">[Placeholder — replace with the one-line promise about the registration experience: what the form handles in one pass that usually takes three.]</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
           The form below is how everything gets handled -- tier, access,
-          travel grants, waiver requests, and mentor matching. It asks the
-          questions you want asked and none of the ones you don't.
+          travel grants, waiver requests, and mentor matching.
         </p>
         <p className="mt-3 text-xs text-muted-foreground">
           Registration opens in late spring 2026. Submitting now adds you to
