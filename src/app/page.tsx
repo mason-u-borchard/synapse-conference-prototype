@@ -1,9 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { meta, schedule, faq } from "@/lib/content";
+import { meta, faq } from "@/lib/content";
 import { Section } from "@/components/section";
 import { SynapseField } from "@/components/synapse-field";
-import { ScheduleGlance } from "@/components/schedule-glance";
 import { PrinciplesGrid } from "@/components/principles-grid";
 import { FaqPreview } from "@/components/faq-preview";
 import { FieldsGrid } from "@/components/fields-grid";
@@ -15,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const openers = schedule.filter((s) => s.day === 1 && s.kind !== "break").slice(0, 4);
   const openFaq = faq.slice(0, 4);
 
   return (
@@ -49,7 +47,7 @@ export default function HomePage() {
               className="btn px-8 py-3 text-base font-medium text-[#1e0e22] shadow-[0_1px_0_hsl(var(--gold-deep)/0.8),0_14px_40px_-18px_hsl(var(--gold)/0.8)]"
               style={{ backgroundColor: "hsl(var(--gold))", borderColor: "hsl(var(--gold-deep) / 0.8)" }}
             >
-              Apply to attend
+              Apply to Participate
               <ArrowRight />
             </Link>
             <Link href="/donate" className="btn btn-ghost">Become a funding partner</Link>
@@ -92,19 +90,29 @@ export default function HomePage() {
         <FieldsGrid />
       </Section>
 
-      <Section id="ethos" tone="raised" eyebrow="Our ethos" heading="Power without permission. Rigor with love." lede="Six principles that shape how we invite, schedule, host, and close the days.">
+      <Section id="ethos" tone="raised" eyebrow="Our ethos" heading="Power without permission. Rigor with love." lede="The principles that shape how we invite, schedule, host, and close the days.">
         <PrinciplesGrid />
       </Section>
 
-      <Section id="program" eyebrow="What to expect" heading="Three days. A deliberate arc." lede="Each day moves through the same four phases -- Embody, Encounter, Imagine, Create -- but the weight shifts deliberately as the conference progresses. Day 1 opens perception. Day 2 builds frameworks. Day 3 makes things. A provisional arc. Exact sessions, speakers, and format will be shaped with the community in the months ahead.">
-        <ScheduleGlance items={openers} />
-        <div className="mt-8">
+      <Section id="program" eyebrow="What to expect" heading="Three days. A deliberate arc." lede="Each day moves through the same four phases -- Embody, Encounter, Imagine, Create -- but the weight shifts deliberately as the conference progresses. Day 1 opens perception. Day 2 builds frameworks. Day 3 makes things. A provisional arc; exact sessions, speakers, and format will be shaped with the community in the months ahead.">
+        <div className="mt-2">
           <Link href="/schedule" className="btn btn-ghost">The full arc<ArrowRight /></Link>
         </div>
       </Section>
 
       <Section id="who" tone="raised" eyebrow="Who it's for" heading="For the women building at the edges.">
         <WhoItsFor />
+      </Section>
+
+      <Section id="apply" eyebrow="Apply" heading="A curated group of 75.">
+        <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+          <p>We are convening a curated group of 75 participants.</p>
+          <p>Most attendees are invited. A limited number of additional places are held for individuals whose perspectives will expand and deepen the room.</p>
+          <p>Participation is intentionally selected to support a high-trust, high-contribution environment.</p>
+        </div>
+        <div className="mt-10">
+          <Link href="/register" className="btn btn-primary">Apply to Participate<ArrowRight /></Link>
+        </div>
       </Section>
 
       <Section tone="raised" eyebrow="Questions, briefly answered" heading="Logistics without the maze.">
@@ -133,7 +141,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/donate" className="btn btn-primary">Fund the work</Link>
-            <Link href="/register" className="btn btn-ghost">Apply to attend</Link>
+            <Link href="/register" className="btn btn-ghost">Apply to Participate</Link>
           </div>
         </div>
       </Section>

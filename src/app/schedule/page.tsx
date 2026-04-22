@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { schedule, speakers, meta } from "@/lib/content";
-import { ScheduleExplorer } from "@/components/schedule-explorer";
+import { meta } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Three days. A deliberate arc.",
@@ -70,16 +69,10 @@ export default function SchedulePage() {
         </ol>
       </section>
 
-      <section className="mt-section" aria-labelledby="detail-heading">
-        <h2 id="detail-heading" className="eyebrow mb-4 text-muted-foreground">Session detail (placeholder)</h2>
-        <p className="mb-8 max-w-prose text-sm text-muted-foreground">
-          An indicative grid of sessions, included for committee review.
-          All session titles are generic (Keynote 1, Talk 1, Workshop 1,
-          etc.) and the parallel-track structure will likely simplify
-          once the final format is set.
-        </p>
-        <ScheduleExplorer sessions={schedule} speakers={speakers} />
-      </section>
+      <p className="mt-14 max-w-prose text-sm text-muted-foreground">
+        Session titles, times, speaker slots, and tracks will be published
+        once the Program team finalizes the arc.
+      </p>
     </div>
   );
 }

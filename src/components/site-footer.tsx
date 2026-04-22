@@ -33,9 +33,8 @@ export function SiteFooter() {
           { label: "FAQ", href: "/faq" },
         ]} />
         <FooterColumn title="Get involved" items={[
-          { label: "Apply to attend", href: "/register" },
+          { label: "Apply to Participate", href: "/register" },
           { label: "Fund the work", href: "/donate" },
-          { label: "Access form", href: "/register#access" },
         ]} />
         <FooterColumn title="Reach us" items={[
           { label: "hello@thesynapse.example", href: "mailto:hello@thesynapse.example" },

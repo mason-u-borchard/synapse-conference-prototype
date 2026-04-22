@@ -2,7 +2,7 @@ import { meta } from "@/lib/content";
 
 export function PrinciplesGrid() {
   return (
-    <ol className="grid gap-6 md:grid-cols-2 md:gap-8">
+    <ol className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
       {meta.principles.map((principle, idx) => (
         <li key={principle.title} className="paper relative flex flex-col p-7">
           <span className="eyebrow absolute left-7 top-6 text-muted-foreground">0{idx + 1}</span>

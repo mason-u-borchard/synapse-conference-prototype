@@ -192,7 +192,7 @@ export function RegisterForm() {
 
       <div className="flex items-center gap-4">
         <button type="submit" className="btn btn-primary" disabled={status.kind === "submitting"}>
-          {status.kind === "submitting" ? (<><Spinner /> Sending</>) : <>Register</>}
+          {status.kind === "submitting" ? (<><Spinner /> Sending</>) : <>Submit application</>}
         </button>
         <p className="text-xs text-muted-foreground">
           We send a single confirmation email. No newsletters, no share-backs.

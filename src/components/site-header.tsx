@@ -76,7 +76,7 @@ export function SiteHeader() {
           >
             {theme === "light" ? <MoonIcon /> : <SunIcon />}
           </button>
-          <Link href="/register" className="hidden md:inline-flex btn btn-primary">Apply to attend</Link>
+          <Link href="/register" className="hidden md:inline-flex btn btn-primary">Apply to Participate</Link>
           <button
             type="button"
             className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-border"
@@ -104,7 +104,7 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/register" className="btn btn-primary mt-2 w-full">Apply to attend</Link>
+            <Link href="/register" className="btn btn-primary mt-2 w-full">Apply to Participate</Link>
           </nav>
         </div>
       )}

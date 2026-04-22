@@ -34,9 +34,8 @@ describe("content integrity", () => {
     expect(sponsors.length).toBeGreaterThanOrEqual(3);
   });
 
-  it("schedule spans three days", () => {
-    const days = new Set(schedule.map((s) => s.day));
-    expect(days).toEqual(new Set([1, 2, 3]));
+  it("schedule is empty while the Program team finalizes the arc", () => {
+    expect(schedule.length).toBe(0);
   });
 
   it("Atlanta is the declared city and Applied Love Labs is the host", () => {
