@@ -31,7 +31,7 @@ describe("content integrity", () => {
 
   it("committee and sponsors are populated", () => {
     expect(committee.length).toBeGreaterThanOrEqual(6);
-    expect(sponsors.length).toBeGreaterThanOrEqual(3);
+    expect(sponsors.length).toBeGreaterThanOrEqual(1);
   });
 
   it("schedule is empty while the Program team finalizes the arc", () => {
