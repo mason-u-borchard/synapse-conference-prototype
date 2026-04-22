@@ -23,16 +23,26 @@ env-var change plus (for a brand new backend) one new file.
 
 Set `DONATION_PROVIDER` in `.env.local` / Vercel:
 
-| Value      | What it does                                                        |
-|------------|---------------------------------------------------------------------|
-| `stripe`   | Default. Uses `STRIPE_SECRET_KEY` + Checkout Sessions.              |
-| `donorbox` | Sends supporters to a Donorbox-hosted form at `DONATION_EMBED_URL`. |
-| `patreon`  | Sends supporters to a Patreon tier page at `DONATION_EMBED_URL`.    |
-| `paypal`   | Sends supporters to a PayPal donation link at `DONATION_EMBED_URL`. |
-| `none`     | Donation paused; UI explains the state.                             |
+| Value       | What it does                                                                           |
+|-------------|----------------------------------------------------------------------------------------|
+| `virtuous`  | Committee's chosen platform via ALL. Renders the Virtuous form inline via JS embed.    |
+| `stripe`    | API-driven direct. Uses `STRIPE_SECRET_KEY` + Checkout Sessions.                       |
+| `donorbox`  | Sends supporters to a Donorbox-hosted form at `DONATION_EMBED_URL`.                    |
+| `patreon`   | Sends supporters to a Patreon tier page at `DONATION_EMBED_URL`.                       |
+| `paypal`    | Sends supporters to a PayPal donation link at `DONATION_EMBED_URL`.                    |
+| `none`      | Donation paused; UI explains the state.                                                |
 
-For embed providers (`donorbox`, `patreon`, `paypal`), the donate page
-stops contacting `/api/donate` entirely and just renders a styled
+The **Virtuous** provider is the live one. It reads
+`NEXT_PUBLIC_VIRTUOUS_FORM_ID` and `NEXT_PUBLIC_VIRTUOUS_ORG_ID` (both
+have safe defaults baked in -- override only if ALL rotates the form).
+The donate page inserts a `<script src=cdn.virtuoussoftware.com/...>`
+into a container div on client-side hydration; Virtuous takes over and
+renders the form inline. Funds land in the ALL Stripe account under
+the hood; receipts come from ALL. CSP allowlists the virtuoussoftware
+and virtuousapi domains in `next.config.js`.
+
+For URL-embed providers (`donorbox`, `patreon`, `paypal`), the donate
+page stops contacting `/api/donate` entirely and just renders a styled
 link to the `DONATION_EMBED_URL`. No code changes needed.
 
 ## Adding a brand new provider

@@ -1,9 +1,10 @@
 import type { DonationProvider, DonationProviderKind } from "./types";
 import { stripeProvider } from "./stripe";
 import { makeEmbedProvider } from "./embed";
+import { makeVirtuousProvider } from "./virtuous";
 import { noneProvider } from "./none";
 
-const VALID: readonly DonationProviderKind[] = ["stripe", "paypal", "patreon", "donorbox", "none"];
+const VALID: readonly DonationProviderKind[] = ["stripe", "paypal", "patreon", "donorbox", "virtuous", "none"];
 
 function parseProvider(raw: string | undefined): DonationProviderKind {
   const lower = (raw ?? "stripe").trim().toLowerCase() as DonationProviderKind;
@@ -31,6 +32,8 @@ export function getDonationProvider(): DonationProvider {
     case "patreon":
     case "paypal":
       return makeEmbedProvider(kind);
+    case "virtuous":
+      return makeVirtuousProvider();
     case "none":
       return noneProvider;
   }

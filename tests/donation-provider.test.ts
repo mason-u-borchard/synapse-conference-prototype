@@ -8,15 +8,21 @@ function reload() {
 describe("donation provider selection", () => {
   const originalProvider = process.env.DONATION_PROVIDER;
   const originalEmbedUrl = process.env.DONATION_EMBED_URL;
+  const originalVformId = process.env.NEXT_PUBLIC_VIRTUOUS_FORM_ID;
+  const originalOrgId = process.env.NEXT_PUBLIC_VIRTUOUS_ORG_ID;
 
   beforeEach(() => {
     delete process.env.DONATION_PROVIDER;
     delete process.env.DONATION_EMBED_URL;
+    delete process.env.NEXT_PUBLIC_VIRTUOUS_FORM_ID;
+    delete process.env.NEXT_PUBLIC_VIRTUOUS_ORG_ID;
   });
 
   afterEach(() => {
     process.env.DONATION_PROVIDER = originalProvider;
     process.env.DONATION_EMBED_URL = originalEmbedUrl;
+    process.env.NEXT_PUBLIC_VIRTUOUS_FORM_ID = originalVformId;
+    process.env.NEXT_PUBLIC_VIRTUOUS_ORG_ID = originalOrgId;
   });
 
   it("defaults to Stripe when DONATION_PROVIDER is unset", async () => {
@@ -50,6 +56,26 @@ describe("donation provider selection", () => {
     const p = getDonationProvider();
     expect(p.name).toBe("paypal");
     expect(p.embedOnly).toBe(true);
+  });
+
+  it("accepts virtuous as an inline-script embed provider", async () => {
+    process.env.DONATION_PROVIDER = "virtuous";
+    const { getDonationProvider } = await reload();
+    const p = getDonationProvider();
+    expect(p.name).toBe("virtuous");
+    expect(p.embedOnly).toBe(true);
+    expect(p.virtuous?.vformId).toMatch(/[0-9A-F-]{36}/i);
+    expect(p.virtuous?.orgId).toBeTruthy();
+  });
+
+  it("virtuous provider reads env overrides for the form and org ids", async () => {
+    process.env.DONATION_PROVIDER = "virtuous";
+    process.env.NEXT_PUBLIC_VIRTUOUS_FORM_ID = "11111111-2222-3333-4444-555555555555";
+    process.env.NEXT_PUBLIC_VIRTUOUS_ORG_ID = "9999";
+    const { getDonationProvider } = await reload();
+    const p = getDonationProvider();
+    expect(p.virtuous?.vformId).toBe("11111111-2222-3333-4444-555555555555");
+    expect(p.virtuous?.orgId).toBe("9999");
   });
 
   it("supports a 'none' state when donations are paused", async () => {
