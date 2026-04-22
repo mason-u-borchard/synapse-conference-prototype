@@ -248,7 +248,7 @@ function OfflineBanner() {
   return (
     <div className="rounded-card border border-border bg-surface-raised px-4 py-3 text-pretty text-muted-foreground">
       Ava is offline in this environment -- no model provider key is set. Email{" "}
-      <a href="mailto:hello@thesynapse.example" className="underline decoration-gold/60 decoration-2 underline-offset-2">
+      <a href="mailto:hello@thesynapse.example" className="underline decoration-gold-deep decoration-2 underline-offset-2 link-glow">
         hello@thesynapse.example
       </a>{" "}instead.
     </div>

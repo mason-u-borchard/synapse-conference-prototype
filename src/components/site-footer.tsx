@@ -19,7 +19,7 @@ export function SiteFooter() {
               href={meta.fiscalSponsor.href}
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold"
+              className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow"
             >
               {meta.fiscalSponsor.name}
             </a>.

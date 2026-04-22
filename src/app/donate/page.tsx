@@ -25,7 +25,7 @@ export default function DonatePage() {
           can afford to be.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
-          Gifts flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="text-ink underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">{meta.fiscalSponsor.name}</a>; receipts are issued in ALL's name. {provider.blurb}
+          Gifts flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">{meta.fiscalSponsor.name}</a>; receipts are issued in ALL's name. {provider.blurb}
         </p>
       </header>
 
@@ -45,7 +45,7 @@ export default function DonatePage() {
             </ul>
             <p className="mt-5 text-xs text-muted-foreground">
               Percentages are an illustrative split the committee will
-              refine. Funds flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">{meta.fiscalSponsor.name}</a>.
+              refine. Funds flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">{meta.fiscalSponsor.name}</a>.
             </p>
           </section>
           <section className="paper p-6">

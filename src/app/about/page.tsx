@@ -97,7 +97,7 @@ export default function AboutPage() {
         <h2 className="text-display-md">Partners</h2>
         <p className="mt-4 max-w-prose text-muted-foreground text-pretty">
           Partnership here means alignment with the ethos -- not
-          transaction. <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a> presents the gathering as host
+          transaction. <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a> presents the gathering as host
           and fiscal sponsor.
         </p>
         <SponsorTier title="Presenting" rows={tiers.presenting} />
@@ -123,7 +123,7 @@ export default function AboutPage() {
         <p className="mt-4 text-pretty text-muted-foreground">
           For media passes, speaker interviews, or the official press kit,
           reach the organizing committee at{" "}
-          <a href="mailto:press@thesynapse.example" className="text-ink underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">
+          <a href="mailto:press@thesynapse.example" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
             press@thesynapse.example
           </a>.
         </p>

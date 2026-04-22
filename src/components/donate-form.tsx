@@ -38,7 +38,7 @@ function EmbedDonateCard({ providerLabel, embedUrl }: { providerLabel: string; e
       <p className="text-lg text-pretty text-muted-foreground">
         The committee has chosen {providerLabel} as the donation platform.
         Donations are processed on their site; your receipt arrives from{" "}
-        <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a>, our host and fiscal sponsor.
+        <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a>, our host and fiscal sponsor.
       </p>
       {embedUrl ? (
         <a href={embedUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
@@ -60,7 +60,7 @@ function PausedDonateCard() {
       <p className="eyebrow text-muted-foreground">Donations are paused</p>
       <p className="text-lg text-pretty text-muted-foreground">
         The donation backend is being finalized;{" "}
-        <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a> will
+        <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a> will
         hold received funds. Reach the committee directly to pledge
         support in the meantime.
       </p>
@@ -184,7 +184,7 @@ function StripeStyleForm({ providerLabel }: { providerLabel: string }) {
       </button>
 
       <p className="text-xs text-muted-foreground">
-        Donations flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a>. Card details never touch our servers.
+        Donations flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a>. Card details never touch our servers.
       </p>
     </form>
   );

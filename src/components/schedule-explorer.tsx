@@ -86,7 +86,7 @@ export function ScheduleExplorer({ sessions, speakers }: { sessions: readonly Se
                   <p className="mt-2 text-sm">
                     {presenters.map((p, i) => (
                       <span key={p.slug}>
-                        <Link href={`/speakers/${p.slug}`} className="text-ink underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">
+                        <Link href={`/speakers/${p.slug}`} className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
                           {p.name}
                         </Link>
                         {i < presenters.length - 1 && ", "}

@@ -54,7 +54,7 @@ export default function HomePage() {
             <Link href="/#program" className="btn btn-ghost">The arc</Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            An initiative of <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a>. Gifts are tax-deductible through ALL and ring-fenced from operating costs.
+            An initiative of <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a>. Gifts are tax-deductible through ALL and ring-fenced from operating costs.
           </p>
           <dl className="mt-16 grid max-w-2xl grid-cols-2 gap-6 text-sm md:grid-cols-4">
             <HeroStat label="When" value={meta.dates.display} />
@@ -136,7 +136,7 @@ export default function HomePage() {
               can afford to be.
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
-              Gifts are tax-deductible through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">{meta.fiscalSponsor.name}</a> and ring-fenced from operating costs.
+              Gifts are tax-deductible through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">{meta.fiscalSponsor.name}</a> and ring-fenced from operating costs.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

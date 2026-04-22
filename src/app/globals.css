@@ -23,7 +23,7 @@
 
     /* Neural gradient anchors, with a peach warming it toward Atlanta light */
     --synapse-cyan: 185 68% 58%;
-    --synapse-magenta: 322 65% 60%;
+    --synapse-magenta: 322 65% 44%;
     --synapse-plum: 284 50% 42%;
     --synapse-peach: 18 78% 72%;
 
@@ -31,7 +31,7 @@
     --surface: 40 38% 97%;
     --surface-raised: 38 45% 94%;
     --border: 292 16% 84%;
-    --border-strong: 292 18% 68%;
+    --border-strong: 292 18% 55%;
     --muted: 36 24% 90%;
     --muted-foreground: 290 10% 38%;
 
@@ -148,6 +148,18 @@
 
   .link-marker:hover {
     background-size: 100% 110%;
+  }
+
+  .link-glow {
+    transition: text-shadow 260ms var(--ease-out-expo),
+      text-decoration-thickness 220ms var(--ease-out-expo);
+  }
+
+  .link-glow:hover {
+    text-shadow:
+      0 0 8px hsl(var(--gold) / 0.6),
+      0 0 22px hsl(var(--gold) / 0.28);
+    text-decoration-thickness: 3px;
   }
 
   .neural-gradient {

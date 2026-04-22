@@ -94,7 +94,7 @@ export default function SpeakerPage({ params }: PageProps) {
             <ul className="space-y-2 text-sm">
               {speaker.links.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="inline-flex items-center gap-1.5 text-ink underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold" target="_blank" rel="noreferrer">
+                  <a href={l.href} className="inline-flex items-center gap-1.5 text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow" target="_blank" rel="noreferrer">
                     {l.label} <span aria-hidden="true">&nearr;</span>
                   </a>
                 </li>

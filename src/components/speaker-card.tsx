@@ -16,7 +16,7 @@ export function SpeakerCard({ speaker }: Props) {
       className="group paper flex flex-col gap-3 p-6 transition-colors hover:border-border-strong"
     >
       <p className="eyebrow text-muted-foreground">{speaker.affiliation}</p>
-      <h3 className="font-serif text-xl tracking-tight text-ink group-hover:underline decoration-gold/50 decoration-2 underline-offset-4">
+      <h3 className="font-serif text-xl tracking-tight text-ink group-hover:underline decoration-gold-deep decoration-2 underline-offset-4">
         {speaker.name}
       </h3>
       <p className="text-sm text-muted-foreground">{speaker.title}</p>
