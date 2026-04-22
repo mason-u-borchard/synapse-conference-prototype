@@ -17,7 +17,8 @@ export default function AboutPage() {
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">About</p>
-        <h1 className="text-display-lg text-balance">[Placeholder — replace with the one-line governance stance: who the committee is accountable to and what that changes about how the event is run.]</h1>
+{/* #PLACEHOLDER */}
+        <h1 className="text-display-lg text-balance">A working committee accountable to the participants and the work itself -- not to funders, institutions, or optics.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">{meta.mission}</p>
       </header>
 
