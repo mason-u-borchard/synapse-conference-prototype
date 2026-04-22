@@ -96,11 +96,9 @@ export default function AboutPage() {
       <section id="partners" className="mt-24">
         <h2 className="text-display-md">Partners</h2>
         <p className="mt-4 max-w-prose text-muted-foreground text-pretty">
-          Sponsor tiers mirror how the committee thinks about partnership:
-          presenting (the fiscal sponsor), supporting (mission-aligned
-          funders), and community (local and in-kind partners). Every
-          partner listed below is a numbered placeholder until the
-          committee confirms commitments.
+          Partnership here means alignment with the ethos -- not
+          transaction. Applied Love Labs presents the gathering as host
+          and fiscal sponsor.
         </p>
         <SponsorTier title="Presenting" rows={tiers.presenting} />
         <SponsorTier title="Supporting" rows={tiers.supporting} />

@@ -1,8 +1,3 @@
 [
-  { "name": "Applied Love Labs", "tier": "presenting", "blurb": "Host and fiscal sponsor. Charitable contributions flow through ALL / TILT; tax-deductible receipts are issued in ALL's name.", "href": "https://appliedlovelabs.org", "initials": "ALL" },
-  { "name": "Supporting partner 1", "tier": "supporting", "blurb": "Placeholder for a mission-aligned funder -- typically a research foundation, academic institute, or endowment. The committee will fill this slot once a commitment is signed. [PLACEHOLDER]", "href": "#", "initials": "S1" },
-  { "name": "Supporting partner 2", "tier": "supporting", "blurb": "Placeholder for a second mission-aligned funder or institutional partner. The committee will fill this slot once a commitment is signed. [PLACEHOLDER]", "href": "#", "initials": "S2" },
-  { "name": "Community partner 1", "tier": "community", "blurb": "Placeholder for a local Atlanta venue, university, or civic partner. The committee will fill this slot once arrangements are made. [PLACEHOLDER]", "href": "#", "initials": "C1" },
-  { "name": "Community partner 2", "tier": "community", "blurb": "Placeholder for an in-kind partner -- captioning, AV, catering, or similar. The committee will fill this slot once arrangements are made. [PLACEHOLDER]", "href": "#", "initials": "C2" },
-  { "name": "Community partner 3", "tier": "community", "blurb": "Placeholder for a media, publication, or community organization partner. The committee will fill this slot once arrangements are made. [PLACEHOLDER]", "href": "#", "initials": "C3" }
+  { "name": "Applied Love Labs", "tier": "presenting", "blurb": "Host and fiscal sponsor. Charitable contributions flow through ALL / TILT; tax-deductible receipts are issued in ALL's name.", "href": "https://appliedlovelabs.org", "initials": "ALL" }
 ]
