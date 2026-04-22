@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { committee, meta, sponsors } from "@/lib/content";
+import { meta, sponsors } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -73,7 +73,8 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section id="committee" className="mt-20">
+      {/* #PLACEHOLDER */}
+      {/* <section id="committee" className="mt-20">
         <h2 className="text-display-md">Organizing committee</h2>
         <p className="mt-4 max-w-prose text-muted-foreground text-pretty">
           The working committee stewards the program, access, ethics, and
@@ -90,7 +91,7 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
 
       <section id="partners" className="mt-24">
         <h2 className="text-display-md">Partners</h2>
