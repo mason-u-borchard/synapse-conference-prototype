@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cx } from "@/lib/cx";
+import { meta } from "@/lib/content";
 
 const presetAmounts = [50, 125, 250, 500] as const;
 type Status =
@@ -36,8 +37,8 @@ function EmbedDonateCard({ providerLabel, embedUrl }: { providerLabel: string; e
       <p className="eyebrow text-muted-foreground">Via {providerLabel}</p>
       <p className="text-lg text-pretty text-muted-foreground">
         The committee has chosen {providerLabel} as the donation platform.
-        Donations are processed on their site; your receipt arrives from
-        Applied Love Labs, our host and fiscal sponsor.
+        Donations are processed on their site; your receipt arrives from{" "}
+        <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a>, our host and fiscal sponsor.
       </p>
       {embedUrl ? (
         <a href={embedUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
@@ -58,7 +59,8 @@ function PausedDonateCard() {
     <section className="paper space-y-5 p-8">
       <p className="eyebrow text-muted-foreground">Donations are paused</p>
       <p className="text-lg text-pretty text-muted-foreground">
-        The donation backend is being finalized; Applied Love Labs will
+        The donation backend is being finalized;{" "}
+        <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a> will
         hold received funds. Reach the committee directly to pledge
         support in the meantime.
       </p>
@@ -182,7 +184,7 @@ function StripeStyleForm({ providerLabel }: { providerLabel: string }) {
       </button>
 
       <p className="text-xs text-muted-foreground">
-        Donations flow through Applied Love Labs. Card details never touch our servers.
+        Donations flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a>. Card details never touch our servers.
       </p>
     </form>
   );

@@ -25,7 +25,7 @@ export default function DonatePage() {
           can afford to be.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
-          Gifts flow through <span className="text-ink">{meta.fiscalSponsor.name}</span>; receipts are issued in ALL's name. {provider.blurb}
+          Gifts flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="text-ink underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">{meta.fiscalSponsor.name}</a>; receipts are issued in ALL's name. {provider.blurb}
         </p>
       </header>
 
@@ -45,13 +45,13 @@ export default function DonatePage() {
             </ul>
             <p className="mt-5 text-xs text-muted-foreground">
               Percentages are an illustrative split the committee will
-              refine. Funds flow through {meta.fiscalSponsor.name}.
+              refine. Funds flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">{meta.fiscalSponsor.name}</a>.
             </p>
           </section>
           <section className="paper p-6">
             <h2 className="eyebrow mb-3 text-muted-foreground">Transparency</h2>
             <p className="text-sm text-pretty text-muted-foreground">
-              Financial reporting is published through Applied Love Labs
+              Financial reporting is published through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a>
               and reviewed annually. The committee is still selecting
               a donation platform; the active backend here is{" "}
               <span className="font-mono text-ink">{provider.label}</span>.

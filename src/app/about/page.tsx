@@ -97,7 +97,7 @@ export default function AboutPage() {
         <h2 className="text-display-md">Partners</h2>
         <p className="mt-4 max-w-prose text-muted-foreground text-pretty">
           Partnership here means alignment with the ethos -- not
-          transaction. Applied Love Labs presents the gathering as host
+          transaction. <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a> presents the gathering as host
           and fiscal sponsor.
         </p>
         <SponsorTier title="Presenting" rows={tiers.presenting} />
