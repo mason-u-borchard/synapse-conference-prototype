@@ -48,6 +48,20 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["framer-motion"],
+    // Ship the committee's current source docs with the /api/chat function
+    // so concierge-prompt.ts can read them at runtime on Vercel. Next's
+    // file tracer can't infer this because the paths are built dynamically.
+    // Keep this list in sync with SOURCE_DOC_FILES in concierge-prompt.ts --
+    // the Marketing & Comms Committee tracker and the Website Copy draft are
+    // deliberately excluded (see the comment on SOURCE_DOC_FILES for why).
+    outputFileTracingIncludes: {
+      "/api/chat": [
+        "./artifacts/Ethic/docs-to-date/ALivingEthic.md",
+        "./artifacts/Ethic/docs-to-date/Synapse_Messaging_Guide.md",
+        "./artifacts/Ethic/docs-to-date/conference_program_arc.docx.md",
+        "./artifacts/Ethic/docs-to-date/The Synapse_ Draft Arc + Modalities.md",
+      ],
+    },
   },
   // Headers are only applied by the Next.js server; static export serves
   // from nginx, which should apply its own CSP/HSTS. Guard so the build
