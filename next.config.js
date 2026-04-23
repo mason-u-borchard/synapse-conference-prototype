@@ -16,9 +16,9 @@ const basePath = rawBasePath.replace(/\/$/, "");
 const cspDirectives = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://cdn.virtuoussoftware.com https://*.virtuoussoftware.com https://js.hcaptcha.com https://*.hcaptcha.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com",
-  "style-src 'self' 'unsafe-inline' https://*.virtuoussoftware.com https://*.hcaptcha.com https://fonts.googleapis.com",
+  "style-src 'self' 'unsafe-inline' https://*.virtuoussoftware.com https://*.hcaptcha.com https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com",
   "img-src 'self' data: blob: https:",
-  "font-src 'self' data: https://fonts.gstatic.com https://*.virtuoussoftware.com",
+  "font-src 'self' data: https://fonts.gstatic.com https://*.virtuoussoftware.com https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com",
   "connect-src 'self' https://api.openai.com https://api.anthropic.com https://api.stripe.com https://*.upstash.io https://sheets.googleapis.com https://*.virtuoussoftware.com https://*.virtuousapi.com https://*.hcaptcha.com https://www.google.com",
   "frame-src 'self' https://js.stripe.com https://hooks.stripe.com https://*.virtuoussoftware.com https://*.hcaptcha.com https://newassets.hcaptcha.com https://www.google.com",
   "frame-ancestors 'self'",
