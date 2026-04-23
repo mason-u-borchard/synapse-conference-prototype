@@ -8,14 +8,19 @@ const basePath = rawBasePath.replace(/\/$/, "");
 // CSP is written with the Vercel AI SDK streaming endpoint in mind plus
 // the Stripe Checkout redirect. When the committee finalizes a donation
 // backend, re-audit the connect-src list below.
+// The Virtuous donation loader pulls in third-party dependencies it needs
+// to render a payment form: hCaptcha (anti-bot, required before submit),
+// Google (reCAPTCHA fallback + gstatic fonts), and jsdelivr / cdnjs for
+// Virtuous's own polyfills. All of these are standard for CRM-hosted
+// donation embeds; dropping any one of them breaks the form in practice.
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://cdn.virtuoussoftware.com https://*.virtuoussoftware.com",
-  "style-src 'self' 'unsafe-inline' https://*.virtuoussoftware.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://cdn.virtuoussoftware.com https://*.virtuoussoftware.com https://js.hcaptcha.com https://*.hcaptcha.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com",
+  "style-src 'self' 'unsafe-inline' https://*.virtuoussoftware.com https://*.hcaptcha.com https://fonts.googleapis.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://fonts.gstatic.com https://*.virtuoussoftware.com",
-  "connect-src 'self' https://api.openai.com https://api.anthropic.com https://api.stripe.com https://*.upstash.io https://sheets.googleapis.com https://*.virtuoussoftware.com https://*.virtuousapi.com",
-  "frame-src 'self' https://js.stripe.com https://hooks.stripe.com https://*.virtuoussoftware.com",
+  "connect-src 'self' https://api.openai.com https://api.anthropic.com https://api.stripe.com https://*.upstash.io https://sheets.googleapis.com https://*.virtuoussoftware.com https://*.virtuousapi.com https://*.hcaptcha.com https://www.google.com",
+  "frame-src 'self' https://js.stripe.com https://hooks.stripe.com https://*.virtuoussoftware.com https://*.hcaptcha.com https://newassets.hcaptcha.com https://www.google.com",
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self' https://*.virtuoussoftware.com",
