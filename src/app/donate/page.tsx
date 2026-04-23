@@ -30,7 +30,7 @@ export default function DonatePage() {
       </header>
 
       <div className="mt-14 grid gap-12 md:grid-cols-[1.4fr_1fr]">
-        <DonateForm providerName={provider.name} providerLabel={provider.label} embedOnly={provider.embedOnly} embedUrl={provider.embedUrl} />
+        <DonateForm providerName={provider.name} providerLabel={provider.label} embedOnly={provider.embedOnly} embedUrl={provider.embedUrl} virtuous={provider.virtuous} />
         <aside className="space-y-8">
           <section className="paper p-6">
             <h2 className="eyebrow mb-4 text-muted-foreground">Working budget</h2>
@@ -48,15 +48,15 @@ export default function DonatePage() {
               refine. Funds flow through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">{meta.fiscalSponsor.name}</a>.
             </p>
           </section>
-          <section className="paper p-6">
+          {/* <section className="paper p-6">
             <h2 className="eyebrow mb-3 text-muted-foreground">Transparency</h2>
             <p className="text-sm text-pretty text-muted-foreground">
-              Financial reporting is published through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold/50 decoration-2 underline-offset-4 hover:decoration-gold">Applied Love Labs</a>
-              and reviewed annually. The committee is still selecting
+            When naming sponsors or partners publicly, clarity on the nature of the relationship is a feature, not a risk. Funders who are aligned will welcome this transparency. Those who aren't are not the right funders.
+              Financial reporting is published through <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a> and reviewed annually. The committee is still selecting
               a donation platform; the active backend here is{" "}
               <span className="font-mono text-ink">{provider.label}</span>.
             </p>
-          </section>
+          </section> */}
         </aside>
       </div>
     </div>

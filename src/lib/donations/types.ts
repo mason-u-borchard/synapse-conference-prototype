@@ -10,6 +10,7 @@ export type DonationProviderKind =
   | "paypal"
   | "patreon"
   | "donorbox"
+  | "virtuous"
   | "none";
 
 export interface DonationCheckoutInput {
@@ -34,6 +35,8 @@ export interface DonationProvider {
   embedOnly: boolean;
   /** The embed URL (Donorbox/Patreon/PayPal) or empty for API-driven providers. */
   embedUrl?: string;
+  /** Virtuous-specific config: the form ID and org ID used to render the inline embed. */
+  virtuous?: { vformId: string; orgId: string };
   /** Create a checkout session (API-driven providers only). */
   createCheckout?: (input: DonationCheckoutInput) => Promise<DonationCheckoutResult>;
 }

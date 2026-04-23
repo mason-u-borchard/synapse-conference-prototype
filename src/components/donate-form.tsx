@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { cx } from "@/lib/cx";
 import { meta } from "@/lib/content";
+import { VirtuousEmbed } from "@/components/virtuous-embed";
 
 const presetAmounts = [50, 125, 250, 500] as const;
 type Status =
@@ -17,11 +18,18 @@ interface Props {
   providerLabel: string;
   embedOnly: boolean;
   embedUrl?: string;
+  virtuous?: { vformId: string; orgId: string };
 }
 
-export function DonateForm({ providerName, providerLabel, embedOnly, embedUrl }: Props) {
-  // For embed providers we just render a link out to their hosted form.
-  // No /api/donate call is made -- see src/lib/donations/README.md.
+export function DonateForm({ providerName, providerLabel, embedOnly, embedUrl, virtuous }: Props) {
+  // Virtuous renders its form inline via a loader script, so it lives
+  // on our page rather than linking out.
+  if (virtuous) {
+    return <VirtuousEmbed vformId={virtuous.vformId} orgId={virtuous.orgId} />;
+  }
+  // For URL-embed providers (Donorbox/Patreon/PayPal) we just render a
+  // link out to their hosted form. No /api/donate call is made -- see
+  // src/lib/donations/README.md.
   if (embedOnly) {
     return <EmbedDonateCard providerLabel={providerLabel} embedUrl={embedUrl} />;
   }
