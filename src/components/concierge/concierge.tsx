@@ -5,12 +5,19 @@ import { useChat } from "ai/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cx } from "@/lib/cx";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { restoreConversation, saveConversation, type StoredConversation } from "@/components/concierge/storage";
+import { clearConversation } from "@/components/concierge/storage";
 
 const suggestedOpeners = [
-  "Who is keynoting this year?",
+  "What types of sessions will be included?",
+  "How can I apply to participate?",
+  "Who are the speakers this year?",
+  // "What can I expect as far as the day-to-day experience at the conference?",
+  "Who is welcome to apply to attend?",
+  // "What requirements are required in order to apply to become a speaker?",
+  // "Will there be vendors?",
+  "Can I apply to be a vendor?",
   "Where is the conference being held?",
-  "Is childcare available?",
+  // "Is childcare available?",
   "What accessibility accommodations do you offer?",
 ];
 
@@ -20,7 +27,7 @@ export function Concierge() {
   const transcriptRef = useRef<HTMLDivElement | null>(null);
   const prefersReduced = useReducedMotion();
 
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error, setMessages, append } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error, append } = useChat({
     api: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/chat`,
     onResponse: async (response) => {
       if (response.status === 503) setOffline(true);
@@ -28,14 +35,12 @@ export function Concierge() {
     onError: () => {},
   });
 
-  useEffect(() => {
-    const restored = restoreConversation();
-    if (restored && restored.messages.length > 0) setMessages(restored.messages);
-  }, [setMessages]);
-
-  useEffect(() => {
-    saveConversation({ messages } as StoredConversation);
-  }, [messages]);
+  // Ava is intentionally ephemeral: each page load starts a fresh
+  // conversation. Clear any legacy transcript left over from when this
+  // component persisted to localStorage. storage.ts is kept around so
+  // we can re-enable a bounded cache later (e.g. 30-60m) without
+  // rewriting.
+  useEffect(() => { clearConversation(); }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -124,14 +129,22 @@ export function Concierge() {
               {offline && <OfflineBanner />}
 
               {messages.map((message) => (
-                <MessageBubble key={message.id} role={message.role} content={renderContent(message.content)} />
+                <MessageBubble
+                  key={message.id}
+                  role={message.role}
+                  content={renderContent(message.content)}
+                  onFollowUp={(text) => {
+                    if (isLoading || offline) return;
+                    append({ role: "user", content: text });
+                  }}
+                />
               ))}
 
               {isLoading && <Typing />}
 
               {error && !offline && (
                 <p role="alert" className="rounded-md border border-synapse-magenta/50 bg-synapse-magenta/10 px-3 py-2 text-xs">
-                  Something interrupted that reply. Try again or email hello@thesynapse.example.
+                  Something interrupted that reply. Try again or email hello@thesynapse.co.
                 </p>
               )}
             </div>
@@ -171,7 +184,7 @@ export function Concierge() {
               </label>
               <p className="mt-2 text-[11px] text-muted-foreground">
                 Ava is an AI assistant. She reads from the content on this site; email
-                hello@thesynapse.example for anything she cannot answer.
+                hello@thesynapse.co for anything she cannot answer.
               </p>
             </form>
           </motion.div>
@@ -191,9 +204,14 @@ function renderContent(content: unknown): string {
   return "";
 }
 
-function MessageBubble({ role, content }: { role: string; content: string }) {
+function MessageBubble({ role, content, onFollowUp }: {
+  role: string;
+  content: string;
+  onFollowUp?: (text: string) => void;
+}) {
   const { lead, followUps } = splitFollowUps(content);
   const isUser = role === "user";
+  const clickable = !isUser && followUps.length > 0 && typeof onFollowUp === "function";
   return (
     <div className={cx("flex", isUser ? "justify-end" : "justify-start")}>
       <div
@@ -208,8 +226,22 @@ function MessageBubble({ role, content }: { role: string; content: string }) {
         {followUps.length > 0 && (
           <ul className="mt-3 space-y-1 border-t border-border/60 pt-3">
             {followUps.map((f, i) => (
-              <li key={i} className="text-xs text-muted-foreground">
-                <span className="font-mono text-muted-foreground">-&gt;</span> {f}
+              <li key={i}>
+                {clickable ? (
+                  <button
+                    type="button"
+                    onClick={() => onFollowUp!(f)}
+                    className="group flex w-full items-start gap-2 rounded-md px-2 py-1 text-left text-xs text-muted-foreground transition-colors hover:bg-surface hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
+                  >
+                    <span className="font-mono text-muted-foreground group-hover:text-ink" aria-hidden="true">&#x2192;</span>
+                    <span className="flex-1 underline decoration-transparent underline-offset-2 transition-colors group-hover:decoration-gold-deep">{f}</span>
+                  </button>
+                ) : (
+                  <span className="flex items-start gap-2 px-2 py-1 text-xs text-muted-foreground">
+                    <span className="font-mono text-muted-foreground" aria-hidden="true">&#x2192;</span>
+                    <span>{f}</span>
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -248,8 +280,8 @@ function OfflineBanner() {
   return (
     <div className="rounded-card border border-border bg-surface-raised px-4 py-3 text-pretty text-muted-foreground">
       Ava is offline in this environment -- no model provider key is set. Email{" "}
-      <a href="mailto:hello@thesynapse.example" className="underline decoration-gold-deep decoration-2 underline-offset-2 link-glow">
-        hello@thesynapse.example
+      <a href="mailto:hello@thesynapse.co" className="underline decoration-gold-deep decoration-2 underline-offset-2 link-glow">
+        hello@thesynapse.co
       </a>{" "}instead.
     </div>
   );
