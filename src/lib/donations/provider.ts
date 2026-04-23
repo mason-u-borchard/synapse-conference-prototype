@@ -7,21 +7,23 @@ import { noneProvider } from "./none";
 const VALID: readonly DonationProviderKind[] = ["stripe", "paypal", "patreon", "donorbox", "virtuous", "none"];
 
 function parseProvider(raw: string | undefined): DonationProviderKind {
-  const lower = (raw ?? "stripe").trim().toLowerCase() as DonationProviderKind;
-  return VALID.includes(lower) ? lower : "stripe";
+  const lower = (raw ?? "virtuous").trim().toLowerCase() as DonationProviderKind;
+  return VALID.includes(lower) ? lower : "virtuous";
 }
 
 /**
  * Pick the donation provider at runtime based on DONATION_PROVIDER env.
- * When the committee picks a final platform, either:
- *   1. If the platform is Stripe, set STRIPE_SECRET_KEY and leave
- *      DONATION_PROVIDER=stripe. No code change.
- *   2. If the platform is Donorbox / Patreon / PayPal, set
- *      DONATION_PROVIDER=<name> and DONATION_EMBED_URL to the hosted
- *      form. The UI will render an embed link and bypass /api/donate.
- *   3. To implement something entirely new, drop a new file under
- *      src/lib/donations/ exporting a DonationProvider and register
- *      it below. Keep the interface identical so nothing else changes.
+ * The committee's chosen platform is Virtuous (via Applied Love Labs),
+ * so that's the default when the env var is missing or malformed --
+ * a misconfigured environment still lands on the real donation form
+ * instead of silently falling back to a stub.
+ *
+ * Alternate providers:
+ *   - stripe: direct Stripe Checkout. Needs STRIPE_SECRET_KEY.
+ *   - donorbox / patreon / paypal: URL embeds. Need DONATION_EMBED_URL.
+ *   - none: donations paused; UI explains the state.
+ * To add a new backend, drop a file in src/lib/donations/ exporting a
+ * DonationProvider and register it in the switch below.
  */
 export function getDonationProvider(): DonationProvider {
   const kind = parseProvider(process.env.DONATION_PROVIDER);

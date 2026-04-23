@@ -25,11 +25,12 @@ describe("donation provider selection", () => {
     process.env.NEXT_PUBLIC_VIRTUOUS_ORG_ID = originalOrgId;
   });
 
-  it("defaults to Stripe when DONATION_PROVIDER is unset", async () => {
+  it("defaults to Virtuous when DONATION_PROVIDER is unset", async () => {
     const { getDonationProvider } = await reload();
     const p = getDonationProvider();
-    expect(p.name).toBe("stripe");
-    expect(p.embedOnly).toBe(false);
+    expect(p.name).toBe("virtuous");
+    expect(p.embedOnly).toBe(true);
+    expect(p.virtuous?.vformId).toBeTruthy();
   });
 
   it("accepts donorbox as an embed provider", async () => {
@@ -86,9 +87,9 @@ describe("donation provider selection", () => {
     expect(p.createCheckout).toBeUndefined();
   });
 
-  it("falls back to stripe when given an unknown provider name", async () => {
+  it("falls back to virtuous when given an unknown provider name", async () => {
     process.env.DONATION_PROVIDER = "crypto-moon-bank";
     const { getDonationProvider } = await reload();
-    expect(getDonationProvider().name).toBe("stripe");
+    expect(getDonationProvider().name).toBe("virtuous");
   });
 });
