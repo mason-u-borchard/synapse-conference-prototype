@@ -15,7 +15,7 @@ const basePath = rawBasePath.replace(/\/$/, "");
 // donation embeds; dropping any one of them breaks the form in practice.
 const cspDirectives = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://cdn.virtuoussoftware.com https://*.virtuoussoftware.com https://js.hcaptcha.com https://*.hcaptcha.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://cdn.virtuoussoftware.com https://*.virtuoussoftware.com https://js.hcaptcha.com https://*.hcaptcha.com https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://cdn.plaid.com",
   "style-src 'self' 'unsafe-inline' https://*.virtuoussoftware.com https://*.hcaptcha.com https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://fonts.gstatic.com https://*.virtuoussoftware.com https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com",
