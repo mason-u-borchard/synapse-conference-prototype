@@ -71,7 +71,7 @@ export default function SchedulePage() {
 
       <p className="mt-14 max-w-prose text-sm text-muted-foreground">
         Session titles, times, speaker slots, and tracks will be published
-        once the Program team finalizes the arc.
+        soon.
       </p>
     </div>
   );

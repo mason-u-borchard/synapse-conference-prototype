@@ -6,7 +6,6 @@ import { SynapseField } from "@/components/synapse-field";
 import { PrinciplesGrid } from "@/components/principles-grid";
 import { FaqPreview } from "@/components/faq-preview";
 import { FieldsGrid } from "@/components/fields-grid";
-import { WhoItsFor } from "@/components/who-its-for";
 
 export const metadata: Metadata = {
   title: `${meta.name} -- ${meta.subtitle}`,
@@ -51,7 +50,7 @@ export default function HomePage() {
               <ArrowRight />
             </Link>
             <Link href="/donate" className="btn btn-ghost">Become a funding partner</Link>
-            <Link href="/#program" className="btn btn-ghost">The arc</Link>
+            <Link href="/schedule" className="btn btn-ghost">The arc</Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
             An initiative of <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a>. Gifts are tax-deductible through ALL and ring-fenced from operating costs.
@@ -70,9 +69,8 @@ export default function HomePage() {
           <div>
             <p className="eyebrow mb-1">Hosted by {meta.fiscalSponsor.name} &middot; tax-deductible</p>
             <p className="text-sm text-muted-foreground">
-              Gifts flow through {meta.fiscalSponsor.short}. Allocation
-              categories shown on /donate are illustrative placeholders the
-              committee will confirm.
+              Gifts flow through {meta.fiscalSponsor.short} and are
+              ring-fenced from operating costs.
             </p>
           </div>
           <Link href="/donate" className="btn btn-ghost shrink-0">
@@ -92,16 +90,10 @@ export default function HomePage() {
 
       <Section id="ethos" tone="raised" eyebrow="Our ethos" heading="Power without permission. Rigor with love." lede="The principles that shape how we invite, schedule, host, and close the days.">
         <PrinciplesGrid />
-      </Section>
-
-      <Section id="program" eyebrow="What to expect" heading="Three days. A deliberate arc." lede="Each day moves through the same four phases -- Embody, Encounter, Imagine, Create -- but the weight shifts deliberately as the conference progresses. Day 1 opens perception. Day 2 builds frameworks. Day 3 makes things. A provisional arc; exact sessions, speakers, and format will be shaped with the community in the months ahead.">
-        <div className="mt-2">
-          <Link href="/schedule" className="btn btn-ghost">The full arc<ArrowRight /></Link>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <Link href="/schedule" className="btn btn-ghost">The program arc<ArrowRight /></Link>
+          <Link href="/about" className="btn btn-ghost">Who it's for<ArrowRight /></Link>
         </div>
-      </Section>
-
-      <Section id="who" tone="raised" eyebrow="Who it's for" heading="For the women building at the edges.">
-        <WhoItsFor />
       </Section>
 
       <Section id="apply" eyebrow="Apply" heading="A curated group of 75.">

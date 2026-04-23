@@ -29,7 +29,6 @@ export function SiteFooter() {
           { label: "About", href: "/about" },
           { label: "Ethos", href: "/#ethos" },
           { label: "Program", href: "/schedule" },
-          { label: "Participants", href: "/speakers" },
           { label: "FAQ", href: "/faq" },
         ]} />
         <FooterColumn title="Get involved" items={[
@@ -37,8 +36,7 @@ export function SiteFooter() {
           { label: "Fund the work", href: "/donate" },
         ]} />
         <FooterColumn title="Reach us" items={[
-          { label: "hello@thesynapse.example", href: "mailto:hello@thesynapse.example" },
-          { label: "Code of conduct", href: "/about#conduct" },
+          { label: "hello@thesynapse.co", href: "mailto:hello@thesynapse.co" },
           { label: "Press kit", href: "/about#press" },
         ]} />
       </div>

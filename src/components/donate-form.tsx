@@ -72,7 +72,7 @@ function PausedDonateCard() {
         hold received funds. Reach the committee directly to pledge
         support in the meantime.
       </p>
-      <a href="mailto:hello@thesynapse.example" className="btn btn-ghost">Email the committee</a>
+      <a href="mailto:hello@thesynapse.co" className="btn btn-ghost">Email the committee</a>
     </section>
   );
 }

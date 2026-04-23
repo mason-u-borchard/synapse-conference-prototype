@@ -2,7 +2,7 @@
   {
     "id": "how-big",
     "question": "How big is the conference?",
-    "answer": "50-75 guests. We are optimizing for depth, not scale. Every person in the room is there on purpose, and deep connection is treated as a design constraint rather than a nice-to-have.",
+    "answer": "75 guests. We are optimizing for depth, not scale. Every person in the room is there on purpose, and deep connection is treated as a design constraint rather than a nice-to-have.",
     "category": "program"
   },
   {
@@ -20,7 +20,7 @@
   {
     "id": "host",
     "question": "Who is organizing this?",
-    "answer": "The Synapse is organized by Julia Mossbridge, PhD (Applied Love Labs) and collaborators. It will be held in Atlanta, GA on October 9-11, 2026.",
+    "answer": "The Synapse is co-led by Elatia Abate and Beth Glick, with an organizing team of 25 contributors from across the fields. The convening is hosted and fiscally sponsored by Applied Love Labs.",
     "category": "program"
   },
   {
@@ -68,7 +68,7 @@
   {
     "id": "conduct",
     "question": "What is the code of conduct?",
-    "answer": "The Synapse follows a clear code of conduct grounded in respect, consent, and scholarly integrity, enforced by an independent response team reachable in person, by email, and by anonymous form. The full document is linked from the footer.",
+    "answer": "The Synapse follows a clear code of conduct grounded in respect, consent, and scholarly integrity, enforced by an independent response team reachable in person, by email, and by anonymous form.",
     "category": "conduct"
   },
   {

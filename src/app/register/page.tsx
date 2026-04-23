@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { KeepInLoopForm } from "@/components/keep-in-loop-form";
 
 export const metadata: Metadata = {
   title: "Apply to Participate",
-  description: "The Synapse is a curated gathering of 75 participants. Applications open after the Program team finalizes the review process.",
+  description: "The Synapse is a curated gathering of 75 participants. Leave your details and we'll reach out when the application window opens.",
 };
 
 export default function RegisterPage() {
@@ -15,9 +16,9 @@ export default function RegisterPage() {
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
           The Synapse is a curated gathering of 75 participants. Most
           places are invitation-based; a limited number will open through
-          an application window the Program team is finalizing now. Once
-          the window opens, the form lands here and we reach out to
-          everyone who asked to be kept in the loop.
+          an application window that will be available soon. Leave your
+          details below and we'll reach out to everyone who asked to be
+          kept in the loop as soon as the window opens.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
           Questions in the meantime? Ask Ava -- the concierge in the
@@ -29,6 +30,19 @@ export default function RegisterPage() {
           <Link href="/donate" className="btn btn-ghost">Support the convening</Link>
         </div>
       </header>
+
+      <section aria-labelledby="keep-in-loop-heading" className="mt-16 max-w-2xl">
+        <h2 id="keep-in-loop-heading" className="font-serif text-2xl text-ink">
+          Keep me in the loop
+        </h2>
+        <p className="mt-3 max-w-prose text-sm text-muted-foreground">
+          Tell us who you are and we'll notify you the moment the
+          application opens.
+        </p>
+        <div className="mt-6">
+          <KeepInLoopForm />
+        </div>
+      </section>
     </div>
   );
 }

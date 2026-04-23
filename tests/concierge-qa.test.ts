@@ -9,15 +9,16 @@ import { assembleConciergePrompt } from "@/lib/concierge-prompt";
 const prompt = assembleConciergePrompt("anthropic");
 
 const groundingChecks: { question: string; requires: string[] }[] = [
-  { question: "Who is giving the opening keynote?", requires: ["Speaker 1", "Talk1_Title"] },
   { question: "When and where is the conference?", requires: ["October", "2026", "Atlanta"] },
   { question: "How do I apply?", requires: ["Applications open", "late spring 2026", "invitation"] },
   { question: "Is childcare available?", requires: ["Onsite childcare", "ages 1-10"] },
   { question: "What accessibility accommodations are provided?", requires: ["Step-free", "induction loop", "live captioning"] },
   { question: "Who is the fiscal sponsor?", requires: ["Applied Love Labs"] },
   { question: "Can I apply for a travel grant?", requires: ["travel grant"] },
-  { question: "How many speakers are there?", requires: ["Speaker 1", "Speaker 20"] },
-  { question: "How big is the conference?", requires: ["50-75", "depth, not scale"] },
+  { question: "Who are the speakers this year?", requires: ["NOT yet confirmed", "Do NOT invent names"] },
+  { question: "How many keynotes are there?", requires: ["Do NOT state a count of speakers", "speaker/attendee hierarchies"] },
+  { question: "Who is organizing this?", requires: ["Elatia Abate", "Beth Glick", "organizing team"] },
+  { question: "How big is the conference?", requires: ["75 guests", "depth, not scale"] },
   { question: "Are you a real person?", requires: ["AI assistant", "AI concierge"] },
 ];
 

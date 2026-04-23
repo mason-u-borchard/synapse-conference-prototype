@@ -9,12 +9,12 @@ test.describe("critical flows", () => {
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });
 
-  test("speakers page opens a detail page with abstract", async ({ page }) => {
+  test("participants page shows the holding state until the roster is confirmed", async ({ page }) => {
     await page.goto("/speakers");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    await page.locator("a[href^='/speakers/']").first().click();
-    await expect(page.locator("h1")).toBeVisible();
-    await expect(page.getByText("Talk", { exact: false })).toBeVisible();
+    await expect(page.getByText(/roster will be published|invitations are still/i)).toBeVisible();
+    // No per-participant links should be exposed while the roster is placeholder-only.
+    await expect(page.locator("a[href^='/speakers/']")).toHaveCount(0);
   });
 
   test("schedule page renders the three-day arc", async ({ page }) => {

@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
     return json(
       {
         message:
-          "The submission reached us but we couldn't finish processing it. Try again in a few minutes or email hello@thesynapse.example.",
+          "The submission reached us but we couldn't finish processing it. Try again in a few minutes or email hello@thesynapse.co.",
       },
       500,
     );

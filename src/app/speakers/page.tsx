@@ -1,28 +1,43 @@
 import type { Metadata } from "next";
-import { speakers, speakerTagCloud } from "@/lib/content";
-import { SpeakersExplorer } from "@/components/speakers-explorer";
+import Link from "next/link";
+import { meta } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Participants",
-  description: "A list of invited participants and a visual map of how their research areas overlap. Twenty numbered placeholders while the committee finalizes the roster.",
+  description: "The roster of participants will be published once the committee finalizes invitations.",
 };
 
 export default function SpeakersPage() {
-  const allTags = speakerTagCloud();
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">Participants</p>
         <h1 className="text-display-lg text-balance">Every person in the room is here on purpose.</h1>
-        <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          The Synapse is built around conversation, not broadcast.
-          Participants are numbered placeholders (Participant 1 through
-          Participant 20) while the committee finalizes invitations. The
-          constellation view shows how their research areas overlap; it
-          is a map of the conversation, not a ranking.
-        </p>
+        <div className="mt-6 max-w-prose space-y-5 text-lg leading-relaxed text-muted-foreground text-pretty">
+          <p>
+            Approximately {meta.capacity} participants will convene in
+            {" "}{meta.city} across the three days. Who leads a session,
+            facilitates, performs, or contributes in other ways is being
+            shaped by the committee as the program arc is designed -- the
+            Synapse deliberately does not divide the room into keynote
+            and attendee tiers.
+          </p>
+          <p>
+            Invitations are still being finalized; the roster will be
+            published here soon. If you would like to be notified when
+            the application window opens, leave your details on the{" "}
+            <Link href="/register" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
+              Attend
+            </Link>{" "}
+            page.
+          </p>
+        </div>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <Link href="/register" className="btn btn-primary">Keep me in the loop</Link>
+          <Link href="/schedule" className="btn btn-ghost">The program arc</Link>
+          <Link href="/about" className="btn btn-ghost">Who it's for</Link>
+        </div>
       </header>
-      <SpeakersExplorer speakers={speakers} allTags={allTags} />
     </div>
   );
 }

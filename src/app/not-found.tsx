@@ -11,8 +11,8 @@ export default function NotFound() {
       </p>
       <ul className="mt-8 space-y-3 font-serif text-lg">
         <li><Link href="/" className="link-marker">Home</Link></li>
-        <li><Link href="/speakers" className="link-marker">Speakers</Link></li>
-        <li><Link href="/schedule" className="link-marker">Schedule</Link></li>
+        <li><Link href="/about" className="link-marker">About</Link></li>
+        <li><Link href="/schedule" className="link-marker">Program</Link></li>
         <li><Link href="/faq" className="link-marker">FAQ</Link></li>
       </ul>
     </div>

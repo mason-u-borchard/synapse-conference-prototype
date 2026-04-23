@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
     return new Response(
       JSON.stringify({
         error: "no-credentials",
-        message: "Ava is offline right now because no model provider key is set in this environment. Reach out at hello@thesynapse.example -- a human will answer the same question faster anyway.",
+        message: "Ava is offline right now because no model provider key is set in this environment. Reach out at hello@thesynapse.co -- a human will answer the same question faster anyway.",
       }),
       { status: 503, headers: { "Content-Type": "application/json" } },
     );

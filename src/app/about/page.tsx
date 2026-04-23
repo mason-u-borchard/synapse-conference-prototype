@@ -1,26 +1,44 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { meta, sponsors } from "@/lib/content";
+import { meta } from "@/lib/content";
+import { WhoItsFor } from "@/components/who-its-for";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "The organizing committee, operating principles, code of conduct, and Applied Love Labs -- the host and fiscal sponsor.",
+  description: "Four fields, one frontier. The Synapse convenes women working across AI, robotics, cognitive science, and consciousness -- hosted by Applied Love Labs.",
 };
 
 export default function AboutPage() {
-  const tiers = {
-    presenting: sponsors.filter((s) => s.tier === "presenting"),
-    supporting: sponsors.filter((s) => s.tier === "supporting"),
-    community: sponsors.filter((s) => s.tier === "community"),
-  };
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">About</p>
-{/* #PLACEHOLDER */}
-        <h1 className="text-display-lg text-balance">A working committee accountable to the participants and the work itself -- not to funders, institutions, or optics.</h1>
-        <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">{meta.mission}</p>
+        <h1 className="text-display-lg text-balance">Four fields. One frontier.</h1>
+        <div className="mt-6 max-w-prose space-y-5 text-lg leading-relaxed text-muted-foreground text-pretty">
+          <p>
+            AI, robotics, cognitive science, and consciousness are no
+            longer separate conversations. The questions that matter now
+            live between them -- across disciplines, ways of knowing, and
+            the full range of human intelligence.
+          </p>
+          <p>
+            The Synapse convenes women working at these edges --
+            researchers, builders, practitioners, and leaders shaping what
+            comes next in real time.
+          </p>
+          <p className="font-serif italic text-ink">
+            This is not a conference about the future.<br />
+            It is the future, in formation.
+          </p>
+        </div>
       </header>
+
+      <section id="who" className="mt-20">
+        <p className="eyebrow mb-4 text-muted-foreground">Who it's for</p>
+        <h2 className="text-display-md">For the women building at the edges.</h2>
+        <div className="mt-8">
+          <WhoItsFor />
+        </div>
+      </section>
 
       <section id="founder" className="mt-20 paper p-8 md:p-10">
         <p className="eyebrow mb-4 text-muted-foreground">A dedication, not a protest</p>
@@ -93,63 +111,20 @@ export default function AboutPage() {
         </ul>
       </section> */}
 
-      <section id="partners" className="mt-24">
-        <h2 className="text-display-md">Partners</h2>
-        <p className="mt-4 max-w-prose text-muted-foreground text-pretty">
-          Partnership here means alignment with the ethos -- not
-          transaction. <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a> presents the gathering as host
-          and fiscal sponsor.
-        </p>
-        <SponsorTier title="Presenting" rows={tiers.presenting} />
-        <SponsorTier title="Supporting" rows={tiers.supporting} />
-        <SponsorTier title="Community" rows={tiers.community} />
-      </section>
+      {/* #PLACEHOLDER -- Partners section hidden until confirmed partners exist */}
 
-      <section id="conduct" className="mt-24 max-w-3xl">
-        <h2 className="text-display-md">Code of conduct</h2>
-        <p className="mt-4 text-pretty text-muted-foreground">
-          The Synapse follows a clear, enforceable code of conduct rooted in
-          respect, consent, and scholarly integrity. It will be enforced by
-          an independent response team reachable in person, by email, and
-          by anonymous form.
-        </p>
-        <Link href="#" className="link-marker mt-6 inline-block font-serif text-lg">
-          Read the full code of conduct [coming soon]
-        </Link>
-      </section>
+      {/* #PLACEHOLDER -- Code of conduct / code of ethics section hidden per Beth 2026-04-23 */}
 
       <section id="press" className="mt-24 max-w-3xl">
         <h2 className="text-display-md">Press and inquiries</h2>
         <p className="mt-4 text-pretty text-muted-foreground">
           For media passes, speaker interviews, or the official press kit,
           reach the organizing committee at{" "}
-          <a href="mailto:press@thesynapse.example" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
-            press@thesynapse.example
+          <a href="mailto:hello@thesynapse.co" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
+            hello@thesynapse.co
           </a>.
         </p>
       </section>
-    </div>
-  );
-}
-
-function SponsorTier({ title, rows }: { title: string; rows: readonly { name: string; blurb: string; initials: string; href: string; }[]; }) {
-  if (rows.length === 0) return null;
-  return (
-    <div className="mt-12">
-      <h3 className="eyebrow mb-5 text-muted-foreground">{title}</h3>
-      <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {rows.map((s) => (
-          <li key={s.name} className="paper flex gap-4 p-5">
-            <div className="flex h-14 w-14 flex-none items-center justify-center rounded-md border border-border-strong font-serif italic text-muted-foreground" aria-hidden="true">
-              {s.initials}
-            </div>
-            <div>
-              <p className="font-serif text-lg text-ink">{s.name}</p>
-              <p className="text-sm text-muted-foreground text-pretty">{s.blurb}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

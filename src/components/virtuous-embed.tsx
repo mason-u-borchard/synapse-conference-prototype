@@ -55,7 +55,7 @@ export function VirtuousEmbed({ vformId, orgId }: Props) {
           <p role="alert" className="rounded-md border border-synapse-magenta/60 bg-synapse-magenta/10 px-4 py-3 text-sm">
             The donation form could not be loaded. Please refresh, or reach
             the committee at{" "}
-            <a href="mailto:hello@thesynapse.example" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">hello@thesynapse.example</a>{" "}
+            <a href="mailto:hello@thesynapse.co" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">hello@thesynapse.co</a>{" "}
             to pledge support directly.
           </p>
         )}
