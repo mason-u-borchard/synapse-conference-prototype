@@ -11,7 +11,7 @@ interface EmbedConfig {
   blurbFor: (url: string | undefined) => string;
 }
 
-const CONFIGS: Record<Exclude<DonationProviderKind, "stripe" | "none">, EmbedConfig> = {
+const CONFIGS: Record<Exclude<DonationProviderKind, "stripe" | "none" | "virtuous">, EmbedConfig> = {
   donorbox: {
     name: "donorbox",
     label: "Donorbox",
@@ -32,7 +32,7 @@ const CONFIGS: Record<Exclude<DonationProviderKind, "stripe" | "none">, EmbedCon
   },
 };
 
-export function makeEmbedProvider(kind: Exclude<DonationProviderKind, "stripe" | "none">): DonationProvider {
+export function makeEmbedProvider(kind: Exclude<DonationProviderKind, "stripe" | "none" | "virtuous">): DonationProvider {
   const config = CONFIGS[kind];
   const url = process.env.DONATION_EMBED_URL;
   return {
