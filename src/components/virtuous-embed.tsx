@@ -41,7 +41,7 @@ export function VirtuousEmbed({ vformId, orgId }: Props) {
   }, [vformId, orgId]);
 
   return (
-    <div className="paper p-6 md:p-8">
+    <div className="donate-card p-6 md:p-8">
       <div
         ref={containerRef}
         className="min-h-[500px]"

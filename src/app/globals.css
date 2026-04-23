@@ -134,6 +134,22 @@
     border-color: hsl(var(--border-strong));
   }
 
+  /* Pin the Virtuous donation card to the light palette even in dark
+     mode. Virtuous renders its form inline with a hard-coded black
+     text color, so a near-black .paper surface leaves every label,
+     placeholder, and input value unreadable. Keeping this one island
+     ivory is simpler and more robust than chasing Virtuous's selectors
+     with !important overrides they can change without notice. */
+  .donate-card {
+    background-color: hsl(40 38% 97%);
+    color: hsl(294 45% 10%);
+    border: 1px solid hsl(292 16% 84%);
+    border-radius: 14px;
+    box-shadow: 0 1px 0 hsl(292 16% 84% / 1),
+      0 12px 32px -18px hsl(294 55% 8% / 0.35);
+    color-scheme: light;
+  }
+
   .link-marker {
     background-image: linear-gradient(
       transparent 62%,
