@@ -63,6 +63,20 @@ const nextConfig = {
       ],
     },
   },
+  // Clean short-URL aliases for sections that otherwise require an
+  // anchor. Email clients URL-encode '#' (Beth reported /#ethos
+  // arriving as /%23ethos from a mail link), so a redirect lets us
+  // share a link-safe /ethos instead. Destination includes the hash
+  // fragment; modern browsers honor hashes in Location headers.
+  ...(isStaticExport
+    ? {}
+    : {
+        async redirects() {
+          return [
+            { source: "/ethos", destination: "/#ethos", permanent: false },
+          ];
+        },
+      }),
   // Headers are only applied by the Next.js server; static export serves
   // from nginx, which should apply its own CSP/HSTS. Guard so the build
   // does not warn about header-config being inapplicable.
