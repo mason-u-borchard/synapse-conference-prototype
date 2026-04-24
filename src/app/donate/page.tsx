@@ -35,7 +35,7 @@ export default function DonatePage() {
           <section className="paper p-6">
             <h2 className="eyebrow mb-4 text-muted-foreground">Working budget</h2>
             <p className="mb-4 text-xs text-muted-foreground">
-              {meta.fundingTarget.amount} target by {meta.fundingTarget.by}. Exact allocation will be confirmed by the committee.
+              {meta.fundingTarget.amount} target by {meta.fundingTarget.by}.
             </p>
             <ul className="space-y-3">
               <AllocationRow share={35} label="Organizer salaries" />
