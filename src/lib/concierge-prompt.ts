@@ -58,7 +58,7 @@ export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none
 
   const dayNumbers = Array.from(new Set(schedule.map((s) => s.day))).sort();
   const scheduleBlock = dayNumbers.length === 0
-    ? "Session titles, times, speaker slots, and tracks will be published soon. Do not invent individual sessions; refer to the three-day arc (Day 1 opens perception; Day 2 builds frameworks; Day 3 makes things) when asked about the shape of the program."
+    ? "Session titles, times, speaker slots, and tracks will be published soon. Do not invent individual sessions; refer to the three-day arc (Day 1 Expand: each of AI, robotics, cognitive science, and consciousness brings a frontier claim and the room widens its aperture; Day 2 Weave: four crossing points -- Experience x Architecture, Body x Boundary, Knowing x Power, Growth x Optimization -- each leaving an artifact; Day 3 Emerge: a half day where small groups pressure-test the most alive work into something with form and a next step) when asked about the shape of the program."
     : dayNumbers
         .map((day) => {
           const rows = schedule
