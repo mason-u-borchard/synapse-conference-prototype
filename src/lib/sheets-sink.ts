@@ -1,18 +1,43 @@
 import { google } from "googleapis";
 
 type SubmissionPayload = Record<string, unknown>;
+type SubmissionKind = "registration" | "contact";
 
 export interface SinkResult {
   confirmationId: string;
   persisted: "sheets" | "log";
 }
 
+const REGISTRATION_COLUMNS = [
+  "confirmationId",
+  "kind",
+  "fullName",
+  "email",
+  "affiliation",
+  "role",
+  "pronouns",
+  "interests",
+  "dietary",
+  "access",
+  "grantInterest",
+  "grantContext",
+  "referral",
+];
+
+const CONTACT_COLUMNS = [
+  "confirmationId",
+  "kind",
+  "fullName",
+  "email",
+  "message",
+];
+
 export async function recordSubmission(
-  kind: "registration" | "contact",
+  kind: SubmissionKind,
   payload: SubmissionPayload,
 ): Promise<SinkResult> {
   const confirmationId = makeConfirmationId();
-  const row = flattenRow({ kind, confirmationId, ...payload });
+  const row = flattenRow(kind, { kind, confirmationId, ...payload });
 
   if (!hasSheetsCredentials()) {
     console.info(
@@ -54,8 +79,8 @@ function buildAuthFromEnv() {
   });
 }
 
-function flattenRow(row: Record<string, unknown>): string[] {
-  const ordered = ["confirmationId", "kind", "fullName", "email", "affiliation", "role", "pronouns", "interests", "dietary", "access", "grantInterest", "grantContext", "referral", "message"];
+function flattenRow(kind: SubmissionKind, row: Record<string, unknown>): string[] {
+  const ordered = kind === "registration" ? REGISTRATION_COLUMNS : CONTACT_COLUMNS;
   const timestamp = new Date().toISOString();
   return [
     timestamp,

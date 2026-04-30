@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KeepInLoopForm } from "@/components/keep-in-loop-form";
 
+// #PLACEHOLDER: To preview the prototype application form on /register
+// locally (e.g. for committee walkthroughs), uncomment the import below
+// and follow the LIVE/PROTOTYPE swap inside RegisterPage. Revert with
+// `git checkout -- src/app/register/page.tsx` before committing.
+// import { ApplicationForm } from "@/components/application-form";
+
 export const metadata: Metadata = {
   title: "Apply to Participate",
   description: "The Synapse is a curated gathering of 75 participants. Leave your details and we'll reach out when the application window opens.",
@@ -10,6 +16,7 @@ export const metadata: Metadata = {
 export default function RegisterPage() {
   return (
     <div className="container-gutter py-section">
+      {/* === LIVE === keep this block uncommented for production === */}
       <header className="max-w-2xl">
         <p className="eyebrow mb-4">Apply</p>
         <h1 className="text-display-lg text-balance">Applications open soon.</h1>
@@ -43,6 +50,25 @@ export default function RegisterPage() {
           <KeepInLoopForm />
         </div>
       </section>
+      {/* === END LIVE === */}
+
+      {/* === PROTOTYPE === #PLACEHOLDER -- keep COMMENTED in committed code ===
+      <header className="max-w-2xl">
+        <p className="eyebrow mb-4">Apply</p>
+        <h1 className="text-display-lg text-balance">Apply to participate.</h1>
+        <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
+          The Synapse is a curated gathering of 75 participants in
+          Atlanta this October. Most places are invitation-based; a
+          small number open through this application window. Take your
+          time -- we read every submission carefully and will be in
+          touch within two weeks.
+        </p>
+      </header>
+      <section aria-labelledby="application-heading" className="mt-12 max-w-2xl">
+        <h2 id="application-heading" className="sr-only">Participant application</h2>
+        <ApplicationForm />
+      </section>
+      === END PROTOTYPE === */}
     </div>
   );
 }
