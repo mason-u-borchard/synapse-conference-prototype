@@ -15,7 +15,13 @@ type YesNo = "yes" | "no";
 
 type Status =
   | { kind: "idle" }
-  | { kind: "success" };
+  | { kind: "submitting" }
+  | { kind: "success"; confirmationId: string; speakerHadFile: boolean }
+  | { kind: "error"; message: string };
+
+const ESSAY1_LIMIT = 250;
+const ESSAY2_LIMIT = 250;
+const REFLECTION_LIMIT = 100;
 
 const GENDER_OPTIONS: { value: Gender; label: string }[] = [
   { value: "male", label: "Male" },
@@ -42,38 +48,123 @@ export function ApplicationForm() {
   const [essay2, setEssay2] = useState("");
   const [reflection, setReflection] = useState("");
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  const overLimit =
+    countWords(essay1) > ESSAY1_LIMIT ||
+    countWords(essay2) > ESSAY2_LIMIT ||
+    countWords(reflection) > REFLECTION_LIMIT;
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus({ kind: "success" });
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (status.kind === "submitting") return;
+
+    if (overLimit) {
+      setStatus({
+        kind: "error",
+        message:
+          "One of your responses is over its word limit. Trim it and resubmit.",
+      });
+      return;
+    }
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    if (String(data.get("company_website") ?? "").length > 0) {
+      setStatus({
+        kind: "success",
+        confirmationId: "SYN-PREVIEW",
+        speakerHadFile: false,
+      });
+      return;
+    }
+
+    const speakerFile = data.get("speakerUpload");
+    data.delete("speakerUpload");
+    const speakerHadFile =
+      speakerFile instanceof File && speakerFile.size > 0;
+
+    const payload: Record<string, unknown> = Object.fromEntries(
+      data.entries(),
+    );
+    if (speakerHadFile && speakerFile instanceof File) {
+      payload.speakerUploadFilename = speakerFile.name;
+    }
+
+    setStatus({ kind: "submitting" });
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/submit-form`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ kind: "registration", payload }),
+        },
+      );
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        throw new Error(
+          body.message ?? `Submission failed (${response.status})`,
+        );
+      }
+      const body = await response.json();
+      setStatus({
+        kind: "success",
+        confirmationId: body.confirmationId ?? "SYN-UNKNOWN",
+        speakerHadFile,
+      });
+      if (typeof window !== "undefined") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      form.reset();
+      setGender(null);
+      setDirectoryConsent(null);
+      setIsSpeaker(null);
+      setBio("");
+      setEssay1("");
+      setEssay2("");
+      setReflection("");
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Submission failed.";
+      setStatus({ kind: "error", message });
     }
   }
 
   if (status.kind === "success") {
     return (
       <div className="paper p-10 text-center">
-        <p className="eyebrow mb-3 text-muted-foreground">Preview</p>
-        <h2 className="font-serif text-3xl text-ink">This is a template.</h2>
+        <p className="eyebrow mb-3 text-muted-foreground">Application received</p>
+        <h2 className="font-serif text-3xl text-ink">Thanks for applying.</h2>
         <p className="mt-4 max-w-prose text-pretty text-muted-foreground mx-auto">
-          Real applications haven't opened yet. When they do, this is the form
-          you'll fill out.
+          The committee reads every application carefully. You'll hear back
+          within two weeks. A confirmation email is on its way.
         </p>
-        <div className="mt-6 flex justify-center">
-          <button
-            type="button"
-            onClick={() => setStatus({ kind: "idle" })}
-            className="btn"
-          >
-            Reset and view again
-          </button>
-        </div>
+        {status.speakerHadFile && (
+          <p className="mt-4 max-w-prose text-pretty text-muted-foreground mx-auto">
+            Speaker materials: we have your filename on file but the upload
+            channel isn't live yet. Watch your inbox -- the program team will
+            reach out to collect the document.
+          </p>
+        )}
+        <p className="mt-5 font-mono text-xs text-muted-foreground">
+          Confirmation: {status.confirmationId}
+        </p>
       </div>
     );
   }
 
   return (
     <form onSubmit={onSubmit} noValidate className="paper space-y-6 p-8">
+      <input
+        type="text"
+        name="company_website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] h-0 w-0 opacity-0"
+      />
+
       <FieldRow>
         <Field label="Full name" required>
           <input
@@ -298,12 +389,31 @@ export function ApplicationForm() {
         </label>
       </div>
 
+      {status.kind === "error" && (
+        <p
+          role="alert"
+          className="rounded-md border border-synapse-magenta/60 bg-synapse-magenta/10 px-4 py-3 text-sm"
+        >
+          {status.message}
+        </p>
+      )}
+
       <div className="flex items-center gap-4">
-        <button type="submit" className="btn btn-primary">
-          Submit application
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={status.kind === "submitting"}
+        >
+          {status.kind === "submitting" ? (
+            <>
+              <Spinner /> Sending
+            </>
+          ) : (
+            <>Submit application</>
+          )}
         </button>
         <p className="text-xs text-muted-foreground">
-          Preview only -- applications aren't open yet.
+          Submitting sends a confirmation email. We read every entry.
         </p>
       </div>
 
@@ -402,6 +512,15 @@ function YesNoRadios({
         </label>
       ))}
     </div>
+  );
+}
+
+function Spinner() {
+  return (
+    <span
+      aria-hidden="true"
+      className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-surface/40 border-t-surface"
+    />
   );
 }
 

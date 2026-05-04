@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KeepInLoopForm } from "@/components/keep-in-loop-form";
+import { ApplicationForm } from "@/components/application-form";
 
 // #PLACEHOLDER: To preview the prototype application form on /register
 // locally (e.g. for committee walkthroughs), uncomment the import below
@@ -17,7 +18,7 @@ export default function RegisterPage() {
   return (
     <div className="container-gutter py-section">
       {/* === LIVE === keep this block uncommented for production === */}
-      <header className="max-w-2xl">
+      {/* <header className="max-w-2xl">
         <p className="eyebrow mb-4">Apply</p>
         <h1 className="text-display-lg text-balance">Applications open soon.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
@@ -49,10 +50,10 @@ export default function RegisterPage() {
         <div className="mt-6">
           <KeepInLoopForm />
         </div>
-      </section>
+      </section> */}
       {/* === END LIVE === */}
 
-      {/* === PROTOTYPE === #PLACEHOLDER -- keep COMMENTED in committed code ===
+      {/* === PROTOTYPE === #PLACEHOLDER -- keep COMMENTED in committed code === */}
       <header className="max-w-2xl">
         <p className="eyebrow mb-4">Apply</p>
         <h1 className="text-display-lg text-balance">Apply to participate.</h1>
@@ -68,7 +69,7 @@ export default function RegisterPage() {
         <h2 id="application-heading" className="sr-only">Participant application</h2>
         <ApplicationForm />
       </section>
-      === END PROTOTYPE === */}
+      {/* === END PROTOTYPE === */}
     </div>
   );
 }

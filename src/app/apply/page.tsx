@@ -18,14 +18,15 @@ export default function ApplyPage() {
           What the application will look like.
         </h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          This is a working preview of the form participants will fill out
-          when applications open. We're sharing it now so the committee can
-          align on the questions before the window goes live. Submission
-          isn't wired up -- clicking submit shows a preview confirmation,
-          but nothing is sent and nothing is stored.
+          This is the form participants will fill out when applications
+          open. The committee is using it now to align on the questions
+          before the window is announced. Submissions are real -- they
+          land in the committee's submissions sheet -- so test entries
+          help us pressure-test the flow end to end.
         </p>
         <p className="mt-4 max-w-prose text-sm text-muted-foreground">
-          If you're here to be notified when applications open, head to the{" "}
+          If you're here to be notified when applications open publicly,
+          head to the{" "}
           <Link
             href="/register"
             className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow"
@@ -40,10 +41,11 @@ export default function ApplyPage() {
         role="note"
         className="mt-10 ml-1 max-w-2xl rounded-md border border-dashed border-border p-4 text-sm text-muted-foreground"
       >
-        <span className="font-serif text-ink">Heads up.</span> This is a
-        template the committee is using to align on the questions.
-        Applications haven't opened. Anything you type here disappears when
-        you reload.
+        <span className="font-serif text-ink">Heads up.</span> This route
+        isn't linked from anywhere yet -- it's a private URL the committee
+        is using to align on the questions. Submissions are stored, so
+        please use a recognizable name on test entries (or expect to be
+        asked about a real-looking application later).
       </aside>
 
       <section aria-label="Application form preview" className="mt-12 max-w-2xl">

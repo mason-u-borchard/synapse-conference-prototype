@@ -41,3 +41,8 @@ yarn-error.log*
 Thumbs.db
 
 artifacts/
+
+*settings.local.json
+.obsidian/*
+*TS/*
+docs/*

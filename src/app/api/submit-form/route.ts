@@ -9,15 +9,31 @@ export const runtime = "nodejs";
 const registrationSchema = z.object({
   fullName: z.string().min(2).max(120),
   email: z.string().email(),
+  city: z.string().min(1).max(120),
+  country: z.string().min(1).max(120),
   affiliation: z.string().min(1).max(200),
-  role: z.enum(["researcher", "practitioner", "student", "other"]),
+  gender: z.enum([
+    "male",
+    "female",
+    "non-binary",
+    "intersex",
+    "other",
+    "prefer-not-to-say",
+  ]),
+  bio: z.string().min(1).max(2000),
+  directoryConsent: z.enum(["yes", "no"]),
+  isSpeaker: z.enum(["yes", "no"]),
+  essay1: z.string().min(1).max(3000),
+  essay2: z.string().min(1).max(3000),
+  guidelinesAgreement: z.string().refine((v) => v === "on", {
+    message: "Please agree to the community guidelines.",
+  }),
   pronouns: z.string().max(60).optional().default(""),
-  interests: z.union([z.string(), z.array(z.string())]).optional(),
+  referral: z.string().max(300).optional().default(""),
+  speakerUploadFilename: z.string().max(500).optional().default(""),
+  reflection: z.string().max(2000).optional().default(""),
   dietary: z.string().max(400).optional().default(""),
   access: z.string().max(2000).optional().default(""),
-  grantInterest: z.union([z.literal("on"), z.literal("off"), z.boolean()]).optional(),
-  grantContext: z.string().max(2000).optional().default(""),
-  referral: z.string().max(300).optional().default(""),
   company_website: z.string().max(0).optional(),
 });
 
@@ -82,10 +98,7 @@ export async function POST(req: NextRequest) {
 
 function normalizePayload(raw: unknown): Record<string, unknown> {
   if (!raw || typeof raw !== "object") return {};
-  const out: Record<string, unknown> = { ...(raw as Record<string, unknown>) };
-  const interests = out.interests;
-  if (typeof interests === "string") out.interests = [interests];
-  return out;
+  return { ...(raw as Record<string, unknown>) };
 }
 
 function json(body: unknown, status: number) {
