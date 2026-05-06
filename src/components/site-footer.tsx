@@ -27,17 +27,19 @@ export function SiteFooter() {
         </div>
         <FooterColumn title="Explore" items={[
           { label: "About", href: "/about" },
-          { label: "Ethos", href: "/#ethos" },
-          { label: "Program", href: "/schedule" },
+          { label: "Ethos", href: "/ethos" },
+          { label: "Program", href: "/program" },
           { label: "FAQ", href: "/faq" },
         ]} />
         <FooterColumn title="Get involved" items={[
-          { label: "Apply to Participate", href: "/register" },
-          { label: "Fund the work", href: "/donate" },
+          { label: "Fund the room", href: "/invest" },
+          { label: "Apply to attend", href: "/attend" },
         ]} />
+        {/* #PLACEHOLDER -- "Press kit" link is a stub. Wire to a real */}
+        {/* press kit (PDF or media-room page) once one exists. */}
         <FooterColumn title="Reach us" items={[
           { label: "hello@thesynapse.co", href: "mailto:hello@thesynapse.co" },
-          { label: "Press kit", href: "/about#press" },
+          { label: "Press kit", href: "#press-kit" },
         ]} />
       </div>
       <div className="border-t border-border">

@@ -7,15 +7,13 @@ import { cx } from "@/lib/cx";
 import { useTheme } from "@/components/theme-provider";
 import { SynapseMark } from "@/components/synapse-mark";
 
-// Nav follows Kelly's Messaging Guide / Website Copy doc -- About,
-// Ethos, Program, Attend, Support. Ethos points to the home-page
-// anchor; Participants (the constellation view) lives in the footer.
+// Nav follows the v2 IA -- text links on the left for content pages,
+// the two CTAs (Invest / Attend) rendered as buttons on the right via
+// the action region below.
 const navItems = [
   { href: "/about", label: "About" },
-  { href: "/#ethos", label: "Ethos" },
-  { href: "/schedule", label: "Program" },
-  { href: "/register", label: "Attend" },
-  { href: "/donate", label: "Support" },
+  { href: "/ethos", label: "Ethos" },
+  { href: "/program", label: "Program" },
 ];
 
 export function SiteHeader() {
@@ -76,7 +74,8 @@ export function SiteHeader() {
           >
             {theme === "light" ? <MoonIcon /> : <SunIcon />}
           </button>
-          <Link href="/register" className="hidden md:inline-flex btn btn-primary">Apply to Participate</Link>
+          <Link href="/invest" className="hidden md:inline-flex btn btn-ghost">Invest</Link>
+          <Link href="/attend" className="hidden md:inline-flex btn btn-primary">Attend</Link>
           <button
             type="button"
             className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-border"
@@ -104,7 +103,8 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/register" className="btn btn-primary mt-2 w-full">Apply to Participate</Link>
+            <Link href="/invest" className="btn btn-ghost mt-2 w-full">Invest</Link>
+            <Link href="/attend" className="btn btn-primary mt-2 w-full">Attend</Link>
           </nav>
         </div>
       )}

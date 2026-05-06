@@ -28,10 +28,10 @@ export default function ApplyPage() {
           If you're here to be notified when applications open publicly,
           head to the{" "}
           <Link
-            href="/register"
+            href="/attend"
             className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow"
           >
-            keep-in-the-loop page
+            attend page
           </Link>
           .
         </p>
@@ -54,7 +54,7 @@ export default function ApplyPage() {
 
       <footer className="mt-16 max-w-2xl">
         <div className="flex flex-wrap gap-3">
-          <Link href="/schedule" className="btn btn-ghost">
+          <Link href="/program" className="btn btn-ghost">
             The program arc
           </Link>
           <Link href="/about" className="btn btn-ghost">

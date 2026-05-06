@@ -26,15 +26,15 @@ export default function SpeakersPage() {
             Invitations are still being finalized; the roster will be
             published here soon. If you would like to be notified when
             the application window opens, leave your details on the{" "}
-            <Link href="/register" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
+            <Link href="/attend" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
               Attend
             </Link>{" "}
             page.
           </p>
         </div>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/register" className="btn btn-primary">Keep me in the loop</Link>
-          <Link href="/schedule" className="btn btn-ghost">The program arc</Link>
+          <Link href="/attend" className="btn btn-primary">Keep me in the loop</Link>
+          <Link href="/program" className="btn btn-ghost">The program arc</Link>
           <Link href="/about" className="btn btn-ghost">Who it's for</Link>
         </div>
       </header>

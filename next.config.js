@@ -63,17 +63,22 @@ const nextConfig = {
       ],
     },
   },
-  // Clean short-URL aliases for sections that otherwise require an
-  // anchor. Email clients URL-encode '#' (Beth reported /#ethos
-  // arriving as /%23ethos from a mail link), so a redirect lets us
-  // share a link-safe /ethos instead. Destination includes the hash
-  // fragment; modern browsers honor hashes in Location headers.
+  // v2 IA renames every primary route on the site. Old URLs return
+  // permanent 301s to their successors so external links, email
+  // signatures, and search-engine indexes converge on the new paths.
+  // /ethos used to be a homepage anchor that redirected here; now it
+  // is a real page, so the redirect is gone.
   ...(isStaticExport
     ? {}
     : {
         async redirects() {
           return [
-            { source: "/ethos", destination: "/#ethos", permanent: false },
+            { source: "/donate", destination: "/invest", permanent: true },
+            { source: "/donate/:path*", destination: "/invest/:path*", permanent: true },
+            { source: "/register", destination: "/attend", permanent: true },
+            { source: "/register/:path*", destination: "/attend/:path*", permanent: true },
+            { source: "/schedule", destination: "/program", permanent: true },
+            { source: "/schedule/:path*", destination: "/program/:path*", permanent: true },
           ];
         },
       }),

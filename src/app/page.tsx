@@ -27,30 +27,28 @@ export default function HomePage() {
             The Synapse &middot; {meta.city} &middot; {meta.dates.display}
           </p>
           <h1 className="max-w-[22ch] text-display-xl text-balance">
-            Where women connect{" "}
-            <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">mind</span>,{" "}
-            <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">machine</span>, and what comes next.
+            Where women reimagine{" "}
+            <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">mind</span>{" "}
+            and{" "}
+            <span className="font-serif italic text-aubergine-800 dark:text-aubergine-600">machine</span>.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Across AI, robotics, cognitive science, and consciousness,
-            the inherited rules are no longer sufficient. The Synapse
-            is an invitation to the women -- and those who stand with
-            them -- who are building what comes next.
+            Four fields. Three days. The conversations that don't happen anywhere else. The futures that don't exist without them.
           </p>
           <p className="mt-4 eyebrow text-muted-foreground">
-            3 days &middot; {meta.capacityDisplay} &middot; {meta.city}
+            AI &middot; Robotics &middot; Cognitive Science &middot; Consciousness
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
-              href="/register"
+              href="/invest"
               className="btn px-8 py-3 text-base font-medium text-[#1e0e22] shadow-[0_1px_0_hsl(var(--gold-deep)/0.8),0_14px_40px_-18px_hsl(var(--gold)/0.8)]"
               style={{ backgroundColor: "hsl(var(--gold))", borderColor: "hsl(var(--gold-deep) / 0.8)" }}
             >
-              Apply to Participate
+              Fund the room
               <ArrowRight />
             </Link>
-            <Link href="/donate" className="btn btn-ghost">Become a funding partner</Link>
-            <Link href="/schedule" className="btn btn-ghost">The arc</Link>
+            <Link href="/attend" className="btn btn-ghost">Apply to attend</Link>
+            <Link href="/program" className="btn btn-ghost">The arc</Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
             An initiative of <a href={meta.fiscalSponsor.href} target="_blank" rel="noreferrer" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">Applied Love Labs</a>. Gifts are tax-deductible through ALL and ring-fenced from operating costs.
@@ -73,7 +71,7 @@ export default function HomePage() {
               ring-fenced from operating costs.
             </p>
           </div>
-          <Link href="/donate" className="btn btn-ghost shrink-0">
+          <Link href="/invest" className="btn btn-ghost shrink-0">
             Support the convening <ArrowRight />
           </Link>
         </div>
@@ -91,19 +89,20 @@ export default function HomePage() {
       <Section id="ethos" tone="raised" eyebrow="Our ethos" heading="Power without permission. Rigor with love." lede="The principles that shape how we invite, schedule, host, and close the days.">
         <PrinciplesGrid />
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link href="/schedule" className="btn btn-ghost">The program arc<ArrowRight /></Link>
+          <Link href="/ethos" className="btn btn-ghost">The full ethos<ArrowRight /></Link>
+          <Link href="/program" className="btn btn-ghost">The program arc<ArrowRight /></Link>
           <Link href="/about" className="btn btn-ghost">Who it's for<ArrowRight /></Link>
         </div>
       </Section>
 
-      <Section id="apply" eyebrow="Apply" heading="A curated group of 75.">
+      <Section id="apply" eyebrow="Attend" heading="A curated group of 100.">
         <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-pretty text-muted-foreground">
-          <p>We are convening a curated group of 75 participants.</p>
+          <p>We are convening a curated group of 100 participants.</p>
           <p>Most attendees are invited. A limited number of additional places are held for individuals whose perspectives will expand and deepen the room.</p>
           <p>Participation is intentionally selected to support a high-trust, high-contribution environment.</p>
         </div>
         <div className="mt-10">
-          <Link href="/register" className="btn btn-primary">Apply to Participate<ArrowRight /></Link>
+          <Link href="/attend" className="btn btn-primary">Apply to attend<ArrowRight /></Link>
         </div>
       </Section>
 
@@ -132,8 +131,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/donate" className="btn btn-primary">Fund the work</Link>
-            <Link href="/register" className="btn btn-ghost">Apply to Participate</Link>
+            <Link href="/invest" className="btn btn-primary">Fund the room</Link>
+            <Link href="/attend" className="btn btn-ghost">Apply to attend</Link>
           </div>
         </div>
       </Section>
