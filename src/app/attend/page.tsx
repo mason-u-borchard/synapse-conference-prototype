@@ -1,3 +1,8 @@
+// HOLD: Taylor (May 7, 10:13 AM) asked to pause /attend work pending her hero revision.
+// She wants where/when/cost surfaced more prominently in the hero and is awaiting Beth/Elatia confirmation on tickets-covered + lunches-on-three-days, plus a new FAQ entry on cost.
+// Body content (Who it's for, four fields, email capture) is likely keep-as-is; the hero is the at-risk part.
+// Do not progress this file without Taylor's go-ahead. The skeleton below remains so that the /register -> /attend redirect has a target page.
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KeepInLoopForm } from "@/components/keep-in-loop-form";
