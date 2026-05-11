@@ -64,10 +64,10 @@ export default function AttendPage() {
       </section>
 
       <section aria-labelledby="who-its-for" className="mt-24 max-w-3xl">
-        <h2 id="who-its-for" className="font-serif text-3xl text-ink">For those who are building at the edges.</h2>
+        <h2 id="who-its-for" className="font-serif text-3xl text-ink">For those who are building beyond the blueprint.</h2>
         <div className="mt-6 max-w-prose space-y-4 text-base leading-relaxed text-muted-foreground text-pretty">
           <p>
-            This room is for the women who are working where the disciplines don't have names yet, and for those committed enough to stand with them. Researchers and builders. Scholars and practitioners. Academics and executives.
+            This room is for the women who are working where the disciplines don't have names yet — and for those committed enough to stand with them. Researchers and builders. Scholars and practitioners. Academics and executives.
           </p>
           <p>
             The common thread isn't a credential. It's a disposition: the desire to build over the comfort of what already exists.

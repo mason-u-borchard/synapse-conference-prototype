@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FlaskConical, HandHeart, Atom, Flame, Sparkles } from "lucide-react";
 import { OrganizingTeam } from "@/components/organizing-team";
 
 export const metadata: Metadata = {
@@ -15,15 +16,17 @@ const fieldStatements = [
   "Consciousness: What becomes available when we treat the hardest question as the starting point?",
 ];
 
-// Audience list copy updated 2026-05-08 to match Figma. Was previously
-// the older list with "Women leading research labs..." -- replaced
-// per the screenshot Mason flagged.
+// Audience list per IA copy + Figma 20:2251 icon set. Icon glyphs
+// are chosen to mirror the oxide-tinted ones in Taylor's design:
+// flask for researchers, hand-heart for institutional bridge-builders,
+// atom for early-career scholars, flame for fuelers, sparkles for
+// artists.
 const audience = [
-  "Leaders in research, industry, and movements shaping what gets built",
-  "Academics and executives who see across the lines their institutions draw",
-  "Early-career scholars with fresh visions seeking mentorship and collaboration",
-  "Allies, funders, and partners fueling the mission",
-  "Artists and practitioners holding what research can't yet name",
+  { label: "Leaders in research, industry, and movements shaping what gets built", Icon: FlaskConical },
+  { label: "Academics and executives who see across the lines their institutions draw", Icon: HandHeart },
+  { label: "Early-career scholars with fresh visions seeking mentorship and collaboration", Icon: Atom },
+  { label: "Allies, funders, and partners fueling the mission", Icon: Flame },
+  { label: "Artists and practitioners holding what research can't yet name", Icon: Sparkles },
 ];
 
 export default function AboutPage() {
@@ -84,34 +87,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === Moon + Dedication card (Figma 18:634 + 19:1058) ===
-          Moon image is contained inside the section (not full-bleed).
-          The dedication card sits center-right OVER the moon. The
-          flowing-text squiggle (rendered in the page-level wrapper
-          above) sweeps across this section behind the card. Copy
-          updated 2026-05-08 per Taylor's newer Figma version
-          (headline now "This is a dedication"; second paragraph
-          opens with "The Synapse is a dedication"). */}
-      <section className="relative py-12 md:py-section">
-        <div className="container-gutter relative">
-          <div className="relative mx-auto grid w-full max-w-[1180px] items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:gap-0">
-            {/* Moon photograph -- contained, not full-bleed. Sits on
-                the LEFT half on md+, full-width on smaller viewports.
-                No z-index so the squiggle text reads across its face. */}
-            <div className="md:col-start-1 md:row-start-1 md:-mr-16 lg:-mr-24">
-              <img
-                src="/figma/moon.png"
-                alt=""
-                aria-hidden="true"
-                className="block w-full max-w-[720px]"
-              />
-            </div>
-
-            {/* Dedication card. z-10 so it sits in front of the
-                page-level squiggle. */}
-            <div className="relative z-10 md:col-start-2 md:row-start-1">
-              <DedicationCard />
-            </div>
+      {/* === Moon + Dedication card (Figma 39:1335) ===
+          The moon photograph is now FULL-BLEED across the section,
+          serving as a textured backdrop. The dedication card floats
+          centered on top of the moon. The page-level squiggle still
+          sweeps behind the card across both this section and the
+          hero above. */}
+      <section className="relative pb-12 md:pb-section">
+        <div className="relative">
+          {/* Full-bleed moon. object-cover so the lunar surface fills
+              regardless of viewport width; max-h caps it on very wide
+              screens so the card doesn't drift off-center. */}
+          <img
+            src="/figma/moon.png"
+            alt=""
+            aria-hidden="true"
+            className="block h-auto w-full select-none"
+          />
+          {/* Dedication card overlay -- absolutely centered both
+              axes on the moon. z-10 so it sits above the page
+              squiggle. */}
+          <div className="absolute inset-0 z-10 flex items-center justify-center px-gutter">
+            <DedicationCard />
           </div>
         </div>
       </section>
@@ -150,19 +147,22 @@ export default function AboutPage() {
             </div>
           </div>
           <div>
-            <p className="font-mono text-sm uppercase tracking-[0.14em] text-off-white/80">
+            <p className="font-mono text-sm uppercase tracking-[0.2em] text-off-white/70">
               Who belongs here
             </p>
-            <ul className="mt-4 divide-y divide-moss-200 rounded-xl border border-moss-200 bg-moss-400">
-              {audience.map((item) => (
-                <li key={item} className="flex items-center gap-5 px-6 py-5">
-                  <span
+            <ul className="mt-5 space-y-3">
+              {audience.map(({ label, Icon }) => (
+                <li
+                  key={label}
+                  className="flex items-center gap-5 rounded-2xl bg-moss-400 px-6 py-5"
+                >
+                  <Icon
+                    size={22}
+                    strokeWidth={1.5}
                     aria-hidden="true"
-                    className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-off-white/40"
-                  >
-                    <span className="h-1.5 w-1.5 btn-solid-glow rounded-full bg-oxide-100" />
-                  </span>
-                  <span className="font-sans text-lg text-off-white">{item}</span>
+                    className="shrink-0 text-oxide-100"
+                  />
+                  <span className="font-sans text-lg leading-[1.35] text-off-white">{label}</span>
                 </li>
               ))}
             </ul>
@@ -258,18 +258,22 @@ export default function AboutPage() {
   );
 }
 
-// Page-spanning flowing-text squiggle. Sits behind the hero text and
-// dedication card but in front of the moon image, per Taylor's Figma.
-// The path traces four wide horizontal sweeps from upper-right down
-// to bottom-right, weaving edge to edge across the page so the
-// "ticker" reads as a single continuous flow. SMIL animates
-// startOffset for the continuous-flow effect Taylor called out in
-// the pink note ("would be cool if this text could continuously flow
-// along this path, like a ticker"). Hidden below md because the
-// horizontal sweeps don't read on narrow screens.
+// Page-spanning dotted squiggle per Figma 39:1335. A gentle S-curve
+// runs down the right side of the hero + moon-dedication sections,
+// rendered as a string of small dots (stroke-dasharray) with the
+// same Fraunces italic ticker text flowing alongside it on a parallel
+// offset path. SMIL animates startOffset to keep the text in motion.
+// Hidden below md where the right-column space disappears.
 function FlowingSquiggle() {
   const tickerText =
     "This is not a conference about the future; This is the future, in formation. · ";
+  // Single gentle S-bend down the right side of the page. The text
+  // path is offset 36px LEFT of the dot path so the italic text reads
+  // alongside the dots rather than on top of them.
+  const dotPath =
+    "M 1430,40 C 1430,360 1180,520 1180,840 C 1180,1160 1430,1320 1430,1640 C 1430,1960 1240,2150 1080,2440";
+  const textPath =
+    "M 1394,40 C 1394,360 1144,520 1144,840 C 1144,1160 1394,1320 1394,1640 C 1394,1960 1204,2150 1044,2440";
   return (
     <svg
       viewBox="0 0 1500 2500"
@@ -278,22 +282,31 @@ function FlowingSquiggle() {
       aria-hidden="true"
     >
       <defs>
-        <path
-          id="about-flowing-squiggle"
-          d="M 1490,30 C 1500,200 1100,200 1100,380 C 1100,540 1490,540 1490,720 C 1490,900 1100,900 1100,1080 C 1100,1240 1490,1240 1490,1400 C 1490,1600 1100,1750 850,1900 C 650,2050 500,2250 400,2480"
-          fill="none"
-        />
+        <path id="about-squiggle-dots" d={dotPath} fill="none" />
+        <path id="about-squiggle-text" d={textPath} fill="none" />
       </defs>
+      {/* The dotted line itself: zero-width dashes spaced ~18px apart
+          render as a chain of small circles when paired with a round
+          stroke-linecap. */}
+      <use
+        href="#about-squiggle-dots"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeDasharray="0,18"
+        fill="none"
+      />
+      {/* Ticker text running along the parallel offset path. */}
       <text
         fill="currentColor"
         style={{
           fontFamily: "var(--font-fraunces), serif",
-          fontSize: "26px",
+          fontSize: "22px",
           fontStyle: "italic",
           letterSpacing: "0.04em",
         }}
       >
-        <textPath href="#about-flowing-squiggle" startOffset="0%">
+        <textPath href="#about-squiggle-text" startOffset="0%">
           {tickerText.repeat(8)}
           <animate
             attributeName="startOffset"
