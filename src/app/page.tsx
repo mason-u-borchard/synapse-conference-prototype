@@ -62,7 +62,7 @@ export default function HomePage() {
             {/* Headline updated 2026-05-08 per Taylor's Figma comment: "the headline changed to this. We went back to the old tagline of the conference." */}
             {/* tracking-normal (not -tight): Fraunces in Figma sits with default tracking; pulling it tighter makes the headline look squished against the wave column. */}
             <h1 className="font-serif text-[clamp(2.5rem,4vw+1rem,5rem)] leading-[1.05] text-off-white text-balance">
-              Where women reimagine mind and machine.
+              Where women connect mind, machine, and what comes next.
             </h1>
             <p className="mt-7 max-w-[40ch] font-sans text-[clamp(1.125rem,0.8vw+0.75rem,1.5rem)] leading-[1.55] text-off-white/95">
               Four fields. Three days. The conversations that don't happen anywhere else. The futures that don't exist without them.

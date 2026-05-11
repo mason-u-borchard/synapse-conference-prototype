@@ -72,7 +72,7 @@ export function SiteFooter() {
               />
             </Link>
             <p className="mt-7 font-sans text-xl leading-[1.6] text-off-white">
-              Where women reimagine mind and machine.
+              Where women connect mind, machine, and what comes next.
             </p>
             <p className="mt-7 font-mono text-sm text-off-white">
               AI &middot; Robotics &middot; Cognitive Science &middot; Consciousness
