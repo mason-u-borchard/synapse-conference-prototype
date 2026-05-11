@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, Noto_Sans, JetBrains_Mono, Style_Script } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { V1ComparisonBanner } from "@/components/v1-comparison-banner";
 import { Concierge } from "@/components/concierge/concierge";
 import { meta } from "@/lib/content";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -83,7 +82,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             Skip to content
           </a>
-          <V1ComparisonBanner />
           <SiteHeader />
           <main id="main" className="min-h-[calc(100vh-64px)]">{children}</main>
           <SiteFooter />
