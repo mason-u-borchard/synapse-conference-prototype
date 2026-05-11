@@ -45,9 +45,15 @@ export function SiteFooter() {
           <span>
             &copy; {year} {meta.fiscalSponsor.name}.
           </span>
-          <span className="font-mono tracking-wider">
-            {meta.dates.display} &middot; {meta.city}
-          </span>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <Link href="/privacy" className="hover:text-ink">Privacy Policy</Link>
+            <span aria-hidden="true">&middot;</span>
+            <Link href="/terms" className="hover:text-ink">Terms of Service</Link>
+            <span aria-hidden="true" className="hidden md:inline">&middot;</span>
+            <span className="font-mono tracking-wider">
+              {meta.dates.display} &middot; {meta.city}
+            </span>
+          </div>
         </div>
       </div>
     </footer>
