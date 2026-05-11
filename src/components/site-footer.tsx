@@ -112,10 +112,9 @@ export function SiteFooter() {
           <div className="container-gutter flex flex-col gap-3 py-8 font-mono text-base text-off-white md:flex-row md:items-center md:justify-between">
             <span>&copy; {year} {meta.fiscalSponsor.name}</span>
             <div className="flex items-center gap-2">
-              {/* #PLACEHOLDER -- privacy + terms pages don't exist yet. */}
-              <Link href="#privacy" className="hover:underline">Privacy Policy</Link>
+              <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
               <span aria-hidden="true">&middot;</span>
-              <Link href="#terms" className="hover:underline">Terms of Service</Link>
+              <Link href="/terms" className="hover:underline">Terms of Service</Link>
             </div>
           </div>
         </div>
