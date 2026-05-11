@@ -24,6 +24,12 @@ const suggestedOpeners = [
 export function Concierge() {
   const [open, setOpen] = useState(false);
   const [offline, setOffline] = useState(false);
+  // Per Taylor's Figma note (2026-05-07): "Perhaps it sticks once
+  // you hit the last section, before the atlanta pre-footer."
+  // Implementation: observe the page footer; when its top edge
+  // enters the viewport, fade out the floating Ava button so it
+  // doesn't overlap the dark Atlanta cityscape + footer.
+  const [nearFooter, setNearFooter] = useState(false);
   const transcriptRef = useRef<HTMLDivElement | null>(null);
   const prefersReduced = useReducedMotion();
 
@@ -59,6 +65,17 @@ export function Concierge() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setNearFooter(entry?.isIntersecting ?? false),
+      { rootMargin: "0px 0px -50% 0px" },
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <button
@@ -66,7 +83,13 @@ export function Concierge() {
         aria-label={open ? "Close Ava, the conference concierge" : "Open Ava, the conference concierge"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="group fixed bottom-5 right-5 z-40 inline-flex h-14 items-center gap-3 rounded-pill border border-border-strong bg-surface pl-5 pr-4 text-sm shadow-paper transition-transform hover:-translate-y-0.5 hover:shadow-glow md:bottom-8 md:right-8"
+        className={cx(
+          "group fixed bottom-5 right-5 z-40 inline-flex h-14 items-center gap-3 rounded-pill border border-border-strong bg-surface pl-5 pr-4 text-sm shadow-paper transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-glow md:bottom-8 md:right-8",
+          // Fade and lift out of the way once the user is in the
+          // footer / Atlanta pre-footer area. The dialog itself
+          // (when open) stays interactive regardless.
+          nearFooter && !open && "pointer-events-none opacity-0 translate-y-4",
+        )}
       >
         <ConciergeGlyph active={open} />
         <span className="font-serif italic tracking-tight">{open ? "Close Ava" : "Ask Ava"}</span>

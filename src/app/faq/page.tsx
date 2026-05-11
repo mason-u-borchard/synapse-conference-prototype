@@ -9,28 +9,27 @@ export const metadata: Metadata = {
 
 export default function FaqPage() {
   const grouped = {
-    registration: faq.filter((f) => f.category === "registration"),
-    submissions: faq.filter((f) => f.category === "submissions"),
+    attend: faq.filter((f) => f.category === "attend"),
+    invest: faq.filter((f) => f.category === "invest"),
     travel: faq.filter((f) => f.category === "travel"),
-    access: faq.filter((f) => f.category === "access"),
-    conduct: faq.filter((f) => f.category === "conduct"),
+    accessibility: faq.filter((f) => f.category === "accessibility"),
     program: faq.filter((f) => f.category === "program"),
   };
   return (
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">FAQ</p>
-        <h1 className="text-display-lg text-balance">The short answers.</h1>
+        <h1 className="text-display-lg text-balance">Good questions.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
-          If your question is not here, ask Ava in the bottom-right corner --
-          she has read every page on this site -- or email us directly.
+          Something we didn't cover? Ask Ava in the bottom right, or drop us a
+          line at <a href="mailto:hello@thesynapse.co" className="text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">hello@thesynapse.co</a>.
         </p>
       </header>
       <div className="mt-14 space-y-14">
         {Object.entries(grouped).map(([key, rows]) =>
           rows.length === 0 ? null : (
             <section key={key} id={key}>
-              <h2 className="font-serif text-2xl capitalize text-ink">{key}</h2>
+              <h2 className="font-serif text-2xl uppercase tracking-[0.2em] text-ink">{key}</h2>
               <FaqAccordion items={rows} />
             </section>
           ),

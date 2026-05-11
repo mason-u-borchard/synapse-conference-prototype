@@ -22,7 +22,7 @@ describe("content integrity", () => {
   });
 
   it("the FAQ covers all expected categories", () => {
-    const expected: FaqEntry["category"][] = ["registration", "access", "travel", "submissions", "conduct", "program"];
+    const expected: FaqEntry["category"][] = ["attend", "invest", "travel", "accessibility", "program"];
     const categories = new Set(faq.map((f) => f.category));
     for (const c of expected) {
       expect(categories.has(c)).toBe(true);

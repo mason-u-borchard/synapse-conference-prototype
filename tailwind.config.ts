@@ -32,6 +32,49 @@ const config: Config = {
           plum: "hsl(var(--synapse-plum) / <alpha-value>)",
           peach: "hsl(var(--synapse-peach) / <alpha-value>)",
         },
+        /* === Synapse v2 Figma tokens (warm/earthy palette).
+           Sourced from synapse-figma-variables.json. Tier 100 is the
+           lightest / most saturated; tier 400 is the deepest. */
+        neutral: {
+          100: "hsl(var(--neutral-100) / <alpha-value>)",
+          200: "hsl(var(--neutral-200) / <alpha-value>)",
+          300: "hsl(var(--neutral-300) / <alpha-value>)",
+          400: "hsl(var(--neutral-400) / <alpha-value>)",
+        },
+        moss: {
+          100: "hsl(var(--moss-100) / <alpha-value>)",
+          200: "hsl(var(--moss-200) / <alpha-value>)",
+          300: "hsl(var(--moss-300) / <alpha-value>)",
+          400: "hsl(var(--moss-400) / <alpha-value>)",
+        },
+        amethyst: {
+          100: "hsl(var(--amethyst-100) / <alpha-value>)",
+          200: "hsl(var(--amethyst-200) / <alpha-value>)",
+          300: "hsl(var(--amethyst-300) / <alpha-value>)",
+          400: "hsl(var(--amethyst-400) / <alpha-value>)",
+        },
+        orchid: {
+          100: "hsl(var(--orchid-100) / <alpha-value>)",
+          200: "hsl(var(--orchid-200) / <alpha-value>)",
+          300: "hsl(var(--orchid-300) / <alpha-value>)",
+          400: "hsl(var(--orchid-400) / <alpha-value>)",
+        },
+        azure: {
+          100: "hsl(var(--azure-100) / <alpha-value>)",
+          200: "hsl(var(--azure-200) / <alpha-value>)",
+          300: "hsl(var(--azure-300) / <alpha-value>)",
+          400: "hsl(var(--azure-400) / <alpha-value>)",
+        },
+        oxide: {
+          100: "hsl(var(--oxide-100) / <alpha-value>)",
+          200: "hsl(var(--oxide-200) / <alpha-value>)",
+          300: "hsl(var(--oxide-300) / <alpha-value>)",
+          400: "hsl(var(--oxide-400) / <alpha-value>)",
+        },
+        fire: "hsl(var(--fire) / <alpha-value>)",
+        "off-black": "hsl(var(--off-black) / <alpha-value>)",
+        "off-white": "hsl(var(--off-white) / <alpha-value>)",
+        "true-white": "hsl(var(--true-white) / <alpha-value>)",
         ink: "hsl(var(--ink) / <alpha-value>)",
         surface: "hsl(var(--surface) / <alpha-value>)",
         "surface-raised": "hsl(var(--surface-raised) / <alpha-value>)",
@@ -43,6 +86,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-fraunces)", "Fraunces", "ui-serif", "Georgia", "serif"],
         sans: ["var(--font-inter)", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        noto: ["var(--font-noto-sans)", "Noto Sans", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "JetBrains Mono", "ui-monospace", "monospace"],
       },
       fontSize: {

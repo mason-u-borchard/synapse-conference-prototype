@@ -4,36 +4,121 @@
 
 @layer base {
   :root {
-    --aubergine-50: 300 30% 97%;
-    --aubergine-100: 296 28% 92%;
-    --aubergine-200: 294 22% 82%;
-    --aubergine-400: 288 18% 56%;
-    --aubergine-600: 288 30% 32%;
-    --aubergine-800: 290 40% 20%;
-    --aubergine-900: 292 48% 13%;
-    --aubergine-950: 294 55% 8%;
+    /* === Synapse / All -- 28 brand-named color primitives.
+       Stored as raw HSL components so Tailwind's <alpha-value>
+       wrapping (`hsl(var(--foo) / <alpha-value>)`) works. Hex
+       reference values from synapse-vault/synapse-claude/notes/synapse-figma-variables.json. */
+    --off-black: 0 0% 4%;          /* #090909 */
+    --off-white: 23 22% 93%;       /* #F1ECE9 */
+    --true-white: 0 0% 100%;       /* #FFFFFF */
+    --neutral-100: 23 16% 78%;     /* #D0C5BE -- page background per Figma Hero */
+    --neutral-200: 23 12% 63%;     /* #AC9E95 */
+    --neutral-300: 22 14% 35%;     /* #66564D */
+    --neutral-400: 22 18% 18%;     /* #352B25 */
+    --moss-100: 97 17% 55%;        /* #879F78 */
+    --moss-200: 134 15% 33%;       /* #48614E */
+    --moss-300: 163 59% 12%;       /* #0C2F25 */
+    --moss-400: 185 62% 4%;        /* #041011 */
+    --amethyst-100: 310 36% 71%;   /* #D09CC7 */
+    --amethyst-200: 298 26% 42%;   /* #855087 */
+    --amethyst-300: 305 38% 13%;   /* #2D142B */
+    --amethyst-400: 300 33% 5%;    /* #120912 */
+    --orchid-100: 343 48% 62%;     /* #CD718B */
+    --orchid-200: 347 43% 41%;     /* #953B4F */
+    --orchid-300: 344 61% 16%;     /* #42101D */
+    --orchid-400: 356 66% 9%;      /* #27080A */
+    --azure-100: 198 35% 63%;      /* #7FAEC2 */
+    --azure-200: 197 71% 27%;      /* #145975 */
+    --azure-300: 209 73% 9%;       /* #061727 */
+    --azure-400: 210 88% 3%;       /* #01080F */
+    --oxide-100: 27 81% 69%;       /* #F0AA71 -- the warm accent the design leans on */
+    --oxide-200: 23 78% 43%;       /* #C15918 */
+    --oxide-300: 16 78% 19%;       /* #58200B */
+    --oxide-400: 16 95% 8%;        /* #290C01 */
+    --fire: 12 78% 35%;            /* #A13014 */
 
-    --ivory: 40 38% 97%;
-    --ivory-warm: 38 45% 94%;
-    --ivory-deep: 36 28% 88%;
+    /* === Synapse / Sheer -- 28 alpha variants, pre-mixed.
+       Tailwind's <alpha-value> pattern doesn't apply since these
+       already carry an alpha; reference directly via rgb()/var() in CSS. */
+    --moss-100-alpha-80: rgba(135, 159, 120, 0.80);
+    --moss-100-alpha-50: rgba(135, 159, 120, 0.50);
+    --moss-100-alpha-5:  rgba(135, 159, 120, 0.05);
+    --oxide-100-alpha-80: rgba(240, 170, 113, 0.80);
+    --oxide-100-alpha-50: rgba(240, 170, 113, 0.50);
+    --oxide-100-alpha-5:  rgba(240, 170, 113, 0.05);
+    --azure-100-alpha-80: rgba(127, 174, 194, 0.80);
+    --azure-100-alpha-50: rgba(127, 174, 194, 0.50);
+    --azure-100-alpha-5:  rgba(127, 174, 194, 0.05);
+    --orchid-100-alpha-80: rgba(205, 113, 139, 0.80);
+    --orchid-100-alpha-50: rgba(205, 113, 139, 0.50);
+    --orchid-100-alpha-5:  rgba(205, 113, 139, 0.05);
+    --amethyst-100-alpha-80: rgba(208, 156, 199, 0.80);
+    --amethyst-100-alpha-50: rgba(208, 156, 199, 0.50);
+    --amethyst-100-alpha-5:  rgba(208, 156, 199, 0.05);
+    --neutral-100-alpha-80: rgba(208, 197, 190, 0.80);
+    --neutral-100-alpha-50: rgba(208, 197, 190, 0.50);
+    --neutral-100-alpha-5:  rgba(208, 197, 190, 0.05);
+    --true-white-alpha-80: rgba(255, 255, 255, 0.80);
+    --true-white-alpha-50: rgba(255, 255, 255, 0.50);
+    --true-white-alpha-5:  rgba(255, 255, 255, 0.05);
+    --off-white-alpha-80: rgba(241, 236, 233, 0.80);
+    --off-white-alpha-50: rgba(241, 236, 233, 0.50);
+    --off-white-alpha-25: rgba(241, 236, 233, 0.25);
+    --off-white-alpha-5:  rgba(241, 236, 233, 0.05);
+    --off-black-alpha-80: rgba(9, 9, 9, 0.80);
+    --off-black-alpha-50: rgba(9, 9, 9, 0.50);
+    --off-black-alpha-5:  rgba(9, 9, 9, 0.05);
 
-    --gold: 38 62% 58%;
-    --gold-muted: 38 28% 65%;
-    --gold-deep: 36 72% 38%;
+    /* === Primitive sizing/spacing/radii (4px grid). Partial extraction
+       from Figma; expand as more design nodes reference more steps. */
+    --size-3: 12px;
+    --size-4: 16px;
+    --size-4-5: 18px;
+    --size-6: 24px;
+    --space-0: 0px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --radius-sm: 2px;
 
-    /* Neural gradient anchors, with a peach warming it toward Atlanta light */
-    --synapse-cyan: 185 68% 58%;
-    --synapse-magenta: 322 65% 44%;
-    --synapse-plum: 284 50% 42%;
-    --synapse-peach: 18 78% 72%;
+    /* === Aubergine palette repurposed to Amethyst tier ===
+       The v1 site referenced --aubergine-N throughout component code.
+       Rather than search-and-replace every reference, the palette is
+       remapped to Amethyst values so the existing component code
+       renders with the new warm palette. Eventual cleanup: rename
+       these to --amethyst-N once nothing references aubergine. */
+    --aubergine-50: 23 22% 93%;    /* off-white */
+    --aubergine-100: 23 16% 78%;   /* neutral-100 */
+    --aubergine-200: 310 36% 71%;  /* amethyst-100 */
+    --aubergine-400: 298 26% 42%;  /* amethyst-200 */
+    --aubergine-600: 298 26% 42%;  /* amethyst-200 */
+    --aubergine-800: 305 38% 13%;  /* amethyst-300 */
+    --aubergine-900: 300 33% 5%;   /* amethyst-400 */
+    --aubergine-950: 0 0% 4%;      /* off-black */
 
-    --ink: 294 45% 10%;
-    --surface: 40 38% 97%;
-    --surface-raised: 38 45% 94%;
-    --border: 292 16% 84%;
-    --border-strong: 292 18% 55%;
-    --muted: 36 24% 90%;
-    --muted-foreground: 290 10% 38%;
+    /* === Ivory aliases -- repointed to Off White / Neutral 100 === */
+    --ivory: 23 22% 93%;           /* off-white */
+    --ivory-warm: 23 22% 93%;      /* off-white */
+    --ivory-deep: 23 16% 78%;      /* neutral-100 */
+
+    /* === Gold accent -- repurposed to Oxide tier === */
+    --gold: 27 81% 69%;            /* oxide-100 */
+    --gold-muted: 23 12% 63%;      /* neutral-200 */
+    --gold-deep: 23 78% 43%;       /* oxide-200 */
+
+    /* === Synapse neural-gradient anchors -- repointed to the warm palette === */
+    --synapse-cyan: 198 35% 63%;     /* azure-100 */
+    --synapse-magenta: 347 43% 41%;  /* orchid-200 */
+    --synapse-plum: 298 26% 42%;     /* amethyst-200 */
+    --synapse-peach: 27 81% 69%;     /* oxide-100 */
+
+    /* === Semantic role variables, remapped for warm/earthy v2 === */
+    --ink: 0 0% 4%;                /* off-black -- default text */
+    --surface: 23 16% 78%;         /* neutral-100 -- page background per Figma Hero */
+    --surface-raised: 23 22% 93%;  /* off-white -- raised surfaces (cards, panels) */
+    --border: 23 12% 63%;          /* neutral-200 */
+    --border-strong: 22 14% 35%;   /* neutral-300 */
+    --muted: 23 22% 93%;           /* off-white */
+    --muted-foreground: 22 14% 35%; /* neutral-300 */
 
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -41,35 +126,37 @@
   }
 
   .dark {
-    --aubergine-50: 294 55% 8%;
-    --aubergine-100: 292 48% 13%;
-    --aubergine-200: 290 40% 20%;
-    --aubergine-400: 288 24% 40%;
-    --aubergine-600: 286 22% 62%;
-    --aubergine-800: 288 20% 80%;
-    --aubergine-900: 294 22% 90%;
-    --aubergine-950: 300 30% 97%;
+    /* Aubergine inverted -- darks become lights and vice versa,
+       within the Amethyst tier. */
+    --aubergine-50: 0 0% 4%;        /* off-black */
+    --aubergine-100: 300 33% 5%;    /* amethyst-400 */
+    --aubergine-200: 305 38% 13%;   /* amethyst-300 */
+    --aubergine-400: 298 26% 42%;   /* amethyst-200 */
+    --aubergine-600: 310 36% 71%;   /* amethyst-100 */
+    --aubergine-800: 23 16% 78%;    /* neutral-100 */
+    --aubergine-900: 23 22% 93%;    /* off-white */
+    --aubergine-950: 0 0% 100%;     /* true-white */
 
-    --ivory: 292 38% 10%;
-    --ivory-warm: 290 28% 14%;
-    --ivory-deep: 288 20% 22%;
+    --ivory: 22 18% 18%;            /* neutral-400 */
+    --ivory-warm: 305 38% 13%;      /* amethyst-300 */
+    --ivory-deep: 22 14% 35%;       /* neutral-300 */
 
-    --gold: 38 72% 66%;
-    --gold-muted: 38 30% 58%;
-    --gold-deep: 36 56% 48%;
+    --gold: 27 81% 69%;             /* oxide-100 stays warm in dark */
+    --gold-muted: 22 14% 35%;       /* neutral-300 */
+    --gold-deep: 23 78% 43%;        /* oxide-200 */
 
-    --synapse-cyan: 185 78% 68%;
-    --synapse-magenta: 322 72% 70%;
-    --synapse-plum: 284 58% 60%;
-    --synapse-peach: 18 78% 78%;
+    --synapse-cyan: 198 35% 63%;    /* azure-100 */
+    --synapse-magenta: 343 48% 62%; /* orchid-100 -- lighter for dark */
+    --synapse-plum: 310 36% 71%;    /* amethyst-100 */
+    --synapse-peach: 27 81% 69%;    /* oxide-100 */
 
-    --ink: 40 42% 94%;
-    --surface: 292 42% 7%;
-    --surface-raised: 290 34% 11%;
-    --border: 288 20% 20%;
-    --border-strong: 288 18% 30%;
-    --muted: 288 22% 14%;
-    --muted-foreground: 288 14% 66%;
+    --ink: 23 22% 93%;              /* off-white */
+    --surface: 300 33% 5%;          /* amethyst-400 -- deep warm-purple background */
+    --surface-raised: 305 38% 13%;  /* amethyst-300 */
+    --border: 22 14% 35%;           /* neutral-300 */
+    --border-strong: 23 12% 63%;    /* neutral-200 */
+    --muted: 22 18% 18%;            /* neutral-400 */
+    --muted-foreground: 23 12% 63%; /* neutral-200 */
 
     color-scheme: dark;
   }
@@ -84,7 +171,6 @@
     background-color: hsl(var(--surface));
     color: hsl(var(--ink));
     font-family: var(--font-inter), Inter, system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv11";
   }
 
   ::selection {
@@ -242,11 +328,138 @@
   .dark .grain::before { mix-blend-mode: screen; opacity: 0.06; }
 }
 
+/* === Animations Taylor flagged in Figma comments (2026-05-07) === */
+
+/* Hero ticker -- horizontal infinite-scroll marquee. Wrap two
+   identical strips so the seam is invisible. */
+@keyframes synapse-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: synapse-marquee 40s linear infinite;
+}
+.marquee-pause:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Circle graphic in Investment Pitch -- slow rotation with a
+   gentle "heartbeat" pulse on the scale. */
+@keyframes synapse-spin-pulse {
+  0%   { transform: rotate(0deg)   scale(1); }
+  50%  { transform: rotate(180deg) scale(1.06); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.animate-spin-pulse {
+  animation: synapse-spin-pulse 16s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Logo color cycle -- the Synapse mark cycles through the
+   palette tones as a subtle reminder of the four-fields theme.
+   Implemented via filter hue-rotation on the SVG so we don't have
+   to swap source assets. */
+@keyframes synapse-logo-cycle {
+  0%   { filter: hue-rotate(0deg);   }
+  20%  { filter: hue-rotate(60deg);  }
+  40%  { filter: hue-rotate(140deg); }
+  60%  { filter: hue-rotate(220deg); }
+  80%  { filter: hue-rotate(300deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+.animate-logo-cycle {
+  animation: synapse-logo-cycle 18s linear infinite;
+}
+
+/* Slow continuous rotation -- used on the Invest hero badge so
+   the wrapped text "FOUR FIELDS · ONE FRONTIER..." revolves
+   around the leaf-circle graphic in the center. */
+@keyframes synapse-slow-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-slow-spin {
+  animation: synapse-slow-spin 40s linear infinite;
+  transform-origin: center;
+}
+
+/* Discipline-card hover lift -- the title floats up, the rest
+   scales gently. Implemented as a single transform on the card
+   container plus a translate on the title element. */
+.discipline-card {
+  transition: transform 380ms var(--ease-out-expo);
+}
+.discipline-card:hover {
+  transform: scale(1.025);
+}
+.discipline-card-title {
+  transition: transform 380ms var(--ease-out-expo);
+}
+.discipline-card:hover .discipline-card-title {
+  transform: translateY(-6px);
+}
+
+/* Solid (oxide) button -- radial gradient from cursor on hover.
+   The gradient pulls in the amethyst palette as a secondary tone,
+   per Taylor's note "Using the Oxide & Amethyst Palette". The
+   --x and --y custom props are set inline by a JS handler in the
+   button component; defaults keep it visually fine without JS. */
+.btn-solid-glow {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.btn-solid-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    180px circle at var(--glow-x) var(--glow-y),
+    hsl(var(--amethyst-200) / 0.55),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 280ms ease;
+  pointer-events: none;
+}
+.btn-solid-glow:hover::after {
+  opacity: 1;
+}
+
+/* Outlined button -- subtle gradient sweep on the text + a
+   color shift on the border. Cheap version of Taylor's "gradient
+   within text/stroke" note: animate background-image of the text
+   from transparent to a gradient, and shift the border color. */
+.btn-outline-glow {
+  position: relative;
+  background-image: linear-gradient(
+    90deg,
+    hsl(var(--oxide-200)),
+    hsl(var(--amethyst-200))
+  );
+  background-clip: text;
+  background-size: 0 0;
+  background-repeat: no-repeat;
+  transition: border-color 220ms ease, background-size 360ms ease;
+}
+.btn-outline-glow:hover {
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  /* Force the looping animations to a sensible static frame. */
+  .animate-marquee,
+  .animate-spin-pulse,
+  .animate-logo-cycle {
+    animation: none !important;
   }
 }

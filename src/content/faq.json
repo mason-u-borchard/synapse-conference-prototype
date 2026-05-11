@@ -1,80 +1,92 @@
 [
   {
-    "id": "how-big",
-    "question": "How big is the conference?",
-    "answer": "75 guests. We are optimizing for depth, not scale. Every person in the room is there on purpose, and deep connection is treated as a design constraint rather than a nice-to-have.",
-    "category": "program"
+    "id": "applications-open",
+    "question": "When do applications open?",
+    "answer": "Applications open in July 2026. Submissions are reviewed on a rolling basis -- the committee builds the room intentionally and responds to every applicant.",
+    "category": "attend"
   },
   {
     "id": "women-only",
     "question": "Is this only for women?",
-    "answer": "The convening is women-centered. Women lead, women convene, and the experience is designed around women's voices. Allies who support the mission are welcome to apply, regardless of gender.",
-    "category": "conduct"
+    "answer": "The gathering is women-centered. Women lead, women convene, and the experience is designed around women's voices. Allies who support the mission are welcome to apply, regardless of gender.",
+    "category": "attend"
   },
   {
-    "id": "what-makes-different",
-    "question": "How is this different from a typical academic conference?",
-    "answer": "Sparse keynotes. More workshops, facilitated dialogue, art, movement, and structured time for the conversations that usually only happen in hallways. We are building a container, not a lecture hall.",
-    "category": "program"
+    "id": "attendance-cost",
+    "question": "What does attendance cost?",
+    "answer": "Tickets are covered for all accepted attendees -- there's no registration fee. Lunch is provided each day. Travel, lodging, and other meals are the responsibility of each participant. Limited travel grants may be available -- indicate interest in your application.",
+    "category": "attend"
   },
   {
-    "id": "host",
-    "question": "Who is organizing this?",
-    "answer": "The Synapse grew out of an invitation from Julia Mossbridge, PhD -- neuroscientist and founder of Applied Love Labs -- and is co-led by Elatia Abate and Beth Glick with an organizing team of 25 contributors from across the fields. Applied Love Labs hosts and fiscally sponsors the convening.",
-    "category": "program"
+    "id": "how-to-support",
+    "question": "How do I financially support or sponsor The Synapse?",
+    "answer": "There are two ways. Corporate sponsors can choose from four tiers -- Ember ($10k), Flame ($25k), Blaze ($50k), and Beacon ($100k) -- each with meaningful visibility and partnership benefits. Individual donors can give in any amount through our donation form. Visit our Invest page for full details on both paths.",
+    "category": "invest"
   },
   {
-    "id": "compensation",
-    "question": "Are participants compensated?",
-    "answer": "Yes. Those who lead sessions, facilitate, or perform are paid. The ethos of equality starts with what we value enough to fund. Mention your session interest in the application.",
-    "category": "program"
-  },
-  {
-    "id": "registration-dates",
-    "question": "When does the application open and close?",
-    "answer": "Applications open in late spring 2026. Submissions are reviewed on a rolling basis; the committee builds the room intentionally and responds to every applicant.",
-    "category": "registration"
-  },
-  {
-    "id": "submissions",
-    "question": "I want to lead a session, perform, or run a workshop. How?",
-    "answer": "Mention it in your application -- what you would run, why now, who it is for. The committee will follow up. Session leaders and facilitators are compensated.",
-    "category": "submissions"
+    "id": "tax-deductible",
+    "question": "Is my donation tax-deductible?",
+    "answer": "Yes. Gifts are processed through Applied Love Labs, a fiscally sponsored project, and are fully tax-deductible. Receipts are issued in Applied Love Labs' name.",
+    "category": "invest"
   },
   {
     "id": "travel-venue",
-    "question": "Where is the conference and how do I get there?",
-    "answer": "Atlanta, Georgia. Venue is being finalized. Atlanta is a major airline hub (ATL) with direct flights from most U.S. and many international cities; MARTA connects the airport to much of the city.",
+    "question": "Where is the gathering and how do I get there?",
+    "answer": "Atlanta, Georgia. Venue is being finalized. Atlanta is a major airline hub (ATL) with direct flights from most U.S. and many international cities. MARTA connects the airport to much of the city.",
+    "category": "travel"
+  },
+  {
+    "id": "lodging",
+    "question": "Where should I stay?",
+    "answer": "Lodging is not included in attendance. We'll share recommended hotels near the venue once it's confirmed. In the meantime, visit our Attend page to leave your email -- we'll send details as they're finalized.",
     "category": "travel"
   },
   {
     "id": "travel-grants",
     "question": "Are travel grants available?",
-    "answer": "Yes. A limited pool of travel grants funded through Applied Love Labs, our host and fiscal sponsor, covers doctoral researchers and early-career practitioners whose home institutions cannot cover travel. Indicate interest in the application.",
+    "answer": "We're working on this. We hope to have a limited pool of travel grants, funded through Applied Love Labs, available to doctoral researchers and early-career practitioners whose home institutions cannot cover travel. Indicate interest in your application.",
     "category": "travel"
   },
   {
-    "id": "access-mobility",
+    "id": "access-accommodations",
     "question": "What accessibility accommodations are planned?",
-    "answer": "Step-free venue access, induction loop support in the main room, and live captioning for plenaries are defaults. The application asks directly about access needs; the access lead follows up within 72 hours of submission.",
-    "category": "access"
+    "answer": "Accessibility is a priority. We're actively building our accommodations plan as the venue is finalized. If you have specific access needs, please note them in your application -- we'll follow up directly.",
+    "category": "accessibility"
   },
   {
     "id": "access-quiet",
     "question": "Is there a quiet space?",
-    "answer": "Yes. A low-stimulation room with soft seating, dim lighting, and no scheduled programming is available throughout the three days. The room will be marked on the venue map distributed at arrival.",
-    "category": "access"
+    "answer": "Yes. A low-stimulation room with soft seating and dim lighting will be available throughout the three days. Details on location will be shared at arrival.",
+    "category": "accessibility"
   },
   {
-    "id": "conduct",
+    "id": "organizers",
+    "question": "Who is organizing this?",
+    "answer": "The Synapse grew out of an invitation from Julia Mossbridge, PhD -- neuroscientist and founder of Applied Love Labs and American Electrodynamics Corp -- and is co-led by Elatia Abate and Beth Glick, with an organizing team of contributors from across the fields. Applied Love Labs hosts and fiscally sponsors the gathering.",
+    "category": "program"
+  },
+  {
+    "id": "how-big",
+    "question": "How big is the gathering?",
+    "answer": "100 participants. We're optimizing for depth, not scale. Every person in the room is there on purpose. Deep connection is a design constraint, not a nice-to-have.",
+    "category": "program"
+  },
+  {
+    "id": "what-makes-different",
+    "question": "How is this different from a typical academic conference?",
+    "answer": "Sparse keynotes. More workshops, facilitated dialogue, art, movement, and structured time for the conversations that usually only happen in hallways. We're building a container, not a lecture hall.",
+    "category": "program"
+  },
+  {
+    "id": "session-compensation",
+    "question": "I want to lead a session, perform, or run a workshop -- am I compensated?",
+    "answer": "Yes. Session leaders, facilitators, and performers are paid. Mention in your application what you'd run, why now, and who it's for. The committee will follow up.",
+    "category": "program"
+  },
+  {
+    "id": "code-of-conduct",
     "question": "What is the code of conduct?",
     "answer": "The Synapse follows a clear code of conduct grounded in respect, consent, and scholarly integrity, enforced by an independent response team reachable in person, by email, and by anonymous form.",
-    "category": "conduct"
-  },
-  {
-    "id": "program-childcare",
-    "question": "Is childcare available?",
-    "answer": "Onsite childcare for children ages 1-10 during programmed hours is the working plan, staffed by a licensed local provider. Advance sign-up will be required. Nursing and quiet-feeding rooms will be available throughout. Final confirmation depends on venue selection.",
     "category": "program"
   }
 ]

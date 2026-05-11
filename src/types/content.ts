@@ -71,5 +71,5 @@ export interface FaqEntry {
   id: string;
   question: string;
   answer: string;
-  category: "registration" | "travel" | "access" | "submissions" | "conduct" | "program";
+  category: "attend" | "invest" | "travel" | "accessibility" | "program";
 }
