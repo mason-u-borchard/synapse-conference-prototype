@@ -56,12 +56,12 @@ export default function HomePage() {
             vertical rhythm. The text content itself is constrained to
             ~58% of the container on lg+ so the wave column on the
             right stays clear regardless of viewport width. */}
-        <div className="relative z-10 mx-auto w-full max-w-gallery px-gutter py-20 md:py-28">
+        {/* py-28 (was py-20 md:py-28): Figma hero gives the headline a generous top void before the H1 lands. Bumping vertical padding so the headline doesn't sit right under the sticky header. */}
+        <div className="relative z-10 mx-auto w-full max-w-gallery px-gutter py-24 md:py-32 lg:py-40">
           <div className="w-full lg:max-w-[60%]">
-            {/* Headline updated 2026-05-08 per Taylor's Figma comment:
-                "the headline changed to this. We went back to the old
-                tagline of the conference." */}
-            <h1 className="font-serif text-[clamp(2.5rem,4vw+1rem,5rem)] leading-[1.02] tracking-tight text-off-white text-balance">
+            {/* Headline updated 2026-05-08 per Taylor's Figma comment: "the headline changed to this. We went back to the old tagline of the conference." */}
+            {/* tracking-normal (not -tight): Fraunces in Figma sits with default tracking; pulling it tighter makes the headline look squished against the wave column. */}
+            <h1 className="font-serif text-[clamp(2.5rem,4vw+1rem,5rem)] leading-[1.05] text-off-white text-balance">
               Where women reimagine mind and machine.
             </h1>
             <p className="mt-7 max-w-[40ch] font-sans text-[clamp(1.125rem,0.8vw+0.75rem,1.5rem)] leading-[1.55] text-off-white/95">
@@ -308,7 +308,7 @@ export default function HomePage() {
             >
               <div className="relative h-[52%] w-full overflow-hidden bg-moss-100">
                 <img
-                  src="/figma/home-elatia.png"
+                  src="/figma/elatia.jpg"
                   alt="Elatia Abate"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
@@ -406,17 +406,8 @@ export default function HomePage() {
   );
 }
 
-function HeroStat({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt className="eyebrow mb-1">{label}</dt>
-      <dd className="font-serif text-lg text-ink">{value}</dd>
-    </div>
-  );
-}
-
-// Program-arc row. Mono-cased day label + body, padded for the
-// rounded card surround.
+// Program-arc row.
+// Mono-cased day label + body, padded for the rounded card surround.
 function ProgramRow({ day, body }: { day: string; body: string }) {
   return (
     <li className="flex flex-col gap-2 px-7 py-7 md:flex-row md:gap-6">
@@ -426,15 +417,5 @@ function ProgramRow({ day, body }: { day: string; body: string }) {
   );
 }
 
-// Discipline card for the Four Fields section. Top half: dark text
-// (DisciplineCard moved to src/components/discipline-card.tsx -- it
-// needs hooks for the click-to-flip interaction so it lives in its
-// own client-component file. Hero ticker similarly extracted.)
-
-function ArrowRight() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
+// DisciplineCard lives in src/components/discipline-card.tsx -- it needs hooks for the click-to-flip interaction so it has its own client-component file.
+// HeroTicker similarly extracted.

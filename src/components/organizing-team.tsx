@@ -30,11 +30,7 @@ const team: ReadonlyArray<Member> = [
     name: "Elatia Abate",
     shortName: "Elatia Abate",
     image: "/figma/elatia.jpg",
-    role: (
-      <>
-        Strategy Advisor / Future of Now
-      </>
-    ),
+    role: <>Strategy Advisor / Future of Now</>,
     bio: (
       <>
         Elatia Abate is a Forbes-recognized futurist working at the intersection of strategy, AI, and human potential. A former executive at Anheuser-Busch InBev and Dow Jones, she now advises global organizations and serves on the American Society for AI. She is a TEDx speaker, author of <em>Build a Career You Love</em>, and instructor at UChicago Booth and LinkedIn Learning.
@@ -47,13 +43,8 @@ const team: ReadonlyArray<Member> = [
     name: "Julia Mossbridge, PhD",
     shortName: "Julia Mossbridge, PhD",
     image: "/figma/julia.jpg",
-    role: (
-      <>
-        Neuroscientist / Founder
-        <br />
-        Applied Love Labs &amp; American Electrodynamics Corp
-      </>
-    ),
+    // One-line role per Figma 20:1815.
+    role: <>Neuroscientist / Founder, Applied Love Labs</>,
     bio: (
       <>
         Dr. Julia Mossbridge is an American cognitive neuroscientist, author and educator who works on understanding and training exceptional human performance including psi effects, notably on precognition and presentiment. She is a Senior Distinguished Fellow in Human Potential at the{" "}
@@ -98,9 +89,9 @@ export function OrganizingTeam() {
 
   return (
     <>
-      {/* Three cards in a row, vertically centered. Active card grows
-          to ~500px, others stay at ~390px. Sizing in aspect-ratio
-          + flex-basis percentages so it scales at every viewport. */}
+      {/* Three cards in a row, vertically centered. Active card is
+          500x500, inactive side cards are 391x390 per Figma 20:1784.
+          Clamp widths keep responsive scaling at narrow viewports. */}
       <div className="mt-12 flex w-full max-w-[1328px] items-center justify-center gap-6">
         {team.map((m) => {
           const isActive = m.id === activeId;
@@ -111,10 +102,10 @@ export function OrganizingTeam() {
               onClick={() => setActiveId(m.id)}
               aria-pressed={isActive}
               aria-label={`${m.name} bio`}
-              className={`group relative shrink-0 overflow-hidden rounded-3xl transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-oxide-100 focus:ring-offset-2 focus:ring-offset-moss-300 ${
+              className={`group relative shrink-0 overflow-hidden rounded-[20px] transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-oxide-100 focus:ring-offset-2 focus:ring-offset-moss-300 ${
                 isActive
-                  ? "w-[clamp(280px,28vw,500px)] aspect-square"
-                  : "w-[clamp(180px,22vw,390px)] aspect-square"
+                  ? "w-[clamp(300px,36vw,500px)] aspect-square"
+                  : "w-[clamp(200px,28vw,391px)] aspect-square"
               }`}
             >
               <img
@@ -143,12 +134,13 @@ export function OrganizingTeam() {
         })}
       </div>
 
-      {/* Active person's bio. Title + body + LinkedIn pill, all centered. */}
+      {/* Active person's bio. Role + body + LinkedIn pill, all centered.
+          Role uses JetBrains Mono in mixed case at 20px per Figma 20:1815. */}
       <div className="mt-12 max-w-[751px] text-center">
-        <p className="font-mono text-[clamp(0.875rem,0.5vw+0.5rem,1rem)] uppercase tracking-[0.18em] leading-[1.6]">
+        <p className="font-mono text-[clamp(1rem,0.4vw+0.75rem,1.25rem)] leading-[1.4]">
           {active.role}
         </p>
-        <p className="mt-6 font-sans text-[clamp(0.95rem,0.6vw+0.5rem,1.125rem)] leading-[1.6]">
+        <p className="mt-4 font-sans text-[clamp(1rem,0.4vw+0.75rem,1.25rem)] leading-[1.4]">
           {active.bio}
         </p>
         <div className="mt-7 inline-flex">

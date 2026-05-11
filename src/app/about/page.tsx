@@ -210,50 +210,40 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === Why Atlanta? (Figma 20:1838) ===
-          Off-white bg with two flanking decorative leaf clusters at
-          20% opacity. Skipping the multi-vector pattern reconstruction
-          for now and using the existing discipline graphic SVGs as
-          atmospheric fillers; can be replaced once Taylor exports the
-          actual pattern set. */}
+      {/* === Why Atlanta? (Figma 20:2573) ===
+          Centered, off-white surface. A moss-green four-petal
+          ornament (built from Taylor's four exported vectors,
+          composited in /figma/atlanta-ornament.svg with the
+          rotate-45 + Y-flip arrangement baked in) sits above the
+          headline; body wraps at ~750px; single outline "Apply to
+          attend" CTA below. */}
       <section className="relative isolate overflow-hidden bg-off-white py-24 md:py-section">
-        <div className="container-gutter relative flex items-center justify-center">
-          <div className="hidden lg:flex shrink-0 opacity-20" aria-hidden="true">
-            <img src="/figma/graphic-consciousness.svg" alt="" className="h-[315px] w-[315px]" />
-          </div>
-          <div className="relative max-w-[599px] flex-1 px-gutter text-off-black">
-            <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
-              Why Atlanta?
-            </h2>
-            <p className="mt-6 font-sans text-xl leading-[1.6]">
-              Atlanta has deep roots in civil rights, a thriving tech and research ecosystem, and a demonstrated commitment to lifting women's voices. It is not a neutral backdrop — it is a deliberate choice.
-            </p>
-          </div>
-          <div className="hidden lg:flex shrink-0 gap-10 opacity-20" aria-hidden="true">
-            <img src="/figma/graphic-ai.svg" alt="" className="h-[315px] w-[315px]" />
-            <img src="/figma/graphic-cs.svg" alt="" className="h-[315px] w-[315px]" />
-            <img src="/figma/graphic-robotics.svg" alt="" className="h-[315px] w-[315px]" />
+        <div className="container-gutter flex flex-col items-center text-center">
+          <img
+            src="/figma/atlanta-ornament.svg"
+            alt=""
+            aria-hidden="true"
+            width={144}
+            height={144}
+            className="h-[120px] w-[120px] md:h-[144px] md:w-[144px]"
+          />
+          <h2 className="mt-6 font-serif text-[clamp(2.5rem,4vw+0.5rem,3rem)] leading-[1.2] text-off-black">
+            Why Atlanta?
+          </h2>
+          <p className="mt-6 max-w-[751px] font-sans text-xl leading-[1.6] text-off-black">
+            Atlanta has deep roots in civil rights, a thriving tech and research ecosystem, and a demonstrated commitment to lifting women's voices. It is not a neutral backdrop — it is a deliberate choice.
+          </p>
+          <div className="mt-12">
+            <Link
+              href="/attend"
+              className="inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-black/80 px-6 font-noto text-lg font-semibold text-off-black/80 transition-colors hover:bg-off-black/5"
+            >
+              Apply to attend
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Press / contact carry-over from v1 -- not in Figma, kept as
-          an inbound channel until Taylor designs an explicit one. */}
-      <section className="relative isolate bg-off-white px-gutter pb-24">
-        <div className="container-gutter mx-auto max-w-3xl">
-          <h2 className="font-serif text-3xl text-off-black">Press and inquiries</h2>
-          <p className="mt-4 font-sans text-lg leading-[1.6] text-off-black/85">
-            For media passes, speaker interviews, or the official press kit, reach the organizing committee at{" "}
-            <a
-              href="mailto:hello@thesynapse.co"
-              className="text-off-black underline decoration-oxide-200 decoration-2 underline-offset-4"
-            >
-              hello@thesynapse.co
-            </a>
-            .
-          </p>
-        </div>
-      </section>
     </>
   );
 }

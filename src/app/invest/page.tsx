@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "Not a proposal for a different future. A demonstration of one. Invest in the room where this gets built.",
 };
 
+// Where-your-investment-goes line items. Copy verbatim from the IA.
 const allocation = [
   {
     label: "Speaker travel & compensation",
@@ -34,18 +35,86 @@ const allocation = [
   },
 ];
 
+// Sponsor-tier rows per Figma 55:707. Each tier reads as a horizontal
+// band: colored "amount" block on the left, headline + italic body in
+// the middle, "what's included" bullets on the right. The four-step
+// color ramp (oxide-100 → 400) is the visual through-line.
+type Tier = {
+  name: string;
+  amount: string;
+  headline: string;
+  body: string;
+  included: { strong: string; rest: string }[];
+  blockClass: string;
+  blockText: string;
+};
+
+const tiers: Tier[] = [
+  {
+    name: "Ember",
+    amount: "$10k",
+    headline: "Every fire begins here.",
+    body: "Ember sponsors are the first heat. The reason the fire catches at all.",
+    included: [
+      { strong: "Name listed", rest: "in event program and website" },
+      { strong: "Select 1 invitee,", rest: "approved by conference team" },
+      { strong: "Two social media", rest: "recognition posts" },
+    ],
+    blockClass: "bg-oxide-100 text-off-black",
+    blockText: "text-off-black",
+  },
+  {
+    name: "Flame",
+    amount: "$25k",
+    headline: "Steady, sustaining, drawing others toward it.",
+    body: "Flame sponsors are the steady energy that keeps everything burning.",
+    included: [
+      { strong: "Logo placement:", rest: "program, website, signage, main stage, select materials" },
+      { strong: "Select 2 invitees,", rest: "approved by conference team" },
+      { strong: "Two social media", rest: "recognition posts + dedicated spotlight" },
+    ],
+    blockClass: "bg-oxide-200 text-true-white",
+    blockText: "text-true-white",
+  },
+  {
+    name: "Blaze",
+    amount: "$50k",
+    headline: "A force that reshapes what surrounds it.",
+    body: "Blaze sponsors power the higher-order thinking at the core of The Synapse's mission.",
+    included: [
+      { strong: "Logo placement:", rest: "program, website, signage, main stage, select materials" },
+      { strong: "Select 2 invitees,", rest: "approved by conference team" },
+      { strong: "Two social media", rest: "recognition posts + dedicated spotlight" },
+      { strong: "Featured", rest: "interview, project, or quote in event communications" },
+    ],
+    blockClass: "bg-oxide-300 text-true-white",
+    blockText: "text-true-white",
+  },
+  {
+    name: "Beacon",
+    amount: "$100k",
+    headline: "Fire with direction. Visible from a distance.",
+    body: "Beacon sponsors are the animating force behind everything The Synapse aspires to be.",
+    included: [
+      { strong: "Exclusive", rest: "naming rights to a signature event moment" },
+      { strong: "Dedicated", rest: "branded space or experience, designed collaboratively" },
+      { strong: "Year-round", rest: "recognition on The Synapse website + communications" },
+      { strong: "Select 4 invitees,", rest: "approved by conference team" },
+      { strong: "Direct introduction", rest: "to speakers and community leaders" },
+    ],
+    blockClass: "bg-oxide-400 text-true-white",
+    blockText: "text-true-white",
+  },
+];
+
 export default function InvestPage() {
   const provider = getDonationProvider();
   return (
     <>
-      {/* === Hero (Figma 73:3707) ===
-          Off-white surface. Left: Fraunces 60px headline + Inter
-          subhead + 3-stat block separated by hairlines + oxide CTA.
-          Right: a circle "badge" with the leaf-circle graphic in the
-          center and rotating text wrapped around its perimeter
-          ("FOUR FIELDS · ONE FRONTIER · A DEMONSTRATION OF A
-          DIFFERENT FUTURE ·"). The text ring rotates slowly via
-          .animate-slow-spin. */}
+      {/* === Hero (Figma 55:707 top) ===
+          Off-white surface. Left: Fraunces headline + Inter subhead
+          + 3-stat hairline list + single oxide "Request to sponsor"
+          CTA. Right: rotating ring text around the leaf-circle. */}
       <section className="relative isolate overflow-hidden bg-off-white -mt-[88px] pt-[88px]">
         <div className="container-gutter relative z-10 grid items-center gap-12 py-24 md:py-32 lg:grid-cols-[minmax(0,1fr)_auto]">
           <div className="max-w-[820px]">
@@ -67,11 +136,8 @@ export default function InvestPage() {
               />
             </dl>
             <div className="mt-12 flex flex-wrap items-center gap-3">
-              {/* Primary CTA points to the sponsor-request Google form
-                  per the v2 IA. The form URL is still TBD with the
-                  committee; until it lands, the link jumps to the
-                  tiers section so visitors see the partnership context
-                  rather than dead-ending on a missing form. */}
+              {/* Primary CTA anchors to sponsor tiers until the google form
+                  URL is confirmed by the committee. */}
               <Link
                 href="#sponsor-tiers"
                 className="inline-flex h-[50px] items-center btn-solid-glow gap-2 rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
@@ -87,8 +153,8 @@ export default function InvestPage() {
               </Link>
             </div>
           </div>
-          {/* Circle badge -- rotating text wraps a textPath around a
-              perfect circle; the leaf-circle SVG sits in the center. */}
+          {/* Circle badge. Rotating ring text wraps a textPath around a
+              circle; the leaf-circle SVG sits in the center. */}
           <div className="relative mx-auto hidden h-[440px] w-[440px] shrink-0 lg:block">
             <svg
               viewBox="0 0 440 440"
@@ -122,27 +188,32 @@ export default function InvestPage() {
       </section>
 
       {/* === Sponsor tiers ===
-          Four-tier sponsorship grid per the v2 IA. The tier copy
-          mirrors the sponsorship PDF the committee shops directly.
-          Heading anchors the "Request to sponsor" CTA above so a
-          clicked CTA lands in the partnership context. */}
+          Centered heading + intro + single Request CTA, then a vertical
+          stack of four horizontal tier rows. Each row pairs a colored
+          amount block (oxide-100 → 400 ramp) with body + benefits. */}
       <section
         id="sponsor-tiers"
         aria-labelledby="sponsor-tiers-heading"
         className="relative isolate overflow-hidden bg-off-white py-24 md:py-section"
       >
         <div className="container-gutter">
-          <div className="max-w-[820px]">
+          <div className="mx-auto max-w-[720px] text-center">
+            <img
+              src="/figma/circle-graphic.svg"
+              alt=""
+              aria-hidden="true"
+              className="mx-auto h-12 w-12"
+            />
             <h2
               id="sponsor-tiers-heading"
-              className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2] text-off-black"
+              className="mt-6 font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2] text-off-black"
             >
               Four tiers of sponsorship.
             </h2>
-            <p className="mt-6 max-w-[60ch] font-sans text-xl leading-[1.4] text-off-black">
+            <p className="mt-6 font-sans text-xl leading-[1.4] text-off-black">
               We approach sponsorship as mutual, transparent <em>partnership</em>. Sponsors gain meaningful visibility and relationships. The gathering gains the resources to come to life. Together, we build something none of us could build alone.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex justify-center">
               <Link
                 href="#sponsor-tiers"
                 className="inline-flex h-[50px] items-center btn-solid-glow gap-2 rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
@@ -150,45 +221,22 @@ export default function InvestPage() {
                 Request to sponsor
                 <ArrowRight />
               </Link>
-              <Link
-                href="#donate"
-                className="inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-black/80 px-6 font-noto text-lg font-semibold text-off-black/80 transition-colors hover:bg-off-black/5"
-              >
-                Or, donate below
-              </Link>
             </div>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <TierCard
-              name="Ember"
-              amount="$10k"
-              body="Every fire begins here. Ember sponsors are the first heat — the reason the fire catches at all."
-            />
-            <TierCard
-              name="Flame"
-              amount="$25k"
-              body="Steady, sustaining, drawing others toward it. Flame sponsors are the steady energy that keeps everything burning."
-            />
-            <TierCard
-              name="Blaze"
-              amount="$50k"
-              body="A force that reshapes what surrounds it. Blaze sponsors power the higher-order thinking at the core of The Synapse's mission."
-            />
-            <TierCard
-              name="Beacon"
-              amount="$100k"
-              body="Fire with direction. Visible from a distance. Beacon sponsors are the animating force behind everything The Synapse aspires to be."
-            />
+          <div className="mt-14 flex flex-col gap-6">
+            {tiers.map((tier) => (
+              <TierRow key={tier.name} tier={tier} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* === $100k by June 30 + Where Your Investment Goes (Figma 73:3733 upper) ===
-          Two-column. Left: Fraunces "$100k by June 30" + body + CTA.
-          Right: a translucent "WHERE YOUR INVESTMENT GOES" panel with
-          four icon + title + body rows. */}
+      {/* === $100k by June 30 + Where Your Investment Goes ===
+          Two-column. Left: Fraunces ask + body + single primary CTA.
+          Right: a clean "WHERE YOUR INVESTMENT GOES" panel with four
+          icon + title + body rows. */}
       <section className="relative isolate overflow-hidden bg-off-white py-24 md:py-section">
-        <div className="container-gutter relative grid items-start gap-20 lg:grid-cols-[minmax(0,508px)_minmax(0,1fr)]">
+        <div className="container-gutter relative grid items-start gap-20 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
           <div>
             <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2] text-off-black">
               $100k by June 30
@@ -203,12 +251,6 @@ export default function InvestPage() {
               >
                 Request to sponsor
                 <ArrowRight />
-              </Link>
-              <Link
-                href="#donate"
-                className="inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-black/80 px-6 font-noto text-lg font-semibold text-off-black/80 transition-colors hover:bg-off-black/5"
-              >
-                Or, donate below
               </Link>
             </div>
           </div>
@@ -233,12 +275,10 @@ export default function InvestPage() {
         </div>
       </section>
 
-      {/* === Donation form (Figma 73:3775) ===
-          A styled card wraps the actual Virtuous embed. Header in
-          oxide-300 with "Fund the room" + tax-deductible blurb;
-          body off-white with an oxide-300 outline. Wave 2 of the
-          S-shape graphic placed left-anchored as decorative
-          counterweight to the form on the right. */}
+      {/* === Donation form (Figma 55:707 bottom) ===
+          Card wraps the Virtuous embed. Oxide-300 header with "Believe
+          in the room" + tax-deductible blurb; body off-white with an
+          oxide-300 outline. Wave-2 graphic left-anchored as counterweight. */}
       <section
         id="donate"
         aria-labelledby="donate-heading"
@@ -261,10 +301,6 @@ export default function InvestPage() {
               </p>
             </header>
             <div className="bg-off-white p-6 md:p-10">
-              {/* Virtuous embed. Field set + visual treatment of the
-                  inputs is controlled by Virtuous; we can't override
-                  to match Taylor's exact mockup pixel-for-pixel, but
-                  the card surround puts it in the right context. */}
               <DonateForm
                 providerName={provider.name}
                 providerLabel={provider.label}
@@ -293,8 +329,7 @@ export default function InvestPage() {
 }
 
 // --- Stat row ---------------------------------------------------------
-// Used in the Hero to render the 3-line stats block, separated by
-// hairline dividers per Figma.
+// Hero stats block. Bold label + plain detail, separated by hairlines.
 function StatRow({ label, body }: { label: string; body: string }) {
   return (
     <div className="py-5 first:pt-0 last:pb-0">
@@ -310,17 +345,46 @@ function ArrowRight() {
   return <LucideArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />;
 }
 
-// Sponsorship tier card. Heading row (name + amount), single paragraph
-// of body copy. Hairline border, off-white surface, oxide-300 accent
-// on the amount so the four tiers read as a related set.
-function TierCard({ name, amount, body }: { name: string; amount: string; body: string }) {
+// Horizontal tier row: pill-shaped amount block on the left, body in
+// the middle, "what's included" bullets on the right. The amount block
+// uses the per-tier oxide ramp color.
+function TierRow({ tier }: { tier: Tier }) {
   return (
-    <article className="flex h-full flex-col rounded-xl border border-oxide-300/30 bg-true-white/60 p-7">
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="font-serif text-2xl text-off-black">{name}</h3>
-        <p className="font-mono text-base text-oxide-300">{amount}</p>
+    <article className="grid overflow-hidden rounded-2xl border border-oxide-300/20 bg-true-white/60 md:grid-cols-[minmax(180px,220px)_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1.1fr)_minmax(0,1.4fr)]">
+      <div
+        className={`flex flex-col justify-center px-8 py-10 ${tier.blockClass} relative overflow-hidden`}
+      >
+        {/* Subtle inner contour echoing the Figma's blob backdrop. */}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-8 -top-8 h-44 w-44 rounded-full opacity-15"
+          style={{ background: "currentColor" }}
+        />
+        <p className={`font-serif text-[3.25rem] leading-none ${tier.blockText}`}>
+          {tier.amount}
+        </p>
+        <p className={`mt-3 font-mono text-sm uppercase tracking-[0.32em] ${tier.blockText}`}>
+          {tier.name}
+        </p>
       </div>
-      <p className="mt-5 font-sans text-base leading-[1.5] text-off-black/80">{body}</p>
+      <div className="flex flex-col gap-4 px-8 py-8 lg:py-10">
+        <h3 className="font-serif text-2xl leading-[1.15] text-off-black">{tier.headline}</h3>
+        <p className="font-sans text-base italic leading-[1.5] text-off-black/75">
+          {tier.body}
+        </p>
+      </div>
+      <div className="border-t border-oxide-300/15 px-8 py-8 lg:border-l lg:border-t-0 lg:py-10">
+        <p className="font-mono text-xs uppercase tracking-[0.28em] text-oxide-200">
+          What&apos;s included
+        </p>
+        <ul className="mt-4 divide-y divide-oxide-300/15">
+          {tier.included.map((row, i) => (
+            <li key={i} className="py-3 font-sans text-[15px] leading-[1.45] text-off-black first:pt-0 last:pb-0">
+              <span className="font-semibold">{row.strong}</span> {row.rest}
+            </li>
+          ))}
+        </ul>
+      </div>
     </article>
   );
 }
