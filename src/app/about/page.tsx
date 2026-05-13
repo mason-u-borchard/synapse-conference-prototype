@@ -92,22 +92,34 @@ export default function AboutPage() {
           serving as a textured backdrop. The dedication card floats
           centered on top of the moon. The page-level squiggle still
           sweeps behind the card across both this section and the
-          hero above. */}
+          hero above.
+
+          Layout note: on desktop the moon sets the section's intrinsic
+          height and the card is absolutely centered over it. On mobile
+          the moon, scaled to viewport width, isn't tall enough to
+          contain the card -- the card was overflowing into the moss
+          section below and Julia's signature got clipped. So on mobile
+          we flow the card normally inside the section and pin the moon
+          absolutely as a backdrop, letting the card define section
+          height. */}
       <section className="relative pb-12 md:pb-section">
         <div className="relative">
-          {/* Full-bleed moon. object-cover so the lunar surface fills
-              regardless of viewport width; max-h caps it on very wide
-              screens so the card doesn't drift off-center. */}
+          {/* Full-bleed moon. Acts as an absolutely-pinned backdrop on
+              mobile (so the card -- in normal flow -- can define the
+              section's height) and resumes its intrinsic-height role
+              on md+ where the absolute card sits on top of it. */}
           <img
             src="/figma/moon.png"
             alt=""
             aria-hidden="true"
-            className="block h-auto w-full select-none"
+            className="absolute inset-0 h-full w-full select-none object-cover md:relative md:block md:h-auto md:object-fill"
           />
-          {/* Dedication card overlay -- absolutely centered both
-              axes on the moon. z-10 so it sits above the page
-              squiggle. */}
-          <div className="absolute inset-0 z-10 flex items-center justify-center px-gutter">
+          {/* Dedication card. On mobile it's in normal flow with
+              breathing room above/below so the moon shows through and
+              the next section can't overlap. On md+ it returns to the
+              absolutely-centered overlay layout. z-10 so it sits above
+              the page squiggle. */}
+          <div className="relative z-10 flex items-center justify-center px-gutter py-16 md:absolute md:inset-0 md:py-0">
             <DedicationCard />
           </div>
         </div>
@@ -176,7 +188,7 @@ export default function AboutPage() {
           Beth (right, smaller). Each card is a photograph with a
           fade-to-moss-400 gradient at the bottom and the name
           rendered in Fraunces. */}
-      <section className="relative isolate bg-moss-300 px-gutter pb-24 md:pb-section">
+      <section className="relative isolate overflow-hidden bg-moss-300 px-gutter pb-24 md:pb-section">
         <div className="container-gutter flex flex-col items-center text-off-white">
           <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
             The organizing team

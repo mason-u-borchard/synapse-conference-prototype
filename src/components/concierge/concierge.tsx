@@ -83,8 +83,17 @@ export function Concierge() {
         aria-label={open ? "Close Ava, the conference concierge" : "Open Ava, the conference concierge"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
+        // bottom/right are inlined so we can compose `env(safe-area-inset-*)` with a
+        // baseline gutter. Several mobile browsers (iOS Safari in particular) effectively
+        // shift fixed-position elements past the right edge when the page introduces any
+        // horizontal scroll or when the safe-area inset is nonzero; the max() guarantees
+        // a 16px gutter on phones while still respecting notched devices.
+        style={{
+          right: "max(1rem, env(safe-area-inset-right))",
+          bottom: "max(1rem, env(safe-area-inset-bottom))",
+        }}
         className={cx(
-          "group fixed bottom-5 right-5 z-40 inline-flex h-14 items-center gap-3 rounded-pill border border-border-strong bg-surface pl-5 pr-4 text-sm shadow-paper transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-glow md:bottom-8 md:right-8",
+          "group fixed z-40 inline-flex h-14 max-w-[calc(100vw-2rem)] items-center gap-3 whitespace-nowrap rounded-pill border border-border-strong bg-surface pl-5 pr-4 text-sm shadow-paper transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-glow md:!bottom-8 md:!right-8",
           // Fade and lift out of the way once the user is in the
           // footer / Atlanta pre-footer area. The dialog itself
           // (when open) stays interactive regardless.

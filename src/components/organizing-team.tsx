@@ -91,8 +91,13 @@ export function OrganizingTeam() {
     <>
       {/* Three cards in a row, vertically centered. Active card is
           500x500, inactive side cards are 391x390 per Figma 20:1784.
-          Clamp widths keep responsive scaling at narrow viewports. */}
-      <div className="mt-12 flex w-full max-w-[1328px] items-center justify-center gap-6">
+          Clamp widths keep responsive scaling at narrow viewports. On
+          mobile (<sm) the row becomes a snap-scroll carousel that stays
+          inside its container; the active card is centered, the two
+          other cards are visible to either side. From sm up it returns
+          to the original centered three-up flex row. */}
+      <div className="mt-12 w-full max-w-[1328px] overflow-x-auto sm:overflow-visible [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex w-max items-center gap-4 snap-x snap-mandatory sm:w-full sm:max-w-[1328px] sm:justify-center sm:gap-6 sm:snap-none">
         {team.map((m) => {
           const isActive = m.id === activeId;
           return (
@@ -102,10 +107,10 @@ export function OrganizingTeam() {
               onClick={() => setActiveId(m.id)}
               aria-pressed={isActive}
               aria-label={`${m.name} bio`}
-              className={`group relative shrink-0 overflow-hidden rounded-[20px] transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-oxide-100 focus:ring-offset-2 focus:ring-offset-moss-300 ${
+              className={`group relative shrink-0 snap-center overflow-hidden rounded-[20px] transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-oxide-100 focus:ring-offset-2 focus:ring-offset-moss-300 sm:snap-none ${
                 isActive
-                  ? "w-[clamp(300px,36vw,500px)] aspect-square"
-                  : "w-[clamp(200px,28vw,391px)] aspect-square"
+                  ? "w-[min(72vw,360px)] sm:w-[clamp(300px,36vw,500px)] aspect-square"
+                  : "w-[min(60vw,280px)] sm:w-[clamp(200px,28vw,391px)] aspect-square"
               }`}
             >
               <img
@@ -132,6 +137,7 @@ export function OrganizingTeam() {
             </button>
           );
         })}
+        </div>
       </div>
 
       {/* Active person's bio. Role + body + LinkedIn pill, all centered.

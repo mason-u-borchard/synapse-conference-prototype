@@ -204,7 +204,7 @@ export default function HomePage() {
           along the bottom. Wave 2 of the S-shape graphic visually
           flows behind this section in Taylor's design; placed below
           via absolute positioning. */}
-      <section className="relative isolate bg-moss-300 py-24 md:py-section">
+      <section className="relative isolate bg-moss-300 pt-24 pb-10 md:py-section">
         {/* Background leaf pattern, right-anchored, low opacity.
             Inside an overflow-hidden wrapper so it doesn't bleed
             into adjacent sections. */}

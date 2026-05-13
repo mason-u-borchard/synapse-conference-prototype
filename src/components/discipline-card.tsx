@@ -33,8 +33,12 @@ export function DisciplineCard({
     <div
       // Card height comes from aspect-ratio (354:603 per Figma) so the
       // card scales proportionally at every viewport instead of locking
-      // a 603px height that breaks at narrow / zoomed widths.
-      className="discipline-card group mx-auto w-full max-w-[400px] aspect-[354/603] [perspective:1500px]"
+      // a 603px height that breaks at narrow / zoomed widths. On mobile
+      // the card stacks single-column at near-full width, so the tall
+      // 354:603 ratio leaves a big dead zone in the dark text panel
+      // beneath the body copy -- shorten the card there so the text
+      // panel hugs its content while the square graphic stays square.
+      className="discipline-card group mx-auto w-full max-w-[400px] aspect-[354/490] md:aspect-[354/603] [perspective:1500px]"
       onMouseEnter={undefined}
     >
       <button
@@ -50,7 +54,13 @@ export function DisciplineCard({
             whatever's left up top via flex-1. Both heights flex with
             the card's overall aspect-ratio so things scale together. */}
         <article className="absolute inset-0 flex flex-col overflow-hidden rounded-3xl [backface-visibility:hidden]">
-          <div className={`flex flex-1 min-h-0 flex-col justify-between gap-3 p-6 text-off-white ${textBg}`}>
+          {/* Title sits above body with a tight gap on mobile. From md+
+              (when the card is in a 2- or 4-column grid that pins it
+              to the 354:603 aspect ratio with plenty of vertical room)
+              we push the title to the top and body to the bottom with
+              justify-between to match Taylor's Figma. On mobile that
+              same justify-between left a huge gap, so it's md-only. */}
+          <div className={`flex flex-1 min-h-0 flex-col gap-3 p-6 text-off-white md:justify-between ${textBg}`}>
             <h3 className="discipline-card-title font-sans text-[clamp(1.25rem,2vw+0.5rem,1.625rem)] font-semibold leading-[1.2]">
               {title}
             </h3>

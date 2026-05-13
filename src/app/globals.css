@@ -338,9 +338,20 @@
 }
 .animate-marquee {
   animation: synapse-marquee 40s linear infinite;
+  /* Promote to its own compositor layer. iOS Safari otherwise tends
+     to stall transform animations on very wide flex tracks, which
+     makes the ticker appear static on phones. */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
-.marquee-pause:hover .animate-marquee {
-  animation-play-state: paused;
+/* Hover-to-pause only on devices that actually have a hover capability.
+   On touch (iPhone Safari, Android Chrome), :hover gets latched after
+   a tap and would freeze the marquee until the user taps elsewhere. */
+@media (hover: hover) {
+  .marquee-pause:hover .animate-marquee {
+    animation-play-state: paused;
+  }
 }
 
 /* Circle graphic in Investment Pitch -- slow rotation with a
