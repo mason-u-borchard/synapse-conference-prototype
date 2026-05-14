@@ -11,39 +11,6 @@ the committee finalizes a 501(c)(3) partnership.
 - **Where:** Atlanta, Georgia (venue TBD)
 - **Fiscal sponsor:** TBD by the committee
 
-## What this repo is
-
-One of several artifacts the organizing committee is using to shape
-what the actual Synapse website becomes. A second prototype built by
-Audubon (using Claude Code + Tailwind templates + Vercel) is being
-evaluated in parallel. Neither is trying to win; both are trying to
-make the committee's decision easier either way.
-
-The goal of this prototype specifically is to:
-
-1. Demonstrate that the signature design direction (editorial,
-   academic-warm, neural-inspired) can carry the whole site without
-   drifting into Tailwind-template default aesthetics.
-2. Show a working, content-grounded Ava concierge whose knowledge
-   updates when the JSON content files update.
-3. Propose a **swappable donation module** designed around the
-   committee's biggest open question: which donation platform to
-   use once the fiscal sponsor is chosen.
-4. Get to a place where Lighthouse passes 90+ and accessibility
-   passes without special configuration.
-
-## A note on how this was built
-
-This prototype was built with Claude Code assistance. Keeping that
-in the README is intentional -- the organizing committee has been
-open about AI tooling, and Ava (the on-site concierge) is herself an
-AI. Hiding the build process while the product is an AI chatbot
-would be a strange choice.
-
-The code, design decisions, and content placeholders were made
-intentionally and reviewed by a human (Mason Borchard). AI was used
-the way most senior engineers use it: to move faster through
-boilerplate so attention can go to the decisions that matter.
 
 ## Tech stack
 
@@ -153,10 +120,3 @@ See `src/lib/donations/README.md`. TL;DR:
   link and bypasses the API route.
 - Something new: add a file implementing the `DonationProvider`
   interface; register it in `provider.ts`.
-
-## Credits
-
-- Placeholder speaker bios are imaginary; see
-  `CONTENT_PLACEHOLDER.md`.
-- Typography: Fraunces (OFL), Inter (OFL), JetBrains Mono (Apache 2.0).
-- Built with assistance from Anthropic's Claude via Claude Code.
