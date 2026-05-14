@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DisciplineCard } from "@/components/discipline-card";
+import { NotifyForm } from "@/components/notify-form";
 
 export const metadata: Metadata = {
   title: "Attend",
@@ -195,42 +196,6 @@ export default function AttendPage() {
         </div>
       </section>
     </>
-  );
-}
-
-// Inline email capture used in the hero and "Who it's for" sections.
-// IA specifies a single email field plus a "Notify me" button; this is
-// a separate surface from the multi-field KeepInLoopForm used elsewhere.
-function NotifyForm({ id, className }: { id: string; className?: string }) {
-  return (
-    <form
-      id={id}
-      action={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/api/submit-form`}
-      method="post"
-      className={[
-        "flex w-full max-w-[460px] items-stretch overflow-hidden rounded-full border border-off-black/20 bg-off-white",
-        className ?? "",
-      ].join(" ")}
-    >
-      <label htmlFor={`${id}-email`} className="sr-only">
-        Email address
-      </label>
-      <input
-        id={`${id}-email`}
-        type="email"
-        name="email"
-        required
-        placeholder="email@example.com"
-        autoComplete="email"
-        className="flex-1 bg-transparent px-5 py-3 font-sans text-base text-off-black placeholder:text-off-black/40 focus:outline-none"
-      />
-      <button
-        type="submit"
-        className="m-1 inline-flex items-center btn-solid-glow rounded-full bg-oxide-100 px-5 font-noto text-base font-semibold text-off-black transition-transform hover:-translate-y-0.5"
-      >
-        Notify me
-      </button>
-    </form>
   );
 }
 
