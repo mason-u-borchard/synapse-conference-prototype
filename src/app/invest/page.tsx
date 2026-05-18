@@ -5,6 +5,11 @@ import { DonateForm } from "@/components/donate-form";
 import { getDonationProvider } from "@/lib/donations/provider";
 import { meta } from "@/lib/content";
 
+// Sponsorship intake form. Lives in Google Forms while the committee
+// shakes out tier pricing; if we ever swap to a CRM-backed intake the
+// only change needed is this URL.
+const SPONSORSHIP_FORM_URL = "https://forms.gle/bQctfqYjbbXiXEc5A";
+
 export const metadata: Metadata = {
   title: "Invest",
   description:
@@ -136,10 +141,10 @@ export default function InvestPage() {
               />
             </dl>
             <div className="mt-12 flex flex-wrap items-center gap-3">
-              {/* Primary CTA anchors to sponsor tiers until the google form
-                  URL is confirmed by the committee. */}
               <Link
-                href="#sponsor-tiers"
+                href={SPONSORSHIP_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-[50px] items-center btn-solid-glow gap-2 rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
               >
                 Request to sponsor
@@ -215,7 +220,9 @@ export default function InvestPage() {
             </p>
             <div className="mt-8 flex justify-center">
               <Link
-                href="#sponsor-tiers"
+                href={SPONSORSHIP_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-[50px] items-center btn-solid-glow gap-2 rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
               >
                 Request to sponsor
@@ -246,7 +253,9 @@ export default function InvestPage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
-                href="#sponsor-tiers"
+                href={SPONSORSHIP_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-[50px] items-center btn-solid-glow gap-2 rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
               >
                 Request to sponsor

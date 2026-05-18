@@ -1,0 +1,2905 @@
+[
+  {
+    "slug": "anca-d-dragan",
+    "name": "Anca D. Dragan, Ph.D.",
+    "affiliation": "UC Berkeley (Associate Professor, EECS; InterACT Lab); Google DeepMind (Director of AI Safety and Alignment)",
+    "fields": [
+      "robotics",
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "human-robot interaction",
+      "AI alignment",
+      "value learning",
+      "legible motion",
+      "reward learning",
+      "human-AI collaboration"
+    ],
+    "notableWorks": [
+      {
+        "title": "Legibility and Predictability of Robot Motion",
+        "year": 2013,
+        "venue": "ACM/IEEE International Conference on Human-Robot Interaction (HRI)",
+        "url": "https://doi.org/10.1109/HRI.2013.6483603"
+      },
+      {
+        "title": "Cooperative Inverse Reinforcement Learning",
+        "year": 2016,
+        "venue": "NeurIPS",
+        "url": "https://arxiv.org/abs/1606.03137"
+      },
+      {
+        "title": "Inverse Reward Design",
+        "year": 2017,
+        "venue": "NeurIPS",
+        "url": "https://arxiv.org/abs/1711.02827"
+      }
+    ],
+    "profileUrl": "https://people.eecs.berkeley.edu/~anca/",
+    "bridgesNote": "Bridges robotics, AI, and cognitive science through Cooperative Inverse Reinforcement Learning, which formalizes legible motion and value alignment by modeling humans as Bayesian observers of robot behavior."
+  },
+  {
+    "slug": "cynthia-breazeal",
+    "name": "Cynthia Breazeal, Ph.D.",
+    "affiliation": "MIT Media Lab (Professor of Media Arts and Sciences; Founder/Director, Personal Robots Group; Dean for Digital Learning, MIT Open Learning)",
+    "fields": [
+      "robotics",
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "social robotics",
+      "human-robot interaction",
+      "personal robots",
+      "AI literacy"
+    ],
+    "notableWorks": [
+      {
+        "title": "Designing Sociable Robots",
+        "year": 2002,
+        "venue": "MIT Press",
+        "url": "https://mitpress.mit.edu/9780262524315/designing-sociable-robots/"
+      },
+      {
+        "title": "Long-term Effects of a Social Robot on Children's Conversational Engagement (HRI 2024 Best Paper)",
+        "year": 2024,
+        "venue": "ACM/IEEE International Conference on Human-Robot Interaction (HRI)",
+        "url": "https://www.media.mit.edu/posts/personal-robots-researchers-win-best-paper-at-hri-2024/"
+      }
+    ],
+    "profileUrl": "https://robots.media.mit.edu/dr-cynthia-breazeal/",
+    "bridgesNote": "Links robotics, AI, and cognitive science through her sociable-robots framework that treats robots as developmental partners modeled on infant caregiver dyads to study and shape children's social cognition."
+  },
+  {
+    "slug": "dorsa-sadigh",
+    "name": "Dorsa Sadigh, Ph.D.",
+    "affiliation": "Stanford University (Associate Professor of Computer Science and Electrical Engineering; ILIAD Lab)",
+    "fields": [
+      "robotics",
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "human-robot interaction",
+      "robot learning",
+      "active preference learning",
+      "interactive autonomy"
+    ],
+    "notableWorks": [
+      {
+        "title": "Active Preference-Based Learning of Reward Functions",
+        "year": 2017,
+        "venue": "Robotics: Science and Systems (RSS)",
+        "url": "https://doi.org/10.15607/RSS.2017.XIII.053"
+      },
+      {
+        "title": "Planning for Autonomous Cars that Leverage Effects on Human Actions",
+        "year": 2016,
+        "venue": "Robotics: Science and Systems (RSS)",
+        "url": "https://doi.org/10.15607/RSS.2016.XII.029"
+      }
+    ],
+    "profileUrl": "https://dorsa.fyi/",
+    "bridgesNote": "Bridges robotics, AI, and cognitive science through active preference-based reward learning, treating humans as boundedly rational agents whose comparisons reveal latent utility functions."
+  },
+  {
+    "slug": "henny-admoni",
+    "name": "Henny Admoni, Ph.D.",
+    "affiliation": "Carnegie Mellon University (Associate Professor, Robotics Institute; Director, Human And Robot Partners - HARP Lab)",
+    "fields": [
+      "robotics",
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "human-robot interaction",
+      "assistive manipulation",
+      "gaze and nonverbal behavior",
+      "intent recognition"
+    ],
+    "notableWorks": [
+      {
+        "title": "Social Eye Gaze in Human-Robot Interaction: A Review",
+        "year": 2017,
+        "venue": "Journal of Human-Robot Interaction",
+        "url": "https://doi.org/10.5898/JHRI.6.1.Admoni"
+      }
+    ],
+    "profileUrl": "https://www.ri.cmu.edu/ri-faculty/henny-admoni/",
+    "bridgesNote": "Bridges robotics, cognitive science, and AI by importing gaze-as-intent literature from social cognition into computational intent-inference models for assistive manipulation."
+  },
+  {
+    "slug": "iolanda-leite",
+    "name": "Iolanda Leite, Ph.D.",
+    "affiliation": "KTH Royal Institute of Technology (Associate Professor, Division of Robotics, Perception and Learning)",
+    "fields": [
+      "robotics",
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "social robotics",
+      "human-robot interaction",
+      "long-term interaction",
+      "affective computing"
+    ],
+    "notableWorks": [
+      {
+        "title": "The Influence of Empathy in Human-Robot Relations",
+        "year": 2013,
+        "venue": "International Journal of Human-Computer Studies",
+        "url": "https://doi.org/10.1016/j.ijhcs.2012.09.005"
+      },
+      {
+        "title": "Empathic Robots for Long-term Interaction",
+        "year": 2014,
+        "venue": "International Journal of Social Robotics",
+        "url": "https://doi.org/10.1007/s12369-014-0227-1"
+      }
+    ],
+    "profileUrl": "https://iolandaleite.com/",
+    "bridgesNote": "Bridges robotics, AI, and cognitive science by operationalizing empathy models from social psychology as affective-computing policies for child-robot tutoring over months-long deployments."
+  },
+  {
+    "slug": "maja-j-mataric",
+    "name": "Maja J. Matarić, Ph.D.",
+    "affiliation": "University of Southern California (Chan Soon-Shiong Distinguished Professor; Founding Director, USC Robotics and Autonomous Systems Center)",
+    "fields": [
+      "robotics",
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "socially assistive robotics",
+      "human-robot interaction",
+      "behavior-based robotics"
+    ],
+    "notableWorks": [
+      {
+        "title": "Defining Socially Assistive Robotics",
+        "year": 2005,
+        "venue": "IEEE International Conference on Rehabilitation Robotics (ICORR)",
+        "url": "https://doi.org/10.1109/ICORR.2005.1501143"
+      },
+      {
+        "title": "Socially Assistive Robotics for Post-stroke Rehabilitation",
+        "year": 2007,
+        "venue": "Journal of NeuroEngineering and Rehabilitation",
+        "url": "https://doi.org/10.1186/1743-0003-4-5"
+      }
+    ],
+    "profileUrl": "http://www-robotics.usc.edu/~maja/",
+    "bridgesNote": "Bridges robotics, AI, and cognitive science by founding socially assistive robotics, designing behavior-based controllers that target measurable cognitive and motor rehabilitation outcomes in stroke and autism."
+  },
+  {
+    "slug": "yukie-nagai",
+    "name": "Yukie Nagai, Ph.D.",
+    "affiliation": "The University of Tokyo (Project Professor, International Research Center for Neurointelligence - IRCN; Director, Cognitive Developmental Robotics Lab)",
+    "fields": [
+      "robotics",
+      "cogsci",
+      "consciousness"
+    ],
+    "researchAreas": [
+      "cognitive developmental robotics",
+      "predictive processing",
+      "embodied cognition",
+      "assistive technology for developmental disorders"
+    ],
+    "notableWorks": [
+      {
+        "title": "Predictive Learning: Its Key Role in Early Cognitive Development",
+        "year": 2019,
+        "venue": "Philosophical Transactions of the Royal Society B",
+        "url": "https://doi.org/10.1098/rstb.2018.0030"
+      }
+    ],
+    "profileUrl": "https://developmental-robotics.jp/en/members/yukie_nagai/",
+    "bridgesNote": "Bridges robotics, cognitive science, and consciousness by implementing predictive-coding architectures in robots to model early cognitive development and the emergence of self-other distinction."
+  },
+  {
+    "slug": "alison-gopnik",
+    "name": "Alison Gopnik, PhD",
+    "affiliation": "Department of Psychology, University of California, Berkeley",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "developmental cognition",
+      "causal learning",
+      "Bayesian models of learning",
+      "children and AI"
+    ],
+    "notableWorks": [
+      {
+        "title": "The development of human causal learning and reasoning",
+        "year": 2024,
+        "venue": "Nature Reviews Psychology",
+        "url": "http://www.gopniklab.berkeley.edu/2024"
+      }
+    ],
+    "profileUrl": "http://www.gopniklab.berkeley.edu/",
+    "bridgesNote": "Bridges cognitive science and AI through Bayesian causal-learning models of children, used as the benchmark for comparing exploration and inductive bias in LLMs."
+  },
+  {
+    "slug": "angela-p-schoellig",
+    "name": "Angela P. Schoellig, Ph.D.",
+    "affiliation": "Technical University of Munich (Alexander von Humboldt Professor of Robotics and AI; Dynamic Systems Lab); University of Toronto (cross-appointment)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "safe robot learning",
+      "model-based control",
+      "aerial robotics",
+      "learning-based control"
+    ],
+    "notableWorks": [
+      {
+        "title": "Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning",
+        "year": 2022,
+        "venue": "Annual Review of Control, Robotics, and Autonomous Systems",
+        "url": "https://doi.org/10.1146/annurev-control-042920-020211"
+      },
+      {
+        "title": "Safe and Robust Learning Control with Gaussian Processes",
+        "year": 2015,
+        "venue": "European Control Conference (ECC)",
+        "url": "https://doi.org/10.1109/ECC.2015.7330808"
+      }
+    ],
+    "profileUrl": "https://www.dynsyslab.org/prof-angela-schoellig/",
+    "bridgesNote": "Bridges robotics and AI by combining Gaussian-process model learning with control-theoretic safety constraints, providing the canonical reference for safe reinforcement learning."
+  },
+  {
+    "slug": "anna-c-schapiro",
+    "name": "Anna C. Schapiro, PhD",
+    "affiliation": "Department of Psychology, University of Pennsylvania",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "memory consolidation",
+      "sleep and learning",
+      "neural network modeling",
+      "hippocampus-neocortex interactions"
+    ],
+    "notableWorks": [
+      {
+        "title": "A model of autonomous interactions between hippocampus and neocortex driving sleep-dependent memory consolidation",
+        "year": 2022,
+        "venue": "Proceedings of the National Academy of Sciences",
+        "url": "https://www.pnas.org/doi/10.1073/pnas.2123432119"
+      }
+    ],
+    "profileUrl": "https://schapirolab.org/",
+    "bridgesNote": "Bridges cognitive science and AI through her complementary-learning-systems neural network model of hippocampal-neocortical replay driving sleep-dependent consolidation."
+  },
+  {
+    "slug": "anna-ciaunica",
+    "name": "Anna Ciaunica, PhD",
+    "affiliation": "University of Lisbon (CFCUL, Principal Investigator); University College London (Honorary)",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "minimal self",
+      "depersonalisation",
+      "embodied self-consciousness",
+      "active inference",
+      "co-embodiment"
+    ],
+    "notableWorks": [
+      {
+        "title": "Back to square one: the bodily roots of conscious experiences in early life",
+        "year": 2021,
+        "venue": "Neuroscience of Consciousness",
+        "url": "https://doi.org/10.1093/nc/niab037"
+      },
+      {
+        "title": "I overthink—Therefore I am not: An active inference account of altered sense of self and agency in depersonalisation disorder",
+        "year": 2022,
+        "venue": "Consciousness and Cognition",
+        "url": "https://doi.org/10.1016/j.concog.2022.103320"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=ZUMz7EAAAAAJ&hl=en",
+    "bridgesNote": "Bridges consciousness and cognitive science through active-inference models of the minimal self that account for altered self-agency in depersonalisation disorder."
+  },
+  {
+    "slug": "athena-demertzi",
+    "name": "Athena Demertzi, PhD",
+    "affiliation": "University of Liège (FRS-FNRS Research Associate; GIGA Consciousness, Physiology of Cognition Lab)",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "disorders of consciousness",
+      "coma",
+      "resting-state fMRI",
+      "self-related processing",
+      "clinical neuroscience"
+    ],
+    "notableWorks": [
+      {
+        "title": "Looking for the Self in Pathological Unconsciousness",
+        "year": 2013,
+        "venue": "Frontiers in Human Neuroscience",
+        "url": "https://doi.org/10.3389/fnhum.2013.00538"
+      },
+      {
+        "title": "Human consciousness is supported by dynamic complex patterns of brain signal coordination",
+        "year": 2019,
+        "venue": "Science Advances",
+        "url": "https://doi.org/10.1126/sciadv.aat7603"
+      }
+    ],
+    "profileUrl": "https://www.researchgate.net/profile/Athena-Demertzi",
+    "bridgesNote": "Bridges consciousness and cognitive science by characterizing the dynamic functional-connectivity signatures of conscious versus unconscious brain states across coma and anesthesia."
+  },
+  {
+    "slug": "aude-billard",
+    "name": "Aude Billard, Ph.D.",
+    "affiliation": "EPFL (Full Professor; Head of LASA - Learning Algorithms and Systems Laboratory)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "learning from demonstration",
+      "human-robot interaction",
+      "dynamical systems for manipulation",
+      "safe control"
+    ],
+    "notableWorks": [
+      {
+        "title": "Learning Stable Nonlinear Dynamical Systems with Gaussian Mixture Models",
+        "year": 2011,
+        "venue": "IEEE Transactions on Robotics",
+        "url": "https://doi.org/10.1109/TRO.2011.2159412"
+      },
+      {
+        "title": "Learning for Adaptive and Reactive Robot Control: A Dynamical Systems Approach",
+        "year": 2022,
+        "venue": "MIT Press",
+        "url": "https://mitpress.mit.edu/9780262046169/learning-for-adaptive-and-reactive-robot-control/"
+      }
+    ],
+    "profileUrl": "https://www.epfl.ch/labs/lasa/",
+    "bridgesNote": "Bridges robotics and AI by learning stable nonlinear dynamical systems from human demonstrations via Gaussian mixture models, giving provable convergence guarantees for imitation policies."
+  },
+  {
+    "slug": "been-kim",
+    "name": "Been Kim, PhD",
+    "affiliation": "Google DeepMind (Senior Staff Research Scientist)",
+    "fields": [
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "interpretability",
+      "concept activation vectors (TCAV)",
+      "alignment",
+      "human-AI communication"
+    ],
+    "notableWorks": [
+      {
+        "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)",
+        "year": 2018,
+        "venue": "ICML",
+        "url": "https://arxiv.org/abs/1711.11279"
+      },
+      {
+        "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+        "year": 2017,
+        "venue": "arXiv preprint (highly cited)",
+        "url": "https://arxiv.org/abs/1702.08608"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=aGXkhcwAAAAJ&hl=en",
+    "bridgesNote": "Bridges AI and cognitive science through TCAV, which formalizes neural-network interpretability as human-defined concept axes, importing categorization theory into model explanation."
+  },
+  {
+    "slug": "brenna-d-argall",
+    "name": "Brenna D. Argall, Ph.D.",
+    "affiliation": "Northwestern University (Professor of Mechanical Engineering, Computer Science, and Physical Medicine & Rehabilitation); Shirley Ryan AbilityLab (Director, argallab)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "assistive robotics",
+      "rehabilitation robotics",
+      "shared autonomy",
+      "learning from demonstration"
+    ],
+    "notableWorks": [
+      {
+        "title": "A Survey of Robot Learning from Demonstration",
+        "year": 2009,
+        "venue": "Robotics and Autonomous Systems",
+        "url": "https://doi.org/10.1016/j.robot.2008.10.024"
+      }
+    ],
+    "profileUrl": "https://www.argallab.northwestern.edu/people/brenna/",
+    "bridgesNote": "Bridges robotics and AI through her canonical learning-from-demonstration survey and shared-autonomy controllers customized for users with severe motor impairments."
+  },
+  {
+    "slug": "c-karen-liu",
+    "name": "C. Karen Liu, Ph.D.",
+    "affiliation": "Stanford University (Professor of Computer Science; The Movement Lab)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "character animation",
+      "physics-based simulation",
+      "humanoid control",
+      "assistive robotics"
+    ],
+    "notableWorks": [
+      {
+        "title": "Learning Symmetric and Low-Energy Locomotion",
+        "year": 2018,
+        "venue": "ACM Transactions on Graphics (SIGGRAPH)",
+        "url": "https://doi.org/10.1145/3197517.3201397"
+      }
+    ],
+    "profileUrl": "https://cs.stanford.edu/people/karenliu/Home.html",
+    "bridgesNote": "Bridges robotics and AI by transferring deep-RL locomotion policies learned in physics simulation onto humanoid hardware and motion-capture-driven assistive devices."
+  },
+  {
+    "slug": "catherine-olsson",
+    "name": "Catherine Olsson, MEng",
+    "affiliation": "Anthropic (Member of Technical Staff, Interpretability)",
+    "fields": [
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "mechanistic interpretability",
+      "transformer circuits",
+      "AI safety"
+    ],
+    "notableWorks": [
+      {
+        "title": "In-context Learning and Induction Heads",
+        "year": 2022,
+        "venue": "Transformer Circuits Thread (Anthropic)",
+        "url": "https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html"
+      },
+      {
+        "title": "A Mathematical Framework for Transformer Circuits",
+        "year": 2021,
+        "venue": "Transformer Circuits Thread (Anthropic)",
+        "url": "https://transformer-circuits.pub/2021/framework/index.html"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=TvdMDhwAAAAJ&hl=en",
+    "bridgesNote": "Bridges AI and cognitive science by identifying induction heads as the algorithmic substrate of in-context learning, treating transformer circuits as a mechanistic theory of generalization."
+  },
+  {
+    "slug": "catherine-tallon-baudry",
+    "name": "Catherine Tallon-Baudry, PhD",
+    "affiliation": "Laboratoire de Neurosciences Cognitives et Computationnelles, CNRS / École Normale Supérieure, Paris",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "neural correlates of consciousness",
+      "interoception",
+      "brain-viscera coupling",
+      "first-person perspective",
+      "visual consciousness",
+      "neural oscillations"
+    ],
+    "notableWorks": [
+      {
+        "title": "The neural monitoring of visceral inputs, rather than attention, accounts for first-person perspective in conscious vision",
+        "year": 2018,
+        "venue": "Cortex",
+        "url": "https://doi.org/10.1016/j.cortex.2017.05.019"
+      }
+    ],
+    "profileUrl": "https://sites.google.com/view/tallon-baudry-lab/",
+    "bridgesNote": "Bridges consciousness studies and cognitive science by showing that neural responses to heartbeats, not attention, ground first-person perspective in conscious vision."
+  },
+  {
+    "slug": "christina-bergmann",
+    "name": "Christina Bergmann, PhD",
+    "affiliation": "Max Planck Institute for Psycholinguistics, Nijmegen (Language Development Department)",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "infant language acquisition",
+      "meta-analysis",
+      "computational models of development",
+      "open science in developmental research"
+    ],
+    "notableWorks": [
+      {
+        "title": "Promoting Replicability in Developmental Research Through Meta-analyses: Insights From Language Acquisition Research",
+        "year": 2018,
+        "venue": "Child Development",
+        "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/cdev.13079"
+      }
+    ],
+    "profileUrl": "https://www.mpi.nl/people/bergmann-christina",
+    "bridgesNote": "Bridges cognitive science and AI by building MetaLab meta-analytic benchmarks of infant language learning that serve as evaluation targets for computational models of acquisition."
+  },
+  {
+    "slug": "daniela-rus",
+    "name": "Daniela Rus, Ph.D.",
+    "affiliation": "MIT (Director, CSAIL; Andrew and Erna Viterbi Professor of EECS); Distributed Robotics Laboratory",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "distributed robotics",
+      "soft robotics",
+      "self-reconfiguring robots",
+      "autonomous vehicles",
+      "machine learning for control",
+      "liquid neural networks",
+      "autonomous systems"
+    ],
+    "notableWorks": [
+      {
+        "title": "Liquid Time-constant Networks",
+        "year": 2021,
+        "venue": "AAAI",
+        "url": "https://arxiv.org/abs/2006.04439"
+      },
+      {
+        "title": "Closed-form Continuous-time Neural Networks",
+        "year": 2022,
+        "venue": "Nature Machine Intelligence",
+        "url": "https://doi.org/10.1038/s42256-022-00556-7"
+      }
+    ],
+    "profileUrl": "https://danielarus.csail.mit.edu/",
+    "bridgesNote": "Bridges robotics and AI via Liquid Time-constant Networks, a continuous-time neural architecture derived from C. elegans neural dynamics and deployed as the control policy for autonomous driving."
+  },
+  {
+    "slug": "evelina-fedorenko",
+    "name": "Evelina Fedorenko, PhD",
+    "affiliation": "Department of Brain and Cognitive Sciences and McGovern Institute, Massachusetts Institute of Technology",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "neuroscience of language",
+      "language network",
+      "language and thought",
+      "individual differences"
+    ],
+    "notableWorks": [
+      {
+        "title": "Language is primarily a tool for communication rather than thought",
+        "year": 2024,
+        "venue": "Nature",
+        "url": "https://www.evlab.mit.edu/papers"
+      },
+      {
+        "title": "The language network as a natural kind within the broader landscape of the human brain",
+        "year": 2024,
+        "venue": "Nature Reviews Neuroscience",
+        "url": "https://www.evlab.mit.edu/all-publications/the-language-network-as-a-natural-kind-in-the-human-brain"
+      }
+    ],
+    "profileUrl": "https://www.evlab.mit.edu/",
+    "bridgesNote": "Bridges cognitive science and AI by using LLM activations as model organisms for the human language network and arguing language is for communication, not thought."
+  },
+  {
+    "slug": "georgia-chalvatzaki",
+    "name": "Georgia Chalvatzaki, Ph.D.",
+    "affiliation": "Technische Universität Darmstadt (Full Professor, Computer Science; Hessian.AI; Director, PEARL Lab)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "mobile manipulation",
+      "robot learning",
+      "humanoid robotics",
+      "interactive perception"
+    ],
+    "notableWorks": [
+      {
+        "title": "SE(3)-DiffusionFields: Learning Smooth Cost Functions for Joint Grasp and Motion Optimization",
+        "year": 2023,
+        "venue": "IEEE ICRA",
+        "url": "https://arxiv.org/abs/2209.03855"
+      }
+    ],
+    "profileUrl": "https://pearl-lab.com/people/georgia-chalvatzaki/",
+    "bridgesNote": "Bridges robotics and AI through SE(3)-DiffusionFields, learning smooth diffusion cost functions over the rigid-body manifold for joint grasp and motion planning."
+  },
+  {
+    "slug": "hyowon-gweon",
+    "name": "Hyowon Gweon, PhD",
+    "affiliation": "Department of Psychology, Stanford University",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "social learning",
+      "developmental cognition",
+      "pedagogical reasoning",
+      "theory of mind"
+    ],
+    "notableWorks": [
+      {
+        "title": "Inferential social learning: Cognitive foundations of human social learning and teaching",
+        "year": 2021,
+        "venue": "Trends in Cognitive Sciences",
+        "url": "https://sll.stanford.edu/publications.html"
+      },
+      {
+        "title": "Theory of Minds: Early Understanding of Interacting Minds",
+        "year": 2025,
+        "venue": "Annual Review of Developmental Psychology",
+        "url": "https://sll.stanford.edu/publications.html"
+      }
+    ],
+    "profileUrl": "https://sll.stanford.edu/",
+    "bridgesNote": "Bridges cognitive science and AI via her inferential social learning framework, providing the Bayesian pedagogical-reasoning model used in machine-teaching and human-AI tutoring research."
+  },
+  {
+    "slug": "ines-hipolito",
+    "name": "Inês Hipólito, PhD",
+    "affiliation": "Macquarie University (Lecturer, Philosophy of Artificial Intelligence)",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "predictive processing",
+      "enactivism",
+      "embodied cognition",
+      "Bayesian brain",
+      "philosophy of AI"
+    ],
+    "notableWorks": [
+      {
+        "title": "Predictive Processing and Some Disillusions about Illusions (with Gallagher & Hutto)",
+        "year": 2022,
+        "venue": "Review of Philosophy and Psychology",
+        "url": "https://doi.org/10.1007/s13164-021-00588-9"
+      }
+    ],
+    "profileUrl": "https://researchers.mq.edu.au/en/persons/ines-hipolito",
+    "bridgesNote": "Bridges consciousness and cognitive science by critiquing inferentialist readings of predictive processing from an enactivist standpoint, reframing the Bayesian brain as embodied and ecologically situated."
+  },
+  {
+    "slug": "jana-kosecka",
+    "name": "Jana Košecká, Ph.D.",
+    "affiliation": "George Mason University (Professor of Computer Science)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "robotic perception",
+      "embodied AI",
+      "visual SLAM",
+      "scene understanding for robots"
+    ],
+    "notableWorks": [
+      {
+        "title": "An Invitation to 3-D Vision: From Images to Geometric Models",
+        "year": 2004,
+        "venue": "Springer",
+        "url": "https://link.springer.com/book/10.1007/978-0-387-21779-6"
+      }
+    ],
+    "profileUrl": "https://cs.gmu.edu/~kosecka/",
+    "bridgesNote": "Bridges robotics and AI by combining geometric 3D vision with learned semantic exploration policies for embodied object-goal navigation."
+  },
+  {
+    "slug": "jane-x-wang",
+    "name": "Jane X. Wang, PhD",
+    "affiliation": "Google DeepMind (Senior Staff Research Scientist, Neuroscience team)",
+    "fields": [
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "meta-reinforcement learning",
+      "cognitive neuroscience of learning",
+      "deep RL",
+      "natural intelligence"
+    ],
+    "notableWorks": [
+      {
+        "title": "Prefrontal Cortex as a Meta-Reinforcement Learning System",
+        "year": 2018,
+        "venue": "Nature Neuroscience",
+        "url": "https://doi.org/10.1038/s41593-018-0147-8"
+      },
+      {
+        "title": "Meta-learning in natural and artificial intelligence",
+        "year": 2021,
+        "venue": "Current Opinion in Behavioral Sciences",
+        "url": "https://doi.org/10.1016/j.cobeha.2021.03.002"
+      }
+    ],
+    "profileUrl": "http://www.janexwang.com/",
+    "bridgesNote": "Bridges AI and cognitive science by recasting prefrontal cortex as a meta-reinforcement-learning system, using the same recurrent-RL formalism to model human dopaminergic learning and train RL agents."
+  },
+  {
+    "slug": "jeannette-bohg",
+    "name": "Jeannette Bohg, Ph.D.",
+    "affiliation": "Stanford University (Assistant Professor of Computer Science; Interactive Perception and Robot Learning Lab)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "robot manipulation",
+      "grasping",
+      "perception for action",
+      "visuomotor policy learning"
+    ],
+    "notableWorks": [
+      {
+        "title": "Data-driven Grasp Synthesis - A Survey",
+        "year": 2014,
+        "venue": "IEEE Transactions on Robotics",
+        "url": "https://doi.org/10.1109/TRO.2013.2289018"
+      },
+      {
+        "title": "Interactive Perception: Leveraging Action in Perception and Perception in Action",
+        "year": 2017,
+        "venue": "IEEE Transactions on Robotics",
+        "url": "https://doi.org/10.1109/TRO.2017.2721939"
+      }
+    ],
+    "profileUrl": "https://web.stanford.edu/~bohg/",
+    "bridgesNote": "Bridges robotics and AI by formalizing interactive perception, where actions are deployed to reduce perceptual uncertainty, fusing manipulation policies with visual representation learning."
+  },
+  {
+    "slug": "jessica-k-hodgins",
+    "name": "Jessica K. Hodgins, Ph.D.",
+    "affiliation": "Carnegie Mellon University (Professor, Robotics Institute and School of Computer Science); formerly Director of Disney Research and Facebook AI Research Pittsburgh",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "humanoid simulation and control",
+      "character animation",
+      "human motion capture",
+      "physics-based control"
+    ],
+    "notableWorks": [
+      {
+        "title": "Animating Human Athletics",
+        "year": 1995,
+        "venue": "SIGGRAPH",
+        "url": "https://doi.org/10.1145/218380.218414"
+      }
+    ],
+    "profileUrl": "https://www.ri.cmu.edu/ri-faculty/jessica-k-hodgins/",
+    "bridgesNote": "Bridges robotics and AI via her physics-based humanoid control work, where nonlinear inverse optimization learns motion style that transfers between simulated characters and humanoid robots."
+  },
+  {
+    "slug": "julia-mossbridge",
+    "name": "Julia Mossbridge, PhD",
+    "affiliation": "Applied Love Labs (co-founder); Mossbridge Institute (founder); Senior Distinguished Fellow, Center for the Future of Mind, Florida Atlantic University; Associated Northwestern University (Psychology)",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "precognition",
+      "predictive physiology",
+      "anomalous cognition",
+      "love science",
+      "lucid dreaming",
+      "intuition"
+    ],
+    "notableWorks": [
+      {
+        "title": "Predictive physiological anticipation preceding seemingly unpredictable stimuli: a meta-analysis",
+        "year": 2012,
+        "venue": "Frontiers in Psychology",
+        "url": "https://doi.org/10.3389/fpsyg.2012.00390"
+      },
+      {
+        "title": "Transcendent Mind: Rethinking the Science of Consciousness",
+        "year": 2017,
+        "venue": "American Psychological Association",
+        "url": "https://www.apa.org/pubs/books/4316171"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=Zx0HoewAAAAJ&hl=en",
+    "bridgesNote": "Bridges consciousness and cognitive science through her predictive-physiology meta-analysis showing pre-stimulus autonomic responses, reframed in active-inference and anticipatory-processing terms."
+  },
+  {
+    "slug": "karen-e-adolph",
+    "name": "Karen E. Adolph, PhD",
+    "affiliation": "Department of Psychology and Center for Neural Science, New York University",
+    "fields": [
+      "cogsci",
+      "robotics"
+    ],
+    "researchAreas": [
+      "infant motor development",
+      "embodied cognition",
+      "perception-action",
+      "naturalistic behavior"
+    ],
+    "notableWorks": [
+      {
+        "title": "Motor Development: Embodied, Embedded, Enculturated, and Enabling",
+        "year": 2019,
+        "venue": "Annual Review of Psychology",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30256718/"
+      },
+      {
+        "title": "Protracted development of motor cortex constrains rich interpretations of infant cognition",
+        "year": 2023,
+        "venue": "Trends in Cognitive Sciences",
+        "url": "https://nyuscholars.nyu.edu/en/publications/protracted-development-of-motor-cortex-constrains-rich-interpreta"
+      }
+    ],
+    "profileUrl": "https://www.nyuactionlab.com/",
+    "bridgesNote": "Bridges cognitive science and robotics through her embodied-perception-action framework, used by developmental robotics labs as the empirical reference for infant motor learning."
+  },
+  {
+    "slug": "katerina-fragkiadaki",
+    "name": "Katerina Fragkiadaki, Ph.D.",
+    "affiliation": "Carnegie Mellon University (Associate Professor, Machine Learning Department)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "robot manipulation",
+      "3D scene representations",
+      "language grounding for robots",
+      "embodied AI"
+    ],
+    "notableWorks": [
+      {
+        "title": "3D Diffuser Actor: Policy Diffusion with 3D Scene Representations",
+        "year": 2024,
+        "venue": "Conference on Robot Learning (CoRL)",
+        "url": "https://arxiv.org/abs/2402.10885"
+      },
+      {
+        "title": "Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation",
+        "year": 2023,
+        "venue": "Conference on Robot Learning (CoRL)",
+        "url": "https://arxiv.org/abs/2306.17817"
+      }
+    ],
+    "profileUrl": "https://www.cs.cmu.edu/~katef/",
+    "bridgesNote": "Bridges robotics and AI through 3D Diffuser Actor, fusing diffusion-policy generative models with 3D feature-field representations for language-conditioned manipulation."
+  },
+  {
+    "slug": "kimberly-l-stachenfeld",
+    "name": "Kimberly L. Stachenfeld, PhD",
+    "affiliation": "Google DeepMind (New York) and Center for Theoretical Neuroscience, Columbia University",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "hippocampal predictive maps",
+      "reinforcement learning",
+      "graph neural networks",
+      "world models"
+    ],
+    "notableWorks": [
+      {
+        "title": "The hippocampus as a predictive map",
+        "year": 2017,
+        "venue": "Nature Neuroscience",
+        "url": "https://www.nature.com/articles/nn.4650"
+      }
+    ],
+    "profileUrl": "https://neurokim.com/",
+    "bridgesNote": "Bridges cognitive science and AI through her successor-representation account of hippocampus as a predictive map, used both for human navigation experiments and RL world models."
+  },
+  {
+    "slug": "laurel-d-riek",
+    "name": "Laurel D. Riek, Ph.D.",
+    "affiliation": "UC San Diego (David R. Miller Professor of Computer Science and Engineering; Department of Emergency Medicine; Director, Healthcare Robotics Lab)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "healthcare robotics",
+      "human-robot interaction",
+      "assistive technology",
+      "embodied AI for clinical care"
+    ],
+    "notableWorks": [
+      {
+        "title": "Healthcare Robotics",
+        "year": 2017,
+        "venue": "Communications of the ACM",
+        "url": "https://doi.org/10.1145/3127874"
+      }
+    ],
+    "profileUrl": "https://healthrobotics.ucsd.edu/people/laurel-riek.html",
+    "bridgesNote": "Bridges robotics and AI through clinically deployed embodied-AI systems for dementia and disability care, grounding HRI research in emergency-medicine practice."
+  },
+  {
+    "slug": "liad-mudrik",
+    "name": "Liad Mudrik, PhD",
+    "affiliation": "Tel Aviv University (School of Psychological Sciences; Sagol School of Neuroscience)",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "unconscious processing",
+      "neural correlates of consciousness",
+      "functions of consciousness",
+      "volitional action"
+    ],
+    "notableWorks": [
+      {
+        "title": "Adversarial testing of global neuronal workspace and integrated information theories of consciousness (co-lead, Cogitate consortium)",
+        "year": 2025,
+        "venue": "Nature",
+        "url": "https://doi.org/10.1038/s41586-025-08888-1"
+      },
+      {
+        "title": "Tests for consciousness in humans and beyond",
+        "year": 2024,
+        "venue": "Trends in Cognitive Sciences",
+        "url": "https://doi.org/10.1016/j.tics.2024.01.010"
+      }
+    ],
+    "profileUrl": "https://english.tau.ac.il/profile/mudrikli",
+    "bridgesNote": "Bridges consciousness and cognitive science through experiments dissociating unconscious from conscious processing, used as the empirical backbone of the Cogitate adversarial collaboration."
+  },
+  {
+    "slug": "lisa-feldman-barrett",
+    "name": "Lisa Feldman Barrett, PhD",
+    "affiliation": "Department of Psychology, Northeastern University (Interdisciplinary Affective Science Laboratory)",
+    "fields": [
+      "cogsci",
+      "consciousness"
+    ],
+    "researchAreas": [
+      "theory of constructed emotion",
+      "interoception",
+      "predictive processing",
+      "affective neuroscience"
+    ],
+    "notableWorks": [
+      {
+        "title": "The theory of constructed emotion: an active inference account of interoception and categorization",
+        "year": 2017,
+        "venue": "Social Cognitive and Affective Neuroscience",
+        "url": "https://academic.oup.com/scan/article/12/1/1/2823712"
+      }
+    ],
+    "profileUrl": "https://affective-science.org/",
+    "bridgesNote": "Bridges cognitive science and consciousness via her constructed-emotion theory, which frames subjective feeling as active-inference categorization over interoceptive predictions."
+  },
+  {
+    "slug": "lucia-melloni",
+    "name": "Lucia Melloni, PhD",
+    "affiliation": "Max Planck Institute for Empirical Aesthetics (Research Group Leader, Neural Circuits, Consciousness, and Cognition); NYU Grossman School of Medicine",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "neural correlates of consciousness",
+      "IIT vs GNWT adversarial testing",
+      "predictive processing",
+      "perception"
+    ],
+    "notableWorks": [
+      {
+        "title": "Adversarial testing of global neuronal workspace and integrated information theories of consciousness",
+        "year": 2025,
+        "venue": "Nature",
+        "url": "https://doi.org/10.1038/s41586-025-08888-1"
+      },
+      {
+        "title": "Making the hard problem of consciousness easier",
+        "year": 2021,
+        "venue": "Science",
+        "url": "https://doi.org/10.1126/science.abj3259"
+      }
+    ],
+    "profileUrl": "https://www.arc-cogitate.com/lucia-melloni",
+    "bridgesNote": "Bridges consciousness and cognitive science by co-leading the Cogitate adversarial test of GNWT vs IIT, embedding consciousness theories within perceptual neuroscience paradigms."
+  },
+  {
+    "slug": "lydia-e-kavraki",
+    "name": "Lydia E. Kavraki, Ph.D.",
+    "affiliation": "Rice University (Noah Harding Professor of Computer Science; Director, Ken Kennedy Institute)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "motion planning",
+      "task and motion planning",
+      "sampling-based methods",
+      "computational biomedicine"
+    ],
+    "notableWorks": [
+      {
+        "title": "Probabilistic Roadmaps for Path Planning in High-Dimensional Configuration Spaces",
+        "year": 1996,
+        "venue": "IEEE Transactions on Robotics and Automation",
+        "url": "https://doi.org/10.1109/70.508439"
+      },
+      {
+        "title": "The Open Motion Planning Library",
+        "year": 2012,
+        "venue": "IEEE Robotics and Automation Magazine",
+        "url": "https://doi.org/10.1109/MRA.2012.2205651"
+      }
+    ],
+    "profileUrl": "https://www.cs.rice.edu/~kavraki/",
+    "bridgesNote": "Bridges robotics and AI through Probabilistic Roadmaps, the sampling-based planning algorithm that became the canonical search method for high-dimensional configuration spaces."
+  },
+  {
+    "slug": "manuela-m-veloso",
+    "name": "Manuela M. Veloso, Ph.D.",
+    "affiliation": "Carnegie Mellon University (Herbert A. Simon University Professor Emerita); J.P. Morgan Chase (Head of AI Research)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "multi-agent systems",
+      "robot soccer",
+      "autonomous mobile service robots",
+      "symbiotic autonomy"
+    ],
+    "notableWorks": [
+      {
+        "title": "RoboCup: A Challenge Problem for AI",
+        "year": 1997,
+        "venue": "AI Magazine",
+        "url": "https://doi.org/10.1609/aimag.v18i1.1276"
+      }
+    ],
+    "profileUrl": "http://www.cs.cmu.edu/~mmv/",
+    "bridgesNote": "Bridges robotics and AI through symbiotic autonomy with CoBot, treating multi-agent service robots as AI testbeds whose limitations are resolved by structured human help."
+  },
+  {
+    "slug": "nora-ayanian",
+    "name": "Nora Ayanian, Ph.D.",
+    "affiliation": "Brown University (Associate Professor of Computer Science; Director, Automatic Coordination of Teams Lab); formerly USC",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "multi-robot systems",
+      "swarm coordination",
+      "task and motion planning for teams"
+    ],
+    "notableWorks": [
+      {
+        "title": "Synthesis of Feedback Controllers for Multiple Aerial Robots with Geometric Constraints",
+        "year": 2011,
+        "venue": "IEEE/RSJ IROS",
+        "url": "https://doi.org/10.1109/IROS.2011.6094778"
+      }
+    ],
+    "profileUrl": "https://cs.brown.edu/people/faculty/nayanian/",
+    "bridgesNote": "Bridges robotics and AI by synthesizing game-theoretic controllers for multi-robot social navigation, formalizing decentralized team coordination as a non-cooperative game."
+  },
+  {
+    "slug": "olivia-carter",
+    "name": "Olivia Carter, PhD",
+    "affiliation": "University of Melbourne (Professor, School of Psychological Sciences; Melbourne Monash Consciousness Research)",
+    "fields": [
+      "consciousness",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "binocular rivalry",
+      "altered states of consciousness",
+      "psychedelics",
+      "meditation",
+      "perceptual switching"
+    ],
+    "notableWorks": [
+      {
+        "title": "Personality Measures Link Slower Binocular Rivalry Switch Rates to Higher Levels of Self-Discipline",
+        "year": 2017,
+        "venue": "Frontiers in Psychology",
+        "url": "https://doi.org/10.3389/fpsyg.2016.02008"
+      }
+    ],
+    "profileUrl": "https://www.mmcr.edu.au/our_people/olivia-carter/",
+    "bridgesNote": "Bridges consciousness and cognitive science by using binocular rivalry as a psychophysical probe of perceptual switching to dissociate conscious from unconscious vision."
+  },
+  {
+    "slug": "raquel-urtasun",
+    "name": "Raquel Urtasun, Ph.D.",
+    "affiliation": "Waabi (Founder and CEO); University of Toronto (Full Professor of Computer Science); Vector Institute (Co-founder)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "autonomous driving",
+      "self-driving perception",
+      "neural simulation",
+      "generative AI for robotics"
+    ],
+    "notableWorks": [
+      {
+        "title": "UniSim: A Neural Closed-Loop Sensor Simulator",
+        "year": 2023,
+        "venue": "CVPR (Highlight)",
+        "url": "https://arxiv.org/abs/2308.01898"
+      },
+      {
+        "title": "PointPillars: Fast Encoders for Object Detection From Point Clouds",
+        "year": 2019,
+        "venue": "CVPR",
+        "url": "https://arxiv.org/abs/1812.05784"
+      }
+    ],
+    "profileUrl": "https://en.wikipedia.org/wiki/Raquel_Urtasun",
+    "bridgesNote": "Bridges robotics and AI through UniSim, a neural closed-loop sensor simulator that uses generative models to safety-test autonomous driving stacks at scale."
+  },
+  {
+    "slug": "robin-r-murphy",
+    "name": "Robin R. Murphy, Ph.D.",
+    "affiliation": "Texas A&M University (Raytheon Professor of Computer Science and Engineering); Center for Robot-Assisted Search and Rescue (co-founder)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "disaster robotics",
+      "rescue robotics",
+      "human-robot interaction in safety-critical settings",
+      "field robotics"
+    ],
+    "notableWorks": [
+      {
+        "title": "Disaster Robotics",
+        "year": 2014,
+        "venue": "MIT Press",
+        "url": "https://mitpress.mit.edu/9780262027359/disaster-robotics/"
+      },
+      {
+        "title": "Introduction to AI Robotics, 2nd ed.",
+        "year": 2019,
+        "venue": "MIT Press",
+        "url": "https://mitpress.mit.edu/9780262038485/introduction-to-ai-robotics/"
+      }
+    ],
+    "profileUrl": "https://robinrmurphy.com/",
+    "bridgesNote": "Bridges robotics and AI through her hybrid deliberative-reactive paradigm in Introduction to AI Robotics, used as the foundational textbook for field-deployable rescue robots."
+  },
+  {
+    "slug": "selma-sabanovic",
+    "name": "Selma Šabanović, Ph.D.",
+    "affiliation": "Indiana University Bloomington (Professor of Informatics and Cognitive Science; Director, R-House Lab)",
+    "fields": [
+      "robotics",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "social robotics",
+      "human-robot interaction",
+      "science and technology studies of robotics",
+      "culturally situated robot design"
+    ],
+    "notableWorks": [
+      {
+        "title": "Inventing Japan's 'robotics culture': The repeated assembly of science, technology, and culture in social robotics",
+        "year": 2014,
+        "venue": "Social Studies of Science",
+        "url": "https://doi.org/10.1177/0306312713509704"
+      }
+    ],
+    "profileUrl": "https://homes.luddy.indiana.edu/selmas/",
+    "bridgesNote": "Bridges robotics and cognitive science via mutual-shaping STS methods that treat robot design as co-constructed with users' cultural cognition over long-term deployments."
+  },
+  {
+    "slug": "shuran-song",
+    "name": "Shuran Song, Ph.D.",
+    "affiliation": "Stanford University (Assistant Professor of Electrical Engineering; Director, Robotics and Embodied AI Lab - REAL@Stanford)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "robot learning",
+      "manipulation",
+      "computer vision for robotics",
+      "diffusion policies"
+    ],
+    "notableWorks": [
+      {
+        "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+        "year": 2024,
+        "venue": "International Journal of Robotics Research (RSS 2023)",
+        "url": "https://arxiv.org/abs/2303.04137"
+      },
+      {
+        "title": "TossingBot: Learning to Throw Arbitrary Objects with Residual Physics",
+        "year": 2020,
+        "venue": "IEEE Transactions on Robotics",
+        "url": "https://doi.org/10.1109/TRO.2020.2988642"
+      }
+    ],
+    "profileUrl": "https://shurans.github.io/",
+    "bridgesNote": "Bridges robotics and AI through Diffusion Policy, applying generative diffusion models to visuomotor action sequences and setting the state of the art for robot manipulation."
+  },
+  {
+    "slug": "sonia-chernova",
+    "name": "Sonia Chernova, Ph.D.",
+    "affiliation": "Georgia Institute of Technology (Associate Professor, School of Interactive Computing; Director, Robot Autonomy and Interactive Learning - RAIL Lab)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "robot autonomy",
+      "learning from demonstration",
+      "explainable robotics",
+      "human-robot interaction"
+    ],
+    "notableWorks": [
+      {
+        "title": "Explainable AI for Robot Failures: Generating Explanations that Improve User Assistance in Fault Recovery",
+        "year": 2021,
+        "venue": "ACM/IEEE International Conference on Human-Robot Interaction (HRI), Best Paper",
+        "url": "https://doi.org/10.1145/3434073.3444657"
+      },
+      {
+        "title": "Robot Learning from Demonstration: A Review of Recent Advances",
+        "year": 2020,
+        "venue": "Current Robotics Reports",
+        "url": "https://doi.org/10.1007/s43154-020-00006-5"
+      }
+    ],
+    "profileUrl": "https://faculty.cc.gatech.edu/~chernova/",
+    "bridgesNote": "Bridges robotics and AI by adapting explainable-AI techniques to robot fault recovery, generating post-hoc explanations that improve user assistance during failure."
+  },
+  {
+    "slug": "stefanie-tellex",
+    "name": "Stefanie Tellex, Ph.D.",
+    "affiliation": "Brown University (Associate Professor of Computer Science; Humans to Robots Lab)",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "grounded language understanding",
+      "human-robot interaction",
+      "robot manipulation with language",
+      "task planning"
+    ],
+    "notableWorks": [
+      {
+        "title": "Robots That Use Language: A Survey",
+        "year": 2020,
+        "venue": "Annual Review of Control, Robotics, and Autonomous Systems",
+        "url": "https://doi.org/10.1146/annurev-control-101119-071628"
+      }
+    ],
+    "profileUrl": "https://cs.brown.edu/people/stellex/",
+    "bridgesNote": "Bridges robotics and AI by grounding natural-language commands into robot action spaces via her Generalized Grounding Graph framework for navigation and manipulation."
+  },
+  {
+    "slug": "talia-konkle",
+    "name": "Talia Konkle, PhD",
+    "affiliation": "Department of Psychology and Center for Brain Science, Harvard University",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "visual object recognition",
+      "cognitive computational neuroscience",
+      "high-level visual cortex",
+      "deep neural network models"
+    ],
+    "notableWorks": [
+      {
+        "title": "Cognitive Steering in Deep Neural Networks via Long-Range Modulatory Feedback Connections",
+        "year": 2023,
+        "venue": "NeurIPS",
+        "url": "https://konklab.fas.harvard.edu/Papers/Konkle_2023_Neurips.pdf"
+      }
+    ],
+    "profileUrl": "https://konklab.fas.harvard.edu/",
+    "bridgesNote": "Bridges cognitive science and AI by comparing deep neural network representations to high-level visual cortex and using cognitive-steering feedback to test top-down modulation hypotheses."
+  },
+  {
+    "slug": "tessa-a-lau",
+    "name": "Tessa A. Lau, Ph.D.",
+    "affiliation": "Dusty Robotics (Founder and CEO); formerly Savioke (CTO), Willow Garage, IBM Research",
+    "fields": [
+      "robotics",
+      "ai"
+    ],
+    "researchAreas": [
+      "construction robotics",
+      "service robotics",
+      "autonomous mobile robots",
+      "field deployment"
+    ],
+    "notableWorks": [
+      {
+        "title": "Programming by Demonstration Using Version Space Algebra",
+        "year": 2003,
+        "venue": "Machine Learning Journal",
+        "url": "https://doi.org/10.1023/A:1025671410623"
+      }
+    ],
+    "profileUrl": "https://www.linkedin.com/in/tessalau",
+    "bridgesNote": "Bridges robotics and AI via her version-space-algebra programming-by-demonstration framework, the inductive-learning method now deployed in Dusty's construction-layout robots."
+  },
+  {
+    "slug": "yael-niv",
+    "name": "Yael Niv, PhD",
+    "affiliation": "Princeton Neuroscience Institute and Department of Psychology, Princeton University",
+    "fields": [
+      "cogsci",
+      "ai"
+    ],
+    "researchAreas": [
+      "reinforcement learning in the brain",
+      "decision-making",
+      "computational psychiatry",
+      "attention and learning"
+    ],
+    "notableWorks": [
+      {
+        "title": "Reinforcement learning in the brain",
+        "year": 2009,
+        "venue": "Journal of Mathematical Psychology",
+        "url": "https://www.princeton.edu/~yael/Publications/Niv2009.pdf"
+      }
+    ],
+    "profileUrl": "https://nivlab.princeton.edu/",
+    "bridgesNote": "Bridges cognitive science and AI by mapping temporal-difference RL algorithms onto dopaminergic prediction errors and porting them into computational-psychiatry models of decision-making."
+  },
+  {
+    "slug": "yejin-choi",
+    "name": "Yejin Choi, PhD",
+    "affiliation": "Stanford University (Dieter Schwarz Foundation Professor of CS, Senior Fellow HAI); formerly Wissner-Slivka Professor, University of Washington",
+    "fields": [
+      "ai",
+      "cogsci"
+    ],
+    "researchAreas": [
+      "natural language processing",
+      "commonsense reasoning",
+      "neural text generation",
+      "language grounding"
+    ],
+    "notableWorks": [
+      {
+        "title": "COMET: Commonsense Transformers for Automatic Knowledge Graph Construction",
+        "year": 2019,
+        "venue": "ACL",
+        "url": "https://arxiv.org/abs/1906.05317"
+      },
+      {
+        "title": "Social Bias Frames: Reasoning about Social and Power Implications of Language",
+        "year": 2020,
+        "venue": "ACL",
+        "url": "https://arxiv.org/abs/1911.03891"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=vhP-tlcAAAAJ&hl=en",
+    "bridgesNote": "Bridges AI and cognitive science via COMET, encoding human commonsense knowledge graphs into transformers to model the inferential glue that humans use to reason about everyday situations."
+  },
+  {
+    "slug": "aleksandra-korolova",
+    "name": "Aleksandra Korolova, PhD",
+    "affiliation": "Princeton University (Assistant Professor of Computer Science and Public Affairs)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "differential privacy",
+      "algorithmic auditing",
+      "fairness in ad delivery",
+      "responsible ML"
+    ],
+    "notableWorks": [
+      {
+        "title": "Discrimination through Optimization: How Facebook's Ad Delivery Can Lead to Biased Outcomes",
+        "year": 2019,
+        "venue": "Proc. ACM HCI (CSCW)",
+        "url": "https://arxiv.org/abs/1904.02095"
+      },
+      {
+        "title": "Auditing for Discrimination in Algorithms Delivering Job Ads",
+        "year": 2021,
+        "venue": "WWW",
+        "url": "https://arxiv.org/abs/2104.04502"
+      }
+    ],
+    "profileUrl": "https://www.korolova.com/"
+  },
+  {
+    "slug": "allison-m-okamura",
+    "name": "Allison M. Okamura, Ph.D.",
+    "affiliation": "Stanford University (Richard W. Weiland Professor of Engineering, Mechanical Engineering; Director, CHARM Lab)",
+    "fields": [
+      "robotics"
+    ],
+    "researchAreas": [
+      "haptics",
+      "teleoperation",
+      "surgical robotics",
+      "soft haptics",
+      "robot-assisted rehabilitation"
+    ],
+    "notableWorks": [
+      {
+        "title": "Haptics: The Present and Future of Artificial Touch Sensation",
+        "year": 2018,
+        "venue": "Annual Review of Control, Robotics, and Autonomous Systems",
+        "url": "https://doi.org/10.1146/annurev-control-060117-105043"
+      }
+    ],
+    "profileUrl": "https://charm.stanford.edu/Main/AllisonOkamura"
+  },
+  {
+    "slug": "anima-anandkumar",
+    "name": "Anima Anandkumar, PhD",
+    "affiliation": "California Institute of Technology (Bren Professor of Computing); previously Senior Director of ML Research, NVIDIA",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "neural operators",
+      "scientific machine learning",
+      "tensor methods",
+      "AI for climate and physics"
+    ],
+    "notableWorks": [
+      {
+        "title": "Fourier Neural Operator for Parametric Partial Differential Equations",
+        "year": 2021,
+        "venue": "ICLR",
+        "url": "https://arxiv.org/abs/2010.08895"
+      },
+      {
+        "title": "FourCastNet: A Global Data-driven High-resolution Weather Model using Adaptive Fourier Neural Operators",
+        "year": 2022,
+        "venue": "arXiv",
+        "url": "https://arxiv.org/abs/2202.11214"
+      }
+    ],
+    "profileUrl": "https://tensorlab.cms.caltech.edu/users/anima/"
+  },
+  {
+    "slug": "anita-avramides",
+    "name": "Anita Avramides, DPhil",
+    "affiliation": "University of Oxford (St Hilda's College; Reader in Philosophy of Mind)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "other minds",
+      "perception of mind",
+      "philosophy of language",
+      "intersubjectivity",
+      "philosophy of mind",
+      "epistemology"
+    ],
+    "notableWorks": [
+      {
+        "title": "Knowing and Understanding Other Minds (co-editor, with Matthew Parrott)",
+        "year": 2024,
+        "venue": "Oxford University Press",
+        "url": "https://global.oup.com/academic/product/knowing-and-understanding-other-minds-9780198794400"
+      },
+      {
+        "title": "Other Minds (Stanford Encyclopedia of Philosophy entry)",
+        "year": 2023,
+        "venue": "Stanford Encyclopedia of Philosophy",
+        "url": "https://plato.stanford.edu/entries/other-minds/"
+      }
+    ],
+    "profileUrl": "https://www.philosophy.ox.ac.uk/people/anita-avramides"
+  },
+  {
+    "slug": "athena-vouloumanos",
+    "name": "Athena Vouloumanos, PhD",
+    "affiliation": "Department of Psychology, New York University",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "infant language development",
+      "speech perception",
+      "communicative inference",
+      "social cognition in infancy"
+    ],
+    "notableWorks": [
+      {
+        "title": "Voulez-vous jouer avec moi? Twelve-month-olds understand that foreign languages can communicate",
+        "year": 2018,
+        "venue": "Cognition",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29358091/"
+      }
+    ],
+    "profileUrl": "https://www.psych.nyu.edu/vouloumanos/"
+  },
+  {
+    "slug": "berit-brogaard",
+    "name": "Berit Brogaard, DMSci, PhD",
+    "affiliation": "University of Miami (Professor of Philosophy; Director, Brogaard Lab)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "degrees of consciousness",
+      "qualia",
+      "synesthesia",
+      "philosophy of perception",
+      "emotions",
+      "philosophy of mind"
+    ],
+    "notableWorks": [
+      {
+        "title": "Consciousness and Knowledge (with Elijah Chudnoff) in The Oxford Handbook of the Philosophy of Consciousness",
+        "year": 2020,
+        "venue": "Oxford University Press",
+        "url": "https://philpapers.org/rec/BROCAK"
+      }
+    ],
+    "profileUrl": "https://people.miami.edu/profile/12c78c2920942d57ceac59f4584addc9"
+  },
+  {
+    "slug": "beth-glick",
+    "name": "Beth Glick",
+    "affiliation": "California Institute for Human Science (PhD candidate, Integral Noetic Sciences); MTS, Harvard Divinity School",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "mystical experiences",
+      "synchronicity",
+      "extended human capacities",
+      "edges of consciousness",
+      "noetic sciences"
+    ],
+    "notableWorks": [
+      {
+        "title": "Investigating Individual Intuitive Expression: Norms and Patterns in the Noetic Signature Inventory",
+        "year": 2025,
+        "venue": "Journal of Consciousness Studies 32(11-12), 121-158",
+        "url": "https://www.bethglick.com/"
+      }
+    ],
+    "profileUrl": "https://www.bethglick.com/"
+  },
+  {
+    "slug": "catherine-a-hartley",
+    "name": "Catherine A. Hartley, PhD",
+    "affiliation": "Department of Psychology and Center for Neural Science, New York University",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "developmental decision-making",
+      "reinforcement learning across the lifespan",
+      "controllability",
+      "memory and value"
+    ],
+    "notableWorks": [
+      {
+        "title": "Developmental shifts in computations used to detect environmental controllability",
+        "year": 2022,
+        "venue": "PLOS Computational Biology",
+        "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010120"
+      },
+      {
+        "title": "Understanding the development of reward learning through the lens of meta-learning",
+        "year": 2024,
+        "venue": "Nature Reviews Psychology",
+        "url": "https://www.hartleylab.org/publications.html"
+      }
+    ],
+    "profileUrl": "https://www.hartleylab.org/"
+  },
+  {
+    "slug": "cecilia-heyes",
+    "name": "Cecilia Heyes, PhD, FBA",
+    "affiliation": "All Souls College and Department of Experimental Psychology, University of Oxford",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "cultural evolution of cognition",
+      "social learning",
+      "imitation",
+      "metacognition"
+    ],
+    "notableWorks": [
+      {
+        "title": "Cognitive Gadgets: The Cultural Evolution of Thinking",
+        "year": 2018,
+        "venue": "Harvard University Press / Behavioral and Brain Sciences precis",
+        "url": "https://johnsutton.net/wp-content/uploads/2020/05/heyes-bbs-cognitive_gadgets.pdf"
+      }
+    ],
+    "profileUrl": "https://users.ox.ac.uk/~ascch/"
+  },
+  {
+    "slug": "cecilia-laschi",
+    "name": "Cecilia Laschi, Ph.D.",
+    "affiliation": "National University of Singapore (Provost's Chair Professor; Soft Robotics Lab); Scuola Superiore Sant'Anna (cross-appointment, BioRobotics Institute)",
+    "fields": [
+      "robotics"
+    ],
+    "researchAreas": [
+      "soft robotics",
+      "bio-inspired robotics",
+      "octopus-inspired manipulation",
+      "assistive robotics"
+    ],
+    "notableWorks": [
+      {
+        "title": "Soft Robotics: A Bioinspired Evolution in Robotics",
+        "year": 2013,
+        "venue": "Trends in Biotechnology",
+        "url": "https://doi.org/10.1016/j.tibtech.2013.03.002"
+      }
+    ],
+    "profileUrl": "https://cde.nus.edu.sg/me/staff/cecilia-laschi/"
+  },
+  {
+    "slug": "chelsea-finn",
+    "name": "Chelsea Finn, PhD",
+    "affiliation": "Stanford University (Assistant Professor of CS and EE); co-founder of Physical Intelligence (Pi)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "meta-learning",
+      "deep reinforcement learning",
+      "robot learning",
+      "imitation learning"
+    ],
+    "notableWorks": [
+      {
+        "title": "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks",
+        "year": 2017,
+        "venue": "ICML",
+        "url": "https://arxiv.org/abs/1703.03400"
+      }
+    ],
+    "profileUrl": "https://ai.stanford.edu/~cbfinn/"
+  },
+  {
+    "slug": "cynthia-rudin",
+    "name": "Cynthia Rudin, PhD",
+    "affiliation": "Duke University (Professor of Computer Science, ECE, Statistics, and Biostatistics & Bioinformatics); Director, Interpretable Machine Learning Lab",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "interpretable machine learning",
+      "high-stakes decision making",
+      "healthcare ML",
+      "criminal justice algorithms"
+    ],
+    "notableWorks": [
+      {
+        "title": "Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead",
+        "year": 2019,
+        "venue": "Nature Machine Intelligence",
+        "url": "https://doi.org/10.1038/s42256-019-0048-x"
+      },
+      {
+        "title": "Interpretable Machine Learning: Fundamental Principles and 10 Grand Challenges",
+        "year": 2022,
+        "venue": "Statistics Surveys",
+        "url": "https://arxiv.org/abs/2103.11251"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=mezKJyoAAAAJ&hl=en"
+  },
+  {
+    "slug": "danielle-s-caputi",
+    "name": "Danielle S. Caputi, PhD",
+    "affiliation": "UC Davis (PhD, Atmospheric Science); Synapse program team; collaborator on Borchard Ionosphere study",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "mind-matter interaction",
+      "weather-consciousness coupling",
+      "selection problem of consciousness",
+      "ozone modeling",
+      "atmospheric science",
+      "parapsychology"
+    ],
+    "notableWorks": [
+      {
+        "title": "Ozone Pollution in California's Central Valley: An Integrative Approach (doctoral dissertation, UC Davis Atmospheric Science)",
+        "year": 2021,
+        "venue": "UC Davis",
+        "url": "https://ucdavis.academia.edu/DaniCaputi"
+      }
+    ],
+    "profileUrl": "https://www.researchgate.net/scientific-contributions/Dani-Caputi-2147111862"
+  },
+  {
+    "slug": "daphna-shohamy",
+    "name": "Daphna Shohamy, PhD",
+    "affiliation": "Department of Psychology and Mortimer B. Zuckerman Mind Brain Behavior Institute, Columbia University",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "memory",
+      "decision-making",
+      "hippocampus-striatum interactions",
+      "value-guided choice"
+    ],
+    "notableWorks": [
+      {
+        "title": "Proactive and reactive construction of memory-based preferences",
+        "year": 2025,
+        "venue": "Nature Communications (PMC PMC11825774)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11825774/"
+      }
+    ],
+    "profileUrl": "https://shohamylab.zuckermaninstitute.columbia.edu/"
+  },
+  {
+    "slug": "dawn-song",
+    "name": "Dawn Song, PhD",
+    "affiliation": "UC Berkeley (Professor of Computer Science); founder, Oasis Labs",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "AI security",
+      "adversarial machine learning",
+      "privacy-preserving ML",
+      "trustworthy AI"
+    ],
+    "notableWorks": [
+      {
+        "title": "Robust Physical-World Attacks on Deep Learning Visual Classification",
+        "year": 2018,
+        "venue": "CVPR",
+        "url": "https://arxiv.org/abs/1707.08945"
+      },
+      {
+        "title": "The Secret Sharer: Evaluating and Testing Unintended Memorization in Neural Networks",
+        "year": 2019,
+        "venue": "USENIX Security",
+        "url": "https://arxiv.org/abs/1802.08232"
+      }
+    ],
+    "profileUrl": "https://dawnsong.io/"
+  },
+  {
+    "slug": "devi-parikh",
+    "name": "Devi Parikh, PhD",
+    "affiliation": "Georgia Tech (Associate Professor, School of Interactive Computing); Meta FAIR (Research Director); co-founder, Yutori",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "computer vision",
+      "visual question answering",
+      "embodied AI",
+      "human-AI collaboration"
+    ],
+    "notableWorks": [
+      {
+        "title": "VQA: Visual Question Answering",
+        "year": 2015,
+        "venue": "ICCV",
+        "url": "https://arxiv.org/abs/1505.00468"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=ijpYJQwAAAAJ&hl=en"
+  },
+  {
+    "slug": "diyi-yang",
+    "name": "Diyi Yang, PhD",
+    "affiliation": "Stanford University (Assistant Professor, Computer Science); leads Social and Language Technologies (SALT) Lab",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "NLP",
+      "computational social science",
+      "socially aware language technology",
+      "LLM alignment with social context"
+    ],
+    "notableWorks": [
+      {
+        "title": "Politeness Transfer: A Tag and Generate Approach",
+        "year": 2020,
+        "venue": "ACL",
+        "url": "https://arxiv.org/abs/2004.14257"
+      },
+      {
+        "title": "Can Large Language Models Transform Computational Social Science?",
+        "year": 2024,
+        "venue": "Computational Linguistics",
+        "url": "https://arxiv.org/abs/2305.03514"
+      }
+    ],
+    "profileUrl": "https://cs.stanford.edu/~diyiy/"
+  },
+  {
+    "slug": "doina-precup",
+    "name": "Doina Precup, PhD",
+    "affiliation": "McGill University (Associate Dean of Research, Faculty of Science; CIFAR Chair); Google DeepMind (Head, Montreal office)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "reinforcement learning",
+      "options framework",
+      "hierarchical RL",
+      "AI for health"
+    ],
+    "notableWorks": [
+      {
+        "title": "Between MDPs and Semi-MDPs: A Framework for Temporal Abstraction in Reinforcement Learning",
+        "year": 1999,
+        "venue": "Artificial Intelligence Journal",
+        "url": "https://doi.org/10.1016/S0004-3702(99)00052-1"
+      },
+      {
+        "title": "The Option-Critic Architecture",
+        "year": 2017,
+        "venue": "AAAI",
+        "url": "https://arxiv.org/abs/1609.05140"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=j54VcVEAAAAJ&hl=en"
+  },
+  {
+    "slug": "dorothee-legrand",
+    "name": "Dorothée Legrand, PhD",
+    "affiliation": "CNRS / Archives Husserl, École Normale Supérieure (Paris)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "pre-reflective self-consciousness",
+      "bodily self",
+      "phenomenology",
+      "anorexia/embodiment",
+      "philosophy of mind"
+    ],
+    "notableWorks": [
+      {
+        "title": "The bodily self: The sensori-motor roots of pre-reflective self-consciousness",
+        "year": 2006,
+        "venue": "Phenomenology and the Cognitive Sciences",
+        "url": "https://doi.org/10.1007/s11097-005-9015-6"
+      }
+    ],
+    "profileUrl": "https://philpapers.org/s/Doroth%C3%A9e%20Legrand"
+  },
+  {
+    "slug": "elizabeth-a-phelps",
+    "name": "Elizabeth A. Phelps, PhD",
+    "affiliation": "Department of Psychology, Harvard University",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "emotion and memory",
+      "fear learning",
+      "decision-making",
+      "affective neuroscience"
+    ],
+    "notableWorks": [
+      {
+        "title": "Human emotion and memory: interactions of the amygdala and hippocampal complex",
+        "year": 2004,
+        "venue": "Current Opinion in Neurobiology",
+        "url": "https://www.phelpslab.com/"
+      }
+    ],
+    "profileUrl": "https://www.phelpslab.com/"
+  },
+  {
+    "slug": "elizabeth-schechter",
+    "name": "Elizabeth Schechter, PhD",
+    "affiliation": "University of Maryland (Associate Professor, Philosophy; Cognitive Science Program)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "split-brain",
+      "self-consciousness",
+      "psychological unity",
+      "personal identity",
+      "philosophy of mind",
+      "philosophy of cognitive science"
+    ],
+    "notableWorks": [
+      {
+        "title": "Self-Consciousness and 'Split' Brains: The Minds' I",
+        "year": 2018,
+        "venue": "Oxford University Press",
+        "url": "https://global.oup.com/academic/product/self-consciousness-and-split-brains-9780198809654"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=ZXWBRT8AAAAJ&hl=en"
+  },
+  {
+    "slug": "emily-m-bender",
+    "name": "Emily M. Bender, PhD",
+    "affiliation": "University of Washington (Howard and Frances Nostrand Endowed Professor of Linguistics); Director, Computational Linguistics Laboratory",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "computational linguistics",
+      "NLP ethics",
+      "language model critique",
+      "multilingual NLP"
+    ],
+    "notableWorks": [
+      {
+        "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+        "year": 2021,
+        "venue": "FAccT",
+        "url": "https://doi.org/10.1145/3442188.3445922"
+      },
+      {
+        "title": "Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data",
+        "year": 2020,
+        "venue": "ACL",
+        "url": "https://aclanthology.org/2020.acl-main.463/"
+      }
+    ],
+    "profileUrl": "https://faculty.washington.edu/ebender/"
+  },
+  {
+    "slug": "eva-jablonka",
+    "name": "Eva Jablonka, PhD",
+    "affiliation": "Tel Aviv University (Cohn Institute for the History and Philosophy of Science and Ideas)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "origins of consciousness",
+      "Unlimited Associative Learning",
+      "evolution of nervous systems",
+      "minimal consciousness",
+      "philosophy of biology",
+      "evolutionary theory"
+    ],
+    "notableWorks": [
+      {
+        "title": "The Evolution of the Sensitive Soul: Learning and the Origins of Consciousness (with Simona Ginsburg)",
+        "year": 2019,
+        "venue": "MIT Press",
+        "url": "https://mitpress.mit.edu/9780262039307/the-evolution-of-the-sensitive-soul/"
+      },
+      {
+        "title": "Picturing the Mind: Consciousness through the Lens of Evolution (with Simona Ginsburg)",
+        "year": 2022,
+        "venue": "MIT Press",
+        "url": "https://mitpress.mit.edu/9780262046756/picturing-the-mind/"
+      }
+    ],
+    "profileUrl": "https://en.wikipedia.org/wiki/Eva_Jablonka"
+  },
+  {
+    "slug": "finale-doshi-velez",
+    "name": "Finale Doshi-Velez, PhD",
+    "affiliation": "Harvard University (Herchel Smith Professor of Computer Science, SEAS)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "interpretable machine learning",
+      "reinforcement learning for healthcare",
+      "probabilistic models",
+      "human-AI interaction"
+    ],
+    "notableWorks": [
+      {
+        "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+        "year": 2017,
+        "venue": "arXiv (foundational position paper)",
+        "url": "https://arxiv.org/abs/1702.08608"
+      },
+      {
+        "title": "Considerations for Evaluation and Generalization in Interpretable Machine Learning",
+        "year": 2018,
+        "venue": "Explainable and Interpretable Models in Computer Vision and Machine Learning (Springer)",
+        "url": "https://doi.org/10.1007/978-3-319-98131-4_1"
+      }
+    ],
+    "profileUrl": "https://finale.seas.harvard.edu/"
+  },
+  {
+    "slug": "hanna-wallach",
+    "name": "Hanna Wallach, PhD",
+    "affiliation": "Microsoft Research New York (VP and Distinguished Scientist, FATE group)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "fairness, accountability, transparency in ML",
+      "Bayesian methods",
+      "measurement theory for AI",
+      "computational social science"
+    ],
+    "notableWorks": [
+      {
+        "title": "Datasheets for Datasets",
+        "year": 2021,
+        "venue": "Communications of the ACM",
+        "url": "https://arxiv.org/abs/1803.09010"
+      },
+      {
+        "title": "Measurement and Fairness",
+        "year": 2021,
+        "venue": "FAccT",
+        "url": "https://doi.org/10.1145/3442188.3445901"
+      }
+    ],
+    "profileUrl": "https://www.microsoft.com/en-us/research/people/wallach/"
+  },
+  {
+    "slug": "helane-wahbeh",
+    "name": "Helané Wahbeh, ND, MCR",
+    "affiliation": "Institute of Noetic Sciences (Director of Research); Oregon Health & Science University (adjunct, Neurology)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "channeling",
+      "extended human capacities",
+      "meditation",
+      "noetic experiences",
+      "parapsychology",
+      "mind-body medicine"
+    ],
+    "notableWorks": [
+      {
+        "title": "The Science of Channeling: Why You Should Trust Your Intuition and the Force That Connects Us All",
+        "year": 2021,
+        "venue": "New Harbinger",
+        "url": "https://www.newharbinger.com/9781684037155/the-science-of-channeling/"
+      }
+    ],
+    "profileUrl": "https://scholar.google.com/citations?user=W0WWiKMAAAAJ&hl=en"
+  },
+  {
+    "slug": "himabindulakkaraju",
+    "name": "HimabinduLakkaraju, PhD",
+    "affiliation": "Harvard University (Assistant Professor, Harvard Business School; faculty affiliate, Department of Computer Science)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "explainable ML",
+      "trustworthy AI",
+      "post-hoc explanations",
+      "adversarial attacks on explanations"
+    ],
+    "notableWorks": [
+      {
+        "title": "Fooling LIME and SHAP: Adversarial Attacks on Post hoc Explanation Methods",
+        "year": 2020,
+        "venue": "AIES",
+        "url": "https://arxiv.org/abs/1911.02508"
+      },
+      {
+        "title": "Faithful and Customizable Explanations of Black Box Models",
+        "year": 2019,
+        "venue": "AIES",
+        "url": "https://himalakkaraju.github.io/papers/aies-2019.pdf"
+      }
+    ],
+    "profileUrl": "https://himalakkaraju.github.io/"
+  },
+  {
+    "slug": "irene-solaiman",
+    "name": "Irene Solaiman, MA",
+    "affiliation": "Hugging Face (Chief Policy Officer)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "responsible AI release",
+      "social impact of generative models",
+      "AI policy",
+      "model evaluation for bias"
+    ],
+    "notableWorks": [
+      {
+        "title": "Release Strategies and the Social Impacts of Language Models",
+        "year": 2019,
+        "venue": "arXiv (OpenAI)",
+        "url": "https://arxiv.org/abs/1908.09203"
+      },
+      {
+        "title": "Evaluating the Social Impact of Generative AI Systems in Systems and Society",
+        "year": 2023,
+        "venue": "arXiv",
+        "url": "https://arxiv.org/abs/2306.05949"
+      }
+    ],
+    "profileUrl": "https://en.wikipedia.org/wiki/Irene_Solaiman"
+  },
+  {
+    "slug": "janice-chen",
+    "name": "Janice Chen, PhD",
+    "affiliation": "Department of Psychological and Brain Sciences, Johns Hopkins University",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "episodic memory",
+      "narrative processing",
+      "naturalistic neuroscience",
+      "event segmentation"
+    ],
+    "notableWorks": [
+      {
+        "title": "The causal structure and computational value of narratives",
+        "year": 2024,
+        "venue": "Trends in Cognitive Sciences",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38734531/"
+      }
+    ],
+    "profileUrl": "https://jchenlab.johnshopkins.edu/"
+  },
+  {
+    "slug": "jennifer-m-windt",
+    "name": "Jennifer M. Windt, PhD",
+    "affiliation": "Monash University (Philosophy; Monash Centre for Consciousness and Contemplative Studies)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "dreams",
+      "lucid dreaming",
+      "self-consciousness",
+      "sleep",
+      "phenomenology",
+      "philosophy of mind"
+    ],
+    "notableWorks": [
+      {
+        "title": "Dreaming: A Conceptual Framework for Philosophy of Mind and Empirical Research",
+        "year": 2015,
+        "venue": "MIT Press",
+        "url": "https://mitpress.mit.edu/9780262028677/dreaming/"
+      },
+      {
+        "title": "Open MIND (edited with Thomas Metzinger)",
+        "year": 2016,
+        "venue": "MIT Press / Open MIND",
+        "url": "https://open-mind.net/om-contributors/Jennifer_M_Windt"
+      }
+    ],
+    "profileUrl": "https://research.monash.edu/en/persons/jennifer-windt"
+  },
+  {
+    "slug": "joelle-pineau",
+    "name": "Joelle Pineau, PhD",
+    "affiliation": "Cohere (Chief AI Officer, 2025); McGill University (Professor, School of Computer Science); Mila",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "reinforcement learning",
+      "dialogue systems",
+      "reproducibility in ML",
+      "robotics"
+    ],
+    "notableWorks": [
+      {
+        "title": "Conditional Computation in Neural Networks for Faster Models",
+        "year": 2016,
+        "venue": "ICLR Workshop",
+        "url": "https://arxiv.org/abs/1511.06297"
+      },
+      {
+        "title": "Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)",
+        "year": 2021,
+        "venue": "JMLR",
+        "url": "https://arxiv.org/abs/2003.12206"
+      }
+    ],
+    "profileUrl": "https://www.cs.mcgill.ca/~jpineau/"
+  },
+  {
+    "slug": "josie-hughes",
+    "name": "Josie Hughes, Ph.D.",
+    "affiliation": "EPFL (Tenure Track Assistant Professor; Director, CREATE Lab - Computational Robot Design & Fabrication)",
+    "fields": [
+      "robotics"
+    ],
+    "researchAreas": [
+      "soft robotics",
+      "computational fabrication",
+      "robotic hands",
+      "bio-inspired manipulators"
+    ],
+    "notableWorks": [
+      {
+        "title": "A Soft Robotic Trunk Inspired by Elephants for Close Human-Robot Interaction",
+        "year": 2024,
+        "venue": "EPFL CREATE Lab publication (Advanced Intelligent Systems)",
+        "url": "https://actu.epfl.ch/news/soft-elephant-trunk-like-robot-for-close-interacti/"
+      }
+    ],
+    "profileUrl": "https://people.epfl.ch/josie.hughes"
+  },
+  {
+    "slug": "kate-crawford",
+    "name": "Kate Crawford, PhD",
+    "affiliation": "Microsoft Research New York (Senior Principal Researcher); USC Annenberg (Research Professor); co-founder, AI Now Institute",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "AI ethics",
+      "data politics",
+      "sociotechnical critique of AI",
+      "AI labor and environment"
+    ],
+    "notableWorks": [
+      {
+        "title": "Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence",
+        "year": 2021,
+        "venue": "Yale University Press (book)",
+        "url": "https://yalebooks.yale.edu/book/9780300264630/atlas-of-ai/"
+      },
+      {
+        "title": "Excavating AI: The Politics of Images in Machine Learning Training Sets",
+        "year": 2021,
+        "venue": "AI & Society",
+        "url": "https://doi.org/10.1007/s00146-021-01162-8"
+      }
+    ],
+    "profileUrl": "https://katecrawford.net/"
+  },
+  {
+    "slug": "lera-boroditsky",
+    "name": "Lera Boroditsky, PhD",
+    "affiliation": "Department of Cognitive Science, University of California, San Diego",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "language and cognition",
+      "linguistic relativity",
+      "cross-cultural cognition",
+      "perception of time and space"
+    ],
+    "notableWorks": [
+      {
+        "title": "Language and the brain",
+        "year": 2019,
+        "venue": "Science",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31604281/"
+      }
+    ],
+    "profileUrl": "https://cogsci.ucsd.edu/people/faculty/lera-boroditsky.html"
+  },
+  {
+    "slug": "mariam-aly",
+    "name": "Mariam Aly, PhD",
+    "affiliation": "Department of Psychology, Columbia University",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "attention-memory interactions",
+      "hippocampus",
+      "relational representations",
+      "fMRI"
+    ],
+    "notableWorks": [
+      {
+        "title": "Preparation for upcoming attentional states in the hippocampus and medial prefrontal cortex",
+        "year": 2020,
+        "venue": "eLife",
+        "url": "https://elifesciences.org/articles/53191"
+      }
+    ],
+    "profileUrl": "https://www.columbia.edu/cu/psychology/fac-bios/AlyM/faculty.html"
+  },
+  {
+    "slug": "marilyn-schlitz",
+    "name": "Marilyn Schlitz, PhD",
+    "affiliation": "Institute of Noetic Sciences (IONS); Sofia University",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "distant intention",
+      "remote viewing",
+      "healing",
+      "anomalous cognition",
+      "transformative experience",
+      "parapsychology",
+      "anthropology"
+    ],
+    "notableWorks": [
+      {
+        "title": "Living Deeply: The Art and Science of Transformation in Everyday Life",
+        "year": 2008,
+        "venue": "New Harbinger / Noetic Books",
+        "url": "https://www.newharbinger.com/9781572245334/living-deeply/"
+      },
+      {
+        "title": "Consciousness and Healing: Integral Approaches to Mind-Body Medicine (co-editor)",
+        "year": 2005,
+        "venue": "Elsevier / Churchill Livingstone",
+        "url": "https://www.elsevier.com/books/consciousness-and-healing/schlitz/978-0-443-06800-3"
+      }
+    ],
+    "profileUrl": "https://noetic.org/profile/marilyn-schlitz/"
+  },
+  {
+    "slug": "marzyeh-ghassemi",
+    "name": "Marzyeh Ghassemi, PhD",
+    "affiliation": "MIT (Associate Professor, EECS / IMES); Vector Institute (Faculty)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "healthy machine learning",
+      "fairness in clinical ML",
+      "robust ML",
+      "clinical NLP"
+    ],
+    "notableWorks": [
+      {
+        "title": "AI Recognition of Patient Race in Medical Imaging: A Modelling Study",
+        "year": 2022,
+        "venue": "The Lancet Digital Health",
+        "url": "https://doi.org/10.1016/S2589-7500(22)00063-2"
+      }
+    ],
+    "profileUrl": "https://healthyml.org/"
+  },
+  {
+    "slug": "mason-ulrika-borchard",
+    "name": "Mason Ulrika Borchard",
+    "affiliation": "Doctoral Candidate VSU; Synapse program/tech; PI of the Ionosphere QRNG-consciousness study (masonborchard.com/ionosphere)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "consciousness-RNG interaction",
+      "anomalous cognition",
+      "temporal-burst structure detection",
+      "global consciousness project methodology",
+      "statistical physics",
+      "parapsychology"
+    ],
+    "notableWorks": [
+      {
+        "title": "Ionosphere QRNG-Consciousness Study (project page; collaborators Timothy D. Beach, Danielle S. Caputi, Justin Iredale)",
+        "year": 2025,
+        "venue": "masonborchard.com (independent publication, citing Jahn et al. 1997; Radin & Nelson 1989; Peng et al. 1994; Nelson & Bancel 2011)",
+        "url": "https://masonborchard.com/ionosphere.html"
+      }
+    ],
+    "profileUrl": "https://masonborchard.com/"
+  },
+  {
+    "slug": "melanie-boly",
+    "name": "Mélanie Boly, MD, PhD",
+    "affiliation": "University of Wisconsin–Madison (Assistant Professor, Neurology & Psychiatry); Center for Sleep and Consciousness",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "Integrated Information Theory (IIT)",
+      "disorders of consciousness",
+      "neural correlates of consciousness",
+      "TMS-EEG",
+      "neurology"
+    ],
+    "notableWorks": [
+      {
+        "title": "Integrated information theory: from consciousness to its physical substrate",
+        "year": 2016,
+        "venue": "Nature Reviews Neuroscience",
+        "url": "https://doi.org/10.1038/nrn.2016.44"
+      },
+      {
+        "title": "Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms",
+        "year": 2023,
+        "venue": "PLOS Computational Biology",
+        "url": "https://doi.org/10.1371/journal.pcbi.1011465"
+      }
+    ],
+    "profileUrl": "https://www.arc-cogitate.com/melanie-boly"
+  },
+  {
+    "slug": "nancy-kanwisher",
+    "name": "Nancy Kanwisher, PhD",
+    "affiliation": "Department of Brain and Cognitive Sciences and McGovern Institute, Massachusetts Institute of Technology",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "functional specialization of cortex",
+      "face perception",
+      "scene perception",
+      "domain-specific cognition"
+    ],
+    "notableWorks": [
+      {
+        "title": "The Fusiform Face Area: A Module in Human Extrastriate Cortex Specialized for Face Perception",
+        "year": 1997,
+        "venue": "Journal of Neuroscience",
+        "url": "https://www.jneurosci.org/content/17/11/4302"
+      }
+    ],
+    "profileUrl": "https://mcgovern.mit.edu/profile/nancy-kanwisher/"
+  },
+  {
+    "slug": "olga-russakovsky",
+    "name": "Olga Russakovsky, PhD",
+    "affiliation": "Princeton University (Associate Professor, Computer Science; Associate Director, Princeton AI Lab); co-founder, AI4ALL",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "computer vision",
+      "fairness in visual recognition",
+      "ImageNet",
+      "dataset bias"
+    ],
+    "notableWorks": [
+      {
+        "title": "ImageNet Large Scale Visual Recognition Challenge",
+        "year": 2015,
+        "venue": "International Journal of Computer Vision",
+        "url": "https://arxiv.org/abs/1409.0575"
+      },
+      {
+        "title": "Towards Fairness in Visual Recognition: Effective Strategies for Bias Mitigation",
+        "year": 2020,
+        "venue": "CVPR",
+        "url": "https://arxiv.org/abs/1911.11834"
+      }
+    ],
+    "profileUrl": "https://www.cs.princeton.edu/~olgarus/"
+  },
+  {
+    "slug": "patricia-k-kuhl",
+    "name": "Patricia K. Kuhl, PhD",
+    "affiliation": "Institute for Learning & Brain Sciences and Department of Speech and Hearing Sciences, University of Washington",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "infant language acquisition",
+      "speech perception",
+      "neural commitment",
+      "social learning"
+    ],
+    "notableWorks": [
+      {
+        "title": "Social interaction and language acquisition: Toward a neurobiological view",
+        "year": 2018,
+        "venue": "Annual Review of Linguistics",
+        "url": "https://ilabs.uw.edu/patricia-k-kuhl-publications/"
+      }
+    ],
+    "profileUrl": "https://ilabs.uw.edu/patricia-k-kuhl-publications/"
+  },
+  {
+    "slug": "patricia-s-churchland",
+    "name": "Patricia S. Churchland, PhD",
+    "affiliation": "UC San Diego (UC President's Professor of Philosophy Emerita); Salk Institute (adjunct)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "neurophilosophy",
+      "self",
+      "free will",
+      "moral cognition",
+      "consciousness",
+      "philosophy of mind"
+    ],
+    "notableWorks": [
+      {
+        "title": "Conscience: The Origins of Moral Intuition",
+        "year": 2019,
+        "venue": "W. W. Norton",
+        "url": "https://wwnorton.com/books/9780393652680"
+      },
+      {
+        "title": "Touching A Nerve: The Self As Brain",
+        "year": 2013,
+        "venue": "W. W. Norton",
+        "url": "https://wwnorton.com/books/9780393349443"
+      }
+    ],
+    "profileUrl": "https://patriciachurchland.com/"
+  },
+  {
+    "slug": "rebecca-saxe",
+    "name": "Rebecca Saxe, PhD",
+    "affiliation": "Department of Brain and Cognitive Sciences and McGovern Institute, Massachusetts Institute of Technology",
+    "fields": [
+      "cogsci"
+    ],
+    "researchAreas": [
+      "theory of mind",
+      "social cognition",
+      "moral cognition",
+      "developmental neuroscience"
+    ],
+    "notableWorks": [
+      {
+        "title": "People thinking about thinking people: The role of the temporo-parietal junction in 'theory of mind'",
+        "year": 2003,
+        "venue": "NeuroImage",
+        "url": "https://saxelab.mit.edu/"
+      }
+    ],
+    "profileUrl": "https://saxelab.mit.edu/"
+  },
+  {
+    "slug": "rediet-abebe",
+    "name": "Rediet Abebe, PhD",
+    "affiliation": "Harvard University (Junior Fellow / Assistant Professor); previously UC Berkeley EECS",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "algorithmic fairness",
+      "AI for social good",
+      "mechanism design",
+      "inequality and algorithms"
+    ],
+    "notableWorks": [
+      {
+        "title": "Roles for Computing in Social Change",
+        "year": 2020,
+        "venue": "FAccT",
+        "url": "https://doi.org/10.1145/3351095.3372871"
+      },
+      {
+        "title": "Fairness, Equality, and Power in Algorithmic Decision-Making",
+        "year": 2021,
+        "venue": "FAccT",
+        "url": "https://doi.org/10.1145/3442188.3445919"
+      }
+    ],
+    "profileUrl": "https://en.wikipedia.org/wiki/Rediet_Abebe"
+  },
+  {
+    "slug": "regina-barzilay",
+    "name": "Regina Barzilay, PhD",
+    "affiliation": "MIT (School of Engineering Distinguished Professor for AI and Health, EECS / CSAIL); AI faculty lead, Jameel Clinic",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "NLP",
+      "deep learning for chemistry and oncology",
+      "drug discovery",
+      "cancer risk prediction"
+    ],
+    "notableWorks": [
+      {
+        "title": "A Deep Learning Approach to Antibiotic Discovery",
+        "year": 2020,
+        "venue": "Cell",
+        "url": "https://doi.org/10.1016/j.cell.2020.01.021"
+      },
+      {
+        "title": "Toward Robust Mammography-Based Models for Breast Cancer Risk",
+        "year": 2021,
+        "venue": "Science Translational Medicine",
+        "url": "https://doi.org/10.1126/scitranslmed.aba4373"
+      }
+    ],
+    "profileUrl": "https://www.regina.csail.mit.edu/"
+  },
+  {
+    "slug": "sabine-hauert",
+    "name": "Sabine Hauert, Ph.D.",
+    "affiliation": "University of Bristol (Professor of Swarm Engineering, Bristol Robotics Laboratory)",
+    "fields": [
+      "robotics"
+    ],
+    "researchAreas": [
+      "swarm robotics",
+      "swarm engineering",
+      "nanomedicine",
+      "bio-inspired swarms"
+    ],
+    "notableWorks": [
+      {
+        "title": "Swarm Engineering Across Scales: From Robots to Nanomedicine (invited talk)",
+        "year": 2023,
+        "venue": "Santa Fe Institute / Bristol Robotics Laboratory",
+        "url": "https://hauertlab.com/"
+      }
+    ],
+    "profileUrl": "https://hauertlab.com/sabine-hauert/"
+  },
+  {
+    "slug": "sandra-wachter",
+    "name": "Sandra Wachter, DPhil",
+    "affiliation": "Oxford Internet Institute, University of Oxford (Professor of Technology and Regulation)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "law and ethics of AI",
+      "explainable AI",
+      "algorithmic bias",
+      "data protection"
+    ],
+    "notableWorks": [
+      {
+        "title": "Counterfactual Explanations Without Opening the Black Box: Automated Decisions and the GDPR",
+        "year": 2018,
+        "venue": "Harvard Journal of Law & Technology",
+        "url": "https://arxiv.org/abs/1711.00399"
+      },
+      {
+        "title": "Why Fairness Cannot Be Automated: Bridging the Gap Between EU Non-Discrimination Law and AI",
+        "year": 2021,
+        "venue": "Computer Law & Security Review",
+        "url": "https://doi.org/10.1016/j.clsr.2021.105567"
+      }
+    ],
+    "profileUrl": "https://www.oii.ox.ac.uk/people/profiles/sandra-wachter/"
+  },
+  {
+    "slug": "sara-hooker",
+    "name": "Sara Hooker, PhD",
+    "affiliation": "Adaption (co-founder, 2025); previously Head of Cohere For AI",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "efficient deep learning",
+      "model compression",
+      "multilingual LLMs",
+      "responsible AI"
+    ],
+    "notableWorks": [
+      {
+        "title": "The Hardware Lottery",
+        "year": 2021,
+        "venue": "Communications of the ACM",
+        "url": "https://arxiv.org/abs/2009.06489"
+      },
+      {
+        "title": "What Do Compressed Deep Neural Networks Forget?",
+        "year": 2020,
+        "venue": "arXiv",
+        "url": "https://arxiv.org/abs/1911.05248"
+      }
+    ],
+    "profileUrl": "https://www.sarahooker.me/"
+  },
+  {
+    "slug": "sasha-luccioni",
+    "name": "Sasha Luccioni, PhD",
+    "affiliation": "Hugging Face (AI and Climate Lead)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "AI environmental impact",
+      "carbon accounting for ML",
+      "responsible AI",
+      "bias in generative models"
+    ],
+    "notableWorks": [
+      {
+        "title": "Estimating the Carbon Footprint of BLOOM, a 176B Parameter Language Model",
+        "year": 2022,
+        "venue": "JMLR / arXiv",
+        "url": "https://arxiv.org/abs/2211.02001"
+      },
+      {
+        "title": "Power Hungry Processing: Watts Driving the Cost of AI Deployment?",
+        "year": 2024,
+        "venue": "FAccT",
+        "url": "https://arxiv.org/abs/2311.16863"
+      }
+    ],
+    "profileUrl": "https://www.sashaluccioni.com/"
+  },
+  {
+    "slug": "stella-biderman",
+    "name": "Stella Biderman, MS",
+    "affiliation": "EleutherAI (Executive Director); Booz Allen Hamilton",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "open-source LLMs",
+      "training dynamics",
+      "interpretability",
+      "evaluation of language models"
+    ],
+    "notableWorks": [
+      {
+        "title": "Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling",
+        "year": 2023,
+        "venue": "ICML",
+        "url": "https://arxiv.org/abs/2304.01373"
+      },
+      {
+        "title": "BLOOM: A 176B-Parameter Open-Access Multilingual Language Model",
+        "year": 2022,
+        "venue": "arXiv (BigScience consortium)",
+        "url": "https://arxiv.org/abs/2211.05100"
+      }
+    ],
+    "profileUrl": "https://www.stellabiderman.ai/"
+  },
+  {
+    "slug": "su-lin-blodgett",
+    "name": "Su Lin Blodgett, PhD",
+    "affiliation": "Microsoft Research Montréal (Principal Researcher, FATE group)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "NLP bias and harm",
+      "fairness in language technologies",
+      "responsible NLP",
+      "African American English processing"
+    ],
+    "notableWorks": [
+      {
+        "title": "Language (Technology) is Power: A Critical Survey of \"Bias\" in NLP",
+        "year": 2020,
+        "venue": "ACL",
+        "url": "https://arxiv.org/abs/2005.14050"
+      },
+      {
+        "title": "Stereotyping Norwegian Salmon: An Inventory of Pitfalls in Fairness Benchmark Datasets",
+        "year": 2021,
+        "venue": "ACL",
+        "url": "https://aclanthology.org/2021.acl-long.81/"
+      }
+    ],
+    "profileUrl": "https://sblodgett.github.io/"
+  },
+  {
+    "slug": "susan-schneider",
+    "name": "Susan Schneider, PhD",
+    "affiliation": "Florida Atlantic University (William F. Dietrich Distinguished Professor; founding director, Center for the Future of Mind)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "machine consciousness",
+      "the hard problem",
+      "AI and personal identity",
+      "ACT test",
+      "philosophy of mind",
+      "philosophy of AI"
+    ],
+    "notableWorks": [
+      {
+        "title": "Artificial You: AI and the Future of Your Mind",
+        "year": 2019,
+        "venue": "Princeton University Press",
+        "url": "https://press.princeton.edu/books/hardcover/9780691180144/artificial-you"
+      }
+    ],
+    "profileUrl": "https://schneiderwebsite.com/"
+  },
+  {
+    "slug": "tania-singer",
+    "name": "Tania Singer, PhD",
+    "affiliation": "Max Planck Society (Scientific Head, Social Neuroscience Lab, Berlin)",
+    "fields": [
+      "consciousness"
+    ],
+    "researchAreas": [
+      "compassion training",
+      "empathy",
+      "mental training and plasticity",
+      "ReSource Project",
+      "contemplative neuroscience",
+      "social neuroscience"
+    ],
+    "notableWorks": [
+      {
+        "title": "Caring Economics: Conversations on Altruism and Compassion",
+        "year": 2015,
+        "venue": "Picador",
+        "url": "https://us.macmillan.com/books/9781250064128/caringeconomics"
+      }
+    ],
+    "profileUrl": "https://taniasinger.de/"
+  },
+  {
+    "slug": "timnit-gebru",
+    "name": "Timnit Gebru, PhD",
+    "affiliation": "Distributed AI Research Institute (DAIR) (Founder and Executive Director)",
+    "fields": [
+      "ai"
+    ],
+    "researchAreas": [
+      "algorithmic bias",
+      "facial recognition fairness",
+      "AI ethics",
+      "data documentation"
+    ],
+    "notableWorks": [
+      {
+        "title": "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification",
+        "year": 2018,
+        "venue": "FAccT",
+        "url": "https://proceedings.mlr.press/v81/buolamwini18a.html"
+      },
+      {
+        "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+        "year": 2021,
+        "venue": "FAccT",
+        "url": "https://doi.org/10.1145/3442188.3445922"
+      }
+    ],
+    "profileUrl": "https://www.dair-institute.org/"
+  }
+]

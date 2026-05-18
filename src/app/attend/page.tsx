@@ -155,7 +155,7 @@ export default function AttendPage() {
               Get notified
             </Link>
           </div>
-          <div className="mt-16 grid w-full max-w-[1488px] gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid w-full max-w-[1488px] grid-cols-1 gap-3 min-[440px]:grid-cols-2 min-[440px]:gap-4 lg:grid-cols-4 lg:gap-6">
             <DisciplineCard
               title="Artificial Intelligence"
               body="Every model encodes a worldview. Most encode the same blind spots."

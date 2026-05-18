@@ -156,7 +156,7 @@ export default function HomePage() {
               Apply to attend
             </Link>
           </div>
-          <div className="mt-20 grid w-full max-w-[1488px] gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-20 grid w-full max-w-[1488px] grid-cols-1 gap-3 min-[440px]:grid-cols-2 min-[440px]:gap-4 lg:grid-cols-4 lg:gap-6">
             <DisciplineCard
               title="Artificial Intelligence"
               body="Every model encodes a worldview. Most encode the same blind spots."
@@ -234,7 +234,7 @@ export default function HomePage() {
             <p className="mt-8 max-w-[44ch] font-sans text-xl leading-[1.6]">
               Alongside an organizing committee of 25.{" "}
               <Link href="/about" className="text-oxide-100 underline decoration-oxide-100 underline-offset-4 hover:no-underline">
-                Meet the full team
+                Read their full bios
               </Link>
               . Gifts are tax-deductible through Applied Love Labs.
             </p>
