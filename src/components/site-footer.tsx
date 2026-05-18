@@ -87,7 +87,6 @@ export function SiteFooter() {
                 { label: "Ethos", href: "/ethos" },
                 { label: "Program", href: "/program", chip: "Coming soon!" },
                 { label: "FAQ", href: "/faq" },
-                { label: "Original design (v1)", href: "https://legacy.thesynapse.co" },
               ]}
             />
             <FooterColumn
