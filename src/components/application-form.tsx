@@ -42,6 +42,7 @@ export function ApplicationForm() {
   const [gender, setGender] = useState<Gender | null>(null);
   const [directoryConsent, setDirectoryConsent] = useState<YesNo | null>(null);
   const [isSpeaker, setIsSpeaker] = useState<YesNo | null>(null);
+  const [attendIfNotSpeaker, setAttendIfNotSpeaker] = useState<YesNo | null>(null);
 
   const [bio, setBio] = useState("");
   const [essay1, setEssay1] = useState("");
@@ -120,6 +121,7 @@ export function ApplicationForm() {
       setGender(null);
       setDirectoryConsent(null);
       setIsSpeaker(null);
+      setAttendIfNotSpeaker(null);
       setBio("");
       setEssay1("");
       setEssay2("");
@@ -164,6 +166,42 @@ export function ApplicationForm() {
         aria-hidden="true"
         className="pointer-events-none absolute -left-[9999px] h-0 w-0 opacity-0"
       />
+
+      <Field label="Are you applying as a speaker?" required>
+        <YesNoRadios
+          name="isSpeaker"
+          value={isSpeaker}
+          onChange={setIsSpeaker}
+        />
+      </Field>
+
+      {isSpeaker === "yes" && (
+        <>
+          <Field
+            label="Speaker submission"
+            description="Upload a document with: (a) talk title, (b) coauthors and affiliations, (c) abstract <=500 words."
+            required
+          >
+            <input
+              required
+              type="file"
+              name="speakerUpload"
+              accept=".pdf,.doc,.docx"
+              className="block w-full text-sm text-muted-foreground file:mr-4 file:cursor-pointer file:rounded-md file:border file:border-border-strong file:bg-surface file:px-4 file:py-2 file:text-sm file:text-ink hover:file:border-ink"
+            />
+          </Field>
+          <Field
+            label="Speaking slots are intentionally limited. If we can't fit you onto the program for 2026, would you still like to attend as a participant?"
+            required
+          >
+            <YesNoRadios
+              name="attendIfNotSpeaker"
+              value={attendIfNotSpeaker}
+              onChange={setAttendIfNotSpeaker}
+            />
+          </Field>
+        </>
+      )}
 
       <FieldRow>
         <Field label="Full name" required>
@@ -283,30 +321,6 @@ export function ApplicationForm() {
           onChange={setDirectoryConsent}
         />
       </Field>
-
-      <Field label="Are you applying as a speaker?" required>
-        <YesNoRadios
-          name="isSpeaker"
-          value={isSpeaker}
-          onChange={setIsSpeaker}
-        />
-      </Field>
-
-      {isSpeaker === "yes" && (
-        <Field
-          label="Speaker submission"
-          description="Upload a document with: (a) talk title, (b) coauthors and affiliations, (c) abstract <=500 words."
-          required
-        >
-          <input
-            required
-            type="file"
-            name="speakerUpload"
-            accept=".pdf,.doc,.docx"
-            className="block w-full text-sm text-muted-foreground file:mr-4 file:cursor-pointer file:rounded-md file:border file:border-border-strong file:bg-surface file:px-4 file:py-2 file:text-sm file:text-ink hover:file:border-ink"
-          />
-        </Field>
-      )}
 
       <Field label="Why this gathering, and what you bring" required>
         <ul className="mb-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">

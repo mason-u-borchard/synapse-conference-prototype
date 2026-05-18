@@ -29,6 +29,11 @@ const REGISTRATION_COLUMNS = [
   "access",
   "guidelinesAgreement",
   "referral",
+  // Appended after the original column set so existing headers in the
+  // Google Sheet stay aligned. Add a header cell labelled
+  // "attendIfNotSpeaker" (or whatever reads best for the program team)
+  // in the corresponding column once this lands.
+  "attendIfNotSpeaker",
 ];
 
 const CONTACT_COLUMNS = [

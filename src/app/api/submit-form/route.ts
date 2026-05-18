@@ -23,6 +23,7 @@ const registrationSchema = z.object({
   bio: z.string().min(1).max(2000),
   directoryConsent: z.enum(["yes", "no"]),
   isSpeaker: z.enum(["yes", "no"]),
+  attendIfNotSpeaker: z.enum(["yes", "no"]).optional(),
   essay1: z.string().min(1).max(3000),
   essay2: z.string().min(1).max(3000),
   guidelinesAgreement: z.string().refine((v) => v === "on", {
