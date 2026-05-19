@@ -11,6 +11,7 @@ const registrationSchema = z.object({
   email: z.string().email(),
   city: z.string().min(1).max(120),
   country: z.string().min(1).max(120),
+  usState: z.string().max(120).optional().default(""),
   affiliation: z.string().min(1).max(200),
   gender: z.enum([
     "male",

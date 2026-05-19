@@ -85,7 +85,7 @@ export function SiteFooter() {
               items={[
                 { label: "About", href: "/about" },
                 { label: "Ethos", href: "/ethos" },
-                { label: "Program", href: "/program", chip: "Coming soon!" },
+                { label: "Program", chip: "Coming soon!" },
                 { label: "FAQ", href: "/faq" },
               ]}
             />
@@ -100,7 +100,6 @@ export function SiteFooter() {
               title="Reach Us"
               items={[
                 { label: "hello@thesynapse.co", href: "mailto:hello@thesynapse.co" },
-                { label: "Press kit", href: "mailto:hello@thesynapse.co?subject=Press%20kit%20request" },
               ]}
             />
           </div>
@@ -127,15 +126,19 @@ function FooterColumn({
   items,
 }: {
   title: string;
-  items: { label: string; href: string; chip?: string }[];
+  items: { label: string; href?: string; chip?: string }[];
 }) {
   return (
     <div>
       <h3 className="font-mono text-sm uppercase tracking-[0.4em] text-off-white">{title}</h3>
       <ul className="mt-7 space-y-5 font-sans text-base text-off-white">
         {items.map((item) => (
-          <li key={item.href} className="flex items-center gap-2">
-            <Link href={item.href} className="hover:underline">{item.label}</Link>
+          <li key={item.label} className="flex items-center gap-2">
+            {item.href ? (
+              <Link href={item.href} className="hover:underline">{item.label}</Link>
+            ) : (
+              <span aria-disabled="true" className="text-off-white/65 cursor-default">{item.label}</span>
+            )}
             {item.chip && (
               <span className="rounded bg-off-white/5 px-1.5 py-0.5 font-mono text-[11px] italic text-off-white/85">
                 {item.chip}

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import { cx } from "@/lib/cx";
+import { DEFAULT_COUNTRY, US_STATES_AND_TERRITORIES, getCountryOptions } from "@/lib/locations";
 
 type Gender =
   | "male"
@@ -43,6 +44,10 @@ export function ApplicationForm() {
   const [directoryConsent, setDirectoryConsent] = useState<YesNo | null>(null);
   const [isSpeaker, setIsSpeaker] = useState<YesNo | null>(null);
   const [attendIfNotSpeaker, setAttendIfNotSpeaker] = useState<YesNo | null>(null);
+  const [country, setCountry] = useState<string>(DEFAULT_COUNTRY);
+  const [usState, setUsState] = useState<string>("");
+
+  const countryOptions = useMemo(() => getCountryOptions(), []);
 
   const [bio, setBio] = useState("");
   const [essay1, setEssay1] = useState("");
@@ -122,6 +127,8 @@ export function ApplicationForm() {
       setDirectoryConsent(null);
       setIsSpeaker(null);
       setAttendIfNotSpeaker(null);
+      setCountry(DEFAULT_COUNTRY);
+      setUsState("");
       setBio("");
       setEssay1("");
       setEssay2("");
@@ -144,7 +151,7 @@ export function ApplicationForm() {
         </p>
         {status.speakerHadFile && (
           <p className="mt-4 max-w-prose text-pretty text-muted-foreground mx-auto">
-            Speaker materials: we have your filename on file but the upload
+            Presenter materials: we have your filename on file but the upload
             channel isn't live yet. Watch your inbox -- the program team will
             reach out to collect the document.
           </p>
@@ -167,7 +174,7 @@ export function ApplicationForm() {
         className="pointer-events-none absolute -left-[9999px] h-0 w-0 opacity-0"
       />
 
-      <Field label="Are you applying as a speaker?" required>
+      <Field label="Are you applying as a presenter?" required>
         <YesNoRadios
           name="isSpeaker"
           value={isSpeaker}
@@ -178,7 +185,7 @@ export function ApplicationForm() {
       {isSpeaker === "yes" && (
         <>
           <Field
-            label="Speaker submission"
+            label="Presenter submission"
             description="Upload a document with: (a) talk title, (b) coauthors and affiliations, (c) abstract <=500 words."
             required
           >
@@ -186,12 +193,12 @@ export function ApplicationForm() {
               required
               type="file"
               name="speakerUpload"
-              accept=".pdf,.doc,.docx"
+              accept=".md,.pdf,.doc,.docx"
               className="block w-full text-sm text-muted-foreground file:mr-4 file:cursor-pointer file:rounded-md file:border file:border-border-strong file:bg-surface file:px-4 file:py-2 file:text-sm file:text-ink hover:file:border-ink"
             />
           </Field>
           <Field
-            label="Speaking slots are intentionally limited. If we can't fit you onto the program for 2026, would you still like to attend as a participant?"
+            label="Presenter slots are intentionally limited. If we can't fit you onto the program for 2026, would you still like to attend as a participant?"
             required
           >
             <YesNoRadios
@@ -244,15 +251,49 @@ export function ApplicationForm() {
           />
         </Field>
         <Field label="Country" required>
-          <input
+          <select
             required
-            type="text"
             name="country"
+            value={country}
+            onChange={(e) => {
+              setCountry(e.target.value);
+              if (e.target.value !== DEFAULT_COUNTRY) setUsState("");
+            }}
             autoComplete="country-name"
             className="field-input"
-          />
+          >
+            {countryOptions.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
         </Field>
       </FieldRow>
+
+      {country === DEFAULT_COUNTRY && (
+        <Field
+          label="State or territory"
+          description="Many city names exist in more than one state, so we ask US applicants to disambiguate."
+          required
+        >
+          <select
+            required
+            name="usState"
+            value={usState}
+            onChange={(e) => setUsState(e.target.value)}
+            autoComplete="address-level1"
+            className="field-input"
+          >
+            <option value="">Select a state or territory</option>
+            {US_STATES_AND_TERRITORIES.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </Field>
+      )}
 
       <Field label="Affiliation" required>
         <input

@@ -8,19 +8,26 @@ export interface SinkResult {
   persisted: "sheets" | "log";
 }
 
+// Column order is read top-to-bottom into the Registrations tab,
+// preceded by a timestamp column (so position 0 below corresponds to
+// column B in the sheet). Reordered 2026-05-19 to surface the
+// program team's most-scanned fields up front: name, presenter
+// status, and location.
 const REGISTRATION_COLUMNS = [
   "confirmationId",
   "kind",
   "fullName",
-  "pronouns",
-  "email",
+  "isSpeaker",
+  "attendIfNotSpeaker",
   "city",
+  "usState",
   "country",
   "affiliation",
+  "pronouns",
+  "email",
   "gender",
   "bio",
   "directoryConsent",
-  "isSpeaker",
   "speakerUploadFilename",
   "essay1",
   "essay2",
@@ -29,11 +36,6 @@ const REGISTRATION_COLUMNS = [
   "access",
   "guidelinesAgreement",
   "referral",
-  // Appended after the original column set so existing headers in the
-  // Google Sheet stay aligned. Add a header cell labelled
-  // "attendIfNotSpeaker" (or whatever reads best for the program team)
-  // in the corresponding column once this lands.
-  "attendIfNotSpeaker",
 ];
 
 const CONTACT_COLUMNS = [
