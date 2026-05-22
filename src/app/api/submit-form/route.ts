@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { z } from "zod";
 import { identifierFromHeaders, rateLimit } from "@/lib/rate-limit";
 import { recordSubmission } from "@/lib/sheets-sink";
-import { sendConfirmationEmail } from "@/lib/email";
+import { sendAdminNotification, sendConfirmationEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
 
@@ -83,6 +83,17 @@ export async function POST(req: NextRequest) {
     if (parsedBody.kind === "registration") {
       const data = payload.data as z.infer<typeof registrationSchema>;
       await sendConfirmationEmail({ to: data.email, fullName: data.fullName, confirmationId });
+      // Admin notification runs in a non-blocking try/catch so a Resend
+      // failure on the internal copy does not surface as a 500 to the
+      // applicant, whose submission has already been persisted.
+      try {
+        await sendAdminNotification({
+          confirmationId,
+          payload: payload.data as Record<string, unknown>,
+        });
+      } catch (notifyError) {
+        console.error("[submit-form] admin notification failed", notifyError);
+      }
     }
 
     return json({ confirmationId, persisted }, 200);

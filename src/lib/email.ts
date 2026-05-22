@@ -59,3 +59,144 @@ Hosted by ${meta.fiscalSponsor.name}`;
 function escapeHtml(str: string): string {
   return str.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 }
+
+// Internal notification sent to the program team when a new /apply
+// submission arrives. Reads recipients from APPLICATION_NOTIFY_TO
+// (comma-separated) and falls back to mason@thesynapse.co so the team
+// always gets a copy even before the env var is set in production.
+export async function sendAdminNotification(options: {
+  confirmationId: string;
+  payload: Record<string, unknown>;
+}): Promise<{ sent: boolean; reason?: string }> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.RESEND_FROM || "The Synapse <hello@thesynapse.example>";
+  const recipientEnv = process.env.APPLICATION_NOTIFY_TO || "mason@thesynapse.co";
+  const recipients = recipientEnv
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  if (!apiKey) {
+    console.info("[email] RESEND_API_KEY absent, skipping admin notification");
+    return { sent: false, reason: "no-credentials" };
+  }
+  if (recipients.length === 0) {
+    console.info("[email] APPLICATION_NOTIFY_TO is empty, skipping admin notification");
+    return { sent: false, reason: "no-recipients" };
+  }
+
+  const p = options.payload;
+  const fullName = String(p.fullName ?? "Unknown applicant");
+  const isSpeaker = String(p.isSpeaker ?? "");
+  const speakerTag = isSpeaker === "yes" ? " [Presenter]" : "";
+  const subject = `New application: ${fullName}${speakerTag} -- ${options.confirmationId}`;
+
+  const resend = new Resend(apiKey);
+  try {
+    await resend.emails.send({
+      from,
+      to: recipients,
+      subject,
+      html: renderAdminHtml(options),
+      text: renderAdminText(options),
+    });
+    return { sent: true };
+  } catch (error) {
+    console.error("[email] resend admin notification failed", error);
+    return { sent: false, reason: "send-error" };
+  }
+}
+
+function s(value: unknown): string {
+  if (value === undefined || value === null || value === "") return "--";
+  return String(value);
+}
+
+function renderAdminHtml(options: {
+  confirmationId: string;
+  payload: Record<string, unknown>;
+}): string {
+  const p = options.payload;
+  const row = (label: string, value: unknown) =>
+    `<tr><td style="padding:6px 12px 6px 0;color:#6b5a70;vertical-align:top;white-space:nowrap;">${escapeHtml(label)}</td><td style="padding:6px 0;color:#1e0e22;">${escapeHtml(s(value))}</td></tr>`;
+  const block = (label: string, value: unknown) =>
+    `<h3 style="margin:28px 0 8px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#6b5a70;">${escapeHtml(label)}</h3><div style="white-space:pre-wrap;font-size:15px;line-height:1.55;color:#1e0e22;">${escapeHtml(s(value))}</div>`;
+  return `
+  <!doctype html>
+  <html><body style="font-family:'Georgia',serif;background:#faf6ef;color:#1e0e22;padding:32px;">
+    <div style="max-width:680px;margin:0 auto;">
+      <p style="letter-spacing:0.18em;text-transform:uppercase;color:#6b5a70;font-size:11px;margin:0;">${escapeHtml(meta.name)} -- new application</p>
+      <h1 style="font-size:26px;line-height:1.15;margin:10px 0 24px;">${escapeHtml(s(p.fullName))}</h1>
+      <table style="border-collapse:collapse;font-size:14px;">
+        ${row("Confirmation", options.confirmationId)}
+        ${row("Email", p.email)}
+        ${row("Pronouns", p.pronouns)}
+        ${row("City", p.city)}
+        ${row("State / territory", p.usState)}
+        ${row("Country", p.country)}
+        ${row("Affiliation", p.affiliation)}
+        ${row("Gender", p.gender)}
+        ${row("Applying as presenter", p.isSpeaker)}
+        ${p.isSpeaker === "yes" ? row("Attend anyway if not selected", p.attendIfNotSpeaker) : ""}
+        ${p.isSpeaker === "yes" ? row("Presenter upload", p.speakerUploadFilename) : ""}
+        ${row("Directory consent", p.directoryConsent)}
+        ${row("Dietary", p.dietary)}
+        ${row("Referral", p.referral)}
+      </table>
+      ${block("Short bio", p.bio)}
+      ${block("Why this gathering, and what you bring", p.essay1)}
+      ${block("How you uplift women's voices in everyday life", p.essay2)}
+      ${p.reflection ? block("What's been missing from other gatherings", p.reflection) : ""}
+      ${p.access ? block("Accessibility needs (private)", p.access) : ""}
+    </div>
+  </body></html>
+  `;
+}
+
+function renderAdminText(options: {
+  confirmationId: string;
+  payload: Record<string, unknown>;
+}): string {
+  const p = options.payload;
+  const lines = [
+    `New application -- ${meta.name} ${meta.edition}`,
+    `Confirmation: ${options.confirmationId}`,
+    ``,
+    `Name: ${s(p.fullName)}`,
+    `Email: ${s(p.email)}`,
+    `Pronouns: ${s(p.pronouns)}`,
+    `City: ${s(p.city)}`,
+    `State / territory: ${s(p.usState)}`,
+    `Country: ${s(p.country)}`,
+    `Affiliation: ${s(p.affiliation)}`,
+    `Gender: ${s(p.gender)}`,
+    `Applying as presenter: ${s(p.isSpeaker)}`,
+  ];
+  if (p.isSpeaker === "yes") {
+    lines.push(`Attend anyway if not selected: ${s(p.attendIfNotSpeaker)}`);
+    lines.push(`Presenter upload: ${s(p.speakerUploadFilename)}`);
+  }
+  lines.push(`Directory consent: ${s(p.directoryConsent)}`);
+  lines.push(`Dietary: ${s(p.dietary)}`);
+  lines.push(`Referral: ${s(p.referral)}`);
+  lines.push(``);
+  lines.push(`Short bio:`);
+  lines.push(s(p.bio));
+  lines.push(``);
+  lines.push(`Why this gathering, and what you bring:`);
+  lines.push(s(p.essay1));
+  lines.push(``);
+  lines.push(`How you uplift women's voices in everyday life:`);
+  lines.push(s(p.essay2));
+  if (p.reflection) {
+    lines.push(``);
+    lines.push(`What's been missing from other gatherings:`);
+    lines.push(s(p.reflection));
+  }
+  if (p.access) {
+    lines.push(``);
+    lines.push(`Accessibility needs (private):`);
+    lines.push(s(p.access));
+  }
+  return lines.join("\n");
+}
