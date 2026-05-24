@@ -58,7 +58,12 @@ export const metadata: Metadata = {
     title: `${meta.name} \u00b7 ${meta.subtitle}`,
     description: meta.mission,
   },
-  robots: { index: false, follow: false },
+  // Site-wide indexing allowed now that thesynapse.co is the live
+  // production site. Pages that should stay unlisted -- /apply,
+  // /program, /constellation -- set their own page-level
+  // `robots: { index: false, follow: false }` which overrides this.
+  robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
 };
 
 export const viewport: Viewport = {
