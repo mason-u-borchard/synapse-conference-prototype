@@ -4,9 +4,9 @@ import { FlaskConical, HandHeart, Atom, Flame, Sparkles } from "lucide-react";
 import { OrganizingTeam } from "@/components/organizing-team";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: { absolute: "About The Synapse | A New Kind of Futures Gathering" },
   description:
-    "Four fields. The questions that matter live in the spaces between AI, robotics, cognitive science, and consciousness.",
+    "The Synapse convenes women across AI, robotics, neuroscience, cognitive science, and consciousness to shape what comes next.",
 };
 
 const fieldStatements = [

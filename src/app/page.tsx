@@ -1,18 +1,63 @@
 import Link from "next/link";
-import type { Metadata } from "next";
 import { meta } from "@/lib/content";
 import { SynapseField } from "@/components/synapse-field";
 import { HeroTicker } from "@/components/hero-ticker";
 import { DisciplineCard } from "@/components/discipline-card";
 
-export const metadata: Metadata = {
-  title: `${meta.name} -- ${meta.subtitle}`,
-  description: meta.mission,
+// Home title + description come from the layout's default metadata
+// (Kelly's 2026-05-26 SEO copy) so there's a single source of truth.
+
+// Event structured data (schema.org/Event) so Google can render an
+// event rich result. Built from meta.json where possible to stay in
+// sync with the dates/location/sponsor. Per Kelly's 2026-05-26 spec,
+// with three corrections: the organizer is an array (the original
+// `eventOrganizer` is not a valid schema.org property), Applied Love
+// Labs points to applied.love, and the image points at a live static
+// asset since the proposed /og-image.jpg does not exist.
+const eventJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: `${meta.name} ${meta.edition}`,
+  description:
+    "A three-day interdisciplinary gathering where women explore AI, robotics, cognitive science, and consciousness.",
+  startDate: meta.dates.start,
+  endDate: meta.dates.end,
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  location: {
+    "@type": "Place",
+    name: "Atlanta, Georgia",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Atlanta",
+      addressRegion: "GA",
+      addressCountry: "US",
+    },
+  },
+  organizer: [
+    { "@type": "Organization", name: meta.name, url: "https://thesynapse.co" },
+    { "@type": "Organization", name: meta.fiscalSponsor.name, url: meta.fiscalSponsor.href },
+  ],
+  url: "https://thesynapse.co/attend",
+  image: ["https://thesynapse.co/figma/atlanta-skyline.png"],
+  keywords: [
+    "AI",
+    "robotics",
+    "cognitive science",
+    "consciousness",
+    "women in AI",
+    "future of intelligence",
+    "interdisciplinary conference",
+  ],
 };
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
       {/* Hero per Taylor's Figma (node 19:1070). Dark amethyst-300
           background with the SynapseField cosmic backdrop preserved
           as a subtle overlay (per Mason's "keep the starry bg" note).

@@ -4,9 +4,9 @@ import { DisciplineCard } from "@/components/discipline-card";
 import { NotifyForm } from "@/components/notify-form";
 
 export const metadata: Metadata = {
-  title: "Attend",
+  title: { absolute: "Attend The Synapse | Atlanta · Oct 9–11, 2026" },
   description:
-    "An invitation. One hundred participants. Intentionally convened. Leave your email and we'll let you know when applications open.",
+    "Apply to join 100 invited guests in Atlanta for a three-day gathering exploring AI, robotics, cognitive science, and consciousness.",
 };
 
 // Audience list per IA "Who It's For" section (~line 477).

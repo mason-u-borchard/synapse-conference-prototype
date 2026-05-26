@@ -11,9 +11,9 @@ import { meta } from "@/lib/content";
 const SPONSORSHIP_FORM_URL = "https://forms.gle/bQctfqYjbbXiXEc5A";
 
 export const metadata: Metadata = {
-  title: "Invest",
+  title: { absolute: "Invest in The Synapse | Funding the Future of Intelligence" },
   description:
-    "Not a proposal for a different future. A demonstration of one. Invest in the room where this gets built.",
+    "Support a living laboratory where women at the frontier of AI, robotics, cognitive science, and consciousness gather to shape the future.",
 };
 
 // Where-your-investment-goes line items. Copy verbatim from the IA.

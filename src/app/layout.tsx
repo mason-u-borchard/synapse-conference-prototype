@@ -25,16 +25,24 @@ const notoSans = Noto_Sans({ subsets: ["latin"], weight: ["400", "600"], variabl
 const styleScript = Style_Script({ subsets: ["latin"], weight: "400", variable: "--font-style-script", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://masonborchard.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thesynapse.co";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+// Home + global default metadata. Per-page SEO titles/descriptions
+// (About, Ethos, Invest, Attend) are set in each page's own metadata
+// export per Kelly's 2026-05-26 SEO copy; the values here are the home
+// page's and the fallback for anything that doesn't override.
+const HOME_TITLE = "The Synapse | AI, Cognitive Science & Consciousness";
+const HOME_DESCRIPTION =
+  "A three-day interdisciplinary gathering where women explore AI, robotics, cognitive science, consciousness, and the futures emerging between them.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${meta.name} \u00b7 ${meta.subtitle}`,
+    default: HOME_TITLE,
     template: `%s \u00b7 ${meta.name}`,
   },
-  description: meta.mission,
+  description: HOME_DESCRIPTION,
   applicationName: meta.name,
   keywords: [
     "consciousness",
@@ -47,16 +55,16 @@ export const metadata: Metadata = {
     meta.edition,
   ],
   openGraph: {
-    title: `${meta.name} \u00b7 ${meta.subtitle}`,
-    description: meta.mission,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     type: "website",
     url: basePath || "/",
     siteName: meta.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${meta.name} \u00b7 ${meta.subtitle}`,
-    description: meta.mission,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
   },
   // Site-wide indexing allowed now that thesynapse.co is the live
   // production site. Pages that should stay unlisted -- /apply,

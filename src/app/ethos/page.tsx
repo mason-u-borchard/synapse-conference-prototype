@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Ethos",
+  title: { absolute: "The Synapse Ethos | Cognitive Science, AI & Consciousness" },
   description:
-    "Power without permission. Rigor with love. The nine principles that shape how we invite, schedule, host, and close the days.",
+    "Explore the ideas behind The Synapse: interdisciplinary inquiry, emerging intelligence, consciousness, and the future of human systems.",
 };
 
 // Cards walk a diagonal gradient from off-black through moss into amethyst,
