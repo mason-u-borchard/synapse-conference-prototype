@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+// Same fallback as sitemap.ts. The Sitemap directive in robots.txt
+// must be an absolute URL per the sitemaps protocol -- a relative
+// path is ignored by Google and others.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thesynapse.co";
 
 // Known AI training crawlers. Blocked from the entire site -- these
 // are scraped purely for model training, not for search or answer
@@ -40,6 +44,6 @@ export default function robots(): MetadataRoute.Robots {
       ...TRAINING_BOTS.map((userAgent) => ({ userAgent, disallow: root })),
       { userAgent: "*", allow: root },
     ],
-    sitemap: basePath ? `${basePath}/sitemap.xml` : "/sitemap.xml",
+    sitemap: `${siteUrl}${basePath}/sitemap.xml`,
   };
 }
