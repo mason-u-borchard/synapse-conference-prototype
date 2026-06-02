@@ -5,6 +5,7 @@
   "description": "The Synapse -- women connecting mind, machine, and what comes next. A prototype for the 2026 convening in Atlanta.",
   "scripts": {
     "dev": "next dev --port 3021",
+    "prebuild": "node scripts/fetch-ethic-docs.mjs",
     "build": "next build",
     "build:export": "BUILD_MODE=export NEXT_PUBLIC_BASE_PATH=/synapse-conference-prototype next build",
     "start": "next start --port 3021",

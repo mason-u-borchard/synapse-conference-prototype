@@ -10,15 +10,18 @@ export interface SinkResult {
 
 // Column order is read top-to-bottom into the Registrations tab,
 // preceded by a timestamp column (so position 0 below corresponds to
-// column B in the sheet). Reordered 2026-05-19 to surface the
-// program team's most-scanned fields up front: name, presenter
-// status, and location.
+// column B in the sheet). Reordered 2026-05-19 to surface the most-
+// scanned fields up front; updated 2026-05-26 for Kelly's contributor
+// redesign (contribute + contributionType replace isSpeaker; the
+// sparse per-type contribution fields sit at the end since only one
+// set is populated per row).
 const REGISTRATION_COLUMNS = [
   "confirmationId",
   "kind",
   "fullName",
-  "isSpeaker",
-  "attendIfNotSpeaker",
+  "contribute",
+  "contributionType",
+  "attendIfNotSelected",
   "city",
   "usState",
   "country",
@@ -28,7 +31,6 @@ const REGISTRATION_COLUMNS = [
   "gender",
   "bio",
   "directoryConsent",
-  "speakerUploadFilename",
   "essay1",
   "essay2",
   "reflection",
@@ -36,6 +38,20 @@ const REGISTRATION_COLUMNS = [
   "access",
   "guidelinesAgreement",
   "referral",
+  // Per-contribution-type detail. Sparse: only the selected type's
+  // fields are filled on any given row.
+  "presentTitle",
+  "presentAbstract",
+  "presentCoauthors",
+  "presentResisted",
+  "experienceTitle",
+  "experienceDescription",
+  "experienceMedium",
+  "experienceNeeds",
+  "experienceLink",
+  "facilitateOffering",
+  "facilitateExperience",
+  "facilitateMatching",
 ];
 
 const CONTACT_COLUMNS = [

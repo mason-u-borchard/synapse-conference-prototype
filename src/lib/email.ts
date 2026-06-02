@@ -87,9 +87,11 @@ export async function sendAdminNotification(options: {
 
   const p = options.payload;
   const fullName = String(p.fullName ?? "Unknown applicant");
-  const isSpeaker = String(p.isSpeaker ?? "");
-  const speakerTag = isSpeaker === "yes" ? " [Presenter]" : "";
-  const subject = `New application: ${fullName}${speakerTag} -- ${options.confirmationId}`;
+  const contributionTag =
+    p.contribute === "yes" && p.contributionType
+      ? ` [${String(p.contributionType)}]`
+      : "";
+  const subject = `New application: ${fullName}${contributionTag} -- ${options.confirmationId}`;
 
   const resend = new Resend(apiKey);
   try {
@@ -136,13 +138,14 @@ function renderAdminHtml(options: {
         ${row("Country", p.country)}
         ${row("Affiliation", p.affiliation)}
         ${row("Gender", p.gender)}
-        ${row("Applying as presenter", p.isSpeaker)}
-        ${p.isSpeaker === "yes" ? row("Attend anyway if not selected", p.attendIfNotSpeaker) : ""}
-        ${p.isSpeaker === "yes" ? row("Presenter upload", p.speakerUploadFilename) : ""}
+        ${row("Contributing to program", p.contribute)}
+        ${p.contribute === "yes" ? row("Contribution type", p.contributionType) : ""}
+        ${p.contribute === "yes" ? row("Attend anyway if not selected", p.attendIfNotSelected) : ""}
         ${row("Directory consent", p.directoryConsent)}
         ${row("Dietary", p.dietary)}
         ${row("Referral", p.referral)}
       </table>
+      ${contributionBlocksHtml(p, block, row)}
       ${block("Short bio", p.bio)}
       ${block("Why this gathering, and what you bring", p.essay1)}
       ${block("How you uplift women's voices in everyday life", p.essay2)}
@@ -151,6 +154,37 @@ function renderAdminHtml(options: {
     </div>
   </body></html>
   `;
+}
+
+// Renders only the per-type contribution detail that's actually filled,
+// so the email stays readable instead of listing a dozen empty fields.
+function contributionBlocksHtml(
+  p: Record<string, unknown>,
+  block: (label: string, value: unknown) => string,
+  row: (label: string, value: unknown) => string,
+): string {
+  if (p.contribute !== "yes") return "";
+  if (p.contributionType === "present") {
+    return (
+      `<table style="border-collapse:collapse;font-size:14px;margin-top:18px;">${row("Proposed title", p.presentTitle)}${row("Coauthors", p.presentCoauthors)}</table>` +
+      block("Abstract", p.presentAbstract) +
+      (p.presentResisted ? block("Resisted / rejected work", p.presentResisted) : "")
+    );
+  }
+  if (p.contributionType === "experience") {
+    return (
+      `<table style="border-collapse:collapse;font-size:14px;margin-top:18px;">${row("Session title", p.experienceTitle)}${row("Medium / form", p.experienceMedium)}${row("Needs", p.experienceNeeds)}${row("Past work", p.experienceLink)}</table>` +
+      block("What participants experience", p.experienceDescription)
+    );
+  }
+  if (p.contributionType === "facilitate") {
+    return (
+      `<table style="border-collapse:collapse;font-size:14px;margin-top:18px;">${row("Open to matching", p.facilitateMatching)}</table>` +
+      block("Facilitation offered", p.facilitateOffering) +
+      block("Relevant experience", p.facilitateExperience)
+    );
+  }
+  return "";
 }
 
 function renderAdminText(options: {
@@ -170,11 +204,27 @@ function renderAdminText(options: {
     `Country: ${s(p.country)}`,
     `Affiliation: ${s(p.affiliation)}`,
     `Gender: ${s(p.gender)}`,
-    `Applying as presenter: ${s(p.isSpeaker)}`,
+    `Contributing to program: ${s(p.contribute)}`,
   ];
-  if (p.isSpeaker === "yes") {
-    lines.push(`Attend anyway if not selected: ${s(p.attendIfNotSpeaker)}`);
-    lines.push(`Presenter upload: ${s(p.speakerUploadFilename)}`);
+  if (p.contribute === "yes") {
+    lines.push(`Contribution type: ${s(p.contributionType)}`);
+    lines.push(`Attend anyway if not selected: ${s(p.attendIfNotSelected)}`);
+    if (p.contributionType === "present") {
+      lines.push(`Proposed title: ${s(p.presentTitle)}`);
+      lines.push(`Coauthors: ${s(p.presentCoauthors)}`);
+      lines.push(`Abstract: ${s(p.presentAbstract)}`);
+      if (p.presentResisted) lines.push(`Resisted / rejected work: ${s(p.presentResisted)}`);
+    } else if (p.contributionType === "experience") {
+      lines.push(`Session title: ${s(p.experienceTitle)}`);
+      lines.push(`What participants experience: ${s(p.experienceDescription)}`);
+      lines.push(`Medium / form: ${s(p.experienceMedium)}`);
+      lines.push(`Needs: ${s(p.experienceNeeds)}`);
+      lines.push(`Past work: ${s(p.experienceLink)}`);
+    } else if (p.contributionType === "facilitate") {
+      lines.push(`Facilitation offered: ${s(p.facilitateOffering)}`);
+      lines.push(`Relevant experience: ${s(p.facilitateExperience)}`);
+      lines.push(`Open to matching: ${s(p.facilitateMatching)}`);
+    }
   }
   lines.push(`Directory consent: ${s(p.directoryConsent)}`);
   lines.push(`Dietary: ${s(p.dietary)}`);

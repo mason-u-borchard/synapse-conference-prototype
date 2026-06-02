@@ -48,7 +48,34 @@ export default function ApplyPage() {
         asked about a real-looking application later).
       </aside>
 
-      <section aria-label="Application form preview" className="mt-12 max-w-2xl">
+      {/* Framing copy per Kelly's 2026-05-26 application draft -- the
+          real top-of-application intro that goes live with the form. */}
+      <section aria-label="About the application" className="mt-12 max-w-2xl space-y-5 text-lg leading-relaxed text-muted-foreground text-pretty">
+        <p>
+          <span className="font-serif text-ink">The Synapse</span> is a first-of-its-kind
+          convening of 100 women working at the intersection of AI, consciousness, robotics, and
+          cognitive science. These fields are converging on questions none of them can answer
+          alone.
+        </p>
+        <p>
+          The program moves through three dynamic phases: Expand, Weave, Emerge. This is not a
+          conference you sit through. Everyone in the room shapes it through keynotes,
+          provocations, hands-on labs, dialogues, and sessions where fruitful collaborations take
+          shape.
+        </p>
+        <p>
+          We're looking for women who are doing the work: researchers, executives, builders,
+          entrepreneurs, and practitioners who want to be in a room where the conversation goes
+          further than it can in any single field.
+        </p>
+        <p>
+          If you want to be part of these conversations, we invite you to apply. Attendance is
+          intentionally curated to create a high-trust, interdisciplinary environment. We read
+          every application carefully.
+        </p>
+      </section>
+
+      <section aria-label="Application form preview" className="mt-10 max-w-2xl">
         <ApplicationForm />
       </section>
 
