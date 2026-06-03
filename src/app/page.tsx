@@ -83,7 +83,7 @@ export default function HomePage() {
           src="/figma/wave-1.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-[5%] z-[5] hidden h-auto w-[36%] max-w-[460px] lg:block"
+          className="pointer-events-none absolute right-0 top-[5%] z-[5] hidden h-auto w-[44%] max-w-[640px] lg:block"
         />
 
         <section className="relative isolate bg-amethyst-300 -mt-[88px] pt-[88px]">

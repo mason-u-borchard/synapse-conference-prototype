@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cx } from "@/lib/cx";
-import { useTheme } from "@/components/theme-provider";
 import { SynapseMark } from "@/components/synapse-mark";
 
 // Nav follows the v2 IA -- text links on the left for content pages,
@@ -18,7 +17,6 @@ const navItems = [
 
 export function SiteHeader() {
   const pathname = usePathname() ?? "/";
-  const { theme, toggle } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   // "Sticky on scroll up" per Taylor's Figma note: hide on
@@ -124,14 +122,6 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={toggle}
-              aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-              className="hidden lg:inline-flex h-9 w-9 items-center justify-center rounded-full border border-off-white/20 text-off-white/70 transition-colors hover:border-off-white/60 hover:text-off-white"
-            >
-              {theme === "light" ? <MoonIcon /> : <SunIcon />}
-            </button>
             <Link
               href="/invest"
               className="hidden lg:inline-flex h-10 items-center btn-solid-glow rounded-full bg-oxide-100 px-5 font-noto text-base font-semibold text-off-black transition-transform hover:-translate-y-0.5"
@@ -191,21 +181,3 @@ export function SiteHeader() {
   );
 }
 
-function MoonIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path d="M13 9.5A5.5 5.5 0 016.5 3a5.5 5.5 0 00-3 10.5A5.5 5.5 0 0013 9.5z" fill="currentColor" />
-    </svg>
-  );
-}
-
-function SunIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <circle cx="8" cy="8" r="3" fill="currentColor" />
-      <g stroke="currentColor" strokeWidth="1.25" strokeLinecap="round">
-        <path d="M8 1.5v1.5M8 13v1.5M1.5 8h1.5M13 8h1.5M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1" />
-      </g>
-    </svg>
-  );
-}

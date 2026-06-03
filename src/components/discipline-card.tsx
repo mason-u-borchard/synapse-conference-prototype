@@ -100,12 +100,9 @@ export function DisciplineCard({
             />
           </div>
           <div className="flex flex-1 min-h-0 flex-col items-center justify-center px-6 py-6 text-center">
-            <p className="max-w-[28ch] font-serif text-[clamp(0.95rem,1vw+0.4rem,1.25rem)] leading-[1.35] italic">
-              "{back}"
+            <p className="max-w-[28ch] font-serif text-[clamp(0.95rem,1vw+0.4rem,1.25rem)] leading-[1.35]">
+              {back}
             </p>
-            <span className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-off-white/60">
-              Tap to flip back
-            </span>
           </div>
         </article>
       </button>
