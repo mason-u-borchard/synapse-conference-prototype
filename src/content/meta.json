@@ -3,8 +3,8 @@
   "subtitle": "Where women connect mind, machine, and what comes next.",
   "edition": "2026",
   "dates": { "display": "October 9-11, 2026", "month": "October", "year": "2026", "start": "2026-10-09", "end": "2026-10-11" },
-  "city": "Atlanta, GA",
-  "venue": "Venue TBD -- Atlanta confirmed",
+  "city": "San Diego, CA",
+  "venue": "Venue TBD -- San Diego confirmed",
   "capacity": 75,
   "capacityDisplay": "75 participants",
   "tagline": "The Synapse is a conference for women shaping the intersections of AI, robotics, cognitive science, and consciousness -- where the future of intelligence is being co-created.",
@@ -32,5 +32,5 @@
     { "title": "Right Relationship with Power and Capital", "body": "We recognize that funding and partnership shape what becomes possible. We engage capital in ways that are transparent, aligned, and in service of collective benefit, not control." },
     { "title": "Power Without Permission", "body": "We reject inherited dynamics that require validation, gatekeeping, or hierarchy to act. Authority lives within us." }
   ],
-  "placeholderNote": "Venue, participant roster, and session titles are placeholders. Applied Love Labs is confirmed as the host; Atlanta, October 9-11, 2026 and the curated group of 75 participants are confirmed. Ethos section is pulled from the committee's finalized A Living Ethic document."
+  "placeholderNote": "Venue, participant roster, and session titles are placeholders. Applied Love Labs is confirmed as the host; San Diego, October 9-11, 2026 and the curated group of 75 participants are confirmed. Ethos section is pulled from the committee's finalized A Living Ethic document."
 }

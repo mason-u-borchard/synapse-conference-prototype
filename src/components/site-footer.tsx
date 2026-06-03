@@ -16,7 +16,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative isolate bg-moss-400 text-off-white">
-      {/* === Pre-Footer: Atlanta cityscape with date overlay ===
+      {/* === Pre-Footer: cityscape with date overlay ===
           The cityscape image fills the section. The Synapse "S" mark
           (a stylized white wordmark glyph) sits to the right at large
           scale as decorative anchoring. Date headline + host badge

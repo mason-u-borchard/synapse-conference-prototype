@@ -222,13 +222,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === Why Atlanta? (Figma 20:2573) ===
+      {/* === Why this city? (Figma 20:2573) ===
           Centered, off-white surface. A moss-green four-petal
           ornament (built from Taylor's four exported vectors,
           composited in /figma/atlanta-ornament.svg with the
           rotate-45 + Y-flip arrangement baked in) sits above the
           headline; body wraps at ~750px; single outline "Apply to
-          attend" CTA below. */}
+          attend" CTA below.
+          TODO 2026-06-02: city moved Atlanta -> San Diego. Headline
+          and body copy below still reference Atlanta because the
+          rationale (civil rights, Atlanta tech ecosystem) does not
+          transfer. Waiting on Beth/Kelly for new "Why San Diego?"
+          paragraph; will swap headline + body in one edit when it
+          arrives. Image ref also pending Taylor's new ornament if she
+          decides the existing four-petal piece doesn't fit. */}
       <section className="relative isolate overflow-hidden bg-off-white py-24 md:py-section">
         <div className="container-gutter flex flex-col items-center text-center">
           <img

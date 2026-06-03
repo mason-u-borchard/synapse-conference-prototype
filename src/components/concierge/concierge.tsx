@@ -25,10 +25,10 @@ export function Concierge() {
   const [open, setOpen] = useState(false);
   const [offline, setOffline] = useState(false);
   // Per Taylor's Figma note (2026-05-07): "Perhaps it sticks once
-  // you hit the last section, before the atlanta pre-footer."
+  // you hit the last section, before the cityscape pre-footer."
   // Implementation: observe the page footer; when its top edge
   // enters the viewport, fade out the floating Ava button so it
-  // doesn't overlap the dark Atlanta cityscape + footer.
+  // doesn't overlap the dark cityscape + footer.
   const [nearFooter, setNearFooter] = useState(false);
   const transcriptRef = useRef<HTMLDivElement | null>(null);
   const prefersReduced = useReducedMotion();
@@ -95,7 +95,7 @@ export function Concierge() {
         className={cx(
           "group fixed z-40 inline-flex h-14 max-w-[calc(100vw-2rem)] items-center gap-3 whitespace-nowrap rounded-pill border border-border-strong bg-surface pl-5 pr-4 text-sm shadow-paper transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-glow md:!bottom-8 md:!right-8",
           // Fade and lift out of the way once the user is in the
-          // footer / Atlanta pre-footer area. The dialog itself
+          // footer / cityscape pre-footer area. The dialog itself
           // (when open) stays interactive regardless.
           nearFooter && !open && "pointer-events-none opacity-0 translate-y-4",
         )}

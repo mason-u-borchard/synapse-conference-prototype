@@ -38,7 +38,7 @@ export default function OpenGraphImage() {
             S
           </div>
           <div style={{ display: "flex", fontSize: 26, letterSpacing: 2, textTransform: "uppercase", fontFamily: "sans-serif" }}>
-            The Synapse &middot; Atlanta &middot; {meta.edition}
+            The Synapse &middot; San Diego &middot; {meta.edition}
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>

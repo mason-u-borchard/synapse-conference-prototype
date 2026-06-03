@@ -134,7 +134,7 @@ export default function InvestPage() {
             </div>
             <dl className="mt-12 max-w-[535px] divide-y divide-off-black/15">
               <StatRow label="100" body="researchers, builders, and practitioners." />
-              <StatRow label="3 days." body="Atlanta, Georgia. October 2026." />
+              <StatRow label="3 days." body="San Diego, California. October 2026." />
               <StatRow
                 label="Convened by"
                 body="women already doing the work — and those committed to standing with them."

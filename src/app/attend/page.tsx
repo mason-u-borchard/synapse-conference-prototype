@@ -4,9 +4,9 @@ import { DisciplineCard } from "@/components/discipline-card";
 import { NotifyForm } from "@/components/notify-form";
 
 export const metadata: Metadata = {
-  title: { absolute: "Attend The Synapse | Atlanta · Oct 9–11, 2026" },
+  title: { absolute: "Attend The Synapse | San Diego · Oct 9–11, 2026" },
   description:
-    "Apply to join 100 invited guests in Atlanta for a three-day gathering exploring AI, robotics, cognitive science, and consciousness.",
+    "Apply to join 100 invited guests in San Diego for a three-day gathering exploring AI, robotics, cognitive science, and consciousness.",
 };
 
 // Audience list per IA "Who It's For" section (~line 477).
@@ -25,9 +25,11 @@ export default function AttendPage() {
       {/* === Hero (Figma 56:4447, top band) ===
           Two columns: left holds eyebrow, "An invitation" headline,
           subhead block, and the inline email capture. Right holds a
-          dark photo card with the Oct 9-11 / Atlanta date stamp,
-          framed by the venue line. Pulls under the sticky header via
-          the negative-margin pattern shared with /about. */}
+          dark photo card with the Oct 9-11 / San Diego date stamp,
+          framed by the venue line. Image src still points at the
+          atlanta-skyline placeholder pending Taylor's new asset.
+          Pulls under the sticky header via the negative-margin
+          pattern shared with /about. */}
       <section className="relative isolate overflow-hidden bg-off-white -mt-[88px] pt-[88px]">
         <div className="container-gutter grid gap-12 py-20 md:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-16">
           <div className="max-w-[58ch]">
@@ -52,7 +54,7 @@ export default function AttendPage() {
           </div>
 
           {/* Date / venue card. Dark moss surface, photo backdrop with
-              a low-opacity overlay so the stacked Oct 9-11 / Atlanta
+              a low-opacity overlay so the stacked Oct 9-11 / San Diego
               type stays legible. Caption beneath calls out the venue. */}
           <aside className="relative">
             <div className="relative overflow-hidden rounded-3xl bg-moss-300 text-off-white shadow-[0_24px_48px_-24px_rgba(0,0,0,0.35)]">
@@ -74,11 +76,11 @@ export default function AttendPage() {
                     Oct 09&ndash;11
                   </p>
                   <p className="mt-2 font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] leading-[1.05]">
-                    Atlanta, GA
+                    San Diego, CA
                   </p>
                 </div>
                 <p className="max-w-[28ch] font-sans text-sm leading-[1.5] text-off-white/85 text-pretty">
-                  Three days at a private venue in Atlanta &mdash; details shared with accepted applicants.
+                  Three days at a private venue in San Diego &mdash; details shared with accepted applicants.
                 </p>
               </div>
             </div>

@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     "philosophy of mind",
     "AI alignment",
     "women in science",
-    "Atlanta",
+    "San Diego",
     "academic conference",
     meta.edition,
   ],

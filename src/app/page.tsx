@@ -26,11 +26,11 @@ const eventJsonLd = {
   eventStatus: "https://schema.org/EventScheduled",
   location: {
     "@type": "Place",
-    name: "Atlanta, Georgia",
+    name: "San Diego, California",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Atlanta",
-      addressRegion: "GA",
+      addressLocality: "San Diego",
+      addressRegion: "CA",
       addressCountry: "US",
     },
   },

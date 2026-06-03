@@ -142,7 +142,7 @@ export default function EthosPage() {
       </section>
 
       {/* === Closer — "Principles don't live on walls" ===
-          Off-white surface, centered. Small Synapse ornament sits above the headline; single outline CTA below. Mirrors the /about "Why Atlanta?" treatment. */}
+          Off-white surface, centered. Small Synapse ornament sits above the headline; single outline CTA below. Mirrors the /about "Why this city?" treatment. */}
       <section
         aria-labelledby="in-practice"
         className="relative isolate overflow-hidden bg-off-white py-24 md:py-section"

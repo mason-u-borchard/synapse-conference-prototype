@@ -59,7 +59,7 @@ export default function RegisterPage() {
         <h1 className="text-display-lg text-balance">Apply to participate.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
           The Synapse is a curated gathering of 75 participants in
-          Atlanta this October. Most places are invitation-based; a
+          San Diego this October. Most places are invitation-based; a
           small number open through this application window. Take your
           time -- we read every submission carefully and will be in
           touch within two weeks.
