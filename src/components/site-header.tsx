@@ -86,7 +86,7 @@ export function SiteHeader() {
               className="animate-logo-cycle h-[26px] w-[24px] shrink-0 transition-transform group-hover:rotate-[8deg]"
             />
             <span className="font-serif text-lg tracking-tight text-off-white">The Synapse</span>
-            <span className="hidden lg:inline font-mono text-[11px] uppercase tracking-[0.3em] text-off-white/85">Atlanta / 2026</span>
+            <span className="hidden lg:inline font-mono text-[11px] uppercase tracking-[0.3em] text-off-white/85">San Diego / 2026</span>
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:flex lg:items-center lg:gap-10">

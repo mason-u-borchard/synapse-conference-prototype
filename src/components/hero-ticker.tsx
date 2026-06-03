@@ -9,12 +9,12 @@
 import type { ReactNode } from "react";
 
 const tickerChips: { tone: TickerTone; text: string }[] = [
-  { tone: "off-white", text: "Atlanta, GA · Oct 9-11 2026 · 100 guests" },
-  { tone: "moss",      text: "Atlanta, GA · Oct 9-11 2026 · 100 guests" },
-  { tone: "orchid",    text: "Atlanta, GA · Oct 9-11 2026 · 100 guests" },
-  { tone: "amethyst",  text: "Atlanta, GA · Oct 9-11 2026 · 100 guests" },
-  { tone: "oxide",     text: "Atlanta, GA · Oct 9-11 2026 · 100 guests" },
-  { tone: "azure",     text: "Atlanta, GA · Oct 9-11 2026 · 100 guests" },
+  { tone: "off-white", text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
+  { tone: "moss",      text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
+  { tone: "orchid",    text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
+  { tone: "amethyst",  text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
+  { tone: "oxide",     text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
+  { tone: "azure",     text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
 ];
 
 type TickerTone = "off-white" | "moss" | "orchid" | "amethyst" | "oxide" | "azure";
