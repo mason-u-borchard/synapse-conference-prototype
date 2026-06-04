@@ -266,11 +266,14 @@ export default function HomePage() {
             green / oxide / amethyst lobes are visible across viewport
             sizes. Hidden on small phones where it would crowd the
             single-column layout. */}
+        {/* Anchored top-0/h-full so the PNG's green-leaf top aligns
+            with the section top. Earlier negative-top + 120% height
+            pushed the green off-screen and only the blue showed. */}
         <img
           src="/figma/wave-2.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute left-[-15%] top-[-10%] z-[1] hidden h-[120%] w-auto opacity-95 md:block lg:left-[-10%]"
+          className="pointer-events-none absolute left-0 top-0 z-[1] hidden h-full w-auto opacity-95 md:block"
         />
         <div className="container-gutter relative z-10 grid items-center gap-12 lg:grid-cols-[minmax(0,558px)_minmax(0,1fr)]">
           <div className="text-off-white">
