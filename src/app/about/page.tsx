@@ -222,46 +222,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === Why this city? (Figma 20:2573) ===
-          Centered, off-white surface. A moss-green four-petal
-          ornament (built from Taylor's four exported vectors,
-          composited in /figma/atlanta-ornament.svg with the
-          rotate-45 + Y-flip arrangement baked in) sits above the
-          headline; body wraps at ~750px; single outline "Apply to
-          attend" CTA below.
-          TODO 2026-06-02: city moved Atlanta -> San Diego. Headline
-          and body copy below still reference Atlanta because the
-          rationale (civil rights, Atlanta tech ecosystem) does not
-          transfer. Waiting on Beth/Kelly for new "Why San Diego?"
-          paragraph; will swap headline + body in one edit when it
-          arrives. Image ref also pending Taylor's new ornament if she
-          decides the existing four-petal piece doesn't fit. */}
-      <section className="relative isolate overflow-hidden bg-off-white py-24 md:py-section">
-        <div className="container-gutter flex flex-col items-center text-center">
-          <img
-            src="/figma/atlanta-ornament.svg"
-            alt=""
-            aria-hidden="true"
-            width={144}
-            height={144}
-            className="h-[120px] w-[120px] md:h-[144px] md:w-[144px]"
-          />
-          <h2 className="mt-6 font-serif text-[clamp(2.5rem,4vw+0.5rem,3rem)] leading-[1.2] text-off-black">
-            Why Atlanta?
-          </h2>
-          <p className="mt-6 max-w-[751px] font-sans text-xl leading-[1.6] text-off-black">
-            Atlanta has deep roots in civil rights, a thriving tech and research ecosystem, and a demonstrated commitment to lifting women's voices. It is not a neutral backdrop — it is a deliberate choice.
-          </p>
-          <div className="mt-12">
-            <Link
-              href="/attend"
-              className="inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-black/80 px-6 font-noto text-lg font-semibold text-off-black/80 transition-colors hover:bg-off-black/5"
-            >
-              Apply to attend
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* "Why this city?" section pulled 2026-06-04 -- city moved from
+          Atlanta to San Diego and the original civil-rights /
+          Atlanta-tech rationale doesn't transfer. Section will return
+          once Beth/Kelly supply a San Diego paragraph. */}
 
     </>
   );
