@@ -78,12 +78,14 @@ export function OrganizingTeam() {
 
   return (
     <>
-      {/* Two cards in a row, vertically centered (was three before
-          Elatia stepped off). Active card is 500x500, inactive is
-          391x390 per Figma 20:1784. Clamp widths keep responsive
-          scaling at narrow viewports. On mobile (<sm) the row stays a
-          snap-scroll carousel for parity with the previous behavior;
-          from sm up it's a centered two-up flex row. */}
+      {/* Two cards in a row, vertically centered. Both render at the
+          same size now (Mason 06-04) -- the prior active/inactive size
+          split made sense with three cards but read as lopsided once
+          Elatia stepped off. Click still swaps which bio renders
+          below; the active card carries a thin oxide ring for feedback
+          instead of being scaled larger. On mobile (<sm) the row stays
+          a snap-scroll carousel; from sm up it's a centered two-up
+          flex row. */}
       <div className="mt-12 w-full max-w-[1328px] overflow-x-auto sm:overflow-visible [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex w-max items-center gap-4 snap-x snap-mandatory sm:w-full sm:max-w-[1328px] sm:justify-center sm:gap-6 sm:snap-none">
         {team.map((m) => {
@@ -95,10 +97,8 @@ export function OrganizingTeam() {
               onClick={() => setActiveId(m.id)}
               aria-pressed={isActive}
               aria-label={`${m.name} bio`}
-              className={`group relative shrink-0 snap-center overflow-hidden rounded-[20px] transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-oxide-100 focus:ring-offset-2 focus:ring-offset-moss-300 sm:snap-none ${
-                isActive
-                  ? "w-[min(72vw,360px)] sm:w-[clamp(300px,36vw,500px)] aspect-square"
-                  : "w-[min(60vw,280px)] sm:w-[clamp(200px,28vw,391px)] aspect-square"
+              className={`group relative shrink-0 snap-center overflow-hidden rounded-[20px] transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-oxide-100 focus:ring-offset-2 focus:ring-offset-moss-300 sm:snap-none w-[min(72vw,360px)] sm:w-[clamp(280px,32vw,440px)] aspect-square ${
+                isActive ? "ring-2 ring-oxide-100/80 ring-offset-2 ring-offset-moss-300" : ""
               }`}
             >
               <img
@@ -115,11 +115,7 @@ export function OrganizingTeam() {
                     "linear-gradient(to bottom, rgba(4,16,17,0) 0%, rgba(4,16,17,0.84) 84%, hsl(var(--moss-400)) 100%)",
                 }}
               />
-              <p
-                className={`absolute inset-x-0 bottom-0 px-6 pb-6 text-center font-serif text-off-white transition-all duration-500 ${
-                  isActive ? "text-[clamp(1.25rem,1.5vw+0.5rem,1.875rem)]" : "text-[clamp(1rem,1vw+0.5rem,1.5rem)]"
-                }`}
-              >
+              <p className="absolute inset-x-0 bottom-0 px-6 pb-6 text-center font-serif text-off-white text-[clamp(1.125rem,1.2vw+0.5rem,1.625rem)]">
                 {m.name}
               </p>
             </button>
