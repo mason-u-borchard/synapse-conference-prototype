@@ -222,10 +222,59 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* "Why this city?" section pulled 2026-06-04 -- city moved from
-          Atlanta to San Diego and the original civil-rights /
-          Atlanta-tech rationale doesn't transfer. Section will return
-          once Beth/Kelly supply a San Diego paragraph. */}
+      {/* "Why Women?" section -- replaces the prior "Why Atlanta?" block
+          (pulled 2026-06-04). Same centered, off-white treatment Taylor
+          drew in Figma 20:2573: four-petal ornament, serif headline, body
+          column, single outlined CTA. Copy comes from Julia + Beth's
+          06-04 message to the committee; the body runs long, so the
+          column max-width is widened modestly and paragraphs are spaced
+          with leading. */}
+      <section id="why-women" className="relative isolate overflow-hidden bg-off-white py-24 md:py-section scroll-mt-24">
+        <div className="container-gutter flex flex-col items-center text-center">
+          <img
+            src="/figma/atlanta-ornament.svg"
+            alt=""
+            aria-hidden="true"
+            width={144}
+            height={144}
+            className="h-[120px] w-[120px] md:h-[144px] md:w-[144px]"
+          />
+          <h2 className="mt-6 font-serif text-[clamp(2.5rem,4vw+0.5rem,3rem)] leading-[1.2] text-off-black">
+            Why Women?
+          </h2>
+          <div className="mt-6 max-w-[760px] space-y-6 text-left font-sans text-xl leading-[1.6] text-off-black">
+            <p>
+              This conference started because of a complaint. Women started noticing that the Epstein files contained instance after instance — across the fields of consciousness, robotics, cognitive science, and AI — of academics flirting with Jeffrey Epstein using the lever of denigrating women to secure funding and access power.
+            </p>
+            <p>
+              This is an old tactic: leveraging misogyny to get in a powerful man's good graces.
+            </p>
+            <p>
+              In this context, Dr. Julia Mossbridge, the inspiration for this conference, couldn't help but ask the question: what would these fields be like if women were celebrated and platformed rather than denigrated and silenced? Would we be decades ahead of where we are now? Would our technology be more compassionate and human-friendly?
+            </p>
+            <p>
+              This conference was born from an insidious context, but it is hand- and heart-made with love and hope. It platforms the power of women, and even more importantly, of anyone aligned with the power of the sacred feminine.
+            </p>
+            <p>
+              This sacred feminine already knows how to shape minds. It already knows how to give birth and to raise children responsibly. It knows that we are in a relationship of interdependence, and that we can and should make decisions from that ground of reciprocity.
+            </p>
+            <p>
+              This conference grows within and out of the sacred feminine. We are birthing something new from the interdependence of these four fields. While we don't know what this combined field will look like, we believe it will be human-first, compassionate, forward-thinking, and inclusive.
+            </p>
+            <p>
+              The Synapse is designed to birth that field and parent it, responsibly. To support humanity's quest for more compassion: for ourselves, for each other, for the planet. To shape, with care, the minds and the fledgling technologies now coming into being.
+            </p>
+          </div>
+          <div className="mt-12">
+            <Link
+              href="/attend"
+              className="inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-black/80 px-6 font-noto text-lg font-semibold text-off-black/80 transition-colors hover:bg-off-black/5"
+            >
+              Apply to attend
+            </Link>
+          </div>
+        </div>
+      </section>
 
     </>
   );
