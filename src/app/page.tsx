@@ -370,20 +370,21 @@ export default function HomePage() {
           hall. / A living laboratory." headline, body, outlined CTA.
           Right column: a 3-row table titled "THE PROGRAM ARC" listing
           Day 1 Expand / Day 2 Weave / Day 3 Emerge with one-line
-          descriptions per day. */}
-      <section className="relative isolate overflow-hidden bg-off-white py-section">
-        <div className="container-gutter relative grid items-center gap-12 lg:grid-cols-[auto_minmax(0,1fr)_auto]">
-          {/* Decorative photo. Hidden on narrow viewports since it's
-              just a sliver of imagery in Figma. */}
-          <div className="relative hidden h-[461px] w-[108px] overflow-hidden rounded-r-3xl lg:block" aria-hidden="true">
-            <img
-              src="/figma/program-arc-image.jpg"
-              alt=""
-              className="absolute h-full w-[381px] max-w-none object-cover"
-              style={{ left: "-42.55%", top: 0 }}
-            />
-          </div>
-          <div className="max-w-[599px] text-off-black">
+          descriptions per day.
+          Decorative photo is anchored flush to the viewport's left
+          edge per Taylor's 06-03 audit; the inner grid pads its
+          left so the text doesn't collide with the photo on lg. */}
+      <section className="relative isolate overflow-hidden bg-off-white py-[clamp(6rem,11vw,9.5rem)]">
+        <div className="absolute left-0 top-1/2 hidden h-[461px] w-[108px] -translate-y-1/2 overflow-hidden rounded-r-3xl lg:block" aria-hidden="true">
+          <img
+            src="/figma/program-arc-image.jpg"
+            alt=""
+            className="absolute h-full w-[381px] max-w-none object-cover"
+            style={{ left: "-42.55%", top: 0 }}
+          />
+        </div>
+        <div className="container-gutter relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:pl-[clamp(72px,7vw,128px)]">
+          <div className="max-w-[720px] text-off-black">
             <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
               Not a lecture hall.<br />A living laboratory.
             </h2>
