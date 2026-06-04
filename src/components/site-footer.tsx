@@ -62,8 +62,15 @@ export function SiteFooter() {
           Logo + tagline on the left, three-column nav on the right.
           The Program nav-item gets a "Coming soon!" chip mirroring
           the header pattern. */}
+      {/* Layout: stack the wordmark/tagline + nav vertically below lg.
+          The earlier md:flex-row + md:grid-cols-3 packed three nav
+          columns next to the tagline column in the 768-1023 range and
+          squeezed the email + "Fund the room" / "Apply to attend"
+          labels until they wrapped or trailed off the viewport
+          (Mason 06-04 audit). At lg+ the original side-by-side layout
+          returns. */}
       <section aria-label="Site footer" className="relative pt-24 md:pt-36">
-        <div className="container-gutter flex flex-col gap-16 md:flex-row md:items-start md:justify-between md:gap-24">
+        <div className="container-gutter flex flex-col gap-16 xl:flex-row xl:items-start xl:justify-between xl:gap-24">
           <div className="max-w-sm">
             <Link href="/" className="inline-flex items-center" aria-label="The Synapse -- home">
               <img
@@ -80,7 +87,7 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-3 md:gap-24">
+          <div className="grid gap-12 sm:grid-cols-3 sm:gap-10 xl:gap-24">
             <FooterColumn
               title="Explore"
               items={[
