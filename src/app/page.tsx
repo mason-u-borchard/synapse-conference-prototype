@@ -244,11 +244,12 @@ export default function HomePage() {
 
       {/* Built by women, leading this frontier (Figma 19:1156).
           Dark moss-300 surface with a subtle leaf-pattern background
-          on the right. Three pill-shaped bio cards: Julia horizontal
-          across the top, Elatia + Beth vertical (rotated -90 / +90)
-          along the bottom. Wave 2 of the S-shape graphic visually
-          flows behind this section in Taylor's design; placed below
-          via absolute positioning. */}
+          on the right. Two pill-shaped bio cards (Elatia is no longer
+          on the committee as of 2026-06-03): Julia horizontal across
+          the top with a semicircular RIGHT end, Beth horizontal across
+          the bottom as a mirror (semicircular LEFT end). Wave 2 of the
+          S-shape graphic visually flows behind this section in
+          Taylor's design; placed below via absolute positioning. */}
       <section className="relative isolate bg-moss-300 pt-24 pb-10 md:py-section">
         {/* Background leaf pattern, right-anchored, low opacity.
             Inside an overflow-hidden wrapper so it doesn't bleed
@@ -298,36 +299,31 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          {/* Bio card cluster per Taylor's Figma (node 19:1439).
-              Three cards on a 480x716 canvas:
-                - Julia: full-width HORIZONTAL card across the top
-                  (text-LEFT panel, photo-RIGHT, semicircular RIGHT end)
-                - Elatia: VERTICAL card at bottom-LEFT (photo-TOP,
-                  text-BOTTOM panel, semicircular TOP)
-                - Beth: VERTICAL card at bottom-RIGHT (text-TOP panel,
-                  photo-BOTTOM, semicircular BOTTOM)
-              The mismatched rounded ends and the
-              horizontal/vertical mix is what gives the cluster its
-              hand-cut feel in the design. */}
+          {/* Bio card cluster -- two horizontal pill cards (Julia on
+              top, Beth on bottom). Restructured 2026-06-03 after
+              Elatia stepped off the committee; the previous design
+              had three cards on a 480x716 canvas with an asymmetric
+              mix. The mirror pair keeps the hand-cut feel: each card's
+              photo lives in the semicircular end, text in the
+              rectangular end. */}
           <div
-            className="relative mx-auto w-full max-w-[560px]"
-            style={{ aspectRatio: "480 / 716" }}
+            className="relative mx-auto grid w-full max-w-[560px] gap-3"
+            style={{ aspectRatio: "480 / 480" }}
           >
             {/* Julia -- top, full-width horizontal. Mildly rounded
                 LEFT corners, semicircular RIGHT end. */}
             <article
-              className="absolute left-0 right-0 top-0 flex items-stretch overflow-hidden"
+              className="flex items-stretch overflow-hidden"
               style={{
-                height: "32.12%",
                 borderTopLeftRadius: "24px",
                 borderBottomLeftRadius: "24px",
                 borderTopRightRadius: "1000px",
                 borderBottomRightRadius: "1000px",
               }}
             >
-              <div className="flex w-[48%] flex-col justify-end gap-2 bg-orchid-300 p-[clamp(1rem,2vw,1.75rem)] text-off-white">
-                <p className="font-sans text-[clamp(1rem,1.2vw+0.4rem,1.25rem)] font-semibold leading-[1.4]">Julia Mossbridge, PhD</p>
-                <p className="font-sans text-[clamp(0.85rem,0.7vw+0.5rem,1rem)] leading-[1.4]">Neuroscientist and founder, Applied Love Labs & American Electrodynamics Corp.</p>
+              <div className="flex w-[55%] flex-col justify-center gap-2 bg-orchid-300 p-[clamp(0.875rem,1.8vw,1.5rem)] text-off-white">
+                <p className="font-sans text-[clamp(0.9rem,1vw+0.3rem,1.125rem)] font-semibold leading-[1.3]">Julia Mossbridge, PhD</p>
+                <p className="font-sans text-[clamp(0.75rem,0.6vw+0.4rem,0.9375rem)] leading-[1.4]">Neuroscientist and founder, Applied Love Labs & American Electrodynamics Corp.</p>
               </div>
               <div className="relative flex-1 overflow-hidden">
                 <img
@@ -337,57 +333,28 @@ export default function HomePage() {
                 />
               </div>
             </article>
-            {/* Elatia -- bottom-left vertical. Photo on TOP, text panel
-                on BOTTOM. Semicircular TOP, mildly rounded BOTTOM. */}
+            {/* Beth -- bottom, full-width horizontal mirror of Julia.
+                Semicircular LEFT end (photo), mildly rounded RIGHT
+                corners (text). */}
             <article
-              className="absolute left-0 flex flex-col items-stretch overflow-hidden"
+              className="flex items-stretch overflow-hidden"
               style={{
-                top: "34.36%",
-                width: "47.92%",
-                height: "65.64%",
                 borderTopLeftRadius: "1000px",
-                borderTopRightRadius: "1000px",
-                borderBottomLeftRadius: "24px",
+                borderBottomLeftRadius: "1000px",
+                borderTopRightRadius: "24px",
                 borderBottomRightRadius: "24px",
               }}
             >
-              <div className="relative h-[52%] w-full overflow-hidden bg-moss-100">
-                <img
-                  src="/figma/elatia.jpg"
-                  alt="Elatia Abate"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-1 flex-col justify-end gap-2 bg-amethyst-300 p-[clamp(1rem,2vw,1.75rem)] text-off-white">
-                <p className="font-sans text-[clamp(1rem,1.2vw+0.4rem,1.25rem)] font-semibold leading-[1.4]">Elatia Abate</p>
-                <p className="font-sans text-[clamp(0.85rem,0.7vw+0.5rem,1rem)] leading-[1.4]">Strategy advisor to CEOs in the age of AI; Future of Now.</p>
-              </div>
-            </article>
-            {/* Beth -- bottom-right vertical, mirror of Elatia. Text
-                panel on TOP, photo on BOTTOM. Mildly rounded TOP,
-                semicircular BOTTOM. */}
-            <article
-              className="absolute right-0 flex flex-col items-stretch overflow-hidden"
-              style={{
-                top: "34.36%",
-                width: "47.92%",
-                height: "65.64%",
-                borderTopLeftRadius: "24px",
-                borderTopRightRadius: "24px",
-                borderBottomLeftRadius: "1000px",
-                borderBottomRightRadius: "1000px",
-              }}
-            >
-              <div className="flex flex-col gap-2 bg-azure-300 p-[clamp(1rem,2vw,1.75rem)] text-off-white">
-                <p className="font-sans text-[clamp(1rem,1.2vw+0.4rem,1.25rem)] font-semibold leading-[1.4]">Beth Glick</p>
-                <p className="font-sans text-[clamp(0.85rem,0.7vw+0.5rem,1rem)] leading-[1.4]">Consciousness researcher and field-builder.</p>
-              </div>
               <div className="relative flex-1 overflow-hidden bg-moss-100">
                 <img
                   src="/figma/home-beth.png"
                   alt="Beth Glick"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
+              </div>
+              <div className="flex w-[55%] flex-col justify-center gap-2 bg-azure-300 p-[clamp(0.875rem,1.8vw,1.5rem)] text-off-white">
+                <p className="font-sans text-[clamp(0.9rem,1vw+0.3rem,1.125rem)] font-semibold leading-[1.3]">Beth Glick</p>
+                <p className="font-sans text-[clamp(0.75rem,0.6vw+0.4rem,0.9375rem)] leading-[1.4]">Consciousness researcher and field-builder.</p>
               </div>
             </article>
           </div>

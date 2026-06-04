@@ -6,16 +6,18 @@ import type { ReactNode } from "react";
 
 // The Organizing Team section per Taylor's Figma (Figma 20:1764).
 // On click, the active card grows in place and that person's bio
-// renders below all three cards. Inactive cards stay in their
-// original positions and shrink. Default active person is Julia
-// (the center card in the Figma).
+// renders below the cards. Inactive cards stay in their original
+// positions and shrink. Default active person is Julia.
 //
 // Bios pulled from synapse-screenshots/about/organizer_bios.md.
 // Highlighted spans below are organizations Mason wants linked out
 // per the Figma's orange-link treatment.
+//
+// Elatia Abate stepped off the committee on 2026-06-03 and her entry
+// has been removed; the layout is now a two-card row instead of three.
 
 type Member = {
-  id: "elatia" | "julia" | "beth";
+  id: "julia" | "beth";
   name: string;
   shortName: string;
   image: string;
@@ -25,19 +27,6 @@ type Member = {
 };
 
 const team: ReadonlyArray<Member> = [
-  {
-    id: "elatia",
-    name: "Elatia Abate",
-    shortName: "Elatia Abate",
-    image: "/figma/elatia.jpg",
-    role: <>Strategy Advisor / Future of Now</>,
-    bio: (
-      <>
-        Elatia Abate is a Forbes-recognized futurist working at the intersection of strategy, AI, and human potential. A former executive at Anheuser-Busch InBev and Dow Jones, she now advises global organizations and serves on the American Society for AI. She is a TEDx speaker, author of <em>Build a Career You Love</em>, and instructor at UChicago Booth and LinkedIn Learning.
-      </>
-    ),
-    linkedIn: { url: "https://www.linkedin.com/in/elatiaabate/", handle: "Elatia Abate" },
-  },
   {
     id: "julia",
     name: "Julia Mossbridge, PhD",
@@ -85,17 +74,16 @@ const team: ReadonlyArray<Member> = [
 
 export function OrganizingTeam() {
   const [activeId, setActiveId] = useState<Member["id"]>("julia");
-  const active = team.find((m) => m.id === activeId) ?? team[1]!;
+  const active = team.find((m) => m.id === activeId) ?? team[0]!;
 
   return (
     <>
-      {/* Three cards in a row, vertically centered. Active card is
-          500x500, inactive side cards are 391x390 per Figma 20:1784.
-          Clamp widths keep responsive scaling at narrow viewports. On
-          mobile (<sm) the row becomes a snap-scroll carousel that stays
-          inside its container; the active card is centered, the two
-          other cards are visible to either side. From sm up it returns
-          to the original centered three-up flex row. */}
+      {/* Two cards in a row, vertically centered (was three before
+          Elatia stepped off). Active card is 500x500, inactive is
+          391x390 per Figma 20:1784. Clamp widths keep responsive
+          scaling at narrow viewports. On mobile (<sm) the row stays a
+          snap-scroll carousel for parity with the previous behavior;
+          from sm up it's a centered two-up flex row. */}
       <div className="mt-12 w-full max-w-[1328px] overflow-x-auto sm:overflow-visible [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex w-max items-center gap-4 snap-x snap-mandatory sm:w-full sm:max-w-[1328px] sm:justify-center sm:gap-6 sm:snap-none">
         {team.map((m) => {

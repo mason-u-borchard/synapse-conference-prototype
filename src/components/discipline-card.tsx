@@ -38,7 +38,7 @@ export function DisciplineCard({
       // dark text panel enough room above the aspect-square graphic.
       // From lg+ (the 4-column desktop layout) we revert to the
       // 354:603 ratio Taylor specified in Figma.
-      className="discipline-card group mx-auto w-full max-w-[400px] aspect-[354/490] min-[440px]:aspect-[354/680] lg:aspect-[354/603] [perspective:1500px]"
+      className="discipline-card group mx-auto w-full max-w-[400px] aspect-[354/490] min-[440px]:aspect-[354/680] lg:aspect-[354/700] [perspective:1500px]"
       onMouseEnter={undefined}
     >
       <button

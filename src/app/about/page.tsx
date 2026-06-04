@@ -183,9 +183,9 @@ export default function AboutPage() {
       </section>
 
       {/* === Organizing team (Figma 20:1764) ===
-          Same dark moss-300 surface as the section above. Three bio
-          cards: Elatia (left, smaller), Julia (center, larger),
-          Beth (right, smaller). Each card is a photograph with a
+          Same dark moss-300 surface as the section above. Two bio
+          cards (was three: Elatia stepped off the committee on
+          2026-06-03): Julia and Beth, each card a photograph with a
           fade-to-moss-400 gradient at the bottom and the name
           rendered in Fraunces. */}
       <section className="relative isolate overflow-hidden bg-moss-300 px-gutter pb-24 md:pb-section">

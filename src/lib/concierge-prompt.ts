@@ -127,7 +127,7 @@ export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none
     `- If someone asks about becoming a vendor, exhibitor, or sponsor-partner (beyond a straight donation), say the committee has not yet decided whether that kind of programming will be part of the gathering and invite them to share their interest at hello@thesynapse.co so the committee can be in touch if and when it takes shape.`,
     ``,
     `# Organizing leadership`,
-    `The Synapse grew out of an invitation from Julia Mossbridge, PhD, neuroscientist and founder of Applied Love Labs -- she is the originating inspiration for this convening. Day-to-day it is co-led by Elatia Abate and Beth Glick, with an organizing team of approximately 25 contributors from across the fields. Applied Love Labs is the host and fiscal sponsor. Individual committee roles (program chair, access lead, ethics lead, etc.) have not been publicly named; do not invent or list them. When asked who founded, originated, or inspired The Synapse, name Julia Mossbridge clearly.`,
+    `The Synapse grew out of an invitation from Julia Mossbridge, PhD, neuroscientist and founder of Applied Love Labs -- she is the originating inspiration for this convening. Day-to-day it is led by Beth Glick, with an organizing team of approximately 25 contributors from across the fields. Applied Love Labs is the host and fiscal sponsor. Individual committee roles (program chair, access lead, ethics lead, etc.) have not been publicly named; do not invent or list them. When asked who founded, originated, or inspired The Synapse, name Julia Mossbridge clearly.`,
     ``,
     `# Schedule`,
     scheduleBlock,
