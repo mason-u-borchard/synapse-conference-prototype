@@ -308,10 +308,12 @@ export default function HomePage() {
               rectangular end. */}
           <div
             className="relative mx-auto grid w-full max-w-[560px] gap-3"
-            style={{ aspectRatio: "480 / 480" }}
+            style={{ aspectRatio: "480 / 520" }}
           >
-            {/* Julia -- top, full-width horizontal. Mildly rounded
-                LEFT corners, semicircular RIGHT end. */}
+            {/* Julia -- top. Text-LEFT (flex-1, takes whatever's left
+                after the square photo), photo-RIGHT (aspect-square so
+                the semicircular border-radius reads as a full half
+                circle rather than just a rounded corner). */}
             <article
               className="flex items-stretch overflow-hidden"
               style={{
@@ -321,11 +323,11 @@ export default function HomePage() {
                 borderBottomRightRadius: "1000px",
               }}
             >
-              <div className="flex w-[55%] flex-col justify-center gap-2 bg-orchid-300 p-[clamp(0.875rem,1.8vw,1.5rem)] text-off-white">
+              <div className="flex flex-1 flex-col justify-center gap-2 bg-orchid-300 p-[clamp(0.875rem,1.8vw,1.5rem)] text-off-white">
                 <p className="font-sans text-[clamp(0.9rem,1vw+0.3rem,1.125rem)] font-semibold leading-[1.3]">Julia Mossbridge, PhD</p>
                 <p className="font-sans text-[clamp(0.75rem,0.6vw+0.4rem,0.9375rem)] leading-[1.4]">Neuroscientist and founder, Applied Love Labs & American Electrodynamics Corp.</p>
               </div>
-              <div className="relative flex-1 overflow-hidden">
+              <div className="relative aspect-square shrink-0 overflow-hidden">
                 <img
                   src="/figma/home-julia.jpg"
                   alt="Julia Mossbridge"
@@ -333,9 +335,8 @@ export default function HomePage() {
                 />
               </div>
             </article>
-            {/* Beth -- bottom, full-width horizontal mirror of Julia.
-                Semicircular LEFT end (photo), mildly rounded RIGHT
-                corners (text). */}
+            {/* Beth -- bottom, mirror of Julia. Photo-LEFT (aspect-
+                square at the semicircular end), text-RIGHT (flex-1). */}
             <article
               className="flex items-stretch overflow-hidden"
               style={{
@@ -345,14 +346,14 @@ export default function HomePage() {
                 borderBottomRightRadius: "24px",
               }}
             >
-              <div className="relative flex-1 overflow-hidden bg-moss-100">
+              <div className="relative aspect-square shrink-0 overflow-hidden bg-moss-100">
                 <img
                   src="/figma/home-beth.png"
                   alt="Beth Glick"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
-              <div className="flex w-[55%] flex-col justify-center gap-2 bg-azure-300 p-[clamp(0.875rem,1.8vw,1.5rem)] text-off-white">
+              <div className="flex flex-1 flex-col justify-center gap-2 bg-azure-300 p-[clamp(0.875rem,1.8vw,1.5rem)] text-off-white">
                 <p className="font-sans text-[clamp(0.9rem,1vw+0.3rem,1.125rem)] font-semibold leading-[1.3]">Beth Glick</p>
                 <p className="font-sans text-[clamp(0.75rem,0.6vw+0.4rem,0.9375rem)] leading-[1.4]">Consciousness researcher and field-builder.</p>
               </div>
