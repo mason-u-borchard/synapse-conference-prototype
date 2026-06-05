@@ -383,13 +383,21 @@ export default function HomePage() {
             style={{ left: "-42.55%", top: 0 }}
           />
         </div>
-        <div className="container-gutter relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:pl-[clamp(72px,7vw,128px)]">
+        {/* lg:pl shrinks as the viewport grows. At ~1024 the container's
+            gutter is only ~30px, so without extra left padding the
+            text starts inside the photo's column. At ~1560+ the
+            container is fully centered with ample margin on both sides,
+            so the natural margin alone clears the photo and any added
+            pl just pushes the text uselessly to the right. The clamp
+            interpolates between the two: ~140px pl up to xl, dropping
+            to 0 around 1560px. */}
+        <div className="container-gutter relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:pl-[clamp(0px,calc(140px-(100vw-1280px)/2),140px)]">
           <div className="max-w-[720px] text-off-black">
             <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
               Not a lecture hall.<br />A living laboratory.
             </h2>
             <p className="mt-6 font-sans text-xl leading-[1.6]">
-              Three days built around four disciplines — and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.
+              Three days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.
             </p>
             <div className="mt-8">
               <Link
