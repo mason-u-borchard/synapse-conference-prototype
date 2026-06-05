@@ -62,7 +62,7 @@ export function SiteHeader() {
             with a soft inset shadow and an off-white text palette,
             inspired by the Hero export. */}
         <div
-          className="mx-auto flex h-[60px] max-w-[1419px] items-center justify-between rounded-full bg-amethyst-300 px-7 shadow-[5px_5px_18px_-6px_rgba(144,90,140,0.35),inset_0_0_0_1px_rgba(241,236,233,0.06)]"
+          className="mx-auto flex h-[60px] max-w-[1568px] items-center justify-between rounded-full bg-amethyst-300 px-7 shadow-[5px_5px_18px_-6px_rgba(144,90,140,0.35),inset_0_0_0_1px_rgba(241,236,233,0.06)]"
         >
           <Link href="/" className="group flex items-center gap-4" aria-label="The Synapse -- home">
             {/* Use Taylor's actual icon SVG (oxide-100 fill baked in)

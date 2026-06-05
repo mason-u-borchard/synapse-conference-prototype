@@ -93,15 +93,29 @@ export function Concierge() {
           bottom: "max(1rem, env(safe-area-inset-bottom))",
         }}
         className={cx(
-          "group fixed z-40 inline-flex h-14 max-w-[calc(100vw-2rem)] items-center gap-3 whitespace-nowrap rounded-pill border border-border-strong bg-surface pl-5 pr-4 text-sm shadow-paper transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-glow md:!bottom-8 md:!right-8",
+          // Dark amethyst pill with the Synapse "S" mark and italic
+          // serif text, per Taylor's 06-04 Figma audit ("See design").
+          // Was the light cream pill with the eyes-and-smile ConciergeGlyph.
+          "group fixed z-40 inline-flex h-14 max-w-[calc(100vw-2rem)] items-center gap-3 whitespace-nowrap rounded-pill bg-amethyst-300 pl-4 pr-5 text-sm text-off-white shadow-[5px_5px_18px_-6px_rgba(144,90,140,0.45)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-glow md:!bottom-8 md:!right-8",
           // Fade and lift out of the way once the user is in the
           // footer / cityscape pre-footer area. The dialog itself
           // (when open) stays interactive regardless.
           nearFooter && !open && "pointer-events-none opacity-0 translate-y-4",
         )}
       >
-        <ConciergeGlyph active={open} />
-        <span className="font-serif italic tracking-tight">{open ? "Close Ava" : "Ask Ava"}</span>
+        <span
+          aria-hidden="true"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-off-white/10"
+        >
+          <img
+            src="/figma/synapse-icon.svg"
+            alt=""
+            width={20}
+            height={22}
+            className="h-[22px] w-[20px]"
+          />
+        </span>
+        <span className="font-serif italic tracking-tight text-off-white">{open ? "Close Ava" : "Ask Ava"}</span>
       </button>
 
       <AnimatePresence>

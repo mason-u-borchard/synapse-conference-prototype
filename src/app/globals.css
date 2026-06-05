@@ -195,6 +195,18 @@
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
   }
+
+  /* Hide the floating reCAPTCHA v3 badge globally per Taylor's 06-04
+     audit. Google allows hiding the badge as long as the required
+     privacy / terms text is shown elsewhere -- ours lives on /privacy
+     and /terms (already linked from the footer). The badge is loaded
+     by the Virtuous donation widget, so this rule needs to win even
+     when it is inlined late. */
+  .grecaptcha-badge {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
 
 @layer components {

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { meta } from "@/lib/content";
-import { SynapseField } from "@/components/synapse-field";
 import { HeroTicker } from "@/components/hero-ticker";
 import { DisciplineCard } from "@/components/discipline-card";
 
@@ -79,22 +78,24 @@ export default function HomePage() {
             lg-only display: below 1024px the layout is too narrow to
             fit both the wave and the headline without overlap, so
             the wave hides and the text takes the full width. */}
+        {/* Wave-1 enlarged 2026-06-04 per Taylor's audit ("Graphic is
+            coming through very small, and very pixelated. What do you
+            need from me to be able to get it closer to spec?"). w-44
+            -> w-52, max-w 640 -> 820, top -5% so it carries higher
+            into the hero like the design intent. */}
         <img
           src="/figma/wave-1.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-[5%] z-[5] hidden h-auto w-[44%] max-w-[640px] lg:block"
+          className="pointer-events-none absolute right-0 -top-[2%] z-[5] hidden h-auto w-[52%] max-w-[820px] lg:block"
         />
 
         <section className="relative isolate bg-amethyst-300 -mt-[88px] pt-[88px]">
-          {/* SynapseField cosmic backdrop -- the constellation pattern
-              from v1 layered over the dark amethyst surface so the hero
-              reads as a starry sky. Higher opacity (no blend mode) so
-              the dim points of light actually show against the amethyst
-              instead of being multiplied away. */}
-          <div className="absolute inset-0 overflow-hidden opacity-70 pointer-events-none" aria-hidden="true">
-            <SynapseField />
-          </div>
+          {/* SynapseField cosmic backdrop removed 2026-06-04 per Taylor's
+              audit ("Let's remove the animated background. I think brand
+              direction went a different way"). The dark amethyst surface
+              now reads solid, with the wave-1 graphic carrying the
+              decorative weight. */}
         {/* Hero content. min-height removed -- the v1 80vh forced the
             section to nearly fill the viewport, which made the dark
             block feel oppressively tall vs Figma. py-* now sets the
@@ -109,7 +110,11 @@ export default function HomePage() {
             <h1 className="font-serif text-[clamp(2.5rem,4vw+1rem,5rem)] leading-[1.05] text-off-white text-balance">
               Where women connect mind, machine, and what comes next.
             </h1>
-            <p className="mt-7 max-w-[40ch] font-sans text-[clamp(1.125rem,0.8vw+0.75rem,1.5rem)] leading-[1.55] text-off-white/95">
+            {/* max-w widened from 40ch to 60ch so the subhead breathes
+                across 2 lines at wide widths, per Taylor's 06-04 audit
+                ("2 lines of text, rather than 3"). At narrow widths the
+                lg:max-w-[60%] parent already constrains the wrap. */}
+            <p className="mt-7 max-w-[60ch] font-sans text-[clamp(1.125rem,0.8vw+0.75rem,1.5rem)] leading-[1.55] text-off-white/95">
               Four fields. Three days. The conversations that don't happen anywhere else. The futures that don't exist without them.
             </p>
             <p className="mt-5 font-mono text-[clamp(0.875rem,0.4vw+0.65rem,1.125rem)] tracking-[0.04em] text-off-white/85">
@@ -277,8 +282,12 @@ export default function HomePage() {
         />
         <div className="container-gutter relative z-10 grid items-center gap-12 lg:grid-cols-[minmax(0,558px)_minmax(0,1fr)]">
           <div className="text-off-white">
-            <h2 className="max-w-[12ch] font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
-              Built by women leading this frontier
+            {/* Forced 2-line wrap with <br/> after "women" per Taylor's
+                06-04 audit ("Open up so text is on 2 lines, not 3").
+                max-w widened from 12ch to 22ch so the longer second
+                line "leading this frontier" fits without re-wrapping. */}
+            <h2 className="max-w-[22ch] font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
+              Built by women<br />leading this frontier
             </h2>
             <p className="mt-8 max-w-[44ch] font-sans text-xl leading-[1.6]">
               Alongside an organizing committee of 25.{" "}
