@@ -196,8 +196,8 @@ export function ApplicationForm() {
         <span className="font-serif text-ink">Want to be part of the program?</span>{" "}
         We're looking beyond traditional talks. The Synapse will include keynotes, embodied
         practices, research presentations, facilitated conversations, demonstrations, and work
-        that is actively shaping the tools and systems of what comes next. Tell us what you'd
-        bring below.
+        that is actively shaping and growing the relationships between humans and the technology
+        we create and use. Tell us what you'd bring below.
       </p>
 
       <Field label="Would you like to contribute to the program?" required>
@@ -543,7 +543,7 @@ export function ApplicationForm() {
       </Field>
 
       <Field
-        label="How do you aim to uplift women's voices in your everyday life -- personally, professionally, or in your community?"
+        label="How do you aim to uplift women's ideas and plans in your everyday life -- personally, professionally, or in your community?"
         required
       >
         <textarea
@@ -594,7 +594,7 @@ export function ApplicationForm() {
           <span>
             I agree to abide by the conference{" "}
             <a
-              href="/guidelines"
+              href="/ethos"
               className="underline decoration-border-strong underline-offset-2 hover:text-ink hover:decoration-ink"
             >
               community guidelines

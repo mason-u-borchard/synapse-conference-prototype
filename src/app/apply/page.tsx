@@ -26,21 +26,23 @@ export default function ApplyPage() {
           <span className="font-serif text-ink">The Synapse</span> is a first-of-its-kind
           convening of 100 leaders working at the intersection of AI, consciousness, robotics,
           and cognitive science — anchored by women whose work is shaping these fields. These
-          fields are converging on questions none of them can answer alone.
+          fields are converging on questions none of us can answer alone.
         </p>
         <p>
-          The program moves through three dynamic phases: Expand, Weave, Emerge. This is not a
-          conference you sit through. Everyone in the room shapes it through keynotes,
+          The program moves through three dynamic phases: Expand, Weave, Emerge. In other words,
+          we are excited to say that no one will be sitting through this conference. We'll all be
+          working and playing together. Everyone in the room shapes it through keynotes,
           provocations, hands-on labs, dialogues, and sessions where fruitful collaborations take
           shape.
         </p>
         <p>
-          We're centering women who are doing the work — researchers, executives, builders,
-          entrepreneurs, and practitioners — and we welcome participants of all genders who want
-          to be in a room where the conversation goes further than it can in any single field.
+          For our selected leaders and facilitators, we're centering women who are doing the
+          work — researchers, executives, builders, entrepreneurs, and practitioners — and we
+          welcome participants of all genders who want to be in a room where the conversation
+          goes further than it can in any single field.
         </p>
         <p>
-          If you want to be part of these conversations, we invite you to apply. Attendance is
+          If this work and play feels right to you, we invite you to apply. Attendance is
           intentionally curated to create a high-trust, interdisciplinary environment. We read
           every application carefully.
         </p>
