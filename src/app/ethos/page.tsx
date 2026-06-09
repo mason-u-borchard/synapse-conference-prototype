@@ -112,13 +112,19 @@ export default function EthosPage() {
       </section>
 
       {/* === The nine principles ===
-          3x3 grid on off-white. Each tile carries a dark Synapse tone; numbers in mono in the matching accent. */}
+          3x3 grid on off-white. Each tile carries a dark Synapse tone;
+          numbers in mono in the matching accent. Cards lift + glow on
+          desktop hover per Taylor's 06-08 R1 audit ("Hover and click
+          states are missing -- this is more of a surprise and delight
+          brand moment rather than a functional need").
+          TODO: photo backgrounds + mobile flip behavior still pending
+          on Taylor's per-principle photo assets. */}
       <section
         aria-labelledby="principles"
         className="relative isolate bg-off-white pb-24 md:pb-section"
       >
         <div className="container-gutter">
-          <p className="mb-8 font-mono text-xs uppercase tracking-[0.22em] text-off-black/70">
+          <p className="mb-8 font-mono text-xs uppercase tracking-[0.22em] text-oxide-200">
             Our principles
           </p>
           <h2 id="principles" className="sr-only">
@@ -128,9 +134,9 @@ export default function EthosPage() {
             {principles.map((p) => (
               <li
                 key={p.n}
-                className={`flex flex-col gap-5 rounded-2xl p-7 text-off-white ${p.bg}`}
+                className={`group flex flex-col gap-5 rounded-2xl p-7 text-off-white shadow-[0_2px_6px_-3px_rgba(0,0,0,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_32px_-14px_rgba(0,0,0,0.45)] ${p.bg}`}
               >
-                <span className={`font-mono text-xs tracking-[0.18em] ${p.accent}`}>
+                <span className={`font-mono text-xs tracking-[0.18em] transition-colors duration-300 ${p.accent} group-hover:text-off-white`}>
                   {p.n}
                 </span>
                 <h3 className="font-serif text-2xl leading-[1.2] -mt-2">{p.title}</h3>

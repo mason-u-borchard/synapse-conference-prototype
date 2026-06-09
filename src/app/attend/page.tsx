@@ -24,10 +24,12 @@ export default function AttendPage() {
     <>
       {/* === Hero (Figma 56:4447, top band) ===
           Two columns: left holds eyebrow, "An invitation" headline,
-          subhead block, and the inline email capture. Right holds a
-          dark photo card with the Oct 9-11 / San Diego date stamp,
-          framed by the venue line. Image src still points at the
-          atlanta-skyline placeholder pending Taylor's new asset.
+          merged invitation copy (per Taylor's 06-08 R1 audit:
+          "merge these into one paragraph and one CTA"), and the
+          inline email capture. Right holds a dark photo card with
+          the Oct 9-11 / San Diego date stamp, framed by the venue
+          line. Image src still points at the atlanta-skyline
+          placeholder pending Taylor's new asset.
           Pulls under the sticky header via the negative-margin
           pattern shared with /about. */}
       <section className="relative isolate overflow-hidden bg-off-white -mt-[88px] pt-[88px]">
@@ -41,10 +43,10 @@ export default function AttendPage() {
             </h1>
             <div className="mt-8 max-w-[55ch] space-y-5 font-sans text-lg leading-[1.55] text-off-black">
               <p className="text-pretty">
-                One hundred participants. Intentionally convened.
+                One hundred participants, intentionally convened.
               </p>
               <p className="text-pretty">
-                This is a small gathering by design &mdash; selected to support a high-trust, high-contribution environment. A limited number of places are open to applicants whose perspectives will expand and deepen the room.
+                This is a small gathering by design. A limited number of places are open to those who support a high-trust, high-contribution environment &mdash; people working in disciplines that don't have names yet, and those committed to stand with them: researchers and builders, scholars and practitioners, academics and executives.
               </p>
               <p className="text-pretty">
                 Applications open soon. Leave your email and we'll let you know when they do.
@@ -88,30 +90,14 @@ export default function AttendPage() {
         </div>
       </section>
 
-      {/* === Who it's for (Figma 56:4447, mid band) ===
-          Two columns: framing copy on the left, checked audience list
-          on the right. Headline follows the IA verbatim. */}
+      {/* === Who belongs here (Figma 56:4447, mid band) ===
+          The framing-copy column + duplicate notify form were removed
+          2026-06-08 per Taylor's R1 audit ("merge into one paragraph
+          and one CTA"). The audience checklist stays as a standalone
+          band so the page still answers "who is this for?" once. */}
       <section className="relative isolate overflow-hidden bg-off-white pb-24 md:pb-section">
-        <div className="container-gutter grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
-          <div>
-            <h2 className="font-serif text-[clamp(2rem,3vw+0.5rem,3rem)] leading-[1.05] text-off-black text-balance">
-              For those who are building beyond the blueprint.
-            </h2>
-            <div className="mt-8 max-w-[52ch] space-y-5 font-sans text-lg leading-[1.55] text-off-black">
-              <p className="text-pretty">
-                This room is for the women who are working where the disciplines don't have names yet &mdash; and for those committed enough to stand with them. Researchers and builders. Scholars and practitioners. Academics and executives.
-              </p>
-              <p className="text-pretty">
-                The common thread isn't a credential. It's a disposition: the desire to build over the comfort of what already exists.
-              </p>
-              <p className="text-pretty">
-                Applications open soon. Leave your email and we'll let you know when they do.
-              </p>
-            </div>
-            <NotifyForm id="notify-who" className="mt-10" />
-          </div>
-
-          <div className="lg:pt-4">
+        <div className="container-gutter">
+          <div className="mx-auto max-w-[760px]">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-off-black/70">
               Who belongs here
             </p>

@@ -78,16 +78,17 @@ export default function HomePage() {
             lg-only display: below 1024px the layout is too narrow to
             fit both the wave and the headline without overlap, so
             the wave hides and the text takes the full width. */}
-        {/* Wave-1 enlarged 2026-06-04 per Taylor's audit ("Graphic is
-            coming through very small, and very pixelated. What do you
-            need from me to be able to get it closer to spec?"). w-44
-            -> w-52, max-w 640 -> 820, top -5% so it carries higher
-            into the hero like the design intent. */}
+        {/* Wave-1 sized so it stays prominent but doesn't overlap the
+            hero headline. Earlier 06-04 bump (w-52, max-w-820, -top-2%)
+            pushed the moon into the headline text at full width
+            (Taylor R2 audit, 06-08). Now w-[46%] / max-w-720 / top-[4%]
+            keeps the graphic generous without intruding on "what comes
+            next." */}
         <img
           src="/figma/wave-1.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 -top-[2%] z-[5] hidden h-auto w-[52%] max-w-[820px] lg:block"
+          className="pointer-events-none absolute right-0 top-[4%] z-[5] hidden h-auto w-[46%] max-w-[720px] lg:block"
         />
 
         <section className="relative isolate bg-amethyst-300 -mt-[88px] pt-[88px]">
