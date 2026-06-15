@@ -21,6 +21,7 @@ const registrationSchema = z.object({
     "other",
     "prefer-not-to-say",
   ]),
+  genderOther: z.string().max(60).optional().default(""),
   bio: z.string().min(1).max(2000),
   directoryConsent: z.enum(["yes", "no"]),
   // Contributor section (Kelly's 2026-05-26 redesign). contribute
@@ -90,10 +91,12 @@ export async function POST(req: NextRequest) {
     return json({ message }, 422);
   }
 
+  const persistPayload = buildPersistPayload(parsedBody.kind, payload.data);
+
   try {
     const { confirmationId, persisted } = await recordSubmission(
       parsedBody.kind,
-      payload.data as Record<string, unknown>,
+      persistPayload,
     );
 
     if (parsedBody.kind === "registration") {
@@ -105,7 +108,7 @@ export async function POST(req: NextRequest) {
       try {
         await sendAdminNotification({
           confirmationId,
-          payload: payload.data as Record<string, unknown>,
+          payload: persistPayload,
         });
       } catch (notifyError) {
         console.error("[submit-form] admin notification failed", notifyError);
@@ -128,6 +131,23 @@ export async function POST(req: NextRequest) {
 function normalizePayload(raw: unknown): Record<string, unknown> {
   if (!raw || typeof raw !== "object") return {};
   return { ...(raw as Record<string, unknown>) };
+}
+
+// Collapses the "Other" gender split-field into a single sheet value:
+// blank text → "Other", typed text → "Other: <text>". Drops genderOther
+// so it doesn't surface as a separate column or in the JSON dump.
+function buildPersistPayload(
+  kind: "registration" | "contact",
+  data: Record<string, unknown>,
+): Record<string, unknown> {
+  if (kind !== "registration") return data;
+  const next = { ...data };
+  if (next.gender === "other") {
+    const extra = typeof next.genderOther === "string" ? next.genderOther.trim() : "";
+    next.gender = extra ? `Other: ${extra}` : "Other";
+  }
+  delete next.genderOther;
+  return next;
 }
 
 function json(body: unknown, status: number) {

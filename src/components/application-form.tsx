@@ -54,6 +54,7 @@ export function ApplicationForm() {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
 
   const [gender, setGender] = useState<Gender | null>(null);
+  const [genderOther, setGenderOther] = useState("");
   const [directoryConsent, setDirectoryConsent] = useState<YesNo | null>(null);
   const [contribute, setContribute] = useState<YesNo | null>(null);
   const [contributionType, setContributionType] = useState<ContributionType | "">("");
@@ -141,6 +142,7 @@ export function ApplicationForm() {
       }
       form.reset();
       setGender(null);
+      setGenderOther("");
       setDirectoryConsent(null);
       setContribute(null);
       setContributionType("");
@@ -482,7 +484,10 @@ export function ApplicationForm() {
                 name="gender"
                 value={opt.value}
                 checked={gender === opt.value}
-                onChange={() => setGender(opt.value)}
+                onChange={() => {
+                  setGender(opt.value);
+                  if (opt.value !== "other") setGenderOther("");
+                }}
                 className="sr-only"
                 required
               />
@@ -490,6 +495,17 @@ export function ApplicationForm() {
             </label>
           ))}
         </div>
+        {gender === "other" && (
+          <input
+            type="text"
+            name="genderOther"
+            maxLength={60}
+            value={genderOther}
+            onChange={(e) => setGenderOther(e.target.value)}
+            placeholder="Optional — how you describe it"
+            className="field-input mt-3"
+          />
+        )}
       </Field>
 
       <Field label="How did you hear about The Synapse?">
