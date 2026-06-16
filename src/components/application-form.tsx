@@ -128,9 +128,13 @@ export function ApplicationForm() {
       );
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
-        throw new Error(
-          body.message ?? `Submission failed (${response.status})`,
-        );
+        // TEMPORARY: append the server's debug field to the surfaced
+        // message so the prod failure is observable in the UI. Revert
+        // alongside the matching block in src/app/api/submit-form/route.ts
+        // once the live submission path is confirmed working.
+        const base = body.message ?? `Submission failed (${response.status})`;
+        const debug = body.debug ? ` [debug: ${body.debug}]` : "";
+        throw new Error(`${base}${debug}`);
       }
       const body = await response.json();
       setStatus({
