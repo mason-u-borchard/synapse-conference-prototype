@@ -80,9 +80,9 @@ export function OrganizingTeam() {
       {team.map((m) => (
         <article
           key={m.id}
-          className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:gap-[60px]"
+          className="flex flex-col items-start gap-[30px] lg:flex-row lg:items-center lg:gap-[60px]"
         >
-          <div className="relative w-full max-w-[400px] shrink-0 self-center overflow-hidden rounded-[20px] aspect-square lg:w-[400px]">
+          <div className="relative h-[206px] w-[206px] shrink-0 overflow-hidden rounded-[20px] lg:h-[400px] lg:w-[400px]">
             <img
               src={m.image}
               alt={m.name}
@@ -90,7 +90,7 @@ export function OrganizingTeam() {
               loading="lazy"
             />
           </div>
-          <div className="flex w-full flex-col gap-6 text-off-white lg:gap-7">
+          <div className="flex w-full flex-col gap-[30px] text-off-white lg:gap-7">
             <header className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <Link
@@ -102,15 +102,15 @@ export function OrganizingTeam() {
                 >
                   <LinkedInIcon className="h-[22px] w-[22px] text-off-white" />
                 </Link>
-                <h3 className="font-serif text-[clamp(1.375rem,1vw+0.875rem,1.625rem)] leading-[1.15] text-off-white">
+                <h3 className="font-serif text-[1.375rem] leading-[1.15] text-off-white lg:text-[1.5rem]">
                   {m.name}
                 </h3>
               </div>
-              <p className="font-mono text-[clamp(0.9375rem,0.3vw+0.75rem,1.125rem)] leading-[1.4] text-off-white/80">
+              <p className="font-mono text-[1rem] leading-[1.4] text-off-white/80 lg:text-[1.125rem]">
                 {m.role}
               </p>
             </header>
-            <div className="font-sans text-[clamp(1rem,0.4vw+0.75rem,1.25rem)] leading-[1.5] text-off-white">
+            <div className="font-sans text-[1.125rem] leading-[1.5] text-off-white lg:text-[1.25rem]">
               {m.bio}
             </div>
           </div>

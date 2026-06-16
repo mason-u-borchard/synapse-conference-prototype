@@ -54,11 +54,14 @@ export function OrganizingCommittee() {
 
 function CommitteeRow({ member }: { member: Committee }) {
   const interactive = member.linkedIn !== null;
+  // Mobile: single padded cell, flex-col, 12px gap between the
+  // LinkedIn+name row and the role line (per Figma 451:2273).
+  // Desktop (sm+): 2-col grid with an internal vertical divider.
   const content = (
     <div
-      className={`grid w-full grid-cols-[1fr] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-stretch border-t border-off-white/25 transition-colors group-hover/row:bg-oxide-100/[0.05]`}
+      className="border-t border-off-white/25 transition-colors group-hover/row:bg-oxide-100/[0.05] flex flex-col gap-3 px-5 py-5 sm:gap-0 sm:p-0 sm:grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]"
     >
-      <div className="flex items-center gap-4 px-5 py-4 sm:border-r sm:border-off-white/25">
+      <div className="flex items-center gap-4 sm:px-5 sm:py-4 sm:border-r sm:border-off-white/25">
         <LinkedInGlyph dimmed={!interactive} />
         <div className="flex items-center gap-2">
           <span className="font-mono text-[1.0625rem] font-light text-off-white transition-[font-style] group-hover/row:italic">
@@ -71,8 +74,8 @@ function CommitteeRow({ member }: { member: Committee }) {
           )}
         </div>
       </div>
-      <div className="flex items-center px-5 py-4">
-        <span className="font-sans text-[0.9375rem] font-light text-true-white/95">
+      <div className="flex items-center sm:px-5 sm:py-4">
+        <span className="font-sans text-[1rem] font-light text-true-white/95 sm:text-[0.9375rem]">
           {member.role}
         </span>
       </div>
