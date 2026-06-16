@@ -90,21 +90,6 @@ export function SiteHeader() {
           <nav aria-label="Primary" className="hidden lg:flex lg:items-center lg:gap-10">
             {navItems.map((item) => {
               const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
-              const isProgram = item.href === "/program";
-              if (isProgram) {
-                return (
-                  <span
-                    key={item.href}
-                    aria-disabled="true"
-                    className="font-noto text-base flex items-center gap-1.5 text-off-white/65 cursor-default select-none"
-                  >
-                    {item.label}
-                    <span className="rounded bg-off-white/5 px-1.5 py-0.5 font-mono text-[11px] italic text-off-white/85">
-                      Coming soon!
-                    </span>
-                  </span>
-                );
-              }
               return (
                 <Link
                   key={item.href}
@@ -157,21 +142,11 @@ export function SiteHeader() {
       {menuOpen && (
         <div className="lg:hidden mt-3 mx-4 rounded-3xl bg-amethyst-300 px-5 py-4 shadow-lg">
           <nav aria-label="Mobile" className="flex flex-col gap-3 text-off-white">
-            {navItems.map((item) => {
-              if (item.href === "/program") {
-                return (
-                  <span key={item.href} aria-disabled="true" className="rounded-md px-2 py-2 text-base font-noto text-off-white/65 cursor-default flex items-center gap-2">
-                    {item.label}
-                    <span className="rounded bg-off-white/5 px-1.5 py-0.5 font-mono text-[10px] italic text-off-white/85">Coming soon!</span>
-                  </span>
-                );
-              }
-              return (
-                <Link key={item.href} href={item.href} className="rounded-md px-2 py-2 text-base font-noto hover:bg-off-white/10">
-                  {item.label}
-                </Link>
-              );
-            })}
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="rounded-md px-2 py-2 text-base font-noto hover:bg-off-white/10">
+                {item.label}
+              </Link>
+            ))}
             <Link href="/invest" className="mt-2 btn-solid-glow rounded-full bg-oxide-100 px-5 py-3 text-center font-noto font-semibold text-off-black">Invest</Link>
             <Link href="/attend" className="btn-outline-glow rounded-full border border-off-white/80 px-5 py-3 text-center font-noto font-semibold text-off-white">Attend</Link>
           </nav>

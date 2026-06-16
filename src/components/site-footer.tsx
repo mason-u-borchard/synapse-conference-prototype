@@ -59,9 +59,7 @@ export function SiteFooter() {
       </section>
 
       {/* === Main Footer ===
-          Logo + tagline on the left, three-column nav on the right.
-          The Program nav-item gets a "Coming soon!" chip mirroring
-          the header pattern. */}
+          Logo + tagline on the left, three-column nav on the right. */}
       {/* Layout: stack the wordmark/tagline + nav vertically below lg.
           The earlier md:flex-row + md:grid-cols-3 packed three nav
           columns next to the tagline column in the 768-1023 range and
@@ -93,7 +91,7 @@ export function SiteFooter() {
               items={[
                 { label: "About", href: "/about" },
                 { label: "Ethos", href: "/ethos" },
-                { label: "Program", chip: "Coming soon!" },
+                { label: "Program", href: "/program" },
                 { label: "FAQ", href: "/faq" },
               ]}
             />
