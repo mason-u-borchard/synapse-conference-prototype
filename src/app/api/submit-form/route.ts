@@ -118,18 +118,10 @@ export async function POST(req: NextRequest) {
     return json({ confirmationId, persisted }, 200);
   } catch (error) {
     console.error("[submit-form] unhandled error", error);
-    // TEMPORARY: surfacing the underlying error message in the 500
-    // response so the prod failure mode is observable without reading
-    // Vercel logs. Revert this block once the live submission path is
-    // confirmed working. No PII surfaces here — errors originate in
-    // the Sheets API or Resend and describe infrastructure state.
-    const debugMessage =
-      error instanceof Error ? error.message : String(error);
     return json(
       {
         message:
           "The submission reached us but we couldn't finish processing it. Try again in a few minutes or email hello@thesynapse.co.",
-        debug: debugMessage,
       },
       500,
     );

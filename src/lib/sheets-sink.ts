@@ -115,6 +115,14 @@ export async function recordSubmission(
     findNextRow(sheets, spreadsheetId, tabName),
   );
 
+  // values.update (unlike values.append) does NOT auto-extend the
+  // grid. If the target row sits past the sheet's current rowCount,
+  // the call throws "Range exceeds grid limits." Ensure capacity
+  // first so we never block on a sheet that ran out of rows.
+  await withRetry(() =>
+    ensureRowCapacity(sheets, spreadsheetId, tabName, nextRow),
+  );
+
   await withRetry(() =>
     sheets.spreadsheets.values.update({
       spreadsheetId,
@@ -125,6 +133,50 @@ export async function recordSubmission(
   );
 
   return { confirmationId, persisted: "sheets" };
+}
+
+// Reads the tab's gridProperties.rowCount and appends rows in a
+// single batchUpdate if the target row sits beyond it. Adds rows in
+// chunks of ROW_CHUNK so we don't make a Sheets API call every
+// single submission once we're near the edge.
+const ROW_CHUNK = 100;
+
+async function ensureRowCapacity(
+  sheets: ReturnType<typeof google.sheets>,
+  spreadsheetId: string,
+  tabName: string,
+  requiredRow: number,
+): Promise<void> {
+  const meta = await sheets.spreadsheets.get({
+    spreadsheetId,
+    fields: "sheets(properties(sheetId,title,gridProperties))",
+  });
+  const sheet = meta.data.sheets?.find(
+    (s) => s.properties?.title === tabName,
+  );
+  const sheetId = sheet?.properties?.sheetId;
+  const rowCount = sheet?.properties?.gridProperties?.rowCount;
+  if (sheetId == null || rowCount == null) {
+    throw new Error(`[sheets-sink] tab not found or unreadable: ${tabName}`);
+  }
+  if (requiredRow <= rowCount) return;
+
+  const shortfall = requiredRow - rowCount;
+  const toAdd = Math.max(ROW_CHUNK, shortfall);
+  await sheets.spreadsheets.batchUpdate({
+    spreadsheetId,
+    requestBody: {
+      requests: [
+        {
+          appendDimension: {
+            sheetId,
+            dimension: "ROWS",
+            length: toAdd,
+          },
+        },
+      ],
+    },
+  });
 }
 
 // Reads column B and returns the row number immediately after the
