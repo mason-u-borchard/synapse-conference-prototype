@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical, HandHeart, Atom, Flame, Sparkles } from "lucide-react";
 import { OrganizingTeam } from "@/components/organizing-team";
+import { OrganizingCommittee } from "@/components/organizing-committee";
 
 export const metadata: Metadata = {
   title: { absolute: "About The Synapse | A New Kind of Futures Gathering" },
@@ -182,42 +183,39 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* === Organizing team (Figma 20:1764) ===
-          Same dark moss-300 surface as the section above. Two bio
-          cards (was three: Elatia stepped off the committee on
-          2026-06-03): Julia and Beth, each card a photograph with a
-          fade-to-moss-400 gradient at the bottom and the name
-          rendered in Fraunces. */}
+      {/* === Organizing team (Figma 20:2285, refreshed 2026-06-15) ===
+          Taylor's redesigned section: heading + intro + CTAs at top,
+          two stacked horizontal bio cards (Julia, Beth -- Elatia
+          stepped off 2026-06-03), then a horizontal divider, then a
+          14-row committee table with LinkedIn-linked names. */}
       <section className="relative isolate overflow-hidden bg-moss-300 px-gutter pb-24 md:pb-section">
         <div className="container-gutter flex flex-col items-center text-off-white">
-          <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
-            The organizing team
-          </h2>
-          {/* Three clickable bio cards. Active card grows in place,
-              other cards stay in position but smaller. The active
-              person's bio renders below all three -- per Taylor's
-              Figma spec ("On click, the card/name grows and correct
-              bio is printed below. Cards can stay in their original
-              location, just growing/shrinking in size with the
-              interaction"). Default active = Julia. */}
+          <div className="flex flex-col items-center gap-6 text-center">
+            <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
+              The organizing team
+            </h2>
+            <p className="max-w-[680px] font-sans text-[clamp(1rem,0.4vw+0.75rem,1.25rem)] leading-[1.4] text-off-white">
+              The Synapse is also shaped by an organizing committee of researchers, builders, and practitioners from across the four fields.
+            </p>
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/invest"
+                className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
+              >
+                Fund the room
+              </Link>
+              <Link
+                href="/attend"
+                className="inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-white/80 px-6 font-noto text-lg font-semibold text-off-white transition-colors hover:bg-off-white/10"
+              >
+                Apply to attend
+              </Link>
+            </div>
+          </div>
           <OrganizingTeam />
-          <div className="mt-12 h-px w-full max-w-[1040px] bg-off-white/15" aria-hidden="true" />
-          <p className="mt-12 max-w-[528px] text-center font-sans text-base leading-[1.4]">
-            The Synapse is also shaped by an organizing committee of 25 researchers, builders, and practitioners from across the four fields.
-          </p>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/invest"
-              className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
-            >
-              Fund the room
-            </Link>
-            <Link
-              href="/attend"
-              className="inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-white/80 px-6 font-noto text-lg font-semibold text-off-white transition-colors hover:bg-off-white/10"
-            >
-              Apply to attend
-            </Link>
+          <div className="mt-16 h-px w-full max-w-[1040px] bg-off-white/15" aria-hidden="true" />
+          <div className="mt-16 flex w-full justify-center">
+            <OrganizingCommittee />
           </div>
         </div>
       </section>
