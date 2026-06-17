@@ -27,7 +27,7 @@ export function SiteFooter() {
       >
         <div className="relative h-[560px] md:h-[760px] lg:h-[933px]">
           <img
-            src="/figma/atlanta-skyline.png"
+            src="/figma/san-diego-skyline.jpg"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover"
@@ -39,13 +39,14 @@ export function SiteFooter() {
             style={{ background: "linear-gradient(to bottom, rgba(4,16,17,0) 0%, hsl(var(--moss-400)) 100%)" }}
             aria-hidden="true"
           />
-          {/* Decorative Synapse S mark, right-aligned, partially behind
-              text on smaller screens. */}
+          {/* Off-white Synapse Icon mark per Figma 498:119, sized to
+              match the 409px/933px (~44%) proportion from Figma
+              72:1781 and anchored to the right of the date headline. */}
           <img
-            src="/figma/synapse-s-overlay.svg"
+            src="/figma/synapse-icon-off-white.svg"
             alt=""
             aria-hidden="true"
-            className="absolute right-[5%] top-[18%] z-[1] hidden h-[55%] w-auto md:block"
+            className="absolute right-[8%] bottom-[18%] z-[1] hidden h-[44%] w-auto md:block"
           />
           <div className="container-gutter relative z-10 flex h-full flex-col justify-end pb-20 md:pb-32">
             <h2 className="max-w-[438px] font-serif text-[clamp(2.5rem,5vw+0.5rem,3.625rem)] font-semibold leading-[1.2] text-off-white">

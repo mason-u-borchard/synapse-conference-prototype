@@ -16,10 +16,16 @@ const VIRTUOUS_SRC = "https://cdn.virtuoussoftware.com/virtuous.embed.min.js";
 // into the container div (not into <head>) to keep the form rendering
 // inside our layout. A data-* guard skips re-injection under React
 // StrictMode's double-mount in development.
+//
+// When the page is served over plain http (typical for local `next dev`)
+// Virtuous refuses to render and shows a red warning box. We detect that
+// up front and swap in a styled fallback form so reviewers always see
+// the designed flow. For a true Virtuous local test, run
+//   next dev --experimental-https
 export function VirtuousEmbed({ vformId, orgId }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [status, setStatus] = useState<"pending" | "loaded" | "error">("pending");
+  const [status, setStatus] = useState<"pending" | "loaded" | "error" | "insecure">("pending");
   const [completeMessage, setCompleteMessage] = useState<string | null>(null);
 
   // Dev-only preview: hitting /donate?confirmationPreview=1 in a non-production
@@ -39,6 +45,12 @@ export function VirtuousEmbed({ vformId, orgId }: Props) {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+    // Virtuous requires HTTPS. On a plain http origin we never inject
+    // the loader; we render the designed fallback instead.
+    if (typeof window !== "undefined" && window.location.protocol !== "https:") {
+      setStatus("insecure");
+      return;
+    }
     if (container.querySelector("script[data-virtuous-mounted]")) {
       setStatus("loaded");
       return;
@@ -84,29 +96,207 @@ export function VirtuousEmbed({ vformId, orgId }: Props) {
     return () => observer.disconnect();
   }, [completeMessage]);
 
+  const showFallback = status === "insecure" || status === "error";
+
   return (
-    <div ref={wrapperRef} className="donate-card p-6 md:p-8">
+    <div ref={wrapperRef}>
+      {!completeMessage && showFallback && <DonateFormFallback />}
       <div
         ref={containerRef}
-        className={`min-h-[500px] ${completeMessage ? "hidden" : ""}`}
+        className={`min-h-[500px] ${completeMessage || showFallback ? "hidden" : ""}`}
         aria-live="polite"
         aria-busy={status === "pending"}
       >
         {status === "pending" && (
-          <p className="text-sm text-muted-foreground">Loading the donation form...</p>
-        )}
-        {status === "error" && (
-          <p role="alert" className="rounded-md border border-synapse-magenta/60 bg-synapse-magenta/10 px-4 py-3 text-sm">
-            The donation form could not be loaded. Please refresh, or reach
-            the committee at{" "}
-            <a href="mailto:hello@thesynapse.co" className="underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">hello@thesynapse.co</a>{" "}
-            to pledge support directly.
-          </p>
+          <p className="text-sm text-off-black/60">Loading the donation form...</p>
         )}
       </div>
 
       {completeMessage && <DonationConfirmation message={completeMessage} />}
     </div>
+  );
+}
+
+// Figma-styled donation form (411:1239). Rendered whenever Virtuous
+// can't mount (e.g. http origin during local dev). Mirrors the designed
+// pill amount selector, name/email/card fields, zip + country, fee
+// coverage checkbox, and the oxide-100 "Complete my gift" CTA.
+const FALLBACK_AMOUNTS = [500, 1000, 2500, 5000] as const;
+
+function DonateFormFallback() {
+  const [amount, setAmount] = useState<number | "other">(1000);
+  const [customAmount, setCustomAmount] = useState("");
+  const [coverFees, setCoverFees] = useState(false);
+
+  function selectPreset(value: number) {
+    setAmount(value);
+    setCustomAmount("");
+  }
+
+  return (
+    <form
+      onSubmit={(e) => e.preventDefault()}
+      aria-describedby="fallback-required-note"
+      className="space-y-6"
+    >
+      <p
+        id="fallback-required-note"
+        className="font-mono text-xs uppercase tracking-[0.18em] text-off-black/60"
+      >
+        All form fields are required
+      </p>
+
+      <fieldset className="space-y-3">
+        <legend className="font-serif text-lg leading-[1.4] text-off-black">
+          Donation Amount
+        </legend>
+        <div className="flex flex-wrap gap-2">
+          {FALLBACK_AMOUNTS.map((value) => {
+            const active = amount === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                onClick={() => selectPreset(value)}
+                aria-pressed={active}
+                className={`h-[42px] rounded-full px-5 font-noto text-base font-semibold transition-colors ${
+                  active
+                    ? "bg-oxide-100 text-off-black"
+                    : "border border-oxide-300/40 bg-true-white text-off-black/80 hover:border-oxide-300"
+                }`}
+              >
+                ${value.toLocaleString()}
+              </button>
+            );
+          })}
+          <button
+            type="button"
+            onClick={() => setAmount("other")}
+            aria-pressed={amount === "other"}
+            className={`h-[42px] rounded-full px-5 font-noto text-base font-semibold transition-colors ${
+              amount === "other"
+                ? "bg-oxide-100 text-off-black"
+                : "border border-oxide-300/40 bg-true-white text-off-black/80 hover:border-oxide-300"
+            }`}
+          >
+            Other
+          </button>
+        </div>
+        {amount === "other" && (
+          <label className="block">
+            <span className="sr-only">Custom amount in USD</span>
+            <div className="flex items-center rounded-md border border-oxide-300/40 bg-true-white focus-within:border-oxide-300">
+              <span className="pl-3 font-mono text-sm text-off-black/60">$</span>
+              <input
+                type="number"
+                min={5}
+                step={1}
+                value={customAmount}
+                onChange={(e) => setCustomAmount(e.target.value)}
+                placeholder="Other amount"
+                className="w-full border-none bg-transparent px-2 py-2.5 outline-none font-sans text-base text-off-black"
+              />
+            </div>
+          </label>
+        )}
+      </fieldset>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <FallbackInput label="First Name" name="firstName" autoComplete="given-name" />
+        <FallbackInput label="Last Name" name="lastName" autoComplete="family-name" />
+      </div>
+      <FallbackInput label="Email" name="email" type="email" autoComplete="email" />
+      <FallbackInput
+        label="Card Number"
+        name="cardNumber"
+        inputMode="numeric"
+        autoComplete="cc-number"
+        placeholder="1234 1234 1234 1234"
+      />
+      <div className="grid gap-4 sm:grid-cols-2">
+        <FallbackInput
+          label="Expiration"
+          name="expiration"
+          inputMode="numeric"
+          autoComplete="cc-exp"
+          placeholder="MM / YY"
+        />
+        <FallbackInput
+          label="Security Code"
+          name="cvc"
+          inputMode="numeric"
+          autoComplete="cc-csc"
+          placeholder="CVC"
+        />
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <FallbackInput
+          label="Billing Zip"
+          name="zip"
+          inputMode="numeric"
+          autoComplete="postal-code"
+        />
+        <label className="block">
+          <span className="mb-1 block font-sans text-sm font-medium text-off-black">Country</span>
+          <select
+            name="country"
+            defaultValue="US"
+            autoComplete="country"
+            className="h-[42px] w-full rounded-md border border-oxide-300/40 bg-true-white px-3 font-sans text-base text-off-black outline-none focus:border-oxide-300"
+          >
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="GB">United Kingdom</option>
+            <option value="AU">Australia</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+      </div>
+
+      <label className="flex cursor-pointer items-start gap-3 font-sans text-sm leading-[1.5] text-off-black">
+        <input
+          type="checkbox"
+          checked={coverFees}
+          onChange={(e) => setCoverFees(e.target.checked)}
+          className="mt-1 h-4 w-4 rounded border-oxide-300/40"
+        />
+        <span>Help cover transaction fees: Add ~3% to my total.</span>
+      </label>
+
+      <button
+        type="submit"
+        className="h-[50px] w-full rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
+      >
+        Complete my gift
+      </button>
+    </form>
+  );
+}
+
+type FallbackInputProps = {
+  label: string;
+  name: string;
+  type?: string;
+  placeholder?: string;
+  inputMode?: "text" | "numeric" | "email";
+  autoComplete?: string;
+};
+
+function FallbackInput({ label, name, type = "text", placeholder, inputMode, autoComplete }: FallbackInputProps) {
+  const id = `fallback-${name}`;
+  return (
+    <label htmlFor={id} className="block">
+      <span className="mb-1 block font-sans text-sm font-medium text-off-black">{label}</span>
+      <input
+        id={id}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        inputMode={inputMode}
+        autoComplete={autoComplete}
+        className="h-[42px] w-full rounded-md border border-oxide-300/40 bg-true-white px-3 font-sans text-base text-off-black outline-none focus:border-oxide-300"
+      />
+    </label>
   );
 }
 

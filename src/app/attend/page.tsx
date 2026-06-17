@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
 import { DisciplineCard } from "@/components/discipline-card";
 import { NotifyForm } from "@/components/notify-form";
 
@@ -9,80 +10,83 @@ export const metadata: Metadata = {
     "Apply to join 100 invited guests in San Diego for a three-day gathering exploring AI, robotics, cognitive science, and consciousness.",
 };
 
-// Audience list per IA "Who It's For" section (~line 477).
-// Copy is verbatim from may10Synapse Site IA.md.
+// Audience list per Figma 80:3224. Icon glyphs mirror the lucide
+// marks Taylor lined up next to each entry: flask for researchers,
+// building for institutional bridge-builders, atom for early-career
+// scholars, flame for funders, sparkles for artists.
 const audience = [
-  "Leaders in research, industry, and movements shaping what gets built",
-  "Academics and executives who see across the lines their institutions draw",
-  "Early-career scholars with fresh visions seeking mentorship and collaboration",
-  "Allies, funders, and partners fueling the mission",
-  "Artists and practitioners holding what research can't yet name",
+  { label: "Leaders in research, industry, and movements shaping what gets built", Icon: FlaskConical },
+  { label: "Academics and executives who see across the lines their institutions draw", Icon: Building2 },
+  { label: "Early-career scholars with fresh visions seeking mentorship and collaboration", Icon: Atom },
+  { label: "Allies, funders, and partners fueling the mission", Icon: Flame },
+  { label: "Artists and practitioners holding what research can't yet name", Icon: Sparkles },
 ];
 
 export default function AttendPage() {
   return (
     <>
-      {/* === Hero (Figma 56:4447, top band) ===
-          Two columns: left holds eyebrow, "An invitation" headline,
-          merged invitation copy (per Taylor's 06-08 R1 audit:
-          "merge these into one paragraph and one CTA"), and the
-          inline email capture. Right holds a dark photo card with
-          the Oct 9-11 / San Diego date stamp, framed by the venue
-          line. Image src still points at the atlanta-skyline
-          placeholder pending Taylor's new asset.
-          Pulls under the sticky header via the negative-margin
-          pattern shared with /about. */}
+      {/* === Hero (Figma 56:4448 / 56:4449) === Two-column lead-in:
+          left holds the "An invitation" headline, body, and email
+          capture; right holds the dark "When & Where" photo card with
+          the date stamp and tickets-covered caption. */}
       <section className="relative isolate overflow-hidden bg-off-white -mt-[88px] pt-[88px]">
-        <div className="container-gutter grid gap-12 py-20 md:py-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-16">
-          <div className="max-w-[58ch]">
-            <p className="font-mono text-sm tracking-[0.08em] uppercase text-off-black/70">
-              Attend
-            </p>
-            <h1 className="mt-5 font-serif text-[clamp(2.75rem,5vw+0.5rem,4.5rem)] leading-[1.02] tracking-tight text-off-black text-balance">
+        <div className="container-gutter grid items-start gap-12 py-24 md:py-32 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)] lg:gap-16">
+          <div className="max-w-[794px]">
+            <h1
+              className="font-serif text-[clamp(2.5rem,5vw+0.5rem,3.75rem)] leading-none text-off-black max-w-[532px]"
+              style={{ fontVariationSettings: "'SOFT' 0, 'WONK' 1" }}
+            >
               An invitation
             </h1>
-            <div className="mt-8 max-w-[55ch] space-y-5 font-sans text-lg leading-[1.55] text-off-black">
-              <p className="text-pretty">
-                One hundred participants, intentionally convened.
+            <div className="mt-6 max-w-[591px] font-sans text-[clamp(1rem,0.4vw+0.875rem,1.25rem)] leading-[1.4] text-off-black">
+              <p>One hundred participants. Intentionally convened.</p>
+              <p className="mt-6">
+                This is a small gathering by design; selected to support a high-trust, high-contribution environment. A limited number of places are open to applicants whose perspectives will expand and deepen the room.
               </p>
-              <p className="text-pretty">
-                This is a small gathering by design. A limited number of places are open to those who support a high-trust, high-contribution environment &mdash; people working in disciplines that don't have names yet, and those committed to stand with them: researchers and builders, scholars and practitioners, academics and executives.
-              </p>
-              <p className="text-pretty">
-                Applications open soon. Leave your email and we'll let you know when they do.
+              <p className="mt-6">
+                Applications open soon. Leave your email and we&apos;ll let you know when they do.
               </p>
             </div>
             <NotifyForm id="notify-hero" className="mt-10" />
           </div>
-
-          {/* Date / venue card. Dark moss surface, photo backdrop with
-              a low-opacity overlay so the stacked Oct 9-11 / San Diego
-              type stays legible. Caption beneath calls out the venue. */}
-          <aside className="relative">
-            <div className="relative overflow-hidden rounded-3xl bg-moss-300 text-off-white shadow-[0_24px_48px_-24px_rgba(0,0,0,0.35)]">
+          {/* When & Where photo card (Figma 238:1616). Landscape card
+              using the composed moss + magenta-coral background from
+              Figma 238:1617. All text is JetBrains Mono per the
+              design: Regular 20px eyebrow, Medium 60px date stamp,
+              Light Italic 18px caption. Left-to-right darken gradient
+              keeps the left-aligned text legible. */}
+          <aside className="relative lg:self-start">
+            <div className="relative overflow-hidden rounded-3xl bg-moss-400 text-off-white shadow-[0_24px_48px_-24px_rgba(0,0,0,0.35)]">
               <div className="absolute inset-0">
                 <img
-                  src="/figma/atlanta-skyline.png"
+                  src="/figma/attend-card-bg.png"
                   alt=""
                   aria-hidden="true"
-                  className="h-full w-full object-cover opacity-50"
+                  className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-moss-300/40 via-moss-300/55 to-moss-300/85" />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 mix-blend-multiply"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(9,9,9,0.55) 0%, rgba(9,9,9,0.25) 45%, rgba(9,9,9,0) 70%)",
+                  }}
+                />
               </div>
-              <div className="relative flex aspect-[4/5] flex-col justify-between p-8">
-                <p className="font-mono text-xs uppercase tracking-[0.18em] text-off-white/80">
-                  The Synapse 2026
+              <div className="relative flex aspect-[5/6] flex-col justify-between p-7 sm:aspect-[1087/533] sm:p-8">
+                <p className="font-mono text-[clamp(0.875rem,0.3vw+0.75rem,1.125rem)] leading-none">
+                  When &amp; Where
                 </p>
-                <div>
-                  <p className="font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] leading-[1.05]">
-                    Oct 09&ndash;11
+                <div className="font-mono font-medium leading-none">
+                  <p className="text-[clamp(1.75rem,2vw+0.5rem,2.5rem)]">
+                    Oct 09-11
                   </p>
-                  <p className="mt-2 font-serif text-[clamp(2.25rem,3vw+1rem,3rem)] leading-[1.05]">
+                  <p className="mt-2 whitespace-nowrap text-[clamp(1.75rem,2vw+0.5rem,2.5rem)]">
                     San Diego, CA
                   </p>
                 </div>
-                <p className="max-w-[28ch] font-sans text-sm leading-[1.5] text-off-white/85 text-pretty">
-                  Three days at a private venue in San Diego &mdash; details shared with accepted applicants.
+                <p className="font-mono text-[clamp(0.8125rem,0.2vw+0.7rem,1rem)] font-light italic leading-[1.4]">
+                  Tickets are covered for all attendees
                 </p>
               </div>
             </div>
@@ -90,35 +94,63 @@ export default function AttendPage() {
         </div>
       </section>
 
-      {/* === Who belongs here (Figma 56:4447, mid band) ===
-          The framing-copy column + duplicate notify form were removed
-          2026-06-08 per Taylor's R1 audit ("merge into one paragraph
-          and one CTA"). The audience checklist stays as a standalone
-          band so the page still answers "who is this for?" once. */}
-      <section className="relative isolate overflow-hidden bg-off-white pb-24 md:pb-section">
-        <div className="container-gutter">
-          <div className="mx-auto max-w-[760px]">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-off-black/70">
+      {/* === Ticker banner (Figma 127:2155) === Marquee row of five
+          colored pills (Moss / Rose / Azure / Lavender / Oxide) each
+          repeating "San Diego, CA · Oct 9-11 2026 · 100 guests" in
+          italic JetBrains Mono Light. The marquee scrolls continuously
+          via the synapse-marquee animation; the strip is duplicated
+          so the seam is invisible. */}
+      <TickerBanner />
+
+      {/* === Center band (Figma 56:5272) === Both the blueprint copy
+          + audience list AND the Four Fields grid live inside a single
+          relatively-positioned wrapper so the Wave 1 graphic can span
+          from the top of the blueprint section down past the audience
+          list to just above the Consciousness card -- matching Taylor's
+          design intent which has the wave bridging both sections. */}
+      <div className="relative isolate overflow-hidden bg-off-white">
+        <img
+          src="/figma/attend-wave-1.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-[4%] top-0 z-0 hidden h-full w-auto max-w-[48vw] object-contain object-right-top opacity-95 lg:block"
+        />
+        {/* === For those building beyond the blueprint (Figma 411:719) ===
+            Two-column band: left is the framing-copy column with its
+            own NotifyForm; right is the "Who belongs here" audience
+            checklist. */}
+        <section className="relative py-16 md:py-section">
+        <div className="container-gutter relative z-10 grid gap-12 lg:grid-cols-[minmax(0,494px)_minmax(0,1fr)] lg:gap-20">
+          <div>
+            <h2 className="font-serif text-[clamp(2.25rem,3.5vw+0.5rem,3rem)] leading-[1.15] text-off-black text-balance">
+              For those building beyond the blueprint.
+            </h2>
+            <p className="mt-6 font-sans text-lg leading-[1.55] text-off-black text-pretty">
+              This room is for the women working where the disciplines don't have names yet &mdash; and for those committed enough to stand with them. Researchers and builders. Scholars and practitioners. Academics and executives. The common thread isn't a credential. It's a disposition: the desire to build over the comfort of what already exists. Applications open soon. Leave your email and we'll let you know when they do.
+            </p>
+            <NotifyForm id="notify-blueprint" className="mt-10" />
+          </div>
+          <div>
+            <p className="font-mono text-base font-light uppercase tracking-[0.14em] text-off-black/80">
               Who belongs here
             </p>
-            <ul className="mt-6 space-y-4">
-              {audience.map((entry) => (
-                <li
-                  key={entry}
-                  className="flex gap-4 border-b border-off-black/10 pb-4 last:border-b-0"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-oxide-100 text-off-black"
-                  >
-                    <CheckGlyph />
-                  </span>
-                  <span className="font-sans text-base leading-[1.5] text-off-black text-pretty">
-                    {entry}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-4 rounded-xl border border-oxide-300/30 bg-true-white py-2">
+              <ul className="divide-y divide-oxide-300/15">
+                {audience.map(({ label, Icon }) => (
+                  <li key={label} className="flex items-center gap-5 px-6 py-5">
+                    <Icon
+                      size={20}
+                      strokeWidth={1.6}
+                      aria-hidden="true"
+                      className="shrink-0 text-oxide-200"
+                    />
+                    <span className="font-sans text-base leading-[1.4] text-off-black text-pretty">
+                      {label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -127,8 +159,8 @@ export default function AttendPage() {
           Same DisciplineCard set used on the homepage so the cards
           stay in lockstep across the site. CTA anchors back up to the
           hero email capture. */}
-      <section className="relative isolate overflow-hidden bg-off-white pb-24 md:pb-section">
-        <div className="container-gutter flex flex-col items-center text-center">
+        <section className="relative pb-24 md:pb-section">
+        <div className="container-gutter relative z-10 flex flex-col items-center text-center">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-off-black/70">
             Four fields. One frontier.
           </p>
@@ -182,21 +214,52 @@ export default function AttendPage() {
             />
           </div>
         </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
 
-function CheckGlyph() {
+
+// Ticker banner per Figma 127:2155: five colored pills in a row,
+// each with a faint tinted background and italic JetBrains Mono Light
+// text in the matching deeper shade. The row scrolls horizontally as
+// a continuous marquee via the project's synapse-marquee animation.
+// We render the 5-pill set twice so the loop seam is invisible.
+function TickerBanner() {
+  const pills: { bg: string; text: string }[] = [
+    { bg: "bg-[var(--moss-100-alpha-5)]", text: "text-moss-200" },
+    { bg: "bg-[var(--orchid-100-alpha-5)]", text: "text-orchid-200" },
+    { bg: "bg-[var(--azure-100-alpha-5)]", text: "text-azure-200" },
+    { bg: "bg-[var(--amethyst-100-alpha-5)]", text: "text-amethyst-200" },
+    { bg: "bg-[var(--oxide-100-alpha-5)]", text: "text-oxide-200" },
+  ];
+  const message = "San Diego, CA · Oct 9-11, 2026 · 100 guests";
   return (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-      <path
-        d="M2 6.5L4.75 9L10 3.5"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <section
+      aria-label="Conference dates and place"
+      className="marquee-pause overflow-hidden border-y border-off-black/50 bg-off-white"
+    >
+      <div className="animate-marquee flex w-max items-center py-[30px]">
+        {/* Duplicate the pill set twice so the marquee loops seamlessly
+            at translateX(-50%). */}
+        {[0, 1].map((copy) => (
+          <div
+            key={copy}
+            aria-hidden={copy === 1 ? "true" : undefined}
+            className="flex shrink-0 items-center gap-5 px-[10px]"
+          >
+            {pills.map((pill, i) => (
+              <span
+                key={`${copy}-${i}`}
+                className={`shrink-0 whitespace-nowrap rounded px-3 py-1.5 font-mono text-base font-light italic ${pill.bg} ${pill.text}`}
+              >
+                {message}
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }

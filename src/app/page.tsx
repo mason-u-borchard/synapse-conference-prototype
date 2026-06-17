@@ -38,7 +38,7 @@ const eventJsonLd = {
     { "@type": "Organization", name: meta.fiscalSponsor.name, url: meta.fiscalSponsor.href },
   ],
   url: "https://thesynapse.co/attend",
-  image: ["https://thesynapse.co/figma/atlanta-skyline.png"],
+  image: ["https://thesynapse.co/figma/san-diego-skyline.jpg"],
   keywords: [
     "AI",
     "robotics",
@@ -361,7 +361,7 @@ export default function HomePage() {
             >
               <div className="relative aspect-square shrink-0 overflow-hidden bg-moss-100">
                 <img
-                  src="/figma/home-beth.png"
+                  src="/figma/about-beth-2026-06-15.jpg"
                   alt="Beth Glick"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

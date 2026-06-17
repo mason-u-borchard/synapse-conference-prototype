@@ -8,8 +8,16 @@ type Status =
   | { kind: "success" }
   | { kind: "error"; message: string };
 
+// Per Figma 56:4450 Highlights, the Notify me button is disabled
+// until the email field holds a valid address. Keep this regex
+// lenient (matches the standard "looks like an email" shape) so
+// the button enables as soon as someone finishes typing.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function NotifyForm({ id, className }: { id: string; className?: string }) {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
+  const [email, setEmail] = useState("");
+  const isValidEmail = EMAIL_RE.test(email.trim());
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -21,8 +29,8 @@ export function NotifyForm({ id, className }: { id: string; className?: string }
       return;
     }
 
-    const email = String(data.get("email") ?? "").trim();
-    if (!email) {
+    const submittedEmail = String(data.get("email") ?? "").trim();
+    if (!submittedEmail) {
       setStatus({ kind: "error", message: "Please enter your email." });
       return;
     }
@@ -36,7 +44,7 @@ export function NotifyForm({ id, className }: { id: string; className?: string }
           kind: "contact",
           payload: {
             fullName: "Notify list",
-            email,
+            email: submittedEmail,
             message: "Notify me when applications open.",
           },
         }),
@@ -46,6 +54,7 @@ export function NotifyForm({ id, className }: { id: string; className?: string }
         throw new Error(body.message ?? `Could not save your details (${response.status})`);
       }
       setStatus({ kind: "success" });
+      setEmail("");
       form.reset();
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Could not save your details.";
@@ -94,12 +103,15 @@ export function NotifyForm({ id, className }: { id: string; className?: string }
           required
           placeholder="email@example.com"
           autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="flex-1 bg-transparent px-5 py-3 font-sans text-base text-off-black placeholder:text-off-black/40 focus:outline-none"
         />
         <button
           type="submit"
-          disabled={status.kind === "submitting"}
-          className="m-1 inline-flex items-center btn-solid-glow rounded-full bg-oxide-100 px-5 font-noto text-base font-semibold text-off-black transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+          disabled={!isValidEmail || status.kind === "submitting"}
+          aria-disabled={!isValidEmail || status.kind === "submitting"}
+          className="m-1 inline-flex items-center btn-solid-glow rounded-full bg-oxide-100 px-5 font-noto text-base font-semibold text-off-black transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
         >
           {status.kind === "submitting" ? "Sending…" : "Notify me"}
         </button>
