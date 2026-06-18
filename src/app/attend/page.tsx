@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
 import { DisciplineCard } from "@/components/discipline-card";
-import { NotifyForm } from "@/components/notify-form";
 
 export const metadata: Metadata = {
   title: { absolute: "Attend The Synapse | San Diego · Oct 9–11, 2026" },
@@ -43,11 +42,16 @@ export default function AttendPage() {
               <p className="mt-6">
                 This is a small gathering by design; selected to support a high-trust, high-contribution environment. A limited number of places are open to applicants whose perspectives will expand and deepen the room.
               </p>
-              <p className="mt-6">
-                Applications open soon. Leave your email and we&apos;ll let you know when they do.
-              </p>
+              <p className="mt-6">Applications are open.</p>
             </div>
-            <NotifyForm id="notify-hero" className="mt-10" />
+            <div className="mt-10">
+              <Link
+                href="/apply"
+                className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
+              >
+                Apply now
+              </Link>
+            </div>
           </div>
           {/* When & Where photo card (Figma 238:1616). Landscape card
               using the composed moss + magenta-coral background from
@@ -126,9 +130,16 @@ export default function AttendPage() {
               For those building beyond the blueprint.
             </h2>
             <p className="mt-6 font-sans text-lg leading-[1.55] text-off-black text-pretty">
-              This room is for the women working where the disciplines don't have names yet &mdash; and for those committed enough to stand with them. Researchers and builders. Scholars and practitioners. Academics and executives. The common thread isn't a credential. It's a disposition: the desire to build over the comfort of what already exists. Applications open soon. Leave your email and we'll let you know when they do.
+              This room is for the women working where the disciplines don't have names yet &mdash; and for those committed enough to stand with them. Researchers and builders. Scholars and practitioners. Academics and executives. The common thread isn't a credential. It's a disposition: the desire to build over the comfort of what already exists. Applications are open.
             </p>
-            <NotifyForm id="notify-blueprint" className="mt-10" />
+            <div className="mt-10">
+              <Link
+                href="/apply"
+                className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
+              >
+                Apply now
+              </Link>
+            </div>
           </div>
           <div>
             <p className="font-mono text-base font-light uppercase tracking-[0.14em] text-off-black/80">
@@ -169,10 +180,10 @@ export default function AttendPage() {
           </h2>
           <div className="mt-10">
             <Link
-              href="#notify-hero"
+              href="/apply"
               className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
             >
-              Get notified
+              Apply now
             </Link>
           </div>
           <div className="mt-16 grid w-full max-w-[1488px] grid-cols-1 gap-3 min-[440px]:grid-cols-2 min-[440px]:gap-4 lg:grid-cols-4 lg:gap-6">
