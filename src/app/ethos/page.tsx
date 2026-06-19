@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PrincipleCard } from "@/components/principle-card";
 
 export const metadata: Metadata = {
   title: { absolute: "The Synapse Ethos | Cognitive Science, AI & Consciousness" },
@@ -7,78 +8,90 @@ export const metadata: Metadata = {
     "Explore the ideas behind The Synapse: interdisciplinary inquiry, emerging intelligence, consciousness, and the future of human systems.",
 };
 
-// Cards walk a diagonal gradient from off-black through moss into amethyst,
-// matching the Figma. Each tile gets its own bg + accent pairing so the wall
-// reads as a single composition rather than nine identical tiles.
+// Card palette walks three triads per Taylor's 2026-06-08 audit (Figma 40:724):
+// row 1 moss 400/300/200, row 2 amethyst 400/300/200, row 3 orchid 400/300/200.
+// Each card's `photo` is the default face with the per-card `logo` pattern
+// centered on it (Figma 56:2993 for the top-left); hover/click flips to the
+// colored text card.
 const principles: ReadonlyArray<{
   n: string;
   title: string;
   body: string;
   bg: string;
-  accent: string;
+  photo: string;
+  logo: string;
 }> = [
   {
     n: "01",
     title: "Love over ego",
     body: "We prioritize generativity over dominance, curiosity over certainty, and collective emergence over individual performance.",
-    bg: "bg-off-black",
-    accent: "text-moss-100",
+    bg: "bg-moss-400",
+    photo: "/figma/ethos-card-01.png",
+    logo: "/figma/ethos-card-01-logo.png",
   },
   {
     n: "02",
     title: "Full selves belong",
     body: "This is not a space for curated expertise alone, but one that invites the fullness of who we are. Intellect, intuition, lived experience, emotion, and imagination are all welcome here.",
     bg: "bg-moss-300",
-    accent: "text-moss-100",
+    photo: "/figma/ethos-card-02.png",
+    logo: "/figma/ethos-card-02-logo.png",
   },
   {
     n: "03",
     title: "Multiple ways of knowing",
     body: "We honor analytical, intuitive, embodied, relational, and mystical forms of knowing as essential — not peripheral — to understanding reality.",
     bg: "bg-moss-200",
-    accent: "text-moss-100",
+    photo: "/figma/ethos-card-03.png",
+    logo: "/figma/ethos-card-03-logo.png",
   },
   {
     n: "04",
     title: "Cooperation and reciprocity",
     body: "We move beyond win-lose thinking toward forms of cooperation that expand intelligence, creativity, and what becomes possible.",
-    bg: "bg-moss-300",
-    accent: "text-moss-100",
+    bg: "bg-amethyst-400",
+    photo: "/figma/ethos-card-04.png",
+    logo: "/figma/ethos-card-04-logo.png",
   },
   {
     n: "05",
     title: "Relational becoming",
     body: "What emerges between us is more than what any of us brings alone. Difference is not something to resolve. It's something to create with.",
     bg: "bg-amethyst-300",
-    accent: "text-amethyst-100",
+    photo: "/figma/ethos-card-05.png",
+    logo: "/figma/ethos-card-05-logo.png",
   },
   {
     n: "06",
     title: "Women as shapers of mind and world",
     body: "We center the role of women and feminine ways of being in shaping minds, systems, and futures.",
     bg: "bg-amethyst-200",
-    accent: "text-amethyst-100",
+    photo: "/figma/ethos-card-06.png",
+    logo: "/figma/ethos-card-06-logo.png",
   },
   {
     n: "07",
     title: "Ethics as foundation, not afterthought",
     body: "We shape technology, knowledge, and futures to be life-affirming and responsible to the whole — through participation, reciprocity, and shared benefit rather than extraction or control.",
-    bg: "bg-amethyst-300",
-    accent: "text-amethyst-100",
+    bg: "bg-orchid-400",
+    photo: "/figma/ethos-card-07.png",
+    logo: "/figma/ethos-card-07-logo.png",
   },
   {
     n: "08",
     title: "Right relationship with power and capital",
     body: "We recognize that funding and partnership shape what becomes possible. We engage capital in ways that are transparent, aligned, and in service of collective benefit, not control.",
-    bg: "bg-oxide-300",
-    accent: "text-oxide-100",
+    bg: "bg-orchid-300",
+    photo: "/figma/ethos-card-08.png",
+    logo: "/figma/ethos-card-08-logo.png",
   },
   {
     n: "09",
     title: "Power without permission",
     body: "We reject inherited dynamics that require validation, gatekeeping, or hierarchy to act. Authority lives within us.",
-    bg: "bg-oxide-300",
-    accent: "text-oxide-100",
+    bg: "bg-orchid-200",
+    photo: "/figma/ethos-card-09.png",
+    logo: "/figma/ethos-card-09-logo.png",
   },
 ];
 
@@ -112,19 +125,18 @@ export default function EthosPage() {
       </section>
 
       {/* === The nine principles ===
-          3x3 grid on off-white. Each tile carries a dark Synapse tone;
-          numbers in mono in the matching accent. Cards lift + glow on
-          desktop hover per Taylor's 06-08 R1 audit ("Hover and click
-          states are missing -- this is more of a surprise and delight
-          brand moment rather than a functional need").
-          TODO: photo backgrounds + mobile flip behavior still pending
-          on Taylor's per-principle photo assets. */}
+          3x3 grid on off-white walking moss → amethyst → orchid per
+          Taylor's 2026-06-08 audit. Cards live in PrincipleCard so the
+          hover + mobile-tap behavior can carry its own client state
+          without dragging the whole page off the server.
+          TODO: per-principle photo backgrounds for the toggled state
+          still pending Taylor's photo exports. */}
       <section
         aria-labelledby="principles"
         className="relative isolate bg-off-white pb-24 md:pb-section"
       >
         <div className="container-gutter">
-          <p className="mb-8 font-mono text-xs uppercase tracking-[0.22em] text-oxide-200">
+          <p className="mb-8 font-mono text-xs uppercase tracking-[0.22em] text-off-black">
             Our principles
           </p>
           <h2 id="principles" className="sr-only">
@@ -132,35 +144,28 @@ export default function EthosPage() {
           </h2>
           <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {principles.map((p) => (
-              <li
-                key={p.n}
-                className={`group flex flex-col gap-5 rounded-2xl p-7 text-off-white shadow-[0_2px_6px_-3px_rgba(0,0,0,0.18)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_32px_-14px_rgba(0,0,0,0.45)] ${p.bg}`}
-              >
-                <span className={`font-mono text-xs tracking-[0.18em] transition-colors duration-300 ${p.accent} group-hover:text-off-white`}>
-                  {p.n}
-                </span>
-                <h3 className="font-serif text-2xl leading-[1.2] -mt-2">{p.title}</h3>
-                <p className="font-sans text-sm leading-[1.55] text-off-white/85">{p.body}</p>
-              </li>
+              <PrincipleCard key={p.n} n={p.n} title={p.title} body={p.body} bg={p.bg} photo={p.photo} logo={p.logo} />
             ))}
           </ol>
         </div>
       </section>
 
       {/* === Closer — "Principles don't live on walls" ===
-          Off-white surface, centered. Small Synapse ornament sits above the headline; single outline CTA below. Mirrors the /about "Why this city?" treatment. */}
+          Off-white surface, centered. Heart-ish ornament sits above the
+          headline with a slow pulse/heartbeat per Taylor's 2026-06-08
+          audit; single outline CTA below. */}
       <section
         aria-labelledby="in-practice"
         className="relative isolate overflow-hidden bg-off-white py-24 md:py-section"
       >
         <div className="container-gutter flex flex-col items-center text-center">
           <img
-            src="/figma/atlanta-ornament.svg"
+            src="/figma/ethos-heart.png"
             alt=""
             aria-hidden="true"
-            width={96}
-            height={96}
-            className="h-[80px] w-[80px] md:h-[96px] md:w-[96px]"
+            width={132}
+            height={102}
+            className="h-auto w-[105px] animate-heartbeat md:w-[132px]"
           />
           <h2
             id="in-practice"
