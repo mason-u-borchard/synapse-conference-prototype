@@ -70,7 +70,12 @@ export function SiteFooter() {
           returns. */}
       <section aria-label="Site footer" className="relative pt-24 md:pt-36">
         <div className="container-gutter flex flex-col gap-16 xl:flex-row xl:items-start xl:justify-between xl:gap-24">
-          <div className="max-w-sm">
+          {/* Wordmark column: Figma 17:16879 sets the tagline column to
+              a fixed 300px so it wraps after "mind,". The disciplines
+              line then sits below as whitespace-nowrap -- it visually
+              breaks the column's nominal width but that's intentional
+              in the design. */}
+          <div className="w-full max-w-[420px] xl:w-[300px] xl:max-w-none">
             <Link href="/" className="inline-flex items-center" aria-label="The Synapse -- home">
               <img
                 src="/figma/synapse-wordmark.svg"
@@ -79,20 +84,24 @@ export function SiteFooter() {
               />
             </Link>
             <p className="mt-7 font-sans text-xl leading-[1.6] text-off-white">
-              Where women connect mind, machine, and what comes next.
+              Where women connect mind, machine and what comes next
             </p>
-            <p className="mt-7 font-mono text-sm text-off-white">
+            <p className="mt-7 font-mono text-sm font-light leading-[1.4] text-off-white whitespace-nowrap">
               AI &middot; Robotics &middot; Cognitive Science &middot; Consciousness
             </p>
           </div>
 
-          <div className="grid gap-12 sm:grid-cols-3 sm:gap-10 xl:gap-24">
+          {/* Column gap from Figma 17:16895 is 120px; below xl the
+              wordmark column stacks above so 3 cols still need to
+              breathe -- keep a generous gap-12/gap-10 there and
+              promote to 120px at xl. */}
+          <div className="grid gap-12 sm:grid-cols-3 sm:gap-10 xl:gap-[120px]">
             <FooterColumn
               title="Explore"
               items={[
                 { label: "About", href: "/about" },
                 { label: "Ethos", href: "/ethos" },
-                { label: "Program", href: "/program" },
+                { label: "Program", href: "/program", chip: "Coming soon!" },
                 { label: "FAQ", href: "/faq" },
               ]}
             />
@@ -137,8 +146,12 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="font-mono text-sm uppercase tracking-[0.4em] text-off-white">{title}</h3>
-      <ul className="mt-7 space-y-5 font-sans text-base text-off-white">
+      {/* Eyebrow: JetBrains Mono Light @ 14px, tracking 0.4em, never
+          wraps (Figma 17:16897/16904/16909). nowrap keeps "GET INVOLVED"
+          intact even when the grid column is narrow at narrower xl
+          viewports. */}
+      <h3 className="font-mono text-sm font-light uppercase leading-[1.4] tracking-[0.4em] whitespace-nowrap text-off-white">{title}</h3>
+      <ul className="mt-[30px] space-y-5 font-sans text-base text-off-white">
         {items.map((item) => (
           <li key={item.label} className="flex items-center gap-2">
             {item.href ? (
