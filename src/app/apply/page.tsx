@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: "Apply",
   description:
     "Apply to The Synapse -- a three-day gathering of 100 leaders working at the intersection of AI, robotics, cognitive science, and consciousness, anchored by women shaping these fields.",
-  robots: { index: false, follow: false },
 };
 
 export default function ApplyPage() {

@@ -33,10 +33,10 @@ const TRAINING_BOTS: readonly string[] = [
 ];
 
 // Page-level `robots: { index: false, follow: false }` metadata on
-// /apply, /program, and /constellation handles per-page noindex
-// independently of this file -- robots.txt controls *crawling*, page
-// metadata controls *indexing*. Opening up robots.txt does not expose
-// those unlisted pages to search results.
+// /program and /constellation handles per-page noindex independently
+// of this file -- robots.txt controls *crawling*, page metadata
+// controls *indexing*. Opening up robots.txt does not expose those
+// unlisted pages to search results.
 export default function robots(): MetadataRoute.Robots {
   const root = basePath ? `${basePath}/` : "/";
   return {

@@ -247,15 +247,19 @@ export default function ProgramPage() {
       <section className="bg-off-white pt-20 pb-section md:pt-24">
         <div className="container-gutter flex flex-col items-center gap-6 text-center">
           <img
-            src="/figma/circle-graphic.svg"
+            src="/figma/program-warm-flower.svg"
             alt=""
             aria-hidden="true"
             width={102}
             height={111}
             className="h-[90px] w-auto md:h-[111px]"
           />
+          {/* Figma 445:2245 splits the headline so the italic phrase sits
+              on its own line. The <br /> keeps "a living laboratory"
+              intact rather than breaking mid-phrase. */}
           <h1 className="max-w-[680px] font-serif text-[clamp(2.25rem,4.5vw+0.5rem,3.75rem)] leading-[1.05] text-off-black">
-            A lecture hall becomes{" "}
+            A lecture hall becomes
+            <br />
             <span
               className="italic text-oxide-200"
               style={{ fontVariationSettings: '"SOFT" 0, "WONK" 1' }}
@@ -268,9 +272,9 @@ export default function ProgramPage() {
           </p>
           <Link
             href="/attend"
-            className="mt-2 inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-black/80 px-6 font-noto text-lg font-semibold text-off-black/80 transition-colors hover:bg-off-black/5"
+            className="mt-2 inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
           >
-            Apply to attend
+            Attend
           </Link>
         </div>
       </section>
@@ -300,9 +304,9 @@ export default function ProgramPage() {
           </p>
           <Link
             href="/attend"
-            className="mt-2 inline-flex h-[50px] items-center btn-outline-glow rounded-full border border-off-black/80 px-6 font-noto text-lg font-semibold text-off-black/80 transition-colors hover:bg-off-black/5"
+            className="mt-2 inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
           >
-            Apply to attend
+            Attend
           </Link>
           <div className="mt-12 grid w-full max-w-[1488px] grid-cols-1 gap-3 min-[440px]:grid-cols-2 min-[440px]:gap-4 lg:grid-cols-4 lg:gap-6">
             <DisciplineCard

@@ -11,13 +11,12 @@ function url(path: string): string {
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   // v2 IA: About / Ethos are primary text nav, Invest / Attend are
-  // CTA buttons, FAQ is footer-only. /apply and /program are private
-  // and noindex (the latter is still shown in nav with "Coming soon!"
-  // but the route 404s until the committee publishes the schedule).
-  // /constellation is also unlisted. Speakers and the legacy /donate,
-  // /register, /schedule paths are excluded (the latter three
-  // redirect via next.config.js).
-  const staticRoutes = ["/", "/about", "/ethos", "/attend", "/invest", "/faq"];
+  // CTA buttons, FAQ is footer-only. /apply is now public and indexable
+  // (live application route). /program is still noindex while the
+  // committee finalizes the schedule. /constellation is unlisted.
+  // Speakers and the legacy /donate, /register, /schedule paths are
+  // excluded (the latter three redirect via next.config.js).
+  const staticRoutes = ["/", "/about", "/ethos", "/attend", "/apply", "/invest", "/faq"];
   return staticRoutes.map((path) => ({
     url: url(path),
     lastModified: now,
