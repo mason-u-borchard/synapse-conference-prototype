@@ -12,13 +12,14 @@ interface Props {
 }
 
 // One ethos principle tile. Per Taylor's 2026-06-08 audit (Figma 40:724):
-// - The photo IS the default state with the unique per-card pattern
-//   logo centered on it (Figma 56:2993 for the top-left).
-// - Desktop hover or any-platform click flips to the colored text side.
-// - Back-face typography mirrors Figma 40:758: JetBrains Mono Light
+// - The colored text card IS the default state; principle reads on load.
+// - Desktop hover or any-platform click flips to the photo side with the
+//   unique per-card pattern logo centered on it (Figma 56:2993).
+// - Front-face typography mirrors Figma 40:758: JetBrains Mono Light
 //   eyebrow, Inter Semi-Bold title, Inter Regular body.
 // - mix-blend-lighten lets the white logo petals sit cleanly over the
 //   photo without the source PNG's dark background blocking it.
+// _Last updated: 2026-06-22_
 export function PrincipleCard({ n, title, body, bg, photo, logo }: Props) {
   const [flipped, setFlipped] = useState(false);
   const showBack = flipped;
@@ -29,7 +30,7 @@ export function PrincipleCard({ n, title, body, bg, photo, logo }: Props) {
         type="button"
         onClick={() => setFlipped((v) => !v)}
         aria-pressed={flipped}
-        aria-label={`${title}. Tap to ${flipped ? "see image" : "read"}`}
+        aria-label={`${title}. Tap to ${flipped ? "read" : "see image"}`}
         className="relative block h-full w-full text-left"
       >
         <div
@@ -39,10 +40,24 @@ export function PrincipleCard({ n, title, body, bg, photo, logo }: Props) {
             transform: showBack ? "rotateY(180deg)" : undefined,
           }}
         >
-          {/* Front: photo + centered unique pattern logo */}
+          {/* Front: solid color + principle text (typography per Figma 40:758) */}
+          <div
+            className={`absolute inset-0 flex flex-col justify-between overflow-hidden rounded-2xl px-8 pt-6 pb-7 text-off-white shadow-[0_2px_6px_-3px_rgba(0,0,0,0.18)] ${bg}`}
+            style={{ backfaceVisibility: "hidden" }}
+          >
+            <div className="flex flex-col gap-3">
+              <span className="font-mono text-base font-light uppercase tracking-[0.3em]">{n}</span>
+              <h3 className="font-sans text-[26px] font-semibold leading-[1.2]">{title}</h3>
+            </div>
+            <p className="font-sans text-base font-normal leading-[1.4]">{body}</p>
+          </div>
+          {/* Back: photo + centered unique pattern logo */}
           <div
             className="absolute inset-0 overflow-hidden rounded-2xl shadow-[0_2px_6px_-3px_rgba(0,0,0,0.18)]"
-            style={{ backfaceVisibility: "hidden" }}
+            style={{
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+            }}
           >
             <img
               src={photo}
@@ -58,20 +73,6 @@ export function PrincipleCard({ n, title, body, bg, photo, logo }: Props) {
               className="pointer-events-none absolute left-1/2 top-1/2 h-[95px] w-[95px] -translate-x-1/2 -translate-y-1/2 mix-blend-lighten md:h-[112px] md:w-[112px]"
               loading="lazy"
             />
-          </div>
-          {/* Back: solid color + principle text (typography per Figma 40:758) */}
-          <div
-            className={`absolute inset-0 flex flex-col justify-between overflow-hidden rounded-2xl px-8 pt-6 pb-7 text-off-white shadow-[0_2px_6px_-3px_rgba(0,0,0,0.18)] ${bg}`}
-            style={{
-              backfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-            }}
-          >
-            <div className="flex flex-col gap-3">
-              <span className="font-mono text-base font-light uppercase tracking-[0.3em]">{n}</span>
-              <h3 className="font-sans text-[26px] font-semibold leading-[1.2]">{title}</h3>
-            </div>
-            <p className="font-sans text-base font-normal leading-[1.4]">{body}</p>
           </div>
         </div>
       </button>

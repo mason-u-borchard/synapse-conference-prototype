@@ -10,9 +10,8 @@ export const metadata: Metadata = {
 
 // Card palette walks three triads per Taylor's 2026-06-08 audit (Figma 40:724):
 // row 1 moss 400/300/200, row 2 amethyst 400/300/200, row 3 orchid 400/300/200.
-// Each card's `photo` is the default face with the per-card `logo` pattern
-// centered on it (Figma 56:2993 for the top-left); hover/click flips to the
-// colored text card.
+// The colored text card is the default face; hover/click flips to the
+// `photo` with its per-card `logo` pattern centered on it (Figma 56:2993).
 const principles: ReadonlyArray<{
   n: string;
   title: string;
