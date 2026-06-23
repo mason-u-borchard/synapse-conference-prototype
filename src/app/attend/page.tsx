@@ -1,3 +1,4 @@
+// _Last updated: 2026-06-23_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
@@ -37,10 +38,16 @@ export default function AttendPage() {
             >
               An invitation
             </h1>
+            {/* Hero invitation copy per Audobon's audit (Figma 56:4448):
+                the page previously carried two near-identical invitation
+                paragraphs + two Apply CTAs (here and again in the band
+                below). Merged to a single paragraph here; the section
+                below now stands solely as a frame for "Who belongs
+                here." */}
             <div className="mt-6 max-w-[591px] font-sans text-[clamp(1rem,0.4vw+0.875rem,1.25rem)] leading-[1.4] text-off-black">
-              <p>One hundred participants. Intentionally convened.</p>
+              <p>One hundred participants, intentionally convened.</p>
               <p className="mt-6">
-                This is a small gathering by design; selected to support a high-trust, high-contribution environment. A limited number of places are open to applicants whose perspectives will expand and deepen the room.
+                This is a small gathering by design. A limited number of places are open to those who support a high-trust, high-contribution environment &mdash; people working in disciplines that don&apos;t have names yet, and those committed to stand with them: researchers and builders, scholars and practitioners, academics and executives.
               </p>
               <p className="mt-6">Applications are open.</p>
             </div>
@@ -120,26 +127,16 @@ export default function AttendPage() {
           className="pointer-events-none absolute -right-[4%] top-0 z-0 hidden h-full w-auto max-w-[48vw] object-contain object-right-top opacity-95 lg:block"
         />
         {/* === For those building beyond the blueprint (Figma 411:719) ===
-            Two-column band: left is the framing-copy column with its
-            own NotifyForm; right is the "Who belongs here" audience
-            checklist. */}
+            Originally a two-column band (framing copy + audience list).
+            Per Audobon's audit, the framing copy + CTA on the left were
+            duplicates of the hero -- removed. The audience list now
+            stands alone under the section heading. */}
         <section className="relative py-16 md:py-section">
         <div className="container-gutter relative z-10 grid gap-12 lg:grid-cols-[minmax(0,494px)_minmax(0,1fr)] lg:gap-20">
           <div>
             <h2 className="font-serif text-[clamp(2.25rem,3.5vw+0.5rem,3rem)] leading-[1.15] text-off-black text-balance">
               For those building beyond the blueprint.
             </h2>
-            <p className="mt-6 font-sans text-lg leading-[1.55] text-off-black text-pretty">
-              This room is for the women working where the disciplines don't have names yet &mdash; and for those committed enough to stand with them. Researchers and builders. Scholars and practitioners. Academics and executives. The common thread isn't a credential. It's a disposition: the desire to build over the comfort of what already exists. Applications are open.
-            </p>
-            <div className="mt-10">
-              <Link
-                href="/apply"
-                className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
-              >
-                Apply now
-              </Link>
-            </div>
           </div>
           <div>
             <p className="font-mono text-base font-light uppercase tracking-[0.14em] text-off-black/80">
