@@ -1,3 +1,4 @@
+// _Last updated: 2026-06-24_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ApplicationForm } from "@/components/application-form";
@@ -16,6 +17,9 @@ export default function ApplyPage() {
         <h1 className="text-display-lg text-balance">
           Apply to The Synapse.
         </h1>
+        <p className="mt-4 font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">
+          Apply by July 22, 2026
+        </p>
       </header>
 
       {/* Framing copy per Kelly's 2026-05-26 application draft -- the

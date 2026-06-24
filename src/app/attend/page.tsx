@@ -1,4 +1,4 @@
-// _Last updated: 2026-06-23_
+// _Last updated: 2026-06-24_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
@@ -49,7 +49,7 @@ export default function AttendPage() {
               <p className="mt-6">
                 This is a small gathering by design. A limited number of places are open to those who support a high-trust, high-contribution environment &mdash; people working in disciplines that don&apos;t have names yet, and those committed to stand with them: researchers and builders, scholars and practitioners, academics and executives.
               </p>
-              <p className="mt-6">Applications are open.</p>
+              <p className="mt-6">Applications are open through July 22, 2026.</p>
             </div>
             <div className="mt-10">
               <Link
