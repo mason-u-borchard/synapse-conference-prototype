@@ -101,7 +101,7 @@ export function SiteFooter() {
               items={[
                 { label: "About", href: "/about" },
                 { label: "Ethos", href: "/ethos" },
-                { label: "Program", href: "/program", chip: "Coming soon!" },
+                { label: "Program", href: "/program" },
                 { label: "FAQ", href: "/faq" },
               ]}
             />
