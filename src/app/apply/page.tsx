@@ -1,4 +1,4 @@
-// _Last updated: 2026-06-24_
+// _Last updated: 2026-06-26_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ApplicationForm } from "@/components/application-form";
@@ -13,12 +13,11 @@ export default function ApplyPage() {
   return (
     <div className="container-gutter py-section">
       <header className="max-w-2xl">
-        <p className="eyebrow mb-4">Apply</p>
         <h1 className="text-display-lg text-balance">
-          Apply to The Synapse.
+          Apply to attend
         </h1>
         <p className="mt-4 font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">
-          Apply by July 22, 2026
+          Applications close July 22, 2026
         </p>
       </header>
 
