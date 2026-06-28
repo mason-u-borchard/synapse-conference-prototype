@@ -32,6 +32,7 @@ const committee: ReadonlyArray<Committee> = [
   { name: "Mason Borchard", role: "Software Engineer / PhD Candidate", linkedIn: "https://www.linkedin.com/in/mason-u-b-12681888/" },
   { name: "Michael Krieger", role: "Psychiatrist", linkedIn: "https://www.linkedin.com/in/michael-krieger-28152b334/" },
   { name: "Morgan Mine", role: "Grad Student / Teaching Artist", linkedIn: "https://www.linkedin.com/in/morgan-mine-203b792a8/" },
+  { name: "Nirosha Murugan", role: "Research Chair & Assistant Professor", linkedIn: "https://www.linkedin.com/in/nirosha-murugan/" },
   { name: "Sarah Withee", role: "Engineering Manager", linkedIn: "https://www.linkedin.com/in/sarahwithee/" },
   { name: "Sitara Taddeo", role: "Consciousness Studies", linkedIn: "https://www.linkedin.com/in/sitara-taddeo-818334b5/" },
   { name: "Taylor Dunham", role: "Founder / Head of Design", linkedIn: "https://www.linkedin.com/in/taylordunham/" },
