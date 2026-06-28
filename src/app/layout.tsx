@@ -1,3 +1,4 @@
+// _Last updated: 2026-06-28_
 import "@/app/globals.css";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, Noto_Sans, JetBrains_Mono, Style_Script } from "next/font/google";
@@ -52,6 +53,7 @@ export const metadata: Metadata = {
     "women in science",
     "San Diego",
     "academic conference",
+    "Mason Ulrika Borchard",
     meta.edition,
   ],
   openGraph: {
