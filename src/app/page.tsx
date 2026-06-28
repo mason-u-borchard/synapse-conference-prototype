@@ -78,17 +78,23 @@ export default function HomePage() {
             lg-only display: below 1024px the layout is too narrow to
             fit both the wave and the headline without overlap, so
             the wave hides and the text takes the full width. */}
-        {/* Wave-1 sized so it stays prominent but doesn't overlap the
-            hero headline. Earlier 06-04 bump (w-52, max-w-820, -top-2%)
-            pushed the moon into the headline text at full width
-            (Taylor R2 audit, 06-08). Now w-[46%] / max-w-720 / top-[4%]
-            keeps the graphic generous without intruding on "what comes
-            next." */}
+        {/* Wave-1 sized to clear both the hero headline AND the
+            centered Investment-Pitch paragraph below it. Earlier
+            sizing (w-[46%]/max-w-720) covered the centered "convened
+            by women who are already building it..." copy at 1280-1700
+            viewports (Audubon 06-26 audit). Now w-[28%]/max-w-420 and
+            gated to xl: -- at <1280 the centered text spans most of
+            the container, so any visible wave overlaps; xl+ leaves
+            enough right-side margin for a smaller decorative wave that
+            never reaches the text. Halving the displayed width also
+            knocks the PNG upscale factor from ~2.17x to ~1.27x at
+            retina, which softens the pixelation Audubon flagged. A
+            full pixelation fix needs a 2x re-export from Figma. */}
         <img
           src="/figma/wave-1.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-[4%] z-[5] hidden h-auto w-[46%] max-w-[720px] lg:block"
+          className="pointer-events-none absolute right-0 top-[4%] z-[5] hidden h-auto w-[28%] max-w-[420px] xl:block"
         />
 
         <section className="relative isolate bg-amethyst-300 -mt-[88px] pt-[88px]">
@@ -395,13 +401,15 @@ export default function HomePage() {
         </div>
         {/* lg:pl shrinks as the viewport grows. At ~1024 the container's
             gutter is only ~30px, so without extra left padding the
-            text starts inside the photo's column. At ~1560+ the
+            text starts inside the photo's column. At ~1680+ the
             container is fully centered with ample margin on both sides,
             so the natural margin alone clears the photo and any added
             pl just pushes the text uselessly to the right. The clamp
-            interpolates between the two: ~140px pl up to xl, dropping
-            to 0 around 1560px. */}
-        <div className="container-gutter relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:pl-[clamp(0px,calc(140px-(100vw-1280px)/2),140px)]">
+            interpolates between the two: ~200px pl up to xl, dropping
+            to 0 around 1680px. Earlier 140px max (06-03) left only
+            ~40px of breathing room between the photo and "Three days
+            built around..." at 1280-1440px (Audubon 06-26 audit). */}
+        <div className="container-gutter relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:pl-[clamp(0px,calc(200px-(100vw-1280px)/2),200px)]">
           <div className="max-w-[720px] text-off-black">
             <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2]">
               Not a lecture hall.<br />A living laboratory.
