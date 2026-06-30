@@ -1,3 +1,4 @@
+// _Last updated: 2026-06-30_
 import fs from "node:fs";
 import path from "node:path";
 import { faq, meta, schedule, sponsors } from "@/lib/content";
@@ -29,6 +30,8 @@ const SOURCE_DOC_FILES: Array<{ label: string; file: string }> = [
   { label: "Messaging & Strategy Guide", file: "Synapse_Messaging_Guide.md" },
   { label: "Program Arc", file: "conference_program_arc.docx.md" },
   { label: "Draft Arc + Modalities", file: "The Synapse_ Draft Arc + Modalities.md" },
+  { label: "Conference Schedule (working draft)", file: "Conference_Schedule.md" },
+  { label: "Selection Rubric (what the committee looks for)", file: "Selection_Rubric.md" },
 ];
 
 function loadSourceDocs(): string {
@@ -120,14 +123,22 @@ export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none
     ``,
     `What you CAN say:`,
     `- Approximately ${meta.capacity} participants will convene in San Diego across the three days.`,
-    `- Most places are invitation-based; a limited number open through an application window that will be available soon.`,
+    `- Most places are invitation-based; a limited number open through the application window, which is open now and closes July 22, 2026. Submissions are reviewed on a rolling basis, so encourage people to apply as early as they can.`,
     `- Who leads a session, facilitates, performs, or contributes in other ways is being shaped by the committee as the program arc is designed; those assignments are not yet public.`,
     `- Session leaders, facilitators, and performers are compensated -- "the ethos of equality starts with what we value enough to fund."`,
     `- If someone wants to propose leading a session or workshop, they should mention it in their application; the committee follows up.`,
     `- If someone asks about becoming a vendor, exhibitor, or sponsor-partner (beyond a straight donation), say the committee has not yet decided whether that kind of programming will be part of the gathering and invite them to share their interest at hello@thesynapse.co so the committee can be in touch if and when it takes shape.`,
     ``,
     `# Organizing leadership`,
-    `The Synapse grew out of an invitation from Julia Mossbridge, PhD, neuroscientist and founder of Applied Love Labs -- she is the originating inspiration for this convening. Day-to-day it is led by Beth Glick, with an organizing team of approximately 25 contributors from across the fields. Applied Love Labs is the host and fiscal sponsor. Individual committee roles (program chair, access lead, ethics lead, etc.) have not been publicly named; do not invent or list them. When asked who founded, originated, or inspired The Synapse, name Julia Mossbridge clearly.`,
+    `The Synapse grew out of an invitation from Julia Mossbridge, PhD, neuroscientist and founder of Applied Love Labs -- she is the originating inspiration for this convening. Day-to-day it is led by Beth Glick. Applied Love Labs is the host and fiscal sponsor. When asked who founded, originated, or inspired The Synapse, name Julia Mossbridge clearly. When asked who runs it day-to-day, name Beth Glick clearly.`,
+    ``,
+    `The broader organizing committee is publicly listed on the /about page; you may reference and name members of that list when asked who else is involved. When asked about specific functional leads, use these direct answers (these are publicly nameable):`,
+    `- Site / tech lead: Mason Borchard`,
+    `- Program & Experience lead: Sitara Taddeo`,
+    `- Marketing & Communications lead: Kelly Woznicki`,
+    `- Design & Social Media lead: Taylor Dunham`,
+    ``,
+    `When asked for more detail about an individual committee member beyond their role label, give what is on /about (name, role, LinkedIn) and say richer bios are not yet published -- do not invent biographical detail, affiliations, or backstory for any committee member. Julia Mossbridge and Beth Glick are the two exceptions: longer bios for them are public on the /about page and may be paraphrased.`,
     ``,
     `# Schedule`,
     scheduleBlock,

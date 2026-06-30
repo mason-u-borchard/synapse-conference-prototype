@@ -60,6 +60,8 @@ const nextConfig = {
         "./artifacts/Ethic/docs-to-date/Synapse_Messaging_Guide.md",
         "./artifacts/Ethic/docs-to-date/conference_program_arc.docx.md",
         "./artifacts/Ethic/docs-to-date/The Synapse_ Draft Arc + Modalities.md",
+        "./artifacts/Ethic/docs-to-date/Conference_Schedule.md",
+        "./artifacts/Ethic/docs-to-date/Selection_Rubric.md",
       ],
     },
   },
