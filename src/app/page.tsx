@@ -127,6 +127,15 @@ export default function HomePage() {
             <p className="mt-5 font-mono text-[clamp(0.875rem,0.4vw+0.65rem,1.125rem)] tracking-[0.04em] text-off-white/85">
               AI &middot; Robotics &middot; Cognitive Science &middot; Consciousness
             </p>
+            {/* Application-deadline line per Mason's 2026-06-30 audit:
+                conferences typically front-and-center the deadline in the
+                hero. Sits between the disciplines row and the CTAs in
+                mono uppercase, oxide-100 accent against the dark amethyst
+                so it draws the eye without competing with the headline.
+                Pattern mirrors the `/apply` page's sub-H1 deadline line. */}
+            <p className="mt-4 font-mono text-[clamp(0.75rem,0.3vw+0.55rem,0.9375rem)] uppercase tracking-[0.22em] text-oxide-100">
+              Applications close July 22, 2026
+            </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/invest"
