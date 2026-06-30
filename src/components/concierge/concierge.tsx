@@ -1,4 +1,5 @@
 "use client";
+// _Last updated: 2026-06-28_
 
 import { useEffect, useRef, useState } from "react";
 import { useChat } from "ai/react";
@@ -14,11 +15,8 @@ const suggestedOpeners = [
   // "What can I expect as far as the day-to-day experience at the conference?",
   "Who is welcome to apply to attend?",
   // "What requirements are required in order to apply to become a speaker?",
-  // "Will there be vendors?",
-  "Can I apply to be a vendor?",
   "Where is the conference being held?",
   // "Is childcare available?",
-  "What accessibility accommodations do you offer?",
 ];
 
 export function Concierge() {
