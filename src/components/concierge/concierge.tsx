@@ -1,5 +1,5 @@
 "use client";
-// _Last updated: 2026-06-28_
+// _Last updated: 2026-06-28_ (Ava openers: + domain prompts and "More questions" toggle)
 
 import { useEffect, useRef, useState } from "react";
 import { useChat } from "ai/react";
@@ -8,14 +8,26 @@ import { cx } from "@/lib/cx";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { clearConversation } from "@/components/concierge/storage";
 
-const suggestedOpeners = [
-  "What types of sessions will be included?",
+// Default openers shown when the panel opens. First five render
+// immediately; the rest sit behind a "More questions" toggle so the
+// empty-state stays scannable while still surfacing the subject-matter
+// prompts Ava handles well.
+const defaultOpeners = [
+  "How do AI and robotics relate to consciousness?",
+  "Why bring four fields into one room?",
   "How can I apply to participate?",
+  "Who is welcome to apply to attend?",
+  "Where is the conference being held?",
+];
+
+const expandedOpeners = [
+  "What does embodied cognition mean for AI?",
+  "What are some key debates in consciousness studies?",
+  "How is The Synapse different from other interdisciplinary conferences?",
+  "What types of sessions will be included?",
   "Who are the speakers this year?",
   // "What can I expect as far as the day-to-day experience at the conference?",
-  "Who is welcome to apply to attend?",
   // "What requirements are required in order to apply to become a speaker?",
-  "Where is the conference being held?",
   // "Is childcare available?",
 ];
 
@@ -28,6 +40,7 @@ export function Concierge() {
   // enters the viewport, fade out the floating Ava button so it
   // doesn't overlap the dark cityscape + footer.
   const [nearFooter, setNearFooter] = useState(false);
+  const [showAllOpeners, setShowAllOpeners] = useState(false);
   const transcriptRef = useRef<HTMLDivElement | null>(null);
   const prefersReduced = useReducedMotion();
 
@@ -155,7 +168,7 @@ export function Concierge() {
                     something to start, or ask anything.
                   </p>
                   <ul className="mt-3 flex flex-wrap gap-2">
-                    {suggestedOpeners.map((question) => (
+                    {(showAllOpeners ? [...defaultOpeners, ...expandedOpeners] : defaultOpeners).map((question) => (
                       <li key={question}>
                         <button
                           type="button"
@@ -166,6 +179,18 @@ export function Concierge() {
                         </button>
                       </li>
                     ))}
+                    {expandedOpeners.length > 0 && (
+                      <li>
+                        <button
+                          type="button"
+                          onClick={() => setShowAllOpeners((v) => !v)}
+                          aria-expanded={showAllOpeners}
+                          className="rounded-pill px-3 py-1 text-xs text-muted-foreground underline-offset-2 hover:text-ink hover:underline"
+                        >
+                          {showAllOpeners ? "Fewer questions" : `More questions (+${expandedOpeners.length})`}
+                        </button>
+                      </li>
+                    )}
                   </ul>
                 </div>
               )}

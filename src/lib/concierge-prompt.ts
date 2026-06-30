@@ -1,4 +1,4 @@
-// _Last updated: 2026-06-30_
+// _Last updated: 2026-06-28_
 import fs from "node:fs";
 import path from "node:path";
 import { faq, meta, schedule, sponsors } from "@/lib/content";
@@ -133,7 +133,7 @@ export function assembleConciergePrompt(provider: "anthropic" | "openai" | "none
     `The Synapse grew out of an invitation from Julia Mossbridge, PhD, neuroscientist and founder of Applied Love Labs -- she is the originating inspiration for this convening. Day-to-day it is led by Beth Glick. Applied Love Labs is the host and fiscal sponsor. When asked who founded, originated, or inspired The Synapse, name Julia Mossbridge clearly. When asked who runs it day-to-day, name Beth Glick clearly.`,
     ``,
     `The broader organizing committee is publicly listed on the /about page; you may reference and name members of that list when asked who else is involved. When asked about specific functional leads, use these direct answers (these are publicly nameable):`,
-    `- Site / tech lead: Mason Borchard`,
+    `- Site / tech lead: Mason Borchard (she / her)`,
     `- Program & Experience lead: Sitara Taddeo`,
     `- Marketing & Communications lead: Kelly Woznicki`,
     `- Design & Social Media lead: Taylor Dunham`,
