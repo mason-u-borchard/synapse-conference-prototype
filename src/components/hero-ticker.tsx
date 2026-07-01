@@ -1,20 +1,29 @@
+// _Last updated: 2026-07-01_
 // Hero ticker per Taylor's Figma comment (2026-05-07): "Scrolling
 // ticker." Implemented as a CSS-only marquee. Two identical chip
 // strips render side-by-side; the outer container animates from
 // 0 to -50% so the second strip slides into the first's slot,
 // looping seamlessly.
 //
+// 2026-07-01: each pill now carries a distinct fact instead of all six
+// repeating the same date/city/count line. Uses the moss / orchid /
+// amethyst / oxide / azure palette to color-code six pieces of hero-
+// worthy info that are NOT already in the hero (the disciplines eyebrow
+// and the deadline line cover those). Rotates through: host, place +
+// dates, capacity + framing, program-arc anchor, three-day arc,
+// tickets-covered practical.
+//
 // Server-rendered: no client directive needed; pure CSS animation.
 
 import type { ReactNode } from "react";
 
 const tickerChips: { tone: TickerTone; text: string }[] = [
-  { tone: "off-white", text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
-  { tone: "moss",      text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
-  { tone: "orchid",    text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
-  { tone: "amethyst",  text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
-  { tone: "oxide",     text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
-  { tone: "azure",     text: "San Diego, CA · Oct 9-11 2026 · 100 guests" },
+  { tone: "off-white", text: "Hosted by Applied Love Labs" },
+  { tone: "moss",      text: "San Diego, CA · Oct 9-11, 2026" },
+  { tone: "orchid",    text: "100 guests, convened by invitation" },
+  { tone: "amethyst",  text: "Not a lecture hall · A living laboratory" },
+  { tone: "oxide",     text: "Tickets covered for all attendees" },
+  { tone: "azure",     text: "Expand · Weave · Emerge" },
 ];
 
 type TickerTone = "off-white" | "moss" | "orchid" | "amethyst" | "oxide" | "azure";
