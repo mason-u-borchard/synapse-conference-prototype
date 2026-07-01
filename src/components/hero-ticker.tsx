@@ -20,9 +20,9 @@ import type { ReactNode } from "react";
 const tickerChips: { tone: TickerTone; text: string }[] = [
   { tone: "off-white", text: "Hosted by Applied Love Labs" },
   { tone: "moss",      text: "San Diego, CA · Oct 9-11, 2026" },
+  { tone: "oxide",     text: "AI · Robotics · Cognitive Science · Consciousness" },
   { tone: "orchid",    text: "100 guests, convened by invitation" },
   { tone: "amethyst",  text: "Not a lecture hall · A living laboratory" },
-  { tone: "oxide",     text: "Tickets covered for all attendees" },
   { tone: "azure",     text: "Expand · Weave · Emerge" },
 ];
 
