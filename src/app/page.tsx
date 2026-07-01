@@ -112,9 +112,16 @@ export default function HomePage() {
         {/* py-28 (was py-20 md:py-28): Figma hero gives the headline a generous top void before the H1 lands. Bumping vertical padding so the headline doesn't sit right under the sticky header. */}
         <div className="relative z-10 mx-auto w-full max-w-gallery px-gutter py-24 md:py-32 lg:py-40">
           <div className="w-full lg:max-w-[60%]">
+            {/* Disciplines eyebrow -- moved above the H1 per Taylor's
+                07-01 audit: with the deadline now in the hero, the
+                disciplines read better as eyebrow context for the
+                headline instead of a trailing tag beneath the subhead. */}
+            <p className="font-mono text-[clamp(0.875rem,0.4vw+0.65rem,1.125rem)] tracking-[0.04em] text-off-white/85">
+              AI &middot; Robotics &middot; Cognitive Science &middot; Consciousness
+            </p>
             {/* Headline updated 2026-05-08 per Taylor's Figma comment: "the headline changed to this. We went back to the old tagline of the conference." */}
             {/* tracking-normal (not -tight): Fraunces in Figma sits with default tracking; pulling it tighter makes the headline look squished against the wave column. */}
-            <h1 className="font-serif text-[clamp(2.5rem,4vw+1rem,5rem)] leading-[1.05] text-off-white text-balance">
+            <h1 className="mt-5 font-serif text-[clamp(2.5rem,4vw+1rem,5rem)] leading-[1.05] text-off-white text-balance">
               Where women connect mind, machine, and what comes next.
             </h1>
             {/* max-w widened from 40ch to 60ch so the subhead breathes
@@ -124,16 +131,15 @@ export default function HomePage() {
             <p className="mt-7 max-w-[60ch] font-sans text-[clamp(1.125rem,0.8vw+0.75rem,1.5rem)] leading-[1.55] text-off-white/95">
               Four fields. Three days. The conversations that don't happen anywhere else. The futures that don't exist without them.
             </p>
-            <p className="mt-5 font-mono text-[clamp(0.875rem,0.4vw+0.65rem,1.125rem)] tracking-[0.04em] text-off-white/85">
-              AI &middot; Robotics &middot; Cognitive Science &middot; Consciousness
-            </p>
             {/* Application-deadline line per Mason's 2026-06-30 audit:
                 conferences typically front-and-center the deadline in the
-                hero. Sits between the disciplines row and the CTAs in
-                mono uppercase, oxide-100 accent against the dark amethyst
-                so it draws the eye without competing with the headline.
-                Pattern mirrors the `/apply` page's sub-H1 deadline line. */}
-            <p className="mt-4 font-mono text-[clamp(0.75rem,0.3vw+0.55rem,0.9375rem)] uppercase tracking-[0.22em] text-oxide-100">
+                hero. Sits between the subhead and the CTAs in mono
+                uppercase, oxide-100 accent against the dark amethyst so
+                it draws the eye without competing with the headline.
+                Size bumped 07-01 per Taylor's audit -- now matches the
+                disciplines eyebrow so both mono lines carry the same
+                weight bracketing the headline. */}
+            <p className="mt-6 font-mono text-[clamp(0.875rem,0.4vw+0.65rem,1.125rem)] uppercase tracking-[0.22em] text-oxide-100">
               Applications close July 22, 2026
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
