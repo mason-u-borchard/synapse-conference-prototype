@@ -1,3 +1,4 @@
+// _Last updated: 2026-07-02_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Plane, Building2, Ticket, Briefcase, ArrowRight as LucideArrowRight, ExternalLink } from "lucide-react";
@@ -283,13 +284,7 @@ export default function InvestPage() {
         <section className="relative z-10 py-24 md:py-section">
         <div className="container-gutter relative grid items-start gap-20 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)]">
           <div>
-            <h2 className="font-serif text-[clamp(2.25rem,4vw+0.5rem,3rem)] leading-[1.2] text-off-black">
-              $100k by June 30
-            </h2>
-            <p className="mt-6 font-sans text-xl leading-[1.4] text-off-black">
-              This is the threshold that makes The Synapse viable. Below it, we cannot commit to the people, the place, or the program. Your investment is what puts the right people in the room.
-            </p>
-            <div className="mt-12 flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-3">
               <Link
                 href={SPONSORSHIP_FORM_URL}
                 target="_blank"
