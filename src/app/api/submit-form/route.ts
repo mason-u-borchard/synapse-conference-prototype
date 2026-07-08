@@ -53,7 +53,15 @@ const registrationSchema = z.object({
   reflection: z.string().max(2000).optional().default(""),
   dietary: z.string().max(400).optional().default(""),
   access: z.string().max(2000).optional().default(""),
-  company_website: z.string().max(0).optional(),
+  // Honeypot. Bots fill this hidden field; humans never see it. We used
+  // to reject a filled value outright (max(0)), but an aggressive
+  // password manager / autofill extension can populate an off-screen
+  // field on a real applicant -- and rejecting silently dropped their
+  // application. Now we accept it (cap the length so it can't be abused
+  // as a large free-text field) and flag the submission downstream
+  // instead of throwing it away. Fail closed: a saved-and-flagged real
+  // applicant beats a silently-lost one.
+  company_website: z.string().max(200).optional().default(""),
 });
 
 const contactSchema = z.object({
@@ -91,33 +99,28 @@ export async function POST(req: NextRequest) {
     return json({ message }, 422);
   }
 
-  const persistPayload = buildPersistPayload(parsedBody.kind, payload.data);
+  // A filled honeypot means "probably a bot" -- but we no longer reject
+  // it (see the schema note). We persist it with a flag and skip the
+  // applicant-facing confirmation email so we never email a bot address.
+  const honeypotHit =
+    parsedBody.kind === "registration" &&
+    typeof payload.data.company_website === "string" &&
+    payload.data.company_website.trim().length > 0;
 
+  const persistPayload = buildPersistPayload(
+    parsedBody.kind,
+    payload.data,
+    honeypotHit,
+  );
+
+  // Step 1: persist. This is the only step that may surface as a failure
+  // to the applicant -- if we couldn't save the submission, they need to
+  // know it didn't go through.
+  let result;
   try {
-    const { confirmationId, persisted } = await recordSubmission(
-      parsedBody.kind,
-      persistPayload,
-    );
-
-    if (parsedBody.kind === "registration") {
-      const data = payload.data as z.infer<typeof registrationSchema>;
-      await sendConfirmationEmail({ to: data.email, fullName: data.fullName, confirmationId });
-      // Admin notification runs in a non-blocking try/catch so a Resend
-      // failure on the internal copy does not surface as a 500 to the
-      // applicant, whose submission has already been persisted.
-      try {
-        await sendAdminNotification({
-          confirmationId,
-          payload: persistPayload,
-        });
-      } catch (notifyError) {
-        console.error("[submit-form] admin notification failed", notifyError);
-      }
-    }
-
-    return json({ confirmationId, persisted }, 200);
+    result = await recordSubmission(parsedBody.kind, persistPayload);
   } catch (error) {
-    console.error("[submit-form] unhandled error", error);
+    console.error("[submit-form] persistence failed", error);
     return json(
       {
         message:
@@ -126,6 +129,35 @@ export async function POST(req: NextRequest) {
       500,
     );
   }
+
+  const { confirmationId, persisted } = result;
+
+  // Step 2: notify. The application is SAVED now, so nothing below may
+  // turn into an error for the applicant -- a confirmation-email hiccup,
+  // a Resend outage, or general slowness must not make a saved submission
+  // look like it failed (this was the "we have your application but you
+  // saw an error" report). Both sends fire concurrently (shaves latency
+  // versus awaiting them in series) and every failure is swallowed;
+  // delivery is best-effort and independently logged inside each sender.
+  if (parsedBody.kind === "registration") {
+    const data = payload.data as z.infer<typeof registrationSchema>;
+    try {
+      await Promise.allSettled([
+        honeypotHit
+          ? Promise.resolve()
+          : sendConfirmationEmail({
+              to: data.email,
+              fullName: data.fullName,
+              confirmationId,
+            }),
+        sendAdminNotification({ confirmationId, payload: persistPayload }),
+      ]);
+    } catch (notifyError) {
+      console.error("[submit-form] post-persist notification failed", notifyError);
+    }
+  }
+
+  return json({ confirmationId, persisted }, 200);
 }
 
 function normalizePayload(raw: unknown): Record<string, unknown> {
@@ -135,10 +167,14 @@ function normalizePayload(raw: unknown): Record<string, unknown> {
 
 // Collapses the "Other" gender split-field into a single sheet value:
 // blank text → "Other", typed text → "Other: <text>". Drops genderOther
-// so it doesn't surface as a separate column or in the JSON dump.
+// so it doesn't surface as a separate column or in the JSON dump. When
+// the honeypot tripped, drops the honeypot value itself (never worth
+// storing a bot's URL) and stamps a `flag` the sheet + admin email pick
+// up so the team can eyeball or filter these.
 function buildPersistPayload(
   kind: "registration" | "contact",
   data: Record<string, unknown>,
+  honeypotHit = false,
 ): Record<string, unknown> {
   if (kind !== "registration") return data;
   const next = { ...data };
@@ -147,6 +183,8 @@ function buildPersistPayload(
     next.gender = extra ? `Other: ${extra}` : "Other";
   }
   delete next.genderOther;
+  delete next.company_website;
+  if (honeypotHit) next.flag = "possible-spam (honeypot triggered)";
   return next;
 }
 

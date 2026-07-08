@@ -106,11 +106,10 @@ export function ApplicationForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    if (String(data.get("company_website") ?? "").length > 0) {
-      setStatus({ kind: "success", confirmationId: "SYN-PREVIEW" });
-      return;
-    }
-
+    // The honeypot (company_website) is handled server-side now: a filled
+    // value is saved and flagged rather than dropped. We used to fake a
+    // "success" here and never submit, which silently lost any real
+    // applicant whose autofill populated the hidden field. Let it through.
     const payload: Record<string, unknown> = Object.fromEntries(
       data.entries(),
     );

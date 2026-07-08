@@ -91,7 +91,10 @@ export async function sendAdminNotification(options: {
     p.contribute === "yes" && p.contributionType
       ? ` [${String(p.contributionType)}]`
       : "";
-  const subject = `New application: ${fullName}${contributionTag} -- ${options.confirmationId}`;
+  // Honeypot-flagged rows still get sent to the team (fail closed) but are
+  // marked so a real misfire can be spotted and a bot flood can be filtered.
+  const flagTag = p.flag ? "[POSSIBLE SPAM] " : "";
+  const subject = `${flagTag}New application: ${fullName}${contributionTag} -- ${options.confirmationId}`;
 
   const resend = new Resend(apiKey);
   try {
@@ -129,6 +132,7 @@ function renderAdminHtml(options: {
     <div style="max-width:680px;margin:0 auto;">
       <p style="letter-spacing:0.18em;text-transform:uppercase;color:#6b5a70;font-size:11px;margin:0;">${escapeHtml(meta.name)} -- new application</p>
       <h1 style="font-size:26px;line-height:1.15;margin:10px 0 24px;">${escapeHtml(s(p.fullName))}</h1>
+      ${p.flag ? `<p style="margin:0 0 20px;padding:10px 14px;background:#fdeaea;border:1px solid #e0b4b4;border-radius:6px;color:#8a2b2b;font-size:14px;">&#9888; ${escapeHtml(s(p.flag))} &mdash; review before acting; the applicant was not sent a confirmation email.</p>` : ""}
       <table style="border-collapse:collapse;font-size:14px;">
         ${row("Confirmation", options.confirmationId)}
         ${row("Email", p.email)}
@@ -194,6 +198,9 @@ function renderAdminText(options: {
   const p = options.payload;
   const lines = [
     `New application -- ${meta.name} ${meta.edition}`,
+    ...(p.flag
+      ? [`** ${s(p.flag)} -- review before acting; no confirmation email was sent to the applicant. **`]
+      : []),
     `Confirmation: ${options.confirmationId}`,
     ``,
     `Name: ${s(p.fullName)}`,
