@@ -1,7 +1,8 @@
-// _Last updated: 2026-06-26_
+// _Last updated: 2026-07-08_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ApplicationForm } from "@/components/application-form";
+import { ApplicationDeadline } from "@/components/application-deadline";
 
 export const metadata: Metadata = {
   title: "Apply",
@@ -16,9 +17,9 @@ export default function ApplyPage() {
         <h1 className="text-display-lg text-balance">
           Apply to attend
         </h1>
-        <p className="mt-4 font-mono text-sm uppercase tracking-[0.18em] text-muted-foreground">
-          Applications close July 22, 2026
-        </p>
+        <div className="mt-6">
+          <ApplicationDeadline />
+        </div>
       </header>
 
       {/* Framing copy per Kelly's 2026-05-26 application draft -- the

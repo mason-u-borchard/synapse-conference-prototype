@@ -1,8 +1,9 @@
-// _Last updated: 2026-06-24_
+// _Last updated: 2026-07-08_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
 import { DisciplineCard } from "@/components/discipline-card";
+import { ApplicationDeadline } from "@/components/application-deadline";
 
 export const metadata: Metadata = {
   title: { absolute: "Attend The Synapse | San Diego · Oct 9–11, 2026" },
@@ -49,9 +50,15 @@ export default function AttendPage() {
               <p className="mt-6">
                 This is a small gathering by design. A limited number of places are open to those who support a high-trust, high-contribution environment &mdash; people working in disciplines that don&apos;t have names yet, and those committed to stand with them: researchers and builders, scholars and practitioners, academics and executives.
               </p>
-              <p className="mt-6">Applications are open through July 22, 2026.</p>
             </div>
-            <div className="mt-10">
+            {/* Deadline plate replaces the old "Applications are open
+                through July 22, 2026." line (2026-07-08) -- pairs the
+                date with a live day-count right above the CTA. onLight
+                tone: a warm chip tuned for the off-white hero. */}
+            <div className="mt-8">
+              <ApplicationDeadline tone="onLight" variant="minimal" />
+            </div>
+            <div className="mt-8">
               <Link
                 href="/apply"
                 className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"

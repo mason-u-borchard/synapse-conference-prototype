@@ -1,7 +1,9 @@
+// _Last updated: 2026-07-08_
 import Link from "next/link";
 import { meta } from "@/lib/content";
 import { HeroTicker } from "@/components/hero-ticker";
 import { DisciplineCard } from "@/components/discipline-card";
+import { ApplicationDeadline } from "@/components/application-deadline";
 
 // Home title + description come from the layout's default metadata
 // (Kelly's 2026-05-26 SEO copy) so there's a single source of truth.
@@ -131,17 +133,15 @@ export default function HomePage() {
             <p className="mt-7 max-w-[60ch] font-sans text-[clamp(1.125rem,0.8vw+0.75rem,1.5rem)] leading-[1.55] text-off-white/95">
               Four fields. Three days. The conversations that don't happen anywhere else. The futures that don't exist without them.
             </p>
-            {/* Application-deadline line per Mason's 2026-06-30 audit:
-                conferences typically front-and-center the deadline in the
-                hero. Sits between the subhead and the CTAs in mono
-                uppercase, oxide-100 accent against the dark amethyst so
-                it draws the eye without competing with the headline.
-                Size bumped 07-01 per Taylor's audit -- now matches the
-                disciplines eyebrow so both mono lines carry the same
-                weight bracketing the headline. */}
-            <p className="mt-6 font-mono text-[clamp(0.875rem,0.4vw+0.65rem,1.125rem)] uppercase tracking-[0.22em] text-oxide-100">
-              Applications close July 22, 2026
-            </p>
+            {/* Application-deadline plate per Mason's 2026-07-08 audit:
+                the flat mono line was too easy to skim past, so the
+                deadline now sits in a proper plate between the subhead
+                and the CTAs -- the date anchored in Fraunces plus a live
+                day-count that carries the urgency. onDark tone: a glass
+                chip tuned for the deep-amethyst hero. */}
+            <div className="mt-7">
+              <ApplicationDeadline tone="onDark" variant="minimal" />
+            </div>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/invest"
