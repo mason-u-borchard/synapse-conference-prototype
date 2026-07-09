@@ -56,7 +56,7 @@ export default function AttendPage() {
                 date with a live day-count right above the CTA. onLight
                 tone: a warm chip tuned for the off-white hero. */}
             <div className="mt-8">
-              <ApplicationDeadline tone="onLight" variant="minimal" />
+              <ApplicationDeadline tone="onLight" />
             </div>
             <div className="mt-8">
               <Link
