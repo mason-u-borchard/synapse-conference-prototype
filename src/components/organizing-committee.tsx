@@ -1,3 +1,4 @@
+// _Last updated: 2026-07-13_
 import Link from "next/link";
 
 // Organizing committee table per Taylor's 2026-06-15 Figma update
@@ -23,6 +24,7 @@ const committee: ReadonlyArray<Committee> = [
   { name: "Allison Paradise", role: "Founder / CEO", linkedIn: "https://www.linkedin.com/in/allisoncparadise/" },
   { name: "Audubon Dougherty", role: "CX & AI Strategist", linkedIn: "https://www.linkedin.com/in/pazonada/" },
   { name: "Carole Griggs", role: "Researcher / Executive Coach", linkedIn: "https://www.linkedin.com/in/carole-griggs-ph-d-71404b28/" },
+  { name: "Cassandra Vieten", role: "Clinical Professor / Director", linkedIn: "https://www.linkedin.com/in/cassandravieten/" },
   { name: "Courtney Hayden", role: "Operations", linkedIn: "https://www.linkedin.com/in/courtneysh/" },
   { name: "Dani Caputi", role: "Independent Scholar", linkedIn: "https://www.linkedin.com/in/samantha-caputi-phd/" },
   { name: "Dominique Pearyer", role: "Data Engineer", linkedIn: "https://www.linkedin.com/in/dpearyer/" },
