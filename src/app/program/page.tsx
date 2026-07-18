@@ -1,3 +1,4 @@
+// _Last updated: 2026-07-18_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DisciplineCard } from "@/components/discipline-card";
@@ -127,7 +128,7 @@ const days: Day[] = [
           {
             title: "Responsibility + Creation",
             description:
-              "How do we honor indigenous, scientific, practical, and mystical wisdom traditions while navigating the realities of power?",
+              "We may be building things that experience. What do we owe what we create?",
           },
         ],
       },
