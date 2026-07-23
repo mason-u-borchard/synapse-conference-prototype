@@ -1,4 +1,4 @@
-// _Last updated: 2026-07-08_
+// _Last updated: 2026-07-22_
 "use client";
 
 import { useEffect, useState } from "react";
@@ -21,8 +21,8 @@ import { useEffect, useState } from "react";
 //   onLight -- /attend hero, always the off-white backdrop
 // Each tone is a flat class map so a tone never leans on a semantic token
 // that would flip out from under its fixed-tone background.
-const CLOSE_ISO = "2026-07-22T23:59:59-07:00"; // Pacific end-of-day
-const CLOSE_LABEL = "July 22, 2026";
+const CLOSE_ISO = "2026-07-31T23:59:59-07:00"; // Pacific end-of-day
+const CLOSE_LABEL = "July 31, 2026";
 
 type Tone = "surface" | "onDark" | "onLight";
 type Variant = "plate" | "minimal";
