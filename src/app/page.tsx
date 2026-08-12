@@ -131,7 +131,7 @@ export default function HomePage() {
                 ("2 lines of text, rather than 3"). At narrow widths the
                 lg:max-w-[60%] parent already constrains the wrap. */}
             <p className="mt-7 max-w-[60ch] font-sans text-[clamp(1.125rem,0.8vw+0.75rem,1.5rem)] leading-[1.55] text-off-white/95">
-              Four fields. four days. The conversations that don't happen anywhere else. The futures that don't exist without them.
+              Four fields. Four days. The conversations that don't happen anywhere else. The futures that don't exist without them.
             </p>
             {/* Application-deadline plate per Mason's 2026-07-08 audit:
                 the flat mono line was too easy to skim past, so the
@@ -422,7 +422,7 @@ export default function HomePage() {
             pl just pushes the text uselessly to the right. The clamp
             interpolates between the two: ~200px pl up to xl, dropping
             to 0 around 1680px. Earlier 140px max (06-03) left only
-            ~40px of breathing room between the photo and "four days
+            ~40px of breathing room between the photo and "Four days
             built around..." at 1280-1440px (Audubon 06-26 audit). */}
         <div className="container-gutter relative grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:pl-[clamp(0px,calc(200px-(100vw-1280px)/2),200px)]">
           <div className="max-w-[720px] text-off-black">
@@ -430,7 +430,7 @@ export default function HomePage() {
               Not a lecture hall.<br />A living laboratory.
             </h2>
             <p className="mt-6 font-sans text-xl leading-[1.6]">
-              four days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.
+              Four days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.
             </p>
             <div className="mt-8">
               <Link
