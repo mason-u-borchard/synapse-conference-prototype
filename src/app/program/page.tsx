@@ -6,7 +6,7 @@ import { DisciplineCard } from "@/components/discipline-card";
 export const metadata: Metadata = {
   title: { absolute: "Program | The Synapse — San Diego · May 3-6, 2027" },
   description:
-    "Three days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.",
+    "four days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.",
 };
 
 // Program page per Taylor's 2026-06-16 Figma (node 444:603). Hero +
@@ -269,7 +269,7 @@ export default function ProgramPage() {
             </span>
           </h1>
           <p className="max-w-[608px] font-sans text-[clamp(1rem,0.4vw+0.875rem,1.25rem)] leading-[1.6] text-off-black">
-            Three days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.
+            four days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.
           </p>
           <Link
             href="/attend"
@@ -281,7 +281,7 @@ export default function ProgramPage() {
       </section>
 
       {/* === Schedule timeline (Figma 444:613) ===
-          Three days, each with a colored vertical rail on the left
+          four days, each with a colored vertical rail on the left
           (dot + line) and a stack of session cards on the right. */}
       <section className="bg-off-white pb-section">
         <div className="container-gutter flex flex-col gap-20">

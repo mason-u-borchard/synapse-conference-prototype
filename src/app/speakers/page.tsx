@@ -16,7 +16,7 @@ export default function SpeakersPage() {
         <div className="mt-6 max-w-prose space-y-5 text-lg leading-relaxed text-muted-foreground text-pretty">
           <p>
             Approximately {meta.capacity} participants will convene in
-            {" "}{meta.city} across the three days. Who leads a session,
+            {" "}{meta.city} across the four days. Who leads a session,
             facilitates, performs, or contributes in other ways is being
             shaped by the committee as the program arc is designed -- the
             Synapse deliberately does not divide the room into keynote
