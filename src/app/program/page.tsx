@@ -46,7 +46,7 @@ type Day = {
 
 const days: Day[] = [
   {
-    date: "Oct 9",
+    date: "May 4",
     number: 1,
     title: "Day 1: Expand",
     subtitle: "Who shapes minds? And what becomes possible when that expands?",
@@ -83,7 +83,7 @@ const days: Day[] = [
     ],
   },
   {
-    date: "Oct 10",
+    date: "May 5",
     number: 2,
     title: "Day 2: Weave",
     subtitle: "Something is gestating where these fields cross — and we are its parents.",
@@ -163,7 +163,7 @@ const days: Day[] = [
     ],
   },
   {
-    date: "Oct 11",
+    date: "May 6",
     number: 3,
     title: "Day 3: Emerge",
     subtitle: "What is being born, and how will we wear the mantle of care?",

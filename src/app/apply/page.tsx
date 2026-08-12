@@ -1,13 +1,11 @@
-// _Last updated: 2026-07-08_
+// _Last updated: 2026-08-12_
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ApplicationForm } from "@/components/application-form";
-import { ApplicationDeadline } from "@/components/application-deadline";
 
 export const metadata: Metadata = {
   title: "Apply",
   description:
-    "Apply to The Synapse -- a three-day gathering of 100 leaders working at the intersection of AI, robotics, cognitive science, and consciousness, anchored by women shaping these fields.",
+    "Apply to The Synapse -- a four-day gathering of 100 leaders working at the intersection of AI, robotics, cognitive science, and consciousness, anchored by women shaping these fields.",
 };
 
 export default function ApplyPage() {
@@ -18,7 +16,9 @@ export default function ApplyPage() {
           Apply to attend
         </h1>
         <div className="mt-6">
-          <ApplicationDeadline />
+          <p className="max-w-prose rounded-lg border border-oxide-200/40 bg-oxide-100/10 px-5 py-4 text-lg leading-relaxed text-ink">
+            Applications are closed for now. If you&apos;ve already applied, your application still stands -- there&apos;s nothing more you need to do.
+          </p>
         </div>
       </header>
 
@@ -51,9 +51,7 @@ export default function ApplyPage() {
         </p>
       </section>
 
-      <section aria-label="Application form" className="mt-10 max-w-2xl">
-        <ApplicationForm />
-      </section>
+      {/* Application form disabled 2026-08-12 -- applications are closed for now. */}
 
       <footer className="mt-16 max-w-2xl">
         <div className="flex flex-wrap gap-3">

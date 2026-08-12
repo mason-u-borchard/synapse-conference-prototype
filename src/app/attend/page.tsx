@@ -1,14 +1,12 @@
 // _Last updated: 2026-08-12_
 import type { Metadata } from "next";
-import Link from "next/link";
 import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
 import { DisciplineCard } from "@/components/discipline-card";
-import { ApplicationDeadline } from "@/components/application-deadline";
 
 export const metadata: Metadata = {
   title: { absolute: "Attend The Synapse | San Diego · May 3–6, 2027" },
   description:
-    "Apply to join 100 invited guests in San Diego for a three-day gathering exploring AI, robotics, cognitive science, and consciousness.",
+    "Apply to join 100 invited guests in San Diego for a four-day gathering exploring AI, robotics, cognitive science, and consciousness.",
 };
 
 // Audience list per Figma 80:3224. Icon glyphs mirror the lucide
@@ -51,20 +49,14 @@ export default function AttendPage() {
                 This is a small gathering by design. A limited number of places are open to those who support a high-trust, high-contribution environment &mdash; people working in disciplines that don&apos;t have names yet, and those committed to stand with them: researchers and builders, scholars and practitioners, academics and executives.
               </p>
             </div>
-            {/* Deadline plate replaces the old "Applications are open
-                through July 22, 2026." line (2026-07-08) -- pairs the
-                date with a live day-count right above the CTA. onLight
-                tone: a warm chip tuned for the off-white hero. */}
+            {/* Application deadline plate removed 2026-08-12 -- applications closed. */}
             <div className="mt-8">
-              <ApplicationDeadline tone="onLight" />
-            </div>
-            <div className="mt-8">
-              <Link
-                href="/apply"
-                className="inline-flex h-[50px] items-center btn-solid-glow rounded-full bg-oxide-100 px-6 font-noto text-lg font-semibold text-off-black transition-transform hover:-translate-y-0.5"
+              <span
+                aria-disabled="true"
+                className="inline-flex h-[50px] cursor-not-allowed items-center rounded-full bg-off-black/10 px-6 font-noto text-lg font-semibold text-off-black/50"
               >
-                Apply now
-              </Link>
+                Applications closed
+              </span>
             </div>
           </div>
           {/* When & Where photo card (Figma 238:1616). Landscape card
