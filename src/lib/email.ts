@@ -1,5 +1,16 @@
+// _Last updated: 2026-07-27_
 import { Resend } from "resend";
 import { meta } from "@/lib/content";
+
+// Reads the sender identity from RESEND_FROM. A `.env` file strips the
+// quotes in `RESEND_FROM="Name <addr>"`, but Vercel's env UI stores the
+// value literally -- so a value pasted with those quotes arrives as
+// `"Name <addr>"` and Resend rejects it with `Invalid \`from\` field`.
+// Strip any wrapping single/double quotes and trim so either form works.
+function senderFrom(): string {
+  const raw = (process.env.RESEND_FROM || "The Synapse <hello@thesynapse.co>").trim();
+  return raw.replace(/^["']+|["']+$/g, "").trim();
+}
 
 export async function sendConfirmationEmail(options: {
   to: string;
@@ -7,7 +18,7 @@ export async function sendConfirmationEmail(options: {
   confirmationId: string;
 }): Promise<{ sent: boolean; reason?: string }> {
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.RESEND_FROM || "The Synapse <hello@thesynapse.example>";
+  const from = senderFrom();
 
   if (!apiKey) {
     console.info("[email] RESEND_API_KEY absent, skipping confirmation email");
@@ -69,7 +80,7 @@ export async function sendAdminNotification(options: {
   payload: Record<string, unknown>;
 }): Promise<{ sent: boolean; reason?: string }> {
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.RESEND_FROM || "The Synapse <hello@thesynapse.example>";
+  const from = senderFrom();
   const recipientEnv = process.env.APPLICATION_NOTIFY_TO || "mason@thesynapse.co";
   const recipients = recipientEnv
     .split(",")
