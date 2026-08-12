@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Apply",
   description:
-    "Apply to The Synapse -- a four-day gathering of 100 leaders working at the intersection of AI, robotics, cognitive science, and consciousness, anchored by women shaping these fields.",
+    "Apply to The Synapse -- a three-day gathering of 100 leaders working at the intersection of AI, robotics, cognitive science, and consciousness, anchored by women shaping these fields.",
 };
 
 export default function ApplyPage() {

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { meta } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Four days. A deliberate arc.",
+  title: "Three days. A deliberate arc.",
   description: "Each day moves through Embody, Encounter, Imagine, Create. Day 1 expands the aperture across AI, robotics, cognitive science, and consciousness. Day 2 weaves them through four crossing points. Day 3 brings what emerges into form.",
 };
 
@@ -30,7 +30,7 @@ export default function SchedulePage() {
     <div className="container-gutter py-section">
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">What to expect</p>
-        <h1 className="text-display-lg text-balance">Four days. A deliberate arc.</h1>
+        <h1 className="text-display-lg text-balance">Three days. A deliberate arc.</h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground text-pretty">
           Each day moves through four registers -- Embody, Encounter,
           Imagine, Create -- though the weight shifts as the conference

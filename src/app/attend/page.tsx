@@ -1,12 +1,13 @@
 // _Last updated: 2026-08-12_
 import type { Metadata } from "next";
+import Link from "next/link";
 import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
 import { DisciplineCard } from "@/components/discipline-card";
 
 export const metadata: Metadata = {
   title: { absolute: "Attend The Synapse | San Diego · May 3–6, 2027" },
   description:
-    "Apply to join 100 invited guests in San Diego for a four-day gathering exploring AI, robotics, cognitive science, and consciousness.",
+    "Apply to join 100 invited guests in San Diego for a three-day gathering exploring AI, robotics, cognitive science, and consciousness.",
 };
 
 // Audience list per Figma 80:3224. Icon glyphs mirror the lucide

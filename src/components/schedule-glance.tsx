@@ -23,7 +23,7 @@ export function ScheduleGlance({ items }: { items: readonly Session[] }) {
       })}
       <li className="py-5">
         <Link href="/program" className="text-sm text-ink underline decoration-gold-deep decoration-2 underline-offset-4 link-glow">
-          Full schedule, four days, four tracks
+          Full schedule, three days, four tracks
         </Link>
       </li>
     </ol>
