@@ -4,7 +4,7 @@ import { meta } from "@/lib/content";
 // Footer per Taylor's Figma (Home node 19:1222 / Footer 17:16934).
 // Two visually distinct stacked sections:
 //   - Pre-Footer: a full-bleed cityscape photo with the Synapse "S"
-//     mark overlay, "San Diego, CA / Oct 9-11, 2026" headline, and a
+//     mark overlay, "San Diego, CA / May 3-6, 2027" headline, and a
 //     "Hosted by Applied Love Labs" badge. Image src is still the
 //     Atlanta skyline placeholder pending Taylor's San Diego asset.
 //   - Main Footer: dark moss-400 surface with logo + tagline + the
@@ -22,7 +22,7 @@ export function SiteFooter() {
           scale as decorative anchoring. Date headline + host badge
           sit on the left. */}
       <section
-        aria-label="San Diego, October 9-11, 2026"
+        aria-label="San Diego, May 3-6, 2027"
         className="relative overflow-hidden"
       >
         <div className="relative h-[560px] md:h-[760px] lg:h-[933px]">
@@ -50,7 +50,7 @@ export function SiteFooter() {
           />
           <div className="container-gutter relative z-10 flex h-full flex-col justify-end pb-20 md:pb-32">
             <h2 className="max-w-[438px] font-serif text-[clamp(2.5rem,5vw+0.5rem,3.625rem)] font-semibold leading-[1.2] text-off-white">
-              San Diego, CA<br />Oct 9-11, 2026
+              San Diego, CA<br />May 3-6, 2027
             </h2>
             <span className="mt-7 inline-flex w-fit rounded bg-off-black/40 px-3 py-1.5 font-mono text-base text-off-white">
               Hosted by Applied Love Labs

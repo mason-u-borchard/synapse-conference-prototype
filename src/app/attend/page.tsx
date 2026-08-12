@@ -1,4 +1,4 @@
-// _Last updated: 2026-07-08_
+// _Last updated: 2026-08-12_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical, Building2, Atom, Flame, Sparkles } from "lucide-react";
@@ -6,7 +6,7 @@ import { DisciplineCard } from "@/components/discipline-card";
 import { ApplicationDeadline } from "@/components/application-deadline";
 
 export const metadata: Metadata = {
-  title: { absolute: "Attend The Synapse | San Diego · Oct 9–11, 2026" },
+  title: { absolute: "Attend The Synapse | San Diego · May 3–6, 2027" },
   description:
     "Apply to join 100 invited guests in San Diego for a three-day gathering exploring AI, robotics, cognitive science, and consciousness.",
 };
@@ -97,7 +97,7 @@ export default function AttendPage() {
                 </p>
                 <div className="font-mono font-medium leading-none">
                   <p className="text-[clamp(1.75rem,2vw+0.5rem,2.5rem)]">
-                    Oct 09-11
+                    May 03-06
                   </p>
                   <p className="mt-2 whitespace-nowrap text-[clamp(1.75rem,2vw+0.5rem,2.5rem)]">
                     San Diego, CA
@@ -114,7 +114,7 @@ export default function AttendPage() {
 
       {/* === Ticker banner (Figma 127:2155) === Marquee row of five
           colored pills (Moss / Rose / Azure / Lavender / Oxide) each
-          repeating "San Diego, CA · Oct 9-11 2026 · 100 guests" in
+          repeating "San Diego, CA · May 3-6, 2027 · 100 guests" in
           italic JetBrains Mono Light. The marquee scrolls continuously
           via the synapse-marquee animation; the strip is duplicated
           so the seam is invisible. */}
@@ -249,7 +249,7 @@ function TickerBanner() {
     { bg: "bg-[var(--amethyst-100-alpha-5)]", text: "text-amethyst-200" },
     { bg: "bg-[var(--oxide-100-alpha-5)]", text: "text-oxide-200" },
   ];
-  const message = "San Diego, CA · Oct 9-11, 2026 · 100 guests";
+  const message = "San Diego, CA · May 3-6, 2027 · 100 guests";
   return (
     <section
       aria-label="Conference dates and place"

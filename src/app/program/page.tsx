@@ -1,10 +1,10 @@
-// _Last updated: 2026-07-18_
+// _Last updated: 2026-08-12_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DisciplineCard } from "@/components/discipline-card";
 
 export const metadata: Metadata = {
-  title: { absolute: "Program | The Synapse — San Diego · Oct 9-11, 2026" },
+  title: { absolute: "Program | The Synapse — San Diego · May 3-6, 2027" },
   description:
     "Three days built around four disciplines and the spaces between them. Workshops, facilitated dialogue, and structured time for the conversations that usually only happen in hallways.",
 };

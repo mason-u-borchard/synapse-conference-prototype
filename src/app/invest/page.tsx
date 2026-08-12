@@ -1,4 +1,4 @@
-// _Last updated: 2026-07-02_
+// _Last updated: 2026-08-12_
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Plane, Building2, Ticket, Briefcase, ArrowRight as LucideArrowRight, ExternalLink } from "lucide-react";
@@ -163,7 +163,7 @@ export default function InvestPage() {
             </div>
             <dl className="mt-12 max-w-[535px] divide-y divide-off-black/15">
               <StatRow label="100" body="researchers, executives, builders, and practitioners" />
-              <StatRow label="3 days." body="San Diego, California · October 2026" />
+              <StatRow label="3 days." body="San Diego, California · May 2027" />
               <StatRow
                 label="Convened by"
                 body="women already doing the work and those committed to standing with them"

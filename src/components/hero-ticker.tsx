@@ -1,4 +1,4 @@
-// _Last updated: 2026-07-01_
+// _Last updated: 2026-08-12_
 // Hero ticker per Taylor's Figma comment (2026-05-07): "Scrolling
 // ticker." Implemented as a CSS-only marquee. Two identical chip
 // strips render side-by-side; the outer container animates from
@@ -19,7 +19,7 @@ import type { ReactNode } from "react";
 
 const tickerChips: { tone: TickerTone; text: string }[] = [
   { tone: "off-white", text: "Hosted by Applied Love Labs" },
-  { tone: "moss",      text: "San Diego, CA · Oct 9-11, 2026" },
+  { tone: "moss",      text: "San Diego, CA · May 3-6, 2027" },
   { tone: "oxide",     text: "AI · Robotics · Cognitive Science · Consciousness" },
   { tone: "orchid",    text: "100 guests, convened by invitation" },
   { tone: "amethyst",  text: "Not a lecture hall · A living laboratory" },
